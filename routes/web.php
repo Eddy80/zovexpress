@@ -30,6 +30,10 @@ Route::get('/infosending', function () {
     return view('infosending');
 });
 
+Route::get('/infoagreement', function () {
+    return view('infoagreement');
+});
+
 Route::get('/forbidden', function () {
     return view('forbidden');
 });
@@ -48,4 +52,26 @@ Route::get('/contact', function () {
 
 Route::get('/tasco', function () {
     return view('tasco');
+});
+
+
+
+
+
+Route::post('/reg','Auth\RegisterController@create');
+Route::post('/login','Auth\LoginController@login');
+Route::get('/logout','Auth\LoginController@logout');
+
+
+
+Route::group([
+    'middleware'=>'member'
+], function(){
+
+   // Route::get('/cab', 'Admin\DashboardController@index');
+
+    Route::get('/cab', function () {
+        return view('cab');
+    });
+
 });
