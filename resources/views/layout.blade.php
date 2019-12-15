@@ -153,7 +153,7 @@
                 <div class="row">
                     <div class="col">
                         <label style="font-size: 14px; width: 400px;">Email адрес :</label>
-                        <input type="email" name="email" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <input type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
                     </div>
 
                     <div class="col">
