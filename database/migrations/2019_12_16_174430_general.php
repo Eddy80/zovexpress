@@ -13,7 +13,7 @@ class General extends Migration
      */
     public function up()
     {
-        Schema::create('general', function (Blueprint $table) {
+        Schema::create('generals', function (Blueprint $table) {
 
             $table->bigIncrements('id');
 
@@ -26,6 +26,7 @@ class General extends Migration
             $table->string('shortnameen')->nullable();
 
             $table->integer('categoryid')->nullable();
+            $table->integer('type')->nullable();
 
             $table->string('avatar')->nullable();
 
@@ -39,6 +40,6 @@ class General extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('general');
+        Schema::dropIfExists('generals');
     }
 }

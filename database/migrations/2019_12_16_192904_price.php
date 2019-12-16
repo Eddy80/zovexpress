@@ -13,7 +13,7 @@ class Price extends Migration
      */
     public function up()
     {
-        Schema::create('price', function (Blueprint $table) {
+        Schema::create('prices', function (Blueprint $table) {
 
             $table->bigIncrements('id');
             $table->string('title');
@@ -37,6 +37,6 @@ class Price extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('price');
+        Schema::dropIfExists('prices');
     }
 }

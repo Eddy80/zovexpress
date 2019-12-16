@@ -1,11 +1,18 @@
 @extends('layout')
 
 @section('content')
+<?php
+use App\Http\Controllers\GeneralController;
+?>
 <div class="highlight-clean" style="background-image: url(&quot;assets/img/mountain_bg.jpg&quot;);opacity: 1;padding: 0px 0px 50px;background-size: cover;">
-    <h2 class="text-center" style="color: #ffffff;margin: 0px;padding: 0px;"><br>INTERNATIONAL COURIER SERVICE<br><br></h2>
-    <p class="text-justify d-xl-flex align-self-center" style="color: #ffffff;margin: 0 auto;font-size: 16px;padding: 0px 50px;">Lorem is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It
-        has survived not only five enturies, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of etraset sheets containing Lorem Ipsum passages, and more recently with
-        desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.<br></p>
+    <?php
+    $maintitle = GeneralController::getShortName(1,0,0);
+    $maintext = GeneralController::getName(1,0,0);
+    ?>
+
+
+    <h2 class="text-center" style="color: #ffffff;margin: 0px;padding: 0px;"><br>{{ $maintitle }}<br><br></h2>
+    <p class="text-justify d-xl-flex align-self-center" style="color: #ffffff;margin: 0 auto;font-size: 16px;padding: 0px 50px;">{{ $maintext }}<br></p>
     <div class="container text-justify">
         <div class="intro"></div>
         <div class="buttons" style="margin: 20px 23px;">
