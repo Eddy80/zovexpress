@@ -29,7 +29,8 @@
     <div class="header-dark" style="margin: 0px;background-image: url(&quot;transparent&quot;);background-color: rgb(68,66,66);padding: 0px;">
         <div></div>
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #212a39;padding: 10px 0px 10px 0px;margin: 0 auto;">
-            <div class="container"><a class="navbar-brand" href="#"><img alt="" style="width: 73px;height: 52px;background-image: url(&quot;assets/img/logo.png&quot;);color: rgb(255,255,255);" src=""/></a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="container">
+                    <img alt="" style="border: 0;width: 73px;height: 52px;background-image: url('/assets/img/logo.png');color: rgb(255,255,255);" src=""/><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
                 <div
                     class="collapse navbar-collapse" id="navcol-1" style="padding: 0px 5px 0px 0px;">
                     <ul class="nav navbar-nav">
@@ -114,13 +115,13 @@
             <div class="modal-header">
                 <h4 class="modal-title" style="font-size: 16px;font-weight: bold;">Регистрация</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style="padding-left: 27px;">
                 <div class="row">
                     <div class="col">
-                        <label style="font-size: 14px; width: 400px;">Email адрес :</label>
+                        <label style="font-size: 14px; width: 200px;">Email адрес :</label>
                         <input type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
                     </div>
-
+                    <img style="width: 25%; padding: 0px 27px;" src="/assets/img/zovlogo.png"/>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Пароль :</label><input name="password" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input name="password2" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
@@ -130,7 +131,7 @@
                 <div class="form-check" style="margin: 10px 0px;"><input name="agreement" class="form-check-input" type="checkbox" id="formCheck-1"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
                 <div class="form-check"><input name="agreement2" class="form-check-input" type="checkbox" id="formCheck-2"><label style="font-size: 14px;" class="form-check-label" for="formCheck-2">Я согласен(-на) на обработку персональных данных и получения информации о товарах и акциях</label></div>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" style="padding-right: 27px;">
                 <button onclick="loginform()" class="btn btn-light border rounded border-warning" type="button" data-dismiss="modal" style="font-size: 14px; background-color: #ffffff;">Зарегистрирован?</button>
                 <button class="btn btn-white" type="submit" style="font-size: 14px; color:#ffffff; background-color: #da9904;">Продолжить</button>
             </div>
@@ -151,14 +152,19 @@
             </div>
             <div class="modal-body">
                 <div class="row">
-                    <div class="col">
-                        <label style="font-size: 14px; width: 400px;">Email адрес :</label>
-                        <input type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
-                    </div>
+                    <div style=" width: 49%;  display: inline-block; float:left;">
+                        <div class="col">
+                            <label style="font-size: 14px; width: 400px;">Email адрес :</label>
+                            <input type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px;padding-bottom: 0px; width: 200px;"/>
+                        </div>
 
-                    <div class="col">
-                        <label style="font-size: 14px; width: 400px;">Пароль :</label>
-                        <input type="password" name="password" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <div class="col">
+                            <label style="font-size: 14px; width: 400px;">Пароль :</label>
+                            <input type="password" name="password" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; padding-bottom: 0px; width: 200px;"/>
+                        </div>
+                    </div>
+                    <div style="padding:0px 5px;width: 49%; display: inline-block; float:right;">
+                    <img style="float:right; width: 60%; padding: 0px;" src="assets/img/zovlogo.png"/>
                     </div>
                 </div>
 

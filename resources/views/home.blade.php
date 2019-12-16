@@ -72,7 +72,7 @@
                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy
                 </p>
 
-                <p style="color: #c69500;width: 85%;text-align: right;margin-top: 60px;"> Anar Babayev</p>
+                <p style="color: #c69500;width: 85%;text-align: right;margin-top: 30px;margin-bottom: 50px;"> Anar Babayev</p>
             </div>
             <div class="swiper-slide" style=" height:auto;padding:80px 0px 0px 0px;margin:0 auto;margin-bottom:50px;background-color: #262936; ">
 
@@ -88,7 +88,7 @@
                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy
                 </p>
 
-                <p style="color: #c69500;width: 85%;text-align: right;margin-top: 60px;"> Anar Babayev</p>
+                <p style="color: #c69500;width: 85%;text-align: right;margin-top: 30px;margin-bottom: 50px;"> Anar Babayev</p>
             </div>
             <div class="swiper-slide" style=" height:auto;padding:80px 0px 0px 0px; margin:0 auto;margin-bottom:50px;background-color: #262936; ">
 
@@ -104,7 +104,7 @@
                     Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy
                 </p>
 
-                <p style="color: #c69500;width: 85%;text-align: right;margin-top: 60px;"> Anar Babayev</p>
+                <p style="color: #c69500;width: 85%;text-align: right;margin-top: 30px;margin-bottom: 50px;"> Anar Babayev</p>
             </div>
         </div>
         <div class="swiper-pagination"></div>

@@ -190,13 +190,13 @@
                    
                     <tr>
                         <td colspan="5" style="color: #ffffff;padding: 2px 0px; width: 100%">
-                        <table>
+                        <table style="width: 100%;">
                             <tbody>
-                            <tr >
-                                <td style="padding: 2px 0px;height: 10px;"><img src="/assets/img/Ellipse.png"></td>
+                            <tr style="width: 100%;">
+                                <td style="padding: 3px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
                                 <td style="padding: 20px 10px;height: 10px; width: 100%; background-image: url('/assets/img/onedash2.png');
                                 background-repeat: repeat-x;"></td>
-                                <td style="padding: 2px 0px;height: 10px;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 3px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
                             </tr>
                             </tbody>
                         </table>
