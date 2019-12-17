@@ -31,48 +31,59 @@ use App\Http\Controllers\CountryController;
                     <tr></tr>
                     </thead>
                     <tbody>
+                    {{ csrf_field() }}
                     <tr>
                         <td class="text-right" style="font-size: 14px;">Страна отправитель:</td>
                         <td class="border-white">
-                            <div class="dropdown" style="font-size: 14px;color: #da9904;">
-                                <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
-                                <div class="dropdown-menu" role="menu">
-
+                            <div class="dropdown" >
+                               <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
+                                <div class="dropdown-menu" role="menu">-->
+                                <SELECT id="sendcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
+                                    <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>
                                     <?php   $countries = CountryController::getList(); ?>
 
                                     @foreach($countries as $country)
-                                    <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>
+                                    <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
+                                    @if ($country->id != 1)
+                                    <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
+                                    @endif
                                     @endforeach
-
-                                </div>
+                                </SELECT>
+                                <!--</div>-->
                             </div>
                         </td>
                     </tr>
                     <tr>
+
                         <td class="text-right" style="font-size: 14px;">Страна получатель:</td>
                         <td>
-                            <div class="dropdown" style="font-size: 14px;color: #da9904;"><button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Dropdown </button>
-                                <div class="dropdown-menu" role="menu">
+                            <div class="dropdown" >
+                                <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
+                                 <div class="dropdown-menu" role="menu">-->
+                                <SELECT  id="fromcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
+
                                     <?php   $countries = CountryController::getList(); ?>
 
                                     @foreach($countries as $country)
-                                    <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>
+                                    <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
+                                    <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}" @if ($country->id==1) selected @endif >{{$country->nameru}}</OPTION>
                                     @endforeach
-                                </div>
+                                </SELECT>
+                                <!--</div>-->
                             </div>
                         </td>
                     </tr>
                     <tr>
                         <td class="text-right" style="font-size: 14px;">Кол-во посылок:</td>
-                        <td><input class="border rounded border-warning" type="number" style="width: 101px;height: 33px;"></td>
+                        <td><input  id="count" class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
                     </tr>
                     <tr>
                         <td class="text-right" style="font-size: 14px;">Общий вес:</td>
-                        <td><input class="border rounded border-warning" type="number" style="width: 101px;height: 33px;"></td>
+                        <td><input  id="weight" class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
                     </tr>
                     <tr>
-                        <td class="text-right"><button class="btn btn-primary text-right border rounded border-warning" type="button" style="background-color: #da9904;height: 30px;padding: 0px 25px;font-size: 14px;margin: 0px 0px;"><strong>Посчитать</strong></button></td>
-                        <td><label style="font-size: 14px;margin: 0px 5px 0px 0px;"><strong>Итого:</strong></label><label style="color: #da9904;margin: 0px 5px 0px 0px;font-size: 14px;"><strong>45.00m</strong></label></td>
+                        <td class="text-right"><button class="btn btn-primary text-right border rounded border-warning" type="button" style="background-color: #da9904;height: 30px;padding: 0px 25px;font-size: 14px;margin: 0px 0px;" onclick="calculate();"><strong>Посчитать</strong></button></td>
+                        <td><label style="font-size: 14px;margin: 0px 5px 0px 0px;"><strong>Итого:</strong></label><label style="color: #da9904;margin: 0px 5px 0px 0px;font-size: 14px;"><strong><div style="display: inline;" id="result">45.00</div>m</strong></label></td>
                     </tr>
                     </tbody>
                 </table>

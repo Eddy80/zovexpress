@@ -1,13 +1,17 @@
 @extends('layout')
 
 @section('content')
+
 <?php
 use App\Http\Controllers\GeneralController;
 ?>
 <div class="highlight-clean" style="background-image: url(&quot;assets/img/mountain_bg.jpg&quot;);opacity: 1;padding: 0px 0px 50px;background-size: cover;">
     <?php
-    $maintitle = GeneralController::getShortName(1,0,0);
-    $maintext = GeneralController::getName(1,0,0);
+    $langid = 0;
+
+
+    $maintitle = GeneralController::getShortName(1,0, $langid );
+    $maintext =  GeneralController::getName(     1,0, $langid );
     ?>
 
 

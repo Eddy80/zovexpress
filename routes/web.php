@@ -55,6 +55,8 @@ Route::get('/tasco', function () {
 });
 
 
+Route::get('/calculate', 'PriceController@calculate');
+
 
 
 

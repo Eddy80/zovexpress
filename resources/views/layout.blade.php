@@ -1,3 +1,22 @@
+<?php
+use App\Http\Controllers\GeneralController;
+$lang = 1;
+//echo $lang;
+$menuabout = GeneralController::getName(2,0, $lang );
+$menuinfo =  GeneralController::getName(2,1, $lang );
+$menusub1 =  GeneralController::getName(2,11, $lang );
+$menusub2 =  GeneralController::getName(2,12, $lang );
+$menusub3 =  GeneralController::getName(2,13, $lang );
+$menucalculator =  GeneralController::getName(2,2, $lang );
+$menutracking =  GeneralController::getName(2,3, $lang );
+$menureviews =  GeneralController::getName(2,4, $lang );
+$menucontact =  GeneralController::getName(2,5, $lang );
+$menutasco =  GeneralController::getName(2,9, $lang );
+
+$login =  GeneralController::getName(     5,0, $lang );
+$registration =  GeneralController::getName(     5,1, $lang );
+?>
+
 <!DOCTYPE html>
 <html lang="az" style="filter: brightness(100%);">
 
@@ -34,19 +53,19 @@
                 <div
                     class="collapse navbar-collapse" id="navcol-1" style="padding: 0px 5px 0px 0px;">
                     <ul class="nav navbar-nav">
-                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="/" data-bs-hover-animate="rubberBand" style="font-size: 14px;">О нас</a></li>
-                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: 55;">Информация</a>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="/" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menuabout}}</a></li>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: 55;">{{$menuinfo}}</a>
                             <div class="dropdown-menu" role="menu" style="background-color: #1f2938;height: 95px;padding: 10px;">
-                                <a class="dropdown-item" role="presentation" href="{{url('infosending')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">Виды отправок и сроки</a>
-                                <a class="dropdown-item" role="presentation" href="{{url('forbidden')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">Запрещенные товары</a>
-                                <a class="dropdown-item" role="presentation" href="{{url('infotracking')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">Отслеживание товаров</a>
+                                <a class="dropdown-item" role="presentation" href="{{url('infosending')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub1}}</a>
+                                <a class="dropdown-item" role="presentation" href="{{url('forbidden')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub2}}</a>
+                                <a class="dropdown-item" role="presentation" href="{{url('infotracking')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub3}}</a>
                             </div>
                         </li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('calculator')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">Калькулятор</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">Отслеживание</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('reviews')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">Отзывы</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('contact')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">Обратная связь</a></li>
-                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tasco')}}" data-bs-hover-animate="tada" style="color: #da9904;font-size: 14px;"><strong>TASCO</strong></a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('calculator')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucalculator}}</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menutracking}}</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('reviews')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menureviews}}</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('contact')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucontact}}</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tasco')}}" data-bs-hover-animate="tada" style="color: #da9904;font-size: 14px;"><strong>{{$menutasco}}</strong></a></li>
                     </ul>
                     @if (Auth::check())
                     <span class="navbar-text" style="margin: 0px 10px 0px 50px;">
@@ -57,9 +76,9 @@
 
                     @else
                     <span class="navbar-text" style="margin: 0px 10px 0px 50px;">
-                        <a class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38 px;font-size: 14px;width: 14px;"><strong>Вход</strong></a>
+                        <a class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38 px;font-size: 14px;width: 14px;"><strong>{{$login}}</strong></a>
                     </span>
-                    <a class="btn btn-light border rounded ml-auto action-button" role="button" href="javascript:regform();" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 140px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>Регистрация</strong></a>
+                    <a class="btn btn-light border rounded ml-auto action-button" role="button" href="javascript:regform();" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 140px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>{{$registration}}</strong></a>
 
                     @endif
                 </div>
@@ -71,7 +90,7 @@
     </div>
 </div>
 
-@yield('content')
+@yield('content' )
 
 
 <div class="footer-clean" style="background-color: #da9904;margin: 0px;height: 90px;padding: 0px 0px;">
@@ -221,7 +240,19 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
 <script src="assets/js/Simple-Slider.js"></script>
-<script>
+
+
+<script type="text/javascript">
+
+
+
+   /* $(document).ready(function() {
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    }*/
    function regform()
     {
         $("#registrationform").modal('show');
@@ -230,6 +261,18 @@
    function loginform()
    {
        $("#loginform").modal('show');
+   }
+
+   function calculate()
+   {
+       var sendcountry = $('#sendcountry').val();
+       var fromcountry = $('#fromcountry').val();
+       var count = $('#count').val();
+       var weight = $('#weight').val();
+
+       $.get("{{ URL::to('calculate') }}",{sendcountry:sendcountry, fromcountry:fromcountry, count:count, weight:weight}, function(data){
+           $('#result').empty().html(data);
+       })
    }
 </script>
 

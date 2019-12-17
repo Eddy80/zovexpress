@@ -16,7 +16,7 @@ class GeneralController extends Controller
 
     public static function getName($type, $categoryid, $languageid)
     {
-        $target = General::where('type', $type)->take(1)->get();
+        $target = General::where('type', $type)->where('categoryid', $categoryid)->take(1)->get();
         if ($languageid == 0) {
             return $target[0]->textru;
         }
@@ -30,7 +30,7 @@ class GeneralController extends Controller
 
     public static function getShortName($type, $categoryid, $languageid)
     {
-        $target = General::where('type', $type)->take(1)->get();
+        $target = General::where('type', $type)->where('categoryid', $categoryid)->take(1)->get();
         if ($languageid == 0) {
             return $target[0]->shortnameru;
         }
