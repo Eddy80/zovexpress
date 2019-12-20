@@ -1,6 +1,6 @@
 <?php
 use App\Http\Controllers\GeneralController;
-$lang = 1;
+$lang = 0;
 //echo $lang;
 $menuabout = GeneralController::getName(2,0, $lang );
 $menuinfo =  GeneralController::getName(2,1, $lang );
