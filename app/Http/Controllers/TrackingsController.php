@@ -19,19 +19,16 @@ class TrackingsController extends Controller
 
         $code = 'ZOV-'.$this->generateRandomString2(1).$userid.$this->generateRandomString(4).$countryid;
 
+       // $createdcode = Codes::add(['userid'=>$userid, 'code'=> $code]);  //$request->all());
 
-
-        $data = User::whereId($userid)->first();
-
-      //  $data->usercode = $code;
-      //  $data->save();
+       /*
+       $data = User::whereId($userid)->first();
 
         $data->update([
             'usercode' => $code
         ]);
+       */
 
-
-       // return $data->firstname;
 
         return $code;
     }

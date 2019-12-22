@@ -50,12 +50,11 @@ $registration =  GeneralController::getName(     5,1, $lang );
         <div></div>
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #212a39;padding: 10px 0px 10px 0px;margin: 0 auto;">
             <div class="container">
-                    <input type="image" alt="" style="border-image-width: 0px; border-width: 0px; border-color: #1b1e21; width: 73px;height: 52px;" src="/assets/img/logo.png"/><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-                <div
-                    class="collapse navbar-collapse" id="navcol-1" style="padding: 0px 5px 0px 0px;">
-                    <ul class="nav navbar-nav">
+                <input type="image" alt="" style="border-image-width: 0px; border-width: 0px; border-color: #1b1e21; width: 73px;height: 52px;" src="/assets/img/logo.png"/><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navcol-1" style="padding: 0px 5px 0px 20px;">
+                    <ul class="nav navbar-nav" style="width: 100%;">
                         <li class="nav-item" role="presentation"><a class="nav-link text-left" href="/" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menuabout}}</a></li>
-                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: 55;">{{$menuinfo}}</a>
+                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: auto;">{{$menuinfo}}</a>
                             <div class="dropdown-menu" role="menu" style="background-color: #1f2938;height: 95px;padding: 10px;">
                                 <a class="dropdown-item" role="presentation" href="{{url('infosending')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub1}}</a>
                                 <a class="dropdown-item" role="presentation" href="{{url('forbidden')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub2}}</a>
@@ -69,18 +68,15 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tasco')}}" data-bs-hover-animate="tada" style="color: #da9904;font-size: 14px;"><strong>{{$menutasco}}</strong></a></li>
                     </ul>
                     @if (Auth::check())
-                    <span class="navbar-text" style="margin: 0px 10px 0px 50px;">
+                    <span class="navbar-text" style="margin: 0px 10px 0px 20px;">
                         <a class="text-right text-primary login" href="{{url('cab')}}" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px;font-size: 14px;width: 17px;"><strong>Кабинет</strong></a>
                     </span>
                     <a class="btn btn-light border rounded ml-auto action-button" role="button" href="{{url('logout')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 80px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>Выход</strong></a>
-
-
                     @else
-                    <span class="navbar-text" style="margin: 0px 10px 0px 50px;">
-                        <a class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38 px;font-size: 14px;width: 14px;"><strong>{{$login}}</strong></a>
+                    <span class="navbar-text" style="margin: 0px 10px 0px 20px;">
+                        <a class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px; font-size: 14px;width: 14px;"><strong>{{$login}}</strong></a>
                     </span>
-                    <a class="btn btn-light border rounded ml-auto action-button" role="button" href="javascript:regform();" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 140px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>{{$registration}}</strong></a>
-
+                    <a class="btn btn-light border rounded ml-auto action-button" role="button" href="javascript:regform();" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 120px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>{{$registration}}</strong></a>
                     @endif
                 </div>
             </div>
@@ -139,23 +135,23 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 <div class="row">
                     <div class="col">
                         <label style="font-size: 14px; width: 200px;">Email адрес :</label>
-                        <input type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <input required placeholder="your@email.com" type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
                     </div>
                     <img style="width: 25%; padding: 0px 27px;" src="/assets/img/zovlogo.png"/>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Пароль :</label><input name="password" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input name="password2" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Фамилия :</label><input name="lastname" value="{{old('lastname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input name="phone" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер пасспорта :</label><input name="passport" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Пароль :</label><input required name="password" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input required name="password2" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input required minlength="2" placeholder="Ваше Имя" name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Фамилия :</label><input required minlength="2" placeholder="Ваша Фамилия" name="lastname" value="{{old('lastname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input required name="phone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер пасспорта :</label><input required name="passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                 </div>
 
-                <div class="form-check" style="margin: 10px 0px;"><input name="agreement" class="form-check-input" type="checkbox" id="formCheck-1"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
+                <div class="form-check" style="margin: 10px 0px;"><input name="agreement" onclick="enablesubmit()"  class="form-check-input" type="checkbox" id="formCheck-1"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
                 <div class="form-check"><input name="agreement2" class="form-check-input" type="checkbox" id="formCheck-2"><label style="font-size: 14px;" class="form-check-label" for="formCheck-2">Я согласен(-на) на обработку персональных данных и получения информации о товарах и акциях</label></div>
             </div>
             <div class="modal-footer" style="padding-right: 27px;">
                 <button onclick="loginform()" class="btn btn-light border rounded border-warning" type="button" data-dismiss="modal" style="font-size: 14px; background-color: #ffffff;">Зарегистрирован?</button>
-                <button class="btn btn-white" type="submit" style="font-size: 14px; color:#ffffff; background-color: #da9904;">Продолжить</button>
+                <button id="registersubmit" class="btn btn-white" type="submit" style="font-size: 14px; color:#ffffff; background-color: #da9904;" disabled="disabled" >Продолжить</button>
             </div>
             </form>
         </div>
@@ -329,6 +325,22 @@ $registration =  GeneralController::getName(     5,1, $lang );
            $('#result').empty().html(data);
        })
    }
+
+   function enablesubmit()
+   {
+      // alert(1);
+       if ($('#formCheck-1').is(":checked"))
+       {
+           // it is checked
+           $("#registersubmit").prop('disabled', false );;
+       }
+       else
+       {
+           $("#registersubmit").prop('disabled', true);;
+       }
+
+   }
+
 </script>
 
 

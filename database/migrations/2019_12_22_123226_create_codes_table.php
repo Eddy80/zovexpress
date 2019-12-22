@@ -14,7 +14,7 @@ class CreateCodesTable extends Migration
     public function up()
     {
         Schema::create('codes', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id')->autoIncrement();
             $table->integer('userid');
             $table->string('code');
             $table->timestamps();
