@@ -21,7 +21,7 @@
     </div>
     <div class="form-container">
         <form method="post" style="width: 600px;padding: 10px 20px;">
-            <p><strong>Код:</strong><button class="btn btn-primary" type="button" style="background-color: #d79827;margin: 0px 60px 0px;height: 35px;padding: 0px 10px;width: 100px;">ZOV-S3221</button></p>
+            <p><strong>Код:</strong><button class="btn btn-primary" type="button" style="background-color: #d79827;margin: 0px 60px 0px;height: 35px;padding: 0px 10px;width: 130px;">{{Auth::user()->usercode}}</button></p>
             <p><strong>Трек:</strong>&nbsp;&nbsp;</p>
             <ul class="list-group">
                 <li class="list-group-item" style="height: 75px;">

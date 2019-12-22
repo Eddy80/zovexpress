@@ -17,8 +17,11 @@ class User extends Authenticatable
      */
 
 
+
+
     protected $fillable = [
-        'firstname', 'lastname', 'email', 'password',
+        'firstname', 'lastname','surname', 'email', 'password',
+        'gender', 'usercode','dob', 'tel', 'mob', 'description', 'avatar'
     ];
 
     /**
@@ -48,5 +51,15 @@ class User extends Authenticatable
         $user->save();
 
         return $user;
+    }
+
+
+
+    public  function edit($fields)
+    {
+        $this->fill($fields);
+        $this->save();
+
+        return $this;
     }
 }

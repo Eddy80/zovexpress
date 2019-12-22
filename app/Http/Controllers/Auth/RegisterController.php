@@ -68,17 +68,21 @@ class RegisterController extends Controller
 
       //  dd($request->all());
 
-        $this->validate($request,[
+        $validator =  $this->validate($request,[
             'firstname'=> 'required',
             'lastname'=> 'required',
             'email'=> 'required|email|unique:users',
-            'password'=> 'required'
+            'password'=> 'required',
+            'phone'=> 'required',
+            'passport'=> 'required',
             //'avatar' => 'nullable|image'
         ]);
+
+
 
         $user = User::add($request->all());
 
        // dd($user);
-        return redirect('/cab');
+        return redirect('/tracking');
     }
 }

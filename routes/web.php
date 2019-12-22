@@ -18,9 +18,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/tracking', function () {
-    return view('tracking');
-});
+
 
 Route::get('/infotracking', function () {
     return view('infotracking');
@@ -55,7 +53,7 @@ Route::get('/tasco', function () {
 });
 
 
-Route::get('/calculate', 'PriceController@calculate');
+
 
 
 
@@ -75,5 +73,14 @@ Route::group([
     Route::get('/cab', function () {
         return view('cab');
     });
+
+    Route::get('/tracking', function () {
+        return view('tracking');
+    });
+
+    Route::get('/calculate', 'PriceController@calculate');
+
+    Route::get('/usercode', 'TrackingsController@getusercode');
+    //Route::get('/usercode', 'TrackingsController@saveusercode');
 
 });

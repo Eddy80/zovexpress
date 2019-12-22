@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTrackingsTable extends Migration
+class CreateCodesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,10 @@ class CreateTrackingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('trackings', function (Blueprint $table) {
+        Schema::create('codes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('usercode');
             $table->integer('userid');
-            $table->string('tracknumber');
-            $table->string('sentfrom');
-            $table->date('sentdate');
-            $table->string('receiveto');
-            $table->date('receivedate');
-            $table->date('expectedreceivedate');
-            $table->integer('status');
+            $table->string('code');
             $table->timestamps();
         });
     }
@@ -35,6 +28,6 @@ class CreateTrackingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('trackings');
+        Schema::dropIfExists('codes');
     }
 }

@@ -21,8 +21,8 @@ class CreateUsersTable extends Migration
             $table->integer('gender')->default(0);
             $table->date('dob')->nullable();
 
-            $table->string('tel')->nullable();
-            $table->string('mob')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('passport')->nullable();
 
             $table->string('avatar')->nullable();
             $table->string('description')->nullable();

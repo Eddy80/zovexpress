@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\GeneralController;
+use App\Http\Controllers\CountryController;
 $lang = 0;
 //echo $lang;
 $menuabout = GeneralController::getName(2,0, $lang );
@@ -145,6 +146,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input name="password2" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Фамилия :</label><input name="lastname" value="{{old('lastname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input name="phone" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер пасспорта :</label><input name="passport" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                 </div>
 
                 <div class="form-check" style="margin: 10px 0px;"><input name="agreement" class="form-check-input" type="checkbox" id="formCheck-1"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
@@ -211,15 +214,36 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 <h4 class="modal-title" style="font-size: 16px;font-weight: bold;">Получить код</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
             <div class="modal-body">
                 <div class="row">
+                    {{ csrf_field() }}
+                    <div class="col">
+                        <label style="font-size: 14px; width: 400px;">Пользователь :</label><br/>
+                        @if ( Auth::check())
+                        <b> {{Auth::user()->firstname}} {{Auth::user()->lastname}} ({{Auth::user()->email}})</b>
+                        <input type="hidden" id="userid" value="{{Auth::user()->id}}">
+                        @endif
+                    </div>
                     <div class="col">
                         <label style="font-size: 14px; width: 400px;">Выберите страну отправки :</label>
-                        <input type="email" name="email" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <SELECT id="country" class="border rounded border-warning" onchange="javascript:getCode();"
+                                style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
+                            <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>
+                            <?php   $countries = CountryController::getList(); ?>
+
+                            @foreach($countries as $country)
+                            <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
+                            @if ($country->id != 1)
+                            <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
+                            @endif
+                            @endforeach
+                        </SELECT>
                     </div>
 
                     <div class="col">
                         <label style="font-size: 14px;font-weight: bold; width: 400px;">Ваш код отправки :</label>
-                        <input type="text" name="code" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <input type="text" id="code" name="code" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
                     </div>
+
                 </div>
 
 
@@ -262,6 +286,37 @@ $registration =  GeneralController::getName(     5,1, $lang );
    {
        $("#loginform").modal('show');
    }
+
+   function codeform()
+   {
+       $("#codeform").modal('show');
+   }
+
+   function getCode()
+   {
+       var countryid = $('#country').val();
+       var userid = $('#userid').val();
+
+       $('#code').val('...');
+
+       $.get("{{ URL::to('usercode') }}",{countryid:countryid, userid:userid}, function(data){
+
+           $('#code').val(data);
+       })
+   }
+
+   /*
+   function saveCode()
+   {
+       var code = $('#code').val();
+      // var userid = $('#userid').val();
+
+       alert(1);
+       $.get("{{ URL::to('usercode') }}",{usercode:code}, function(data){
+            alert(data);
+           $("#codeform").modal('hide');
+       })
+   }*/
 
    function calculate()
    {
