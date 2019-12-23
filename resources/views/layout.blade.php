@@ -18,6 +18,8 @@ $login =  GeneralController::getName(     5,0, $lang );
 $registration =  GeneralController::getName(     5,1, $lang );
 ?>
 
+
+
 <!DOCTYPE html>
 <html lang="az" style="filter: brightness(100%);">
 
@@ -62,7 +64,11 @@ $registration =  GeneralController::getName(     5,1, $lang );
                             </div>
                         </li>
                         <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('calculator')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucalculator}}</a></li>
+                        @if ( Auth::check())
                         <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menutracking}}</a></li>
+                        @else
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('infotracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menutracking}}</a></li>
+                        @endif
                         <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('reviews')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menureviews}}</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('contact')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucontact}}</a></li>
                         <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tasco')}}" data-bs-hover-animate="tada" style="color: #da9904;font-size: 14px;"><strong>{{$menutasco}}</strong></a></li>
@@ -74,7 +80,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <a class="btn btn-light border rounded ml-auto action-button" role="button" href="{{url('logout')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 80px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>Выход</strong></a>
                     @else
                     <span class="navbar-text" style="margin: 0px 10px 0px 20px;">
-                        <a class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px; font-size: 14px;width: 14px;"><strong>{{$login}}</strong></a>
+                        <a id="loginclick" class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px; font-size: 14px;width: 14px;"><strong>{{$login}}</strong></a>
                     </span>
                     <a class="btn btn-light border rounded ml-auto action-button" role="button" href="javascript:regform();" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 120px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>{{$registration}}</strong></a>
                     @endif

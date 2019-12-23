@@ -1,10 +1,11 @@
 <?php
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use Auth;
 
 
 class UsersController extends Controller
@@ -332,7 +333,33 @@ class UsersController extends Controller
 
     public function storemydata(Request $request){
 
-        return dd($request->all());
+    //return dd($request->all());
+    $myid = Auth::user()->id;
+    /*
+            $this->validate($request,[
+                'firstname'=> 'required',
+                'lastname'=> 'required',
+                'email'=> 'required|email|unique:users',
+                'password'=> 'required'
+                //'avatar' => 'nullable|image'
+            ]);
+    */
+    $user = User::find( $myid );
+    $user->edit($request->all());
+
+    // return redirect()->route('cab.profil');
+    return view('cab');
+
+
+    // $member = User::find($id);
+    //return $member->firstname;
+
+    // return view('cab.memberdetails')->with('member', $member);
+   }
+
+    public function changemypassword(Request $request){
+
+        //return dd($request->all());
         $myid = Auth::user()->id;
         /*
                 $this->validate($request,[

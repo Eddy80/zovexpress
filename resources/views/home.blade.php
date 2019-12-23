@@ -15,13 +15,14 @@ use App\Http\Controllers\GeneralController;
     ?>
 
 
+
     <h2 class="text-center" style="color: #ffffff;margin: 0px;padding: 0px;"><br>{{ $maintitle }}<br><br></h2>
     <p class="text-justify d-xl-flex align-self-center" style="color: #ffffff;margin: 0 auto;font-size: 16px;padding: 0px 50px;">{{ $maintext }}<br></p>
     <div class="container text-justify">
         <div class="intro"></div>
         <div class="buttons" style="margin: 20px 23px;">
             <a class="btn btn-light text-center border rounded border-warning ml-auto action-button" role="button" href="{{url('calculator')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 175px;height: 35px;padding: 10px 18px 10px 18px;font-size: 14px;color: #ffffff;"><strong>КАЛЬКУЛЯТОР</strong><br></a>
-            <a class="btn btn-light text-center border rounded border-warning ml-auto action-button" role="button" href="{{url('tracking')}}" data-bs-hover-animate="rubberBand" style="background-color: transparent;width: 175px;height: 35px;padding: 10px 18px 10px 18px;font-size: 14px;color: #ffffff;"><strong>Отслеживание</strong></a>
+            <a class="btn btn-light text-center border rounded border-warning ml-auto action-button" role="button" href="{{url('infotracking')}}" data-bs-hover-animate="rubberBand" style="background-color: transparent;width: 175px;height: 35px;padding: 10px 18px 10px 18px;font-size: 14px;color: #ffffff;"><strong>Отслеживание</strong></a>
         </div>
     </div>
 </div>

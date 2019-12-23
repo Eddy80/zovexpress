@@ -2,6 +2,9 @@
 @extends('layout')
 
 @section('content')
+<?php
+use App\Http\Controllers\UsersController;
+?>
 <div class="article-list">
     <div class="container">
         <div class="intro"></div>
@@ -16,18 +19,19 @@
                 <h3 class="name" style="background-color: #ffffff;"><a style="text-decoration: none;color: #000000;" href="{{url('cabtracking')}}">Отследить посылку</a></h3>
                 <h3 class="name" style="background-color: #ffffff;"><a style="text-decoration: none;color: #000000;" href="{{url('cabhistory')}}">История отправок</a></h3>
             </div>
+            <?php $user = UsersController::getUserFLNames(Auth::user()->id);  ?>
             <div class="col-sm-6 col-md-3 item" style="width: 350px;padding: 0px 20px;"><a href="#"></a>
-                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Имя: <span style="font-weight: normal;">{{Auth::user()->firstname}}</span></h3>
-                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Фамилия: <span style="font-weight: normal;">{{Auth::user()->lastname}}</span></h3>
-                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Email: <span style="font-weight: normal;">{{Auth::user()->email}}</span></h3>
-                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Телефон: <span style="font-weight: normal;">{{Auth::user()->phone}}</span></h3>
-                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Паспорт: <span style="font-weight: normal;">{{Auth::user()->passport}}</span></h3>
-                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Дата регистрации: <span style="font-weight: normal;">{{date('d.m.Y', strtotime(Auth::user()->created_at))}}</span></h3>
+                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Имя: <span style="font-weight: normal;">{{$user[0]->firstname}}</span></h3>
+                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Фамилия: <span style="font-weight: normal;">{{$user[0]->lastname}}</span></h3>
+                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Email: <span style="font-weight: normal;">{{$user[0]->email}}</span></h3>
+                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Телефон: <span style="font-weight: normal;">{{$user[0]->phone}}</span></h3>
+                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Паспорт: <span style="font-weight: normal;">{{$user[0]->passport}}</span></h3>
+                <h3 class="text-left name" style="font-size: 14px;width: 300px;">Дата регистрации: <span style="font-weight: normal;">{{date('d.m.Y', strtotime($user[0]->created_at))}}</span></h3>
 
             </div>
             <div class="col-sm-6 col-md-6 item" style="padding: 0px;"><a href="#"></a>
 
-                <p class="description" style="text-align: justify;">Aenean tortor est, vulputate quis leo in, vehicula rhoncus lacus. Praesent aliquam in tellus eu gravida. Aliquam varius finibus est, interdum justo suscipit id.</p>
+                <p class="description" style="text-align: justify;">{{$user[0]->description}}</p>
             </div>
         </div>
     </div>

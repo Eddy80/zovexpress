@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
+
 
 
 Route::get('/infotracking', function () {
@@ -78,6 +82,12 @@ Route::group([
     });
 
     Route::post('/cabedit','UsersController@storemydata');
+
+    Route::get('/cabpassword', function () {
+        return view('cabpass');
+    });
+
+    Route::post('/cabpassword','UsersController@changemypassword');
 
     Route::get('/tracking', function () {
         return view('tracking');

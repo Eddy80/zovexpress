@@ -15,7 +15,8 @@ class MemberMiddleware
             return $next($request);
         }
         else {
-            return redirect('/');
+            return redirect('/home');
+
 
         }
 
