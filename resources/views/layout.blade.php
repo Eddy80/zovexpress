@@ -138,15 +138,15 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <input required placeholder="your@email.com" type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
                     </div>
                     <img style="width: 25%; padding: 0px 27px;" src="/assets/img/zovlogo.png"/>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Пароль :</label><input required name="password" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input required name="password2" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Пароль :</label><input required name="password" id="password" onkeyup="check_pass()" minlength="6" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input required id="password2" name="password2" onkeyup="check_pass()" minlength="6"  class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input required minlength="2" placeholder="Ваше Имя" name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Фамилия :</label><input required minlength="2" placeholder="Ваша Фамилия" name="lastname" value="{{old('lastname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input required name="phone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер пасспорта :</label><input required name="passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер паспорта :</label><input required name="passport" placeholder="Passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                 </div>
 
-                <div class="form-check" style="margin: 10px 0px;"><input name="agreement" onclick="enablesubmit()"  class="form-check-input" type="checkbox" id="formCheck-1"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
+                <div class="form-check" style="margin: 10px 0px;"><input name="agreement" onclick="enablesubmit()"  class="form-check-input" type="checkbox" id="formCheck-1" checked="unchecked"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
                 <div class="form-check"><input name="agreement2" class="form-check-input" type="checkbox" id="formCheck-2"><label style="font-size: 14px;" class="form-check-label" for="formCheck-2">Я согласен(-на) на обработку персональных данных и получения информации о товарах и акциях</label></div>
             </div>
             <div class="modal-footer" style="padding-right: 27px;">
@@ -328,17 +328,44 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
    function enablesubmit()
    {
-      // alert(1);
+
        if ($('#formCheck-1').is(":checked"))
        {
            // it is checked
-           $("#registersubmit").prop('disabled', false );;
-       }
+           check_pass()
+           }
        else
        {
-           $("#registersubmit").prop('disabled', true);;
+           $("#registersubmit").prop('disabled', true);
        }
 
+   }
+
+
+   function check_pass() {
+
+       var pass = $('#password').val();
+       var pass2 = $('#password2').val();
+
+       //alert(pass+' '+pass2);
+
+       if (  ( pass.length  >= 6 ) && ( pass2.length  >= 6 )  ){
+           check(pass, pass2);
+       }
+       else {
+           $("#registersubmit").prop('disabled', true);
+       }
+   }
+
+   function check(pass, pass2) {
+        //alert(5);
+
+       if (pass === pass2) {
+           if  ($('#formCheck-1').is(":checked"))
+                $("#registersubmit").prop('disabled', false);
+       } else {
+           $("#registersubmit").prop('disabled', true);
+       }
    }
 
 </script>
