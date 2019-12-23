@@ -332,7 +332,7 @@ class UsersController extends Controller
 
     public function storemydata(Request $request){
 
-         dd($request->all());
+        return dd($request->all());
         $myid = Auth::user()->id;
         /*
                 $this->validate($request,[

@@ -68,11 +68,16 @@ Route::group([
     'middleware'=>'member'
 ], function(){
 
-   // Route::get('/cab', 'Admin\DashboardController@index');
 
     Route::get('/cab', function () {
         return view('cab');
     });
+
+    Route::get('/cabedit', function () {
+        return view('cabedit');
+    });
+
+    Route::post('/cabedit','UsersController@storemydata');
 
     Route::get('/tracking', function () {
         return view('tracking');
