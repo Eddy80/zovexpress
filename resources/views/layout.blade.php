@@ -96,32 +96,27 @@ $registration =  GeneralController::getName(     5,1, $lang );
 @yield('content' )
 
 
-<div class="footer-clean" style="background-color: #da9904;margin: 0px;height: 90px;padding: 0px 0px;">
-    <footer style="height: 85px;">
+<div class="footer-clean" style="background-color: #da9904;margin: 0px;height: 65px;padding: 0px 0px;">
+    <footer style="height: 45px;">
         <div class="container">
             <div class="row justify-content-center" style="height: 45px;">
-                <div class="col-sm-4 col-md-3 item" style="height: 85px;">
-                    <h3 style="color: #ffffff;padding: 10px 0px;font-size: 14px;margin: 0px;">Ünvan: Əhməd Rəcəbli 14 a</h3>
+                <div class="col-sm-4 col-md-3 item" style="height: 45px;">
+
                     <ul>
-                        <li><a href="#"></a></li>
-                        <li style="width: 720px;"><a href="#"></a></li>
-                        <li style="margin: 10px 0px;"><a href="#" style="color: #ffffff;"><strong>Tel: </strong>+994505351980</a></li>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Ünvan: Əhməd Rəcəbli 14 a</h3></li>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Tel:+994505351980</h3></li>
                     </ul>
                 </div>
-                <div class="col-sm-4 col-md-3 item" style="height: 85px;">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <p class="copyright" style="color: #ffffff;margin: 10px 0px;"><strong><em>ZovExpress © 2019</em></strong></p>
+                <div class="col-sm-4 col-md-3 item" style="height: 45px;">
+                        <p class="copyright" style="color: #ffffff;margin: 10px 0px;"><strong><em>© ZovExpress 2020</em></strong></p>
                 </div>
-                <div class="col-sm-4 col-md-3 item" style="height: 85px;">
+                <div class="col-sm-4 col-md-3 item" style="height: 45px;">
                     <ul>
                         <li></li>
                         <li></li>
                     </ul>
                 </div>
-                <div class="col"><img class="float-right" src="assets/img/uparrow.png"></div>
+                <div class="col"><a href="#"><img class="float-right" src="assets/img/uparrow.png"></a></div>
             </div>
         </div>
     </footer>

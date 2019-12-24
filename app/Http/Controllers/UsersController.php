@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use Auth;
-
+use Hash;
 
 class UsersController extends Controller
 {
@@ -361,6 +361,7 @@ class UsersController extends Controller
 
         //return dd($request->all());
         $myid = Auth::user()->id;
+        $mypassword =  Auth::user()->password;
         /*
                 $this->validate($request,[
                     'firstname'=> 'required',
@@ -370,12 +371,37 @@ class UsersController extends Controller
                     //'avatar' => 'nullable|image'
                 ]);
         */
-        $user = User::find( $myid );
-        $user->edit($request->all());
+        $oldpassword = $request->oldpassword;
+        $newpassword = $request->password;
+        $confirmpassword = $request->password2;
 
+
+
+            if (Hash::check($oldpassword, $mypassword)) {
+                // The old password matches the hash in the database
+
+
+            if ($newpassword === $confirmpassword){
+                $request->password =  bcrypt($newpassword);
+                $user = User::find( $myid );
+                //$user->edit($request->all());
+                $user->edit(['password'=> bcrypt($newpassword)]);
+                return redirect()->back()->with('status', 'Пароль успешно изменен!!!');
+            }
+            else {
+                return redirect()->back()->with('status', 'Новые пароли не совпадают !!!');
+            }
+        }
+        else {
+            return redirect()->back()->with('status', 'Пароль не верный!!!');
+        }
         // return redirect()->route('cab.profil');
-        return view('cab');
 
+         //$2y$10$CDhf2BUBbkMLwWVjxENy3.LVkIPTs3Vu7nYLBBYhuc4G5WXXUvaDq
+         //$2y$10$hAvmbSev984zfayFc86f2Oo/J/3bb6Y40RCI6l99qWaxJrC66VK8O
+        // $2y$10$CDhf2BUBbkMLwWVjxENy3.LVkIPTs3Vu7nYLBBYhuc4G5WXXUvaDq
+
+       // return redirect()->back()->with('status','Admin hələ icazə verməyib');
 
         // $member = User::find($id);
         //return $member->firstname;

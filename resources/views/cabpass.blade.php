@@ -23,6 +23,14 @@ use App\Http\Controllers\UsersController;
                 <?php $user = UsersController::getUserFLNames(Auth::user()->id);  ?>
                 <form action="/cabpassword" method="post">
                     {{csrf_field()}}
+                    <section>
+                        <div class="alert alert-danger" @if (session('status')) style="display:block;" @else style="display:none;" @endif >
+                            @if(session('status'))
+                            {{session('status')}}
+                            @endif
+
+                        </div>
+                    </section>
                     <h3 class="text-left name" style="font-size: 14px;width: 66%;">Старый Пароль: <span style="font-weight: normal;"><input required minlength="6" name="oldpassword" id="oldpassword"  style="border: 1; border-radius: 5px; border-color: #da9904; padding-left: 5px; padding-bottom: 3px; background-color:#ffffff;width:150px;float: right;"  type="password" value="" placeholder="Старый Пароль"/></span></h3>
                     <h3 class="text-left name" style="font-size: 14px;width: 66%;">Новый Пароль: <span style="font-weight: normal;"><input required minlength="6" name="password" id="password"  style="border: 1; border-radius: 5px; border-color: #da9904; padding-left: 5px; padding-bottom: 3px; background-color:#ffffff;width:150px;float: right;"  type="password" value="" placeholder="Новый Пароль"/></span></h3>
                     <h3 class="text-left name" style="font-size: 14px;width: 66%;">Подтверждение Пароля: <span style="font-weight: normal;"><input required minlength="6" name="password2" id="password2"  style="border: 1; border-radius: 5px; border-color: #da9904; padding-left: 5px; padding-bottom: 3px; background-color:#ffffff;width:150px;float: right;"  type="password" value="" placeholder="Подтверждение"/></span></h3>

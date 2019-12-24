@@ -89,6 +89,20 @@ Route::group([
 
     Route::post('/cabpassword','UsersController@changemypassword');
 
+
+    Route::get('/cabcodelist', function () {
+        return view('cabcodelist');
+    });
+
+    Route::get('/cabtracking', function () {
+        return view('cabtracking');
+    });
+
+    Route::get('/cabhistory', function () {
+        return view('cabhistory');
+    });
+
+
     Route::get('/tracking', function () {
         return view('tracking');
     });
