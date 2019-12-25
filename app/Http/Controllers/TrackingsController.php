@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use App\Codes;
 
 
 class TrackingsController extends Controller
@@ -19,7 +20,16 @@ class TrackingsController extends Controller
 
         $code = 'ZOV-'.$this->generateRandomString2(1).$userid.$this->generateRandomString(4).$countryid;
 
-       // $createdcode = Codes::add(['userid'=>$userid, 'code'=> $code]);  //$request->all());
+
+       // dd(['userid'=>$userid, 'code'=>$code]);
+        $request->request->add(['code'=>$code]);
+      //  dd($request->all());
+      // $createdcode = Codes::add(array('userid'=>$userid, 'code'=>$code));
+
+        //dd($createdcode);
+         $createdcode = Codes::add($request->all());
+
+
 
        /*
        $data = User::whereId($userid)->first();

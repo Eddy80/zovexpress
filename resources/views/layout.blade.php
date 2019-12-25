@@ -224,7 +224,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <SELECT id="country" class="border rounded border-warning" onchange="javascript:getCode();"
                                 style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
                             <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>
-                            <?php   $countries = CountryController::getList(); ?>
+                            @if ( Auth::check())
+                            <?php   $countries = CountryController::getListWithCodesCheck(); ?>
 
                             @foreach($countries as $country)
                             <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
@@ -232,6 +233,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
                             <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
                             @endif
                             @endforeach
+
+                            @endif
                         </SELECT>
                     </div>
 

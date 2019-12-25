@@ -8,11 +8,12 @@ class Codes extends Model
 {
 
     protected $fillable = [
-        'userid', 'code'
+        'userid', 'code', 'countryid'
     ];
 
     public static function add($fields)
     {
+       // dd($fields);
         $code = new static;
         $code->fill($fields);
         $code->save();

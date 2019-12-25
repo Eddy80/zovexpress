@@ -17,6 +17,7 @@ class CreateCodesTable extends Migration
             $table->bigIncrements('id')->autoIncrement();
             $table->integer('userid');
             $table->string('code');
+            $table->integer('countryid');
             $table->timestamps();
         });
     }
