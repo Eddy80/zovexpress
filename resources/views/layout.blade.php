@@ -26,7 +26,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>zovexpress</title>
+    <title>ZovExpress</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
@@ -302,6 +302,17 @@ $registration =  GeneralController::getName(     5,1, $lang );
        $.get("{{ URL::to('usercode') }}",{countryid:countryid, userid:userid}, function(data){
 
            $('#code').val(data);
+       })
+   }
+
+   function getTrackings()
+   {
+       var codeid = $('#code').val();
+       //alert(codeid);
+
+       $.get("{{ URL::to('cabgettrackings') }}",{codeid:codeid}, function(data){
+
+           $('#tracklist').empty().html(data);
        })
    }
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use App\Codes;
+use App\Trackings;
 
 
 class TrackingsController extends Controller
@@ -41,6 +42,20 @@ class TrackingsController extends Controller
 
 
         return $code;
+    }
+
+    public  function getListByCodeIdAndUserId(Request $request){
+
+
+        $myid = Auth::user()->id;
+       // $codeid = $request->get('codeid');
+
+       /* $trackings = Trackings::where('userid', "$myid")
+            ->Where('usercode',  "$codeid")
+            ->paginate(5);*/
+
+        return $myid;
+
     }
 
 

@@ -1,6 +1,9 @@
 @extends('layout')
 
 @section('content')
+<?php
+use App\Http\Controllers\CodesController;
+?>
 <div class="register-photo" style="background-color: rgb(255,255,255);padding: 20px 0px;">
     <div class="table-responsive table-borderless">
         <table class="table table-bordered">
@@ -21,8 +24,24 @@
     </div>
     <div class="form-container">
         <form method="post" style="width: 600px;padding: 10px 20px;">
-            <p><strong>Код:</strong><button class="btn btn-primary" type="button" style="background-color: #d79827;margin: 0px 60px 0px;height: 35px;padding: 0px 10px;width: 130px;">{{Auth::user()->usercode}}</button></p>
-            <p><strong>Трек:</strong>&nbsp;&nbsp;</p>
+            <p>
+                <strong>Код:</strong>
+
+                <SELECT id="code" class="border rounded border-warning" onchange="javascript:getTrackings();"
+                        style="-moz-appearance:none; -webkit-appearance: none; margin-left: 20px; padding: 0px 10px; color:#ffffff; font-weight:bold;font-size: 14px;width: 132px;height: 35px;background-color: #d79827;" >
+                    @if ( Auth::check())
+                    <OPTION style="background-color: #ffffff; width: auto;border-color: #DA9904; color:#DA9904; border-radius: 5px; font-size: 14px; font-weight: bold;" value="-1">Выберите код</OPTION>
+                    <?php   $codes = CodesController::getListByUserId(); ?>
+
+                    @foreach($codes as $code)
+                    <OPTION style="background-color: #ffffff; width: auto;border-color: #DA9904; color:#DA9904; border-radius: 5px; font-size: 14px; font-weight: bold;" value="{{$code->code}}">{{$code->code}}</OPTION>
+                    @endforeach
+
+                    @endif
+                </SELECT>
+            </p>
+            <p><strong>Треки:</strong>&nbsp;&nbsp;</p>
+            <div id="tracklist">
             <ul class="list-group">
                 <li class="list-group-item" style="height: 75px;">
                     <div class="table-responsive" style="height: 75px;">
@@ -33,7 +52,11 @@
                             <tbody>
                             <tr></tr>
                             <tr style="height: 55px;">
-                                <td class="border-white" style="padding: 0px;height: 48px;"><button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;">012300033252350325</button></td>
+                                <td class="border-white" style="padding: 0px;height: 48px;">
+                                    <button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;">
+                                        012300033252350325
+                                    </button>
+                                </td>
                                 <td
                                     style="padding: 0px;">
                                     <div class="table-responsive table-borderless border-white" style="height: 48px;">
@@ -171,6 +194,7 @@
                     </div>
                 </li>
             </ul>
+            </div>
         </form>
     </div>
     <div class="form-container">

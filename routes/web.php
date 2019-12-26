@@ -98,6 +98,8 @@ Route::group([
         return view('cabtracking');
     });
 
+    Route::get('/cabgettrackings','TrackingsController@getListByCodeIdAndUserId');
+
     Route::get('/cabhistory', function () {
         return view('cabhistory');
     });
