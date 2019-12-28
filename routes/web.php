@@ -100,6 +100,14 @@ Route::group([
 
     Route::get('/cabgettrackings','TrackingsController@getListByCodeIdAndUserId');
 
+    /*Route::get('/cabgettrackings', function () {
+        return view('trackinglist');
+    });*/
+/*
+    Route::post('/cabgettrackings',[
+        'uses' => 'TrackingsController@getListByCodeIdAndUserId'
+    ])->name('getListByCodeIdAndUserId');
+*/
     Route::get('/cabhistory', function () {
         return view('cabhistory');
     });

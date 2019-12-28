@@ -26,6 +26,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>ZovExpress</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
@@ -268,15 +269,6 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 <script type="text/javascript">
 
-
-
-   /* $(document).ready(function() {
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
-    }*/
    function regform()
     {
         $("#registrationform").modal('show');
@@ -298,36 +290,18 @@ $registration =  GeneralController::getName(     5,1, $lang );
        var userid = $('#userid').val();
 
        $('#code').val('...');
-
        $.get("{{ URL::to('usercode') }}",{countryid:countryid, userid:userid}, function(data){
-
            $('#code').val(data);
        })
    }
 
    function getTrackings()
    {
-       var codeid = $('#code').val();
-       //alert(codeid);
-
-       $.get("{{ URL::to('cabgettrackings') }}",{codeid:codeid}, function(data){
-
-           $('#tracklist').empty().html(data);
-       })
+       let codeid = $('#code').val();
+       $.get('{{url("cabgettrackings")}}', {codeid: codeid},function(data){
+           $("#tracklist").html(data);
+       });
    }
-
-   /*
-   function saveCode()
-   {
-       var code = $('#code').val();
-      // var userid = $('#userid').val();
-
-       alert(1);
-       $.get("{{ URL::to('usercode') }}",{usercode:code}, function(data){
-            alert(data);
-           $("#codeform").modal('hide');
-       })
-   }*/
 
    function calculate()
    {
