@@ -40,6 +40,10 @@ Route::get('/forbidden', function () {
     return view('forbidden');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 Route::get('/calculator', function () {
     return view('calculator');
 });

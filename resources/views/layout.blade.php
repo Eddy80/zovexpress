@@ -53,10 +53,10 @@ $registration =  GeneralController::getName(     5,1, $lang );
         <div></div>
         <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #212a39;padding: 10px 0px 10px 0px;margin: 0 auto;">
             <div class="container">
-                <input type="image" alt="" style="border-image-width: 0px; border-width: 0px; border-color: #1b1e21; width: 73px;height: 52px;" src="/assets/img/logo.png"/><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <a href="/"><input type="image" alt="" style="border-image-width: 0px; border-width: 0px; border-color: #1b1e21; width: 73px;height: 52px;" src="/assets/img/logo.png"/></a>
                 <div class="collapse navbar-collapse" id="navcol-1" style="padding: 0px 5px 0px 20px;">
                     <ul class="nav navbar-nav" style="width: 100%;">
-                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="/" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menuabout}}</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('about')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menuabout}}</a></li>
                         <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: auto;">{{$menuinfo}}</a>
                             <div class="dropdown-menu" role="menu" style="background-color: #1f2938;height: 95px;padding: 10px;">
                                 <a class="dropdown-item" role="presentation" href="{{url('infosending')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub1}}</a>
@@ -97,24 +97,77 @@ $registration =  GeneralController::getName(     5,1, $lang );
 @yield('content' )
 
 
-<div class="footer-clean" style="background-color: #da9904;margin: 0px;height: 65px;padding: 0px 0px;">
-    <footer style="height: 45px;">
+<div class="footer-clean" style="background-color: #da9904;margin: 0px;height: auto;padding-top: 5px;padding-bottom: 5px;">
+    <footer style="height: auto;">
         <div class="container">
-            <div class="row justify-content-center" style="height: 45px;">
-                <div class="col-sm-4 col-md-3 item" style="height: 45px;">
-
+            <div class="row justify-content-center" style="height: auto;">
+                <div class="col-sm-4 col-md-3 item" style="height: auto;">
+                    <p>
                     <ul>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Ünvan: Əhməd Rəcəbli 14 a</h3></li>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Tel:+994505351980</h3></li>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Китае</h3></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
                     </ul>
-                </div>
-                <div class="col-sm-4 col-md-3 item" style="height: 45px;">
-                        <p class="copyright" style="color: #ffffff;margin: 10px 0px;"><strong><em>© ZovExpress 2020</em></strong></p>
-                </div>
-                <div class="col-sm-4 col-md-3 item" style="height: 45px;">
+                    </p>
+
+                    <p>
                     <ul>
-                        <li></li>
-                        <li></li>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Украине</h3></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
+                    </ul>
+                    </p>
+
+                    <p>
+                    <ul>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Росиии</h3></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
+                    </ul>
+                    </p>
+
+                    <p>
+                    <ul>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Кыргызстане</h3></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
+                    </ul>
+                    </p>
+
+                    <p>
+                    <ul>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Казахстане</h3></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
+                    </ul>
+                    </p>
+
+                    <p>
+                    <ul>
+                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Азербайджане</h3></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
+                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
+                    </ul>
+                    </p>
+
+                </div>
+                <div class="col-sm-4 col-md-3 item" style="height: auto;">
+                        <p class="copyright" style="color: #ffffff;margin: 13px 0px;"><strong><em>© ZovExpress 2020</em></strong></p>
+                </div>
+                <div class="col-sm-4 col-md-3 item" style="height: auto;padding-top: 5px;padding-bottom: 5px">
+                    <ul >
+                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin:10px 0px; font-weight: bold;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin:0px;">Ссылки на соц. сети:</h3></li>
+                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Инстаграм :</span> @zov_express</li>
+                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Канал в телеграмм :</span> https://t.me/zov_express</li>
+                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Менеджер в телеграмм :</span> @zovexpress_infobot</li>
+                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Менеджер в вотсап :</span> </li>
+                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Менеджер в вичат :</span> </li>
                     </ul>
                 </div>
                 <div class="col"><a href="#"><img class="float-right" src="assets/img/uparrow.png"></a></div>
@@ -144,8 +197,12 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input required id="password2" name="password2" onkeyup="check_pass()" minlength="6"  class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input required minlength="2" placeholder="Ваше Имя" name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Фамилия :</label><input required minlength="2" placeholder="Ваша Фамилия" name="lastname" value="{{old('lastname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input required name="phone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Отчество :</label><input required minlength="2" placeholder="Ваше Отчество" name="surname" value="{{old('surname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Номер паспорта :</label><input required name="passport" placeholder="Passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input required name="phone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона (доп.):</label><input required name="additionalphone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('additionalphone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Страна :</label><input required name="country" placeholder="Страна проживания" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('additionalphone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+
                 </div>
 
                 <div class="form-check" style="margin: 10px 0px;"><input name="agreement" onclick="enablesubmit()"  class="form-check-input" type="checkbox" id="formCheck-1" checked="unchecked"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
