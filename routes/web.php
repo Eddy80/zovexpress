@@ -123,3 +123,8 @@ Route::group([
     //Route::get('/usercode', 'TrackingsController@saveusercode');
 
 });
+
+
+Route::get('/admin', function () {
+    return view('root.home');
+});
