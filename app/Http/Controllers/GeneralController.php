@@ -42,4 +42,10 @@ class GeneralController extends Controller
         }
 
     }
+
+    public function editor($pageid)
+    {
+        $page = General::find($pageid);
+        return view('root.editor')->with('page', $page);
+    }
 }

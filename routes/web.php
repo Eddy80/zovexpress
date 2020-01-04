@@ -134,3 +134,11 @@ Route::group([
 Route::get('/admin', function () {
     return view('root.home');
 });
+
+Route::get('/admin/pages/{pageid}', 'GeneralController@editor');
+
+/*
+Route::get('/admineditor', function () {
+    return view('root.editor');
+});
+*/
