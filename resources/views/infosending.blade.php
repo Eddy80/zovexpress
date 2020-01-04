@@ -23,107 +23,136 @@
         <form method="post" style="width: 600px;padding: 10px 20px;">
             <p></p>
             <p>
-                РОССИЯ
-                Экспресс 4-6 дней
-                - 5 отправок в неделю
-                - Приём посылок от 0,1 кг
-                - Упаковка бесплатная
-                - На грузы выше 20 кг страховка 1%
+            <p style="font-weight: bold">РОССИЯ</p>
+            <p>Экспресс 4-6 дней</p>
+            <p>
+                <ul>
+                    <li>5 отправок в неделю</li>
+                    <li>Приём посылок от 0,1 кг</li>
+                    <li>Упаковка бесплатная</li>
+                    <li>На грузы выше 20 кг страховка 1%</li>
+                </ul>
+            </p>
+            <p>Авто 10-13 дней</p>
+            <p>
+            <ul>
+                <li>5 отправок в неделю</li>
+                <li>Приём от 20 кг</li>
+                <li>Упаковка оплачивается отдельно</li>
+                <li>Страховка 1%</li>
+            </ul>
+            </p>
+            </p>
 
-                Авто 10-13 дней
-                - 5 отправок в неделю
-                - Приём от 20 кг
-                - Упаковка оплачивается отдельно
-                - Страховка 1%
+            <p>
+            <p style="font-weight: bold">УКРАИНА</p>
+            <p>Экспресс 6-8 дней</p>
+            <p>
+            <ul>
+                <li>5 отправок в неделю</li>
+                <li>Приём посылок от 0,1 кг</li>
+                <li>Упаковка бесплатная</li>
+                <li>На грузы выше 20 кг страховка 1%</li>
+            </ul>
+            </p>
+            </p>
 
-                ———
-                Украина
-                Экспресс 6-8 дней
-                - 5 отправок в неделю
-                - Приём посылок от 0,1 кг
-                - Упаковка бесплатная
-                - На грузы выше 20 кг страховка 1%
+            <p>
+            <p style="font-weight: bold">АЗЕРБАЙДЖАН</p>
+            <p>Экспресс 7-10 дней</p>
+            <p>
+            <ul>
+                <li>3 отправки в неделю</li>
+                <li>Приём посылок от 5 кг</li>
+                <li>Упаковка оплачивается отдельно</li>
+                <li>Страховка бесплатная</li>
+            </ul>
+            </p>
+            <p>Авто 25-30 дней</p>
+            <p>
+            <ul>
+                <li>5 отправок в неделю</li>
+                <li>Приём от 20 кг</li>
+                <li>Упаковка оплачивается отдельно</li>
+                <li>Страховка по желанию клиента (1%)</li>
+            </ul>
+            </p>
+            </p>
 
-                ——
-                АЗЕРБАЙДЖАН
-                Экспресс 7-10 дней
-                - 3 отправки в неделю
-                - Приём от 5 кг
-                - Упаковка оплачивается отдельно
-                - Страховка бесплатная
+            <p>
+            <p style="font-weight: bold">КЫРГЫЗСТАН</p>
+            <p>Экспресс 3-5 дней</p>
+            <p>
+            <ul>
+                <li>5 отправок в неделю</li>
+                <li>Приём посылок от 0,1 кг</li>
+                <li>Упаковка бесплатная</li>
+                <li>Страховка бесплатная</li>
+            </ul>
+            </p>
+            <p>Авто 10-12 дней</p>
+            <p>
+            <ul>
+                <li>3 отправок в неделю</li>
+                <li>Приём посылок от 0,1 кг (упк. и стр. бесплатно)</li>
+                <li>Приём от 50 кг</li>
+                <li>Упаковка оплачивается отдельно</li>
+                <li>Страховка по желанию клиента (1%)</li>
+            </ul>
+            </p>
+            </p>
 
-                Авто 25-30 дней
-                - 5 отправок в неделю
-                - Приём от 50 кг
-                - Упаковка оплачивается отдельно
-                - Страховка по желанию клиента (1%)
+            <p>
+            <p style="font-weight: bold">КАЗАХСТАН</p>
+            <p>Экспресс 4-6 дней</p>
+            <p>
+            <ul>
+                <li>5 отправок в неделю</li>
+                <li>Приём посылок от 0,1 кг</li>
+                <li>Упаковка бесплатная</li>
+                <li>Страховка бесплатная</li>
+            </ul>
+            </p>
+            <p>Авто 10-12 дней</p>
+            <p>
+            <ul>
+                <li>4 отправок в неделю</li>
+                <li>Приём посылок от 0,1 кг (упк. и стр. бесплатно)</li>
+                <li>Приём от 50 кг</li>
+                <li>Упаковка оплачивается отдельно</li>
+                <li>Страховка по желанию клиента (1%)</li>
+            </ul>
+            </p>
+            </p>
 
-                ———
-                КЫРГЫЗСТАН
-                Экспресс 3-5 дней
-                - 5 отправок в неделю
-                - Приём от 0,1 кг
-                - Упаковка бесплатная
-                - Страховка бесплатная
+            <p>
+            <p style="font-weight: bold">США</p>
+            <p>Экспресс 3-5 дней</p>
+            <p>
+            <ul>
+                <li>5 отправок в неделю</li>
+                <li>Приём посылок от 0,1 кг</li>
+                <li>Упаковка бесплатная</li>
+                <li>Страховка бесплатная</li>
+            </ul>
+            </p>
+            </p>
 
-                Авто 10-12 дней
-                - 3 отправок в неделю
-                - Приём посылок от 0,1 кг (упк. и стр. бесплатно)
-                - Приём от 50 кг
-                - Упаковка оплачивается отдельно
-                - Страховка по желанию клиента (1%)
-
-                ———
-                КАЗАХСТАН
-                Экспресс 4-6 дней
-                - 5 отправок в неделю
-                - Приём от 0,1 кг
-                - Упаковка бесплатная
-                - Страховка бесплатная
-
-                Авто 10-12 дней (4 отправок в неделю)
-                - Приём от 0,1 кг (упк. и стр. бесплатно)
-                - Приём от 50 кг
-                - Упаковка оплачивается отдельно
-                - Страховка по желанию клиента (1%)
-
-                ———
-                США
-                Экспресс 3-5 дней
-                - 5 отправок в неделю
-                - Приём от 0,1 кг
-                - Упаковка бесплатная
-                - Страховка бесплатная
-
-
-
-                ———
-                Европа
-                Экспресс 3-5 дней
-                - 5 отправок в неделю
-                - Приём от 0,1 кг
-                - Упаковка бесплатная
-                - Страховка бесплатная
+            <p>
+            <p style="font-weight: bold">ЕВРОПА</p>
+            <p>Экспресс 3-5 дней</p>
+            <p>
+            <ul>
+                <li>5 отправок в неделю</li>
+                <li>Приём посылок от 0,1 кг</li>
+                <li>Упаковка бесплатная</li>
+                <li>Страховка бесплатная</li>
+            </ul>
+            </p>
+            </p>
 
             </p>
-            <ul>
-                <li>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
-                    of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator
-                    on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition,
-                    injected humour, or non-characteristic words etc.<br></li>
-                <li>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
-                    of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator
-                    on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition,
-                    injected humour, or non-characteristic words etc.<br></li>
-                <li>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
-                    of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator
-                    on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition,
-                    injected humour, or non-characteristic words etc.<br></li>
-                <li>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage
-                    of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator
-                    on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition,
-                    injected humour, or non-characteristic words etc.<br></li>
-            </ul>
+
         </form>
     </div>
 </div>

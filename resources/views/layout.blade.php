@@ -360,6 +360,15 @@ $registration =  GeneralController::getName(     5,1, $lang );
        });
    }
 
+   function getSamolet(tracknumber)
+   {
+      // alert(tracknumber);
+       $.get('{{url("cabgetsamolet")}}', {tracknumber: tracknumber},function(data){
+           $("#samolet").html(data);
+       });
+
+   }
+
    function calculate()
    {
        var sendcountry = $('#sendcountry').val();

@@ -27,6 +27,82 @@ class TrackingsController extends Controller
         return $code;
     }
 
+
+    public  function getSamoletByTrackNumber(Request $request){
+        $myid = Auth::user()->id;
+        $tracknumber= $request->get('tracknumber');
+
+        $samolet = Trackings::where('userid', $myid)
+            ->where('tracknumber',  $tracknumber)
+            ->get();
+
+        foreach($samolet as $values) {
+          //  return $values->nowpercent;
+
+
+        $left = 30;
+        if ($values->nowpercent >=0 && $values->nowpercent < 25)
+            $left = 10;
+        elseif ($values->nowpercent >=25 && $values->nowpercent < 50)
+            $left = 170;
+        elseif ($values->nowpercent >=50 && $values->nowpercent < 75)
+            $left = 400;
+        elseif ($values->nowpercent >=75 && $values->nowpercent < 100)
+            $left = 600;
+        else
+            $left = 830;
+
+        $resultstring = '';
+        if (count($samolet)==0)
+            $resultstring = '';
+        else
+            $resultstring .='<div class="form-container">
+             <form method="post" style="width: 900px;padding: 0px 20px;background-color: #000000;">
+            <p></p>
+            <div class="table-responsive table-borderless">
+                <table class="table table-bordered" >
+                    <tbody>
+                    <tr>
+                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">0% пути</td>
+                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">25% пути</td>
+                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">50% пути</td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">75% пути</td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;">100% пути</td>
+                    </tr>
+                   
+                   
+                    <tr>
+                        <td colspan="5" style="color: #ffffff;padding: 2px 0px; width: 100%">
+                        <table style="width: 100%;">
+                            <tbody>
+                            <tr style="width: 100%;">
+                                <td style="padding: 3px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 20px 10px;height: 10px; width: 100%; background-image: url(\'/assets/img/onedash2.png\');
+                                background-repeat: repeat-x;"></td>
+                                <td style="padding: 3px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Гуанчжоу</td>
+                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Пхеньян</td>
+                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Хабаровск</td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Казань</td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;">Москва</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>';
+
+            $resultstring .= '<img style="position: relative; top: -78px;left:';
+            $resultstring .= $left;
+            $resultstring .= 'px;" src="assets/img/plane.png">'.'</form></div>';
+        }
+        return  $resultstring;
+    }
+
     public  function getListByCodeIdAndUserId(Request $request){
 
         $myid = Auth::user()->id;
@@ -53,7 +129,7 @@ class TrackingsController extends Controller
                             <tr></tr>
                             <tr >
                                 <td class="border-white" style="padding: 0px;">
-                                    <button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;">
+                                    <button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;" onclick="getSamolet('.$values->tracknumber.');">
                                     '.$values->tracknumber.'
                                     </button>
                                 </td>

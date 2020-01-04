@@ -24,6 +24,9 @@ class CreateTrackingsTable extends Migration
             $table->date('receivedate');
             $table->date('expectedreceivedate');
             $table->integer('status');
+            $table->string('nowplace');
+            $table->double('nowpercent');
+            $table->integer('routeid');
             $table->timestamps();
         });
     }

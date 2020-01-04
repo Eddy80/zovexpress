@@ -104,6 +104,8 @@ Route::group([
 
     Route::get('/cabgettrackings','TrackingsController@getListByCodeIdAndUserId');
 
+    Route::get('/cabgetsamolet','TrackingsController@getSamoletByTrackNumber');
+
     /*Route::get('/cabgettrackings', function () {
         return view('trackinglist');
     });*/
