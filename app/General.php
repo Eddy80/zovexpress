@@ -27,5 +27,12 @@ class General extends Model
 
         return $general;
     }
+
+    public function edit($fields)
+    {
+       //  dd($fields);
+        $this->fill($fields);
+        $this->save();
+    }
 }
 

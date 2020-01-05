@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\General;
 
 
@@ -43,9 +44,18 @@ class GeneralController extends Controller
 
     }
 
-    public function editor($pageid)
+    public function pageload($pageid)
     {
         $page = General::find($pageid);
-        return view('root.editor')->with('page', $page);
+        return view('root\editor')->with('page', $page);
     }
+
+
+    public function pagestore(Request $request)
+    {
+        $id = $request->all('id');
+        General::whereId($id)->update($request->all('shortname','shortnameru','shortnameen','text','textru','texten' ));
+        return view('root.editor')->with('page', $request)->with('status','Admin hələ icazə verməyib');
+    }
+
 }

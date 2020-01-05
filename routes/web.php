@@ -135,7 +135,8 @@ Route::get('/admin', function () {
     return view('root.home');
 });
 
-Route::get('/admin/pages/{pageid}', 'GeneralController@editor');
+Route::get('/admin/pages/{pageid}', 'GeneralController@pageload');
+Route::post('/pages','GeneralController@pagestore');
 
 /*
 Route::get('/admineditor', function () {
