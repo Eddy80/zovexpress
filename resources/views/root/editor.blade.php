@@ -6,13 +6,13 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section>
-        <div class="alert alert-danger">
+    <!-- <section>
+        <div class="alert alert-success">
             @if(session('status'))
             {{session('status')}}
             @endif
         </div>
-    </section>
+    </section>-->
     <form name="pageform" action="/pages" method="post" >
         @csrf
     <section class="content-header">
@@ -24,11 +24,11 @@
                     <div class="card-body">
                         <div class="form-group">
                             <label for="exampleInputEmail1">AZ:</label>
-                            <input type="text"  class="form-control" id="shortname" name="shortname"  value="{{ $page->shortname }}" style="width: 100%" />
+                            <input type="text"  class="form-control" id="shortname" name="shortname"  value="{{ $page->shortname }}" style="width: 80%" />
                             <label for="exampleInputEmail1">RU:</label>
-                            <input type="text"  class="form-control" id="shortnameru" name="shortnameru" value="{{ $page->shortnameru }}" style="width: 100%" />
+                            <input type="text"  class="form-control" id="shortnameru" name="shortnameru" value="{{ $page->shortnameru }}" style="width: 80%" />
                             <label for="exampleInputEmail1">EN:</label>
-                            <input type="text"  class="form-control" id="shortnameen" name="shortnameen" value="{{ $page->shortnameen }}" style="width: 100%" />
+                            <input type="text"  class="form-control" id="shortnameen" name="shortnameen" value="{{ $page->shortnameen }}" style="width: 80%" />
                         </div>
                     </div>
 
