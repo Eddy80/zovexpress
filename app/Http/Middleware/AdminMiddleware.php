@@ -5,16 +5,12 @@ namespace App\Http\Middleware;
 use Closure;
 use Auth;
 
-class MemberMiddleware
+class AdminMiddleware
 {
 
     public function handle($request, Closure $next)
     {
         if ( Auth::check() && Auth::user()->status==999 )
-        {
-            return redirect('/admin');
-        }
-        else  if ( Auth::check() && Auth::user()->status != 999  )
         {
             return $next($request);
         }

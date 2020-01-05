@@ -109,6 +109,13 @@ class UsersController extends Controller
         $this->save();
     }
 
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/home');
+    }
+
+
 
     public function update(Request $request, $id)
     {
@@ -332,7 +339,7 @@ class UsersController extends Controller
 
     public function storemydata(Request $request){
 
-         dd($request->all());
+       //  dd($request->all());
         $myid = Auth::user()->id;
         /*
                 $this->validate($request,[
