@@ -2,7 +2,7 @@
 
 @section('contentadmin')
 <?php
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\UserController;
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -32,7 +32,7 @@ use App\Http\Controllers\UsersController;
                         <h3 class="card-title">Не Зарегистрированные</h3>
                     </div>
                     <!-- /.card-header -->
-                    <?php   $users = UsersController::getNoUsers(); $i=0; ?>
+                    <?php   $users = UserController::getNoUsers(); $i=0; ?>
                     <div class="card-body">
                         <table id="example2" class="table table-bordered table-hover">
                             <thead>

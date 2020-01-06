@@ -75,8 +75,8 @@ use App\Http\Controllers\UsersController;
                                 <th>Email</th>
                                 <th>Телефон</th>
                                 <th>Паспорт</th>
-                                <th>Страна</th>
-                                <th>Статус</th>
+                                <th>Пол</th>
+                                <th>Дата рождения</th>
                             </tr>
                             </tfoot>
                         </table>

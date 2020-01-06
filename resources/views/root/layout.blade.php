@@ -43,24 +43,24 @@
                 <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Главная</a>
+                <a href="/admin" class="nav-link">Главная</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="#" class="nav-link">Обратная связь</a>
-            </li>
+<!--            <li class="nav-item d-none d-sm-inline-block">-->
+<!--                <a href="#" class="nav-link">Обратная связь</a>-->
+<!--            </li>-->
         </ul>
 
         <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
-            <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
-                <div class="input-group-append">
-                    <button class="btn btn-navbar" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
+<!--        <form class="form-inline ml-3">-->
+<!--            <div class="input-group input-group-sm">-->
+<!--                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">-->
+<!--                <div class="input-group-append">-->
+<!--                    <button class="btn btn-navbar" type="submit">-->
+<!--                        <i class="fas fa-search"></i>-->
+<!--                    </button>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </form>-->
 
         <!-- Right navbar links -->
 <!--        <ul class="navbar-nav ml-auto">-->
@@ -84,11 +84,11 @@
 <!--                                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>-->
 <!--                            </div>-->
 <!--                        </div>-->
-<!--                        <!-- Message End -->
+<!--                        Message End -->
 <!--                    </a>-->
 <!--                    <div class="dropdown-divider"></div>-->
 <!--                    <a href="#" class="dropdown-item">-->
-<!--                        <!-- Message Start -->
+<!--                         Message Start -->
 <!--                        <div class="media">-->
 <!--                            <img src="assets/root/dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">-->
 <!--                            <div class="media-body">-->
@@ -196,19 +196,20 @@
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fas fa-key nav-icon"></i>
                                     <p>Поменять пароль</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
-                                    <i class="far fa-circle nav-icon"></i>
+
+                                    <i class="fas fa-history nav-icon"></i>
                                     <p>История</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="{{url('logout')}}" class="nav-link active">
-                                    <i class="far fa-circle nav-icon"></i>
+                                    <i class="fas fa-sign-out-alt nav-icon"></i>
                                     <p>Выход</p>
                                 </a>
                             </li>
@@ -363,12 +364,8 @@
 <!--                    </li>-->
                     <li class="nav-item has-treeview">
                         <a href="{{url('comments')}}" class="nav-link">
-
                             <i class="fas fa-comment nav-icon"></i>
-                            <p>
-                                Отзывы
-
-                            </p>
+                            <p>Отзывы</p>
                         </a>
 
                     </li>
@@ -450,6 +447,37 @@
                     </li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-address-card"></i>
+                            <p>
+                                Контакты
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+
+                                    <i class="fas fa-map-marked-alt nav-icon"></i>
+                                    <p>Адрес</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+
+                                    <i class="nav-icon fas fa-phone"></i>
+                                    <p>Телефон</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-at nav-icon"></i>
+                                    <p>Email</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-book"></i>
                             <p>
                                 Страницы
@@ -504,32 +532,31 @@
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="{{url('users')}}" class="nav-link">
                             <i class="nav-icon far fa-user"></i>
                             <p>
                                 Пользователи
-                                <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{url('users')}}" class="nav-link">
-                                    <i class="far fa-user-circle nav-icon"></i>
-                                    <p>Регистрированные</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url('nousers')}}" class="nav-link">
-                                    <i class="fa fa-user-times nav-icon"></i>
-                                    <p>Не Регистрированные</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url('admins')}}" class="nav-link">
-                                    <i class="fa fa-cogs nav-icon"></i>
-                                    <p>Администраторы</p>
-                                </a>
-                            </li>
+<!--                        <ul class="nav nav-treeview">-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{{url('users')}}" class="nav-link">-->
+<!--                                    <i class="far fa-user-circle nav-icon"></i>-->
+<!--                                    <p>Регистрированные</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{{url('nousers')}}" class="nav-link">-->
+<!--                                    <i class="fa fa-user-times nav-icon"></i>-->
+<!--                                    <p>Не Регистрированные</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="{{url('admins')}}" class="nav-link">-->
+<!--                                    <i class="fa fa-cogs nav-icon"></i>-->
+<!--                                    <p>Администраторы</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
 <!--                            <li class="nav-item">-->
 <!--                                <a href="pages/examples/recover-password.html" class="nav-link">-->
 <!--                                    <i class="far fa-circle nav-icon"></i>-->
@@ -670,25 +697,7 @@
 <!--                            <p>Level 1</p>-->
 <!--                        </a>-->
 <!--                    </li>-->
-                    <li class="nav-header">Контакты</li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon far fa-circle text-danger"></i>
-                            <p class="text">Адрес</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon far fa-circle text-warning"></i>
-                            <p>Телефон</p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link">
-                            <i class="nav-icon far fa-circle text-info"></i>
-                            <p>Email</p>
-                        </a>
-                    </li>
+
                 </ul>
             </nav>
             <!-- /.sidebar-menu -->

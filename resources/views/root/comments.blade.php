@@ -12,7 +12,7 @@ use App\Http\Controllers\UsersController;
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>Пользователи</h1>
+                    <h1>Отзывы</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
@@ -30,7 +30,7 @@ use App\Http\Controllers\UsersController;
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Зарегистрированные</h3>
+                        <h3 class="card-title">отзывы</h3>
                     </div>
                     <!-- /.card-header -->
                     <?php   $comments = CommentController::getComments(); $i=0; ?>
