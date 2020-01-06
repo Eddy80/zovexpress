@@ -26,6 +26,11 @@
     <link rel="stylesheet" href="/assets/root/plugins/summernote/summernote-bs4.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+    <!-- DataTables -->
+    <link rel="stylesheet" href="/assets/root/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -156,7 +161,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="#" class="brand-link">
+        <a href="/admin" class="brand-link">
             <img src="/assets/img/logo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
             <span class="brand-text font-weight-light">Админ Панель</span>
@@ -170,7 +175,7 @@
                     <img src="/assets/root/dist/img/profile.png" class="img-circle elevation-2" alt="User Image">
                 </div>
                 <div class="info">
-                    <a href="#" class="d-block">Админ</a>
+                    <a href="#" class="d-block">{{Auth::user()->firstname.' '.Auth::user()->lastname}}</a>
                 </div>
             </div>
 
@@ -508,19 +513,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('users')}}" class="nav-link">
                                     <i class="far fa-user-circle nav-icon"></i>
                                     <p>Регистрированные</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('nousers')}}" class="nav-link">
                                     <i class="fa fa-user-times nav-icon"></i>
                                     <p>Не Регистрированные</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('admins')}}" class="nav-link">
                                     <i class="fa fa-cogs nav-icon"></i>
                                     <p>Администраторы</p>
                                 </a>
@@ -744,6 +749,26 @@
 <script src="/assets/root/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/assets/root/dist/js/demo.js"></script>
+
+
+<!-- DataTables -->
+<script src="/assets/root/plugins/datatables/jquery.dataTables.js"></script>
+<script src="/assets/root/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+
+
+<!-- page script -->
+<script>
+    $(function () {
+          $('#example2').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": false,
+            "autoWidth": false
+        });
+    });
+</script>
 </body>
 </html>
 

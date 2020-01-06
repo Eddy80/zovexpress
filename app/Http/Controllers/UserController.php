@@ -115,6 +115,11 @@ class UsersController extends Controller
         return redirect('/home');
     }
 
+    public static function getUsers()
+    {
+        return DB::table('users')->paginate(10);
+    }
+
 
 
     public function update(Request $request, $id)

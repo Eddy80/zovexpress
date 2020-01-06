@@ -138,6 +138,18 @@ Route::group([
         return view('root.home');
     });
 
+    Route::get('/users', function () {
+        return view('root.users');
+    });
+
+    Route::get('/nousers', function () {
+        return view('root.nousers');
+    });
+
+    Route::get('/admins', function () {
+        return view('root.admins');
+    });
+
     Route::get('/admin/pages/{pageid}', 'GeneralController@pageload');
     Route::post('/pages', 'GeneralController@pagestore');
 

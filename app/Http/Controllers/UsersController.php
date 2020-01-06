@@ -300,6 +300,29 @@ class UsersController extends Controller
         return 0;
 
     }
+
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect('/home');
+    }
+
+    public static function getUsers()
+    {
+        return DB::table('users')->where('status','=','0')->paginate(10);
+    }
+
+    public static function getNoUsers()
+    {
+        return DB::table('users')->where('status','=','555')->paginate(10);
+    }
+
+    public static function getAdmins()
+    {
+        return DB::table('users')->where('status','=','999')->paginate(10);
+    }
+
     /*
         $keyword = Input::get('search');
             if(!empty($keyword)){
