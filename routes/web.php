@@ -146,6 +146,10 @@ Route::group([
         return view('root.nousers');
     });
 
+    Route::get('/comments', function () {
+        return view('root.comments');
+    });
+
     Route::get('/admins', function () {
         return view('root.admins');
     });

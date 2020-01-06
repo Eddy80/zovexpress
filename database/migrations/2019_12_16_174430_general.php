@@ -30,6 +30,8 @@ class General extends Migration
 
             $table->string('avatar')->nullable();
 
+            $table->timestamps();
+
         });
     }
 

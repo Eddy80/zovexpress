@@ -362,7 +362,7 @@
 <!--                        </ul>-->
 <!--                    </li>-->
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="{{url('comments')}}" class="nav-link">
 
                             <i class="fas fa-comment nav-icon"></i>
                             <p>
