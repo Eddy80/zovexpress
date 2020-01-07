@@ -223,9 +223,37 @@
                             <p>
                                 Калькулятор
                                 <!-- <span class="right badge badge-danger">Цены</span>-->
-                             </p>
-                         </a>
-                     </li>
+                            </p>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-shipping-fast"></i>
+                            <p>
+                                Посылки
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="fas fa-cart-plus nav-icon"></i>
+                                    <p>Добавить посылку</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-th-list"></i>
+                                    <p>Список посылок</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
  <!--                    <li class="nav-item has-treeview">-->
 <!--                        <a href="#" class="nav-link">-->
 <!--                            <i class="nav-icon fas fa-copy"></i>-->
