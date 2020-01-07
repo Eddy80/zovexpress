@@ -201,11 +201,30 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <div class="col"><label style="font-size: 14px; width: 200px;">Номер паспорта :</label><input required name="passport" placeholder="Passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input required name="phone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона (доп.):</label><input required name="additionalphone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('additionalphone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Страна :</label><input required name="country" placeholder="Страна проживания" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('additionalphone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <div class="col"><label style="font-size: 14px; width: 200px;">Страна :</label>
+
+                            <SELECT id="country"  class="border rounded border-warning"  style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px;font-size: 14px;padding-left:5px; width: 442px;height: 25px;" >
+                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected>Выберите страну:</OPTION>
+
+                                <?php   $countries = CountryController::getList(); ?>
+
+                                @foreach($countries as $country)
+                                <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
+                                @if ($country->id != 1)
+                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
+                                @endif
+                                @endforeach
+
+
+                            </SELECT>
+<!--                  <input required name="country" placeholder="Страна проживания" value="{{old('country')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 440px;"/>-->
+                    </div>
+
+
 
                 </div>
 
-                <div class="form-check" style="margin: 10px 0px;"><input name="agreement" onclick="enablesubmit()"  class="form-check-input" type="checkbox" id="formCheck-1" checked="unchecked"><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
+                <div class="form-check" style="margin: 10px 0px;"><input name="agreement" onclick="enablesubmit()"  class="form-check-input" type="checkbox" id="formCheck-1" ><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
                 <div class="form-check"><input name="agreement2" class="form-check-input" type="checkbox" id="formCheck-2"><label style="font-size: 14px;" class="form-check-label" for="formCheck-2">Я согласен(-на) на обработку персональных данных и получения информации о товарах и акциях</label></div>
             </div>
             <div class="modal-footer" style="padding-right: 27px;">
@@ -246,7 +265,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 </div>
 
                 <div class="form-check" style="margin: 10px 0px;">
-                    <input class="form-check-input" name="savepassword" type="checkbox" id="formCheck-1">
+                    <input class="form-check-input" name="savepassword" type="checkbox" id="formCheck-1" checked>
                     <label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Запомнить</label>
                     <label style="font-size: 14px;float: right;" class="form-check-label">Забыли пароль?</label>
                 </div>

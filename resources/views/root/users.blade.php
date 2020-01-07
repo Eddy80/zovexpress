@@ -29,7 +29,7 @@ use App\Http\Controllers\UsersController;
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Зарегистрированные</h3>
+                        <h3 class="card-title">Зарегистрированные пользователи</h3>
                     </div>
                     <!-- /.card-header -->
                     <?php   $users = UsersController::getUsers(); $i=0; ?>
@@ -42,8 +42,10 @@ use App\Http\Controllers\UsersController;
                                 <th>Email</th>
                                 <th>Телефон</th>
                                 <th>Паспорт</th>
+                                <th>Паспорт</th>
                                 <th>Пол</th>
                                 <th>Дата рождения</th>
+                                <th>Статус</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -58,12 +60,32 @@ use App\Http\Controllers\UsersController;
                             ?>
                             <tr>
                                 <td>{{$i}}</td>
-                                <td>{{$user->firstname}} {{$user->lastname}}</td>
+                                <td><a href="/admin/users/{{$user->id}}"> {{$user->firstname}} {{$user->lastname}}</a></td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->phone}}</td>
                                 <td>{{$user->passport}}</td>
                                 <td>{{$sex}}</td>
                                 <td>{{$user->dob}}</td>
+                                <?php
+                                if ($user->status==999)
+                                    $status='aдмин';
+                                else
+                                    $status='';
+                                ?>
+                                <td>{{$status}}
+<!--                                    <div class="form-group">-->
+<!--                                        <div class="custom-control custom-switch">-->
+<!--                                        --><?php
+//                                       // if ($user->status==999)
+//                                            echo '<input type="checkbox" class="custom-control-input" id="customSwitch1'.$i.'" checked="checked" />';
+//                                       // else
+//                                         //   echo '<input type="checkbox" class="custom-control-input" id="customSwitch1'.$i.'" />';
+//
+//                                       // echo '<label class="custom-control-label" for="customSwitch1'.$i.'">'.$status.'</label>';
+//                                        ?>
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </td>
                             </tr>
 
                             @endforeach
@@ -77,6 +99,7 @@ use App\Http\Controllers\UsersController;
                                 <th>Паспорт</th>
                                 <th>Пол</th>
                                 <th>Дата рождения</th>
+                                <th>Статус</th>
                             </tr>
                             </tfoot>
                         </table>

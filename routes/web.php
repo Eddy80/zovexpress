@@ -157,9 +157,5 @@ Route::group([
     Route::get('/admin/pages/{pageid}', 'GeneralController@pageload');
     Route::post('/pages', 'GeneralController@pagestore');
 
-    /*
-    Route::get('/admineditor', function () {
-        return view('root.editor');
-    });
-    */
+    Route::get('/admin/users/{id}','UsersController@viewmember');
 });

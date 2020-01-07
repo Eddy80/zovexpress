@@ -45,6 +45,10 @@
             <li class="nav-item d-none d-sm-inline-block">
                 <a href="/admin" class="nav-link">Главная</a>
             </li>
+
+            <li class="nav-item d-none d-sm-inline-block">
+                <a href="javascript:history.back()" class="nav-link">Назад</a>
+            </li>
 <!--            <li class="nav-item d-none d-sm-inline-block">-->
 <!--                <a href="#" class="nav-link">Обратная связь</a>-->
 <!--            </li>-->
@@ -193,20 +197,19 @@
                             </p>
                         </a>
 
-                        <ul class="nav nav-treeview">
+                        <ul class="nav nav-treeview" style="background-color: #00366c;">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fas fa-key nav-icon"></i>
                                     <p>Поменять пароль</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-
-                                    <i class="fas fa-history nav-icon"></i>
-                                    <p>История</p>
-                                </a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="#" class="nav-link">-->
+<!--                                    <i class="fas fa-history nav-icon"></i>-->
+<!--                                    <p>История</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
                             <li class="nav-item">
                                 <a href="{{url('logout')}}" class="nav-link active">
                                     <i class="fas fa-sign-out-alt nav-icon"></i>
@@ -236,7 +239,7 @@
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
+                        <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fas fa-cart-plus nav-icon"></i>
@@ -452,19 +455,19 @@
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
+                        <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fa fa-envelope nav-icon"></i>
                                     <p>Входящие</p>
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="nav-icon fas fa-edit"></i>
-                                    <p>Написать</p>
-                                </a>
-                            </li>
+<!--                            <li class="nav-item">-->
+<!--                                <a href="#" class="nav-link">-->
+<!--                                    <i class="nav-icon fas fa-edit"></i>-->
+<!--                                    <p>Написать</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="fa fa-envelope-open nav-icon"></i>
@@ -481,7 +484,7 @@
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
+                        <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
 
@@ -512,7 +515,7 @@
                                 <i class="fas fa-angle-left right"></i>
                             </p>
                         </a>
-                        <ul class="nav nav-treeview">
+                        <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">
 
                             <li class="nav-item">
                                 <a href="/admin/pages/1" class="nav-link">

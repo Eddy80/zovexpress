@@ -335,10 +335,10 @@ class UsersController extends Controller
 
 
 
-        $member = User::find($id);
+        $user = User::find($id);
         //return $member->firstname;
 
-        return view('cab.memberdetails')->with('member', $member);
+        return view('root.userdetails')->with('user', $user);
     }
 
 
