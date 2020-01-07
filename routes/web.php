@@ -150,6 +150,12 @@ Route::group([
         return view('root.comments');
     });
 
+    Route::get('/addtrack', function () {
+        return view('root.addtrack');
+    });
+
+    Route::get('/usercodelist', 'CodesController@getListByUserId2');
+
     Route::get('/admins', function () {
         return view('root.admins');
     });

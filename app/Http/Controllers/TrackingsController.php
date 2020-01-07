@@ -184,6 +184,8 @@ class TrackingsController extends Controller
     }
 
 
+
+
     public function edit($fields)
     {
         $this->fill($fields);

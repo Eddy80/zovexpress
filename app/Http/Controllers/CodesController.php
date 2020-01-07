@@ -29,4 +29,14 @@ class CodesController extends Controller
 
         return $codes;
     }
+
+
+    public static function getListByUserId2(Request $request)
+    {
+        $myid = $request->get('userid');
+        $codes = Codes::where('userid', $myid)->get(['id', 'code', 'countryid']);
+
+        return $codes->all();
+    }
+
 }

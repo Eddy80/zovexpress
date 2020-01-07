@@ -186,6 +186,10 @@ class UsersController extends Controller
     }
 
 
+    public static function getList()
+    {
+        return User::all();
+    }
 
 
     public static function getLastMembers()

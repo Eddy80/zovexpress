@@ -14,6 +14,15 @@
     <link rel="stylesheet" href="/assets/root/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
     <!-- iCheck -->
     <link rel="stylesheet" href="/assets/root/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="/assets/root/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="/assets/root/plugins/daterangepicker/daterangepicker.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="/assets/root/plugins/select2/css/select2.css">
+    <link rel="stylesheet" href="/assets/root/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
+    <!-- Bootstrap4 Duallistbox -->
+    <link rel="stylesheet" href="/assets/root/plugins/bootstrap4-duallistbox/bootstrap-duallistbox.min.css">
     <!-- JQVMap -->
     <link rel="stylesheet" href="/assets/root/plugins/jqvmap/jqvmap.min.css">
     <!-- Theme style -->
@@ -241,7 +250,7 @@
                         </a>
                         <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('addtrack')}}" class="nav-link">
                                     <i class="fas fa-cart-plus nav-icon"></i>
                                     <p>Добавить посылку</p>
                                 </a>
@@ -755,6 +764,9 @@
 </div>
 <!-- ./wrapper -->
 
+
+
+
 <!-- jQuery -->
 <script src="/assets/root/plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
@@ -795,6 +807,18 @@
 <script src="/assets/root/plugins/datatables/jquery.dataTables.js"></script>
 <script src="/assets/root/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 
+<!-- Select2 -->
+<script src="/assets/root/plugins/select2/js/select2.full.min.js"></script>
+<!-- Bootstrap4 Duallistbox -->
+<script src="/assets/root/plugins/bootstrap4-duallistbox/jquery.bootstrap-duallistbox.min.js"></script>
+<!-- InputMask -->
+<script src="/assets/root/plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+<!-- bootstrap color picker -->
+<script src="/assets/root/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="/assets/root/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
+
+
 
 <!-- page script -->
 <script>
@@ -805,9 +829,93 @@
             "searching": false,
             "ordering": true,
             "info": false,
-            "autoWidth": false
+            "autoWidth": true
         });
     });
+</script>
+<script>
+    $(function () {
+        //Initialize Select2 Elements
+        $('.select2').select2()
+
+        //Initialize Select2 Elements
+        $('.select2bs4').select2({
+            theme: 'bootstrap4'
+        })
+
+        //Datemask dd/mm/yyyy
+        $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+        //Datemask2 mm/dd/yyyy
+        $('#datemask2').inputmask('mm/dd/yyyy', { 'placeholder': 'mm/dd/yyyy' })
+        //Money Euro
+        $('[data-mask]').inputmask()
+
+        //Date range picker
+        $('#reservation').daterangepicker()
+        //Date range picker with time picker
+        $('#reservationtime').daterangepicker({
+            timePicker: true,
+            timePickerIncrement: 30,
+            locale: {
+                format: 'MM/DD/YYYY hh:mm A'
+            }
+        })
+        //Date range as a button
+        $('#daterange-btn').daterangepicker(
+            {
+                ranges   : {
+                    'Today'       : [moment(), moment()],
+                    'Yesterday'   : [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days' : [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month'  : [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month'  : [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                },
+                startDate: moment().subtract(29, 'days'),
+                endDate  : moment()
+            },
+            function (start, end) {
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'))
+            }
+        )
+
+        //Timepicker
+        $('#timepicker').datetimepicker({
+            format: 'LT'
+        })
+
+        //Bootstrap Duallistbox
+        $('.duallistbox').bootstrapDualListbox()
+
+        //Colorpicker
+        $('.my-colorpicker1').colorpicker()
+        //color picker with addon
+        $('.my-colorpicker2').colorpicker()
+
+        $('.my-colorpicker2').on('colorpickerChange', function(event) {
+            $('.my-colorpicker2 .fa-square').css('color', event.color.toString());
+        });
+
+        $("input[data-bootstrap-switch]").each(function(){
+            $(this).bootstrapSwitch('state', $(this).prop('checked'));
+        });
+
+    })
+
+    function getCodeList()
+    {
+        var userid = $('#userid').val();
+
+        $.get("{{ URL::to('usercodelist') }}",{ userid:userid}, function(data){
+
+                var sel = $("#usercode");
+                sel.empty();
+                for (var i=0; i<data.length; i++) {
+                    sel.append('<option value="' + data[i].code + '">' + data[i].code + '</option>');
+                }
+            }, "json");
+    }
+
 </script>
 </body>
 </html>
