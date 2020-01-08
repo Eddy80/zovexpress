@@ -117,7 +117,7 @@ class UsersController extends Controller
 
     public static function getUsers()
     {
-        return DB::table('users')->paginate(10);
+        return DB::table('users')->get(); //paginate(100);
     }
 
 

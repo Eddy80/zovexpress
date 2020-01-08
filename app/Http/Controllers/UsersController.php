@@ -232,7 +232,7 @@ class UsersController extends Controller
     {
 
         // return "Hello World!";
-        $user = User::where('id', $userid)->get();
+        $user = User::where('id', $userid)->get('firstname', 'lastname')->first();
         return $user;
         // return User::where('id', $request->get('user_id'));
     }
@@ -310,7 +310,7 @@ class UsersController extends Controller
 
     public static function getUsers()
     {
-        return DB::table('users')->where('status','=','0')->paginate(10);
+        return DB::table('users')->where('status','=','0')->all();//paginate(10);
     }
 
     public static function getNoUsers()

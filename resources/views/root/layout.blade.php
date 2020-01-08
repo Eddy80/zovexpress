@@ -256,7 +256,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#" class="nav-link">
+                                <a href="{{url('tracklist')}}" class="nav-link">
                                     <i class="nav-icon fas fa-th-list"></i>
                                     <p>Список посылок</p>
                                 </a>
@@ -825,7 +825,7 @@
     $(function () {
           $('#example2').DataTable({
             "paging": true,
-            "lengthChange": false,
+            "lengthChange": true,
             "searching": false,
             "ordering": true,
             "info": false,
@@ -911,7 +911,7 @@
                 var sel = $("#usercode");
                 sel.empty();
                 for (var i=0; i<data.length; i++) {
-                    sel.append('<option value="' + data[i].code + '">' + data[i].code + '</option>');
+                    sel.append('<option value="' + data[i].code + '">' + data[i].code+'  -  '+ data[i].nameru+ '</option>');
                 }
             }, "json");
     }

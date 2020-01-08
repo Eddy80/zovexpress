@@ -55,7 +55,7 @@ class GeneralController extends Controller
     {
         $id = $request->all('id');
         General::whereId($id)->update($request->all('shortname','shortnameru','shortnameen','text','textru','texten' ));
-        return view('root.editor')->with('page', $request)->with('status','Admin hələ icazə verməyib');
+        return view('root.editor')->with('page', $request);
     }
 
 }

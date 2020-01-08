@@ -42,7 +42,7 @@ use App\Http\Controllers\UsersController;
                                 <th>Email</th>
                                 <th>Телефон</th>
                                 <th>Паспорт</th>
-                                <th>Паспорт</th>
+
                                 <th>Пол</th>
                                 <th>Дата рождения</th>
                                 <th>Статус</th>

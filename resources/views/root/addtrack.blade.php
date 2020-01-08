@@ -37,11 +37,12 @@ use App\Http\Controllers\CountryController;
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
-                        <form role="form">
+                        <form  action="/addtrack" method="post" >
+                            {{csrf_field()}}
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Выберите пользователя</label>
-                                    <select id="userid" class="form-control select2" style="width: 100%;" onchange="javascript:getCodeList();">
+                                    <select id="userid" name="userid" class="form-control select2" style="width: 100%;" onchange="javascript:getCodeList();">
                                         <option selected="selected"></option>
                                         <?php   $users = UsersController::getList(); ?>
                                         @foreach($users as $user)
@@ -51,30 +52,33 @@ use App\Http\Controllers\CountryController;
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Выберите код пользователя</label>
-                                    <select id="usercode" class="form-control select2" style="width: 100%;">
+                                    <select id="usercode" name="usercode" class="form-control select2" style="width: 100%;">
                                         <option selected="selected"></option>
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Выберите город отправки</label>
-                                    <select class="form-control select2" style="width: 100%;">
-                                        <option selected="selected">Alabama</option>
-                                        <option>Alaska</option>
-                                        <option>California</option>
-                                        <option>Delaware</option>
-                                        <option>Tennessee</option>
-                                        <option>Texas</option>
-                                        <option>Washington</option>
-                                    </select>
+                                    <label class="col-form-label" for="inputSuccess"> Введите город отправки </label>
+                                    <input type="text" class="form-control" id="receiveto" name="receiveto" placeholder="город отправки">
                                 </div>
+<!--                                <div class="form-group">-->
+<!--                                    <label for="exampleInputEmail1">Выберите город отправки</label>-->
+<!--                                    <select class="form-control select2" style="width: 100%;">-->
+<!--                                        <option selected="selected">Alabama</option>-->
+<!--                                        <option>Alaska</option>-->
+<!--                                        <option>California</option>-->
+<!--                                        <option>Delaware</option>-->
+<!--                                        <option>Tennessee</option>-->
+<!--                                        <option>Texas</option>-->
+<!--                                        <option>Washington</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
                                 <div class="form-group">
                                     <label>Выберите дату отправки</label>
-
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                        <input type="text" id="sentdate" name="sentdate" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
                                     </div>
                                     <!-- /.input group -->
                                 </div>
@@ -85,15 +89,15 @@ use App\Http\Controllers\CountryController;
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                        <input type="text" id="expectedreceivedate" name="expectedreceivedate"  class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
                                     </div>
                                     <!-- /.input group -->
                                 </div>
 
-                                <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Уведомить пользователя</label>
-                                </div>
+<!--                                <div class="form-check">-->
+<!--                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
+<!--                                    <label class="form-check-label" for="exampleCheck1">Уведомить пользователя</label>-->
+<!--                                </div>-->
                             </div>
                             <!-- /.card-body -->
 

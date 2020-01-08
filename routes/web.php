@@ -150,9 +150,14 @@ Route::group([
         return view('root.comments');
     });
 
+    Route::get('/tracklist', function () {
+        return view('root.tracklist');
+    });
+
     Route::get('/addtrack', function () {
         return view('root.addtrack');
     });
+    Route::post('/addtrack', 'TrackingsController@trackstore');
 
     Route::get('/usercodelist', 'CodesController@getListByUserId2');
 

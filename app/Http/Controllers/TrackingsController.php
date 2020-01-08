@@ -185,6 +185,23 @@ class TrackingsController extends Controller
 
 
 
+    public function trackstore(Request $request){
+
+
+
+        Trackings::add($request->all());
+
+           // return view('root.tracklist');
+        return redirect('/tracklist');
+
+    }
+
+    public static function getList()
+    {
+        return Trackings::all();
+    }
+
+
 
     public function edit($fields)
     {
