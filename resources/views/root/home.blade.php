@@ -1,6 +1,11 @@
 @extends('root.layout')
 
 @section('contentadmin')
+
+<?php
+use App\Http\Controllers\TrackingsController;
+use App\Http\Controllers\UsersController;
+?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -28,9 +33,10 @@
             <div class="row">
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
+                    <?php $tracingscount = TrackingsController::getCount();  ?>
                     <div class="small-box bg-info">
                         <div class="inner">
-                            <h3>150</h3>
+                            <h3>{{$tracingscount}}</h3>
 
                             <p>Посылок</p>
                         </div>
@@ -58,16 +64,17 @@
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
+                    <?php $userscount = UsersController::getMembersCount();  ?>
                     <div class="small-box bg-warning">
                         <div class="inner">
-                            <h3>44</h3>
+                            <h3>{{$userscount}}</h3>
 
                             <p>Пользователей</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-person-add"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="{{url('users')}}" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->

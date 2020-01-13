@@ -145,22 +145,29 @@ class UsersController extends Controller
         ]);
     }
 
-    public function adminuser(Request $request)
+    public  function adminuser(Request $request)
     {
+     // return dd($request);
 
-        $user = User::findOrFail($request->userid);
+        $user = User::findOrFail($request->id);
 
-        if($user->is_admin == 1){
-            $user->is_admin = 0;
+        if($user->status != 999){
+            $user->status = 999;
         } else {
-            $user->is_admin = 1;
+            $user->status = 0;
         }
 
+        $user->edit($request->all('status'));
+/*
         return response()->json([
             'data' => [
                 'success' => $user->save(),
             ]
-        ]);
+        ]);*/
+       //  return redirect('/tracklist');
+
+        return view('root.users');
+
     }
 
     /**
@@ -232,7 +239,11 @@ class UsersController extends Controller
     {
 
         // return "Hello World!";
-        $user = User::where('id', $userid)->get('firstname', 'lastname')->first();
+
+//        $user = User::where('id', $userid)->get('firstname', 'lastname')->first();
+//        return $user;
+
+        $user = User::where('id', $userid)->get();
         return $user;
         // return User::where('id', $request->get('user_id'));
     }
@@ -310,7 +321,8 @@ class UsersController extends Controller
 
     public static function getUsers()
     {
-        return DB::table('users')->where('status','=','0')->all();//paginate(10);
+       // return DB::table('users')->where('status','=','0')->get();//paginate(10);
+        return DB::table('users')->get(); //paginate(100);
     }
 
     public static function getNoUsers()
@@ -341,6 +353,11 @@ class UsersController extends Controller
             ->paginate(5);
 
         return view('cab\searchresult')->with('members', $members);
+    }
+
+    public static function getList()
+    {
+        return User::all();
     }
 
     public function viewmember(Request $request, $id){

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use Auth;
 
 
 class UsersController extends Controller
@@ -118,6 +119,7 @@ class UsersController extends Controller
     public static function getUsers()
     {
         return DB::table('users')->get(); //paginate(100);
+       //return DB::table('users')->where('status','=','0')->get();//paginate(10);
     }
 
 
@@ -159,6 +161,7 @@ class UsersController extends Controller
     public function adminuser(Request $request)
     {
 
+/*
         $user = User::findOrFail($request->userid);
 
         if($user->is_admin == 1){
@@ -171,7 +174,28 @@ class UsersController extends Controller
             'data' => [
                 'success' => $user->save(),
             ]
-        ]);
+        ]);*/
+        //return dd($request);
+
+        $user = User::findOrFail($request->id);
+        //return dd( $user );
+
+        if($user->status != 999){
+            $user->status = 999;
+        } else {
+            $user->status = 0;
+        }
+
+        $user->edit($request->all('status'));
+        /*
+                return response()->json([
+                    'data' => [
+                        'success' => $user->save(),
+                    ]
+                ]);*/
+        //  return redirect('/tracklist');
+
+        return view('root.users');
     }
 
     /**

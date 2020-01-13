@@ -47,7 +47,43 @@ class GeneralController extends Controller
     public function pageload($pageid)
     {
         $page = General::find($pageid);
-        return view('root\editor')->with('page', $page);
+        return view('root.editor')->with('page', $page);
+    }
+
+    public function getPageAbout()
+    {
+        $page = General::find(23);
+        return view('page')->with('page', $page);
+    }
+
+    public function getPageAgreement()
+    {
+        $page = General::find(22);
+        return view('page')->with('page', $page);
+    }
+
+    public function getPageInfoSending()
+    {
+        $page = General::find(13);
+        return view('page')->with('page', $page);
+    }
+
+    public function getPageInfoForbidden()
+    {
+        $page = General::find(14);
+        return view('page')->with('page', $page);
+    }
+
+    public function getPageInfoTracking()
+    {
+        $page = General::find(15);
+        return view('page')->with('page', $page);
+    }
+
+    public function getPageTasco()
+    {
+        $page = General::find(12);
+        return view('page')->with('page', $page);
     }
 
 

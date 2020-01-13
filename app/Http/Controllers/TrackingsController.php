@@ -13,18 +13,52 @@ class TrackingsController extends Controller
 
     public  function getusercode(Request $request){
 
+
+
         $countryid = $request->get('countryid');
         $userid = $request->get('userid');
 
         if (strlen($countryid)==1)
             $countryid = '0'.$countryid;
 
-        $code = 'ZOV-'.$this->generateRandomString2(1).$userid.$this->generateRandomString(4).$countryid;
 
-        $request->request->add(['code'=>$code]);
-        $createdcode = Codes::add($request->all());
+        $characters = '0123456789'; // $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < 4; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString2 = '';
+        for ($i = 0; $i < 1; $i++) {
+            $randomString2 .= $characters[rand(0, $charactersLength - 1)];
+        }
+
+        $code = 'ZOV-'.$randomString2.''.$randomString.''.$countryid;
+
+       // $request->add(['code'=>$code]);
+/*        array_push($request, [
+            'code'   => $code
+        ]);*/
+
+       // $request += ['code'=>$code];
+        array_merge($request->all(), ['code'=>$code]);
+
+        //$createdcode = Codes::add($request->all());
+
+
 
         return $code;
+    }
+
+    public  function setusercode(Request $request){
+
+        $createdcode = Codes::add($request->all());
+        //return 0;
+        return view('cabcodelist');
     }
 
 
@@ -201,6 +235,12 @@ class TrackingsController extends Controller
         return Trackings::all();
     }
 
+    public static function getCount()
+    {
+
+        // return User::all();
+        return Trackings::count();
+    }
 
 
     public function edit($fields)

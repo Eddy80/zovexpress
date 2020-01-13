@@ -63,6 +63,8 @@ use App\Http\Controllers\UsersController;
                                 <td>{{$i}}</td>
                                 @if (count($user2) > 0)
                                 <td>{{ $user2[0]->firstname }} {{ $user2[0]->lastname }}</td>
+                                @else
+                                <td></td>
                                 @endif
                                 <td>{{$tracking->usercode}}</td>
 

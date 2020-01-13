@@ -24,25 +24,19 @@ Route::get('/home', function () {
 
 
 
-Route::get('/infotracking', function () {
-    return view('infotracking');
-});
+Route::get('/infotracking',  'GeneralController@getPageInfoTracking');
 
-Route::get('/infosending', function () {
-    return view('infosending');
-});
+Route::get('/infosending',  'GeneralController@getPageInfoSending');
 
-Route::get('/infoagreement', function () {
-    return view('infoagreement');
-});
+Route::get('/infoagreement', 'GeneralController@getPageAgreement');
 
-Route::get('/forbidden', function () {
-    return view('forbidden');
-});
-
+Route::get('/forbidden',  'GeneralController@getPageInfoForbidden');
+/*
 Route::get('/about', function () {
     return view('about');
 });
+*/
+Route::get('/about', 'GeneralController@getPageAbout');
 
 Route::get('/calculator', function () {
     return view('calculator');
@@ -56,9 +50,7 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
-Route::get('/tasco', function () {
-    return view('tasco');
-});
+Route::get('/tasco',  'GeneralController@getPageTasco');
 
 
 
@@ -126,6 +118,7 @@ Route::group([
     Route::get('/calculate', 'PriceController@calculate');
 
     Route::get('/usercode', 'TrackingsController@getusercode');
+    Route::post('/usercodesave', 'TrackingsController@setusercode');
     //Route::get('/usercode', 'TrackingsController@saveusercode');
 
 });
@@ -169,4 +162,6 @@ Route::group([
     Route::post('/pages', 'GeneralController@pagestore');
 
     Route::get('/admin/users/{id}','UsersController@viewmember');
+
+    Route::post('/makeadmin', 'UsersController@adminuser');
 });

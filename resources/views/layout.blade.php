@@ -288,17 +288,18 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 <h4 class="modal-title" style="font-size: 16px;font-weight: bold;">Получить код</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
             <div class="modal-body">
                 <div class="row">
+                    <form method="post" action="/usercodesave" name="saveusercode">
                     {{ csrf_field() }}
                     <div class="col">
                         <label style="font-size: 14px; width: 400px;">Пользователь :</label><br/>
                         @if ( Auth::check())
                         <b> {{Auth::user()->firstname}} {{Auth::user()->lastname}} ({{Auth::user()->email}})</b>
-                        <input type="hidden" id="userid" value="{{Auth::user()->id}}">
+                        <input type="hidden" id="userid" name="userid" value="{{Auth::user()->id}}">
                         @endif
                     </div>
                     <div class="col">
                         <label style="font-size: 14px; width: 400px;">Выберите страну отправки :</label>
-                        <SELECT id="country" class="border rounded border-warning" onchange="javascript:getCode();"
+                        <SELECT id="country" class="border rounded border-warning" onchange="javascript:getCode(this.value);"
                                 style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
                             <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>
                             @if ( Auth::check())
@@ -315,10 +316,16 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         </SELECT>
                     </div>
 
+                        <input type="hidden" id="countryid"  name="countryid" value="">
+
                     <div class="col">
-                        <label style="font-size: 14px;font-weight: bold; width: 400px;">Ваш код отправки :</label>
+                        <label style="font-size: 14px;width: 400px;">Ваш код отправки :</label>
                         <input type="text" id="code" name="code" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
                         <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
+                    </div>
+                    <div class="col">
+                        <label style="font-size: 14px;font-weight: bold; width: 400px;"></label>
+                        <button class="btn btn-white" type="submit" style="font-size: 14px; color:#ffffff; background-color: #da9904;">Сохранить</button>
                     </div>
 
                 </div>
@@ -360,14 +367,30 @@ $registration =  GeneralController::getName(     5,1, $lang );
        $("#codeform").modal('show');
    }
 
-   function getCode()
+   function getCode(countryid)
    {
-       var countryid = $('#country').val();
+      // var countryid = $('#country').val();
        var userid = $('#userid').val();
-
+       $('#countryid').val(countryid);
        $('#code').val('...');
        $.get("{{ URL::to('usercode') }}",{countryid:countryid, userid:userid}, function(data){
+           //alert(data);
            $('#code').val(data);
+       })
+   }
+
+   function saveCode()
+   {
+        var countryid = $('#countryid').val();
+        var userid =  $('#userid').val();
+        var usercode =  $('#code').val();
+
+        alert(countryid+' '+userid+' '+usercode);
+
+
+       $.get("{{ URL::to('usercodesave') }}",{countryid:countryid, userid:userid, usercode:usercode}, function(data){
+           alert(data);
+           //$('#code').val(data);
        })
    }
 

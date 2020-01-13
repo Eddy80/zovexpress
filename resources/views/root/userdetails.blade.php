@@ -30,10 +30,13 @@ use App\Http\Controllers\UserController;
     <div class="col-md-6">
         <div class="card">
             <div class="card-header">
+                <form  name="userform" action="/makeadmin" method="post" >
+                    {{csrf_field()}}
                 <h3 class="card-title" style="font-weight: bold">
                     <i class="fas fa-user"></i>
                     &nbsp;
                     {{ $user->firstname }} {{ $user->lastname }} {{ $user->surname }}
+                    <input type="hidden" id="id" name="id" value="{{$user->id}}" />
                 </h3>
                 @if ( $user->status != 999 )
                 <span style="float: right;"><input class="btn btn-success" type="submit" value="Сделать Админом" /></span>
@@ -42,7 +45,7 @@ use App\Http\Controllers\UserController;
                     <span style="float: right;"><input class="btn btn-success" type="submit" value="Сделать Пользователем" /></span>
                     @endif
                 @endif
-
+                </form>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
