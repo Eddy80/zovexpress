@@ -102,73 +102,15 @@ $registration =  GeneralController::getName(     5,1, $lang );
         <div class="container">
             <div class="row justify-content-center" style="height: auto;">
                 <div class="col-sm-4 col-md-3 item" style="height: auto;">
-                    <p>
-                    <ul>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Китае</h3></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
-                    </ul>
-                    </p>
-
-                    <p>
-                    <ul>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Украине</h3></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
-                    </ul>
-                    </p>
-
-                    <p>
-                    <ul>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Росиии</h3></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
-                    </ul>
-                    </p>
-
-                    <p>
-                    <ul>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Кыргызстане</h3></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
-                    </ul>
-                    </p>
-
-                    <p>
-                    <ul>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Казахстане</h3></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
-                    </ul>
-                    </p>
-
-                    <p>
-                    <ul>
-                        <li style="margin: 10px 0px;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin: 0px;">Офис в Азербайджане</h3></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Рабочее время :</span></li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Адрес : </span>Əhməd Rəcəbli 14 a</li>
-                        <li style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Контактные номера :</span></li>
-                    </ul>
-                    </p>
-
+                    <?php $addresses = GeneralController::getAddress();  ?>
+                    {!! $addresses !!}
                 </div>
                 <div class="col-sm-4 col-md-3 item" style="height: auto;">
-                        <p class="copyright" style="color: #ffffff;margin: 13px 0px;"><strong><em>© ZovExpress 2020</em></strong></p>
+                        <p class="copyright" style="color: #ffffff;margin: 13px 0px;"><strong><em>&copy; ZovExpress <span id="year"></span></em></strong></p>
                 </div>
                 <div class="col-sm-4 col-md-3 item" style="height: auto;padding-top: 5px;padding-bottom: 5px">
-                    <ul >
-                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin:10px 0px; font-weight: bold;"><h3 style="color: #ffffff;padding: 0px 0px;font-size: 12px;margin:0px;">Ссылки на соц. сети:</h3></li>
-                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Инстаграм :</span> @zov_express</li>
-                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Канал в телеграмм :</span> https://t.me/zov_express</li>
-                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Менеджер в телеграмм :</span> @zovexpress_infobot</li>
-                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Менеджер в вотсап :</span> </li>
-                        <li  style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px;"><span style="color: #ffffff;padding: 0px 0px;font-size: 10px;margin: 0px; font-weight: bold;">Менеджер в вичат :</span> </li>
-                    </ul>
+                    <?php $links = GeneralController::getLinks();  ?>
+                    {!! $links !!}
                 </div>
                 <div class="col"><a href="#"><img class="float-right" src="assets/img/uparrow.png"></a></div>
             </div>
@@ -351,6 +293,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
 <script type="text/javascript">
+
+    document.getElementById("year").innerHTML = new Date().getFullYear();
 
    function regform()
     {

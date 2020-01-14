@@ -86,6 +86,18 @@ class GeneralController extends Controller
         return view('page')->with('page', $page);
     }
 
+    public static function getAddress()
+    {
+        $page = General::find(16);
+        return $page->textru;
+    }
+
+    public static function getLinks()
+    {
+        $page = General::find(24);
+        return $page->textru;
+    }
+
 
     public function pagestore(Request $request)
     {
