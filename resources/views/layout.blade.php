@@ -101,14 +101,14 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <footer style="height: auto;">
         <div class="container">
             <div class="row justify-content-center" style="height: auto;">
-                <div class="col-sm-4 col-md-3 item" style="height: auto;">
+                <div class="col-sm-4 col-md-3 item" style="height: auto; color: #ffffff;">
                     <?php $addresses = GeneralController::getAddress();  ?>
                     {!! $addresses !!}
                 </div>
                 <div class="col-sm-4 col-md-3 item" style="height: auto;">
                         <p class="copyright" style="color: #ffffff;margin: 13px 0px;"><strong><em>&copy; ZovExpress <span id="year"></span></em></strong></p>
                 </div>
-                <div class="col-sm-4 col-md-3 item" style="height: auto;padding-top: 5px;padding-bottom: 5px">
+                <div class="col-sm-4 col-md-3 item" style="height: auto;padding-top: 5px;padding-bottom: 5px; color: #ffffff;">
                     <?php $links = GeneralController::getLinks();  ?>
                     {!! $links !!}
                 </div>

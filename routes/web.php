@@ -143,6 +143,9 @@ Route::group([
         return view('root.comments');
     });
 
+    Route::get('/contacts', 'GeneralController@pageaddressload');
+    Route::get('/links', 'GeneralController@pagelinksload');
+
     Route::get('/tracklist', function () {
         return view('root.tracklist');
     });

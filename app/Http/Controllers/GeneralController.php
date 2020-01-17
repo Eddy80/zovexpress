@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Comment;
 use Illuminate\Http\Request;
 use App\General;
 
@@ -13,6 +14,11 @@ class GeneralController extends Controller
     public static function getList()
     {
         return General::all();
+    }
+
+    public static function getReviewsList()
+    {
+        return Comment::all()->where('allow', 1);
     }
 
     public static function getName($type, $categoryid, $languageid)
@@ -47,6 +53,18 @@ class GeneralController extends Controller
     public function pageload($pageid)
     {
         $page = General::find($pageid);
+        return view('root.editor')->with('page', $page);
+    }
+
+    public function pageaddressload()
+    {
+        $page = General::find(16);
+        return view('root.editor')->with('page', $page);
+    }
+
+    public function pagelinksload()
+    {
+        $page = General::find(24);
         return view('root.editor')->with('page', $page);
     }
 

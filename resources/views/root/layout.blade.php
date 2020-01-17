@@ -403,6 +403,15 @@
 <!--                        </ul>-->
 <!--                    </li>-->
                     <li class="nav-item has-treeview">
+                        <a href="{{url('users')}}" class="nav-link">
+                            <i class="nav-icon far fa-user"></i>
+                            <p>
+                                Пользователи
+                            </p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item has-treeview">
                         <a href="{{url('comments')}}" class="nav-link">
                             <i class="fas fa-comment nav-icon"></i>
                             <p>Отзывы</p>
@@ -486,35 +495,44 @@
                         </ul>
                     </li>
                     <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
+                        <a href="{{url('contacts')}}" class="nav-link">
                             <i class="nav-icon fas fa-address-card"></i>
                             <p>
                                 Контакты
-                                <i class="fas fa-angle-left right"></i>
+<!--                                <i class="fas fa-angle-left right"></i>-->
                             </p>
                         </a>
-                        <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-
-                                    <i class="fas fa-map-marked-alt nav-icon"></i>
-                                    <p>Адрес</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-
-                                    <i class="nav-icon fas fa-phone"></i>
-                                    <p>Телефон</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link">
-                                    <i class="fas fa-at nav-icon"></i>
-                                    <p>Email</p>
-                                </a>
-                            </li>
-                        </ul>
+                    </li>
+                    <li class="nav-item has-treeview">
+                        <a href="{{url('links')}}" class="nav-link">
+                            <i class="nav-icon fas fa-link"></i>
+                            <p>
+                                Социальные сети
+                                <!--                                <i class="fas fa-angle-left right"></i>-->
+                            </p>
+                        </a>
+<!--                        <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="#" class="nav-link">-->
+<!---->
+<!--                                    <i class="fas fa-map-marked-alt nav-icon"></i>-->
+<!--                                    <p>Адрес</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="#" class="nav-link">-->
+<!---->
+<!--                                    <i class="nav-icon fas fa-phone"></i>-->
+<!--                                    <p>Телефон</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li class="nav-item">-->
+<!--                                <a href="#" class="nav-link">-->
+<!--                                    <i class="fas fa-at nav-icon"></i>-->
+<!--                                    <p>Email</p>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
                     </li>
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
@@ -571,88 +589,7 @@
 
                         </ul>
                     </li>
-                    <li class="nav-item has-treeview">
-                        <a href="{{url('users')}}" class="nav-link">
-                            <i class="nav-icon far fa-user"></i>
-                            <p>
-                                Пользователи
-                            </p>
-                        </a>
-<!--                        <ul class="nav nav-treeview">-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="{{url('users')}}" class="nav-link">-->
-<!--                                    <i class="far fa-user-circle nav-icon"></i>-->
-<!--                                    <p>Регистрированные</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="{{url('nousers')}}" class="nav-link">-->
-<!--                                    <i class="fa fa-user-times nav-icon"></i>-->
-<!--                                    <p>Не Регистрированные</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="{{url('admins')}}" class="nav-link">-->
-<!--                                    <i class="fa fa-cogs nav-icon"></i>-->
-<!--                                    <p>Администраторы</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/recover-password.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Recover Password</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/lockscreen.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Lockscreen</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/legacy-user-menu.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Legacy User Menu</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/language-menu.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Language Menu</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/404.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Error 404</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/500.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Error 500</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/pace.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Pace</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="pages/examples/blank.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Blank Page</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-<!--                            <li class="nav-item">-->
-<!--                                <a href="starter.html" class="nav-link">-->
-<!--                                    <i class="far fa-circle nav-icon"></i>-->
-<!--                                    <p>Starter Page</p>-->
-<!--                                </a>-->
-<!--                            </li>-->
-                        </ul>
-                    </li>
+
 <!--                    <li class="nav-header">Пользователи</li>-->
 <!--                    <li class="nav-item">-->
 <!--                        <a href="#" class="nav-link">-->
