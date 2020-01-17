@@ -27,6 +27,7 @@ class CreateTrackingsTable extends Migration
             $table->string('nowplace');
             $table->double('nowpercent');
             $table->integer('routeid');
+            $table->integer('tracktype')->default(0);
             $table->timestamps();
         });
     }

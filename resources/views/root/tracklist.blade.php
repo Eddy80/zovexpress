@@ -48,6 +48,7 @@ use App\Http\Controllers\UsersController;
                                 <th>Дата приб.</th>
                                 <th>Ожид. дата</th>
                                 <th>Статус</th>
+                                <th>Вид отпр.</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -79,6 +80,11 @@ use App\Http\Controllers\UsersController;
                                 @else
                                 <td>доставлено</td>
                                 @endif
+                                @if ($tracking->tracktype==0)
+                                <td> <img  src="../assets/img/black-plane.png"></td>
+                                @else
+                                <td> <img style="width: 25px; height:25px;" src="../assets/img/fast-delivery.png"></td>
+                                @endif
 
                             </tr>
 
@@ -96,6 +102,7 @@ use App\Http\Controllers\UsersController;
                             <th>Дата приб.</th>
                             <th>Ожид. дата</th>
                             <th>Статус</th>
+                            <th>Вид отпр.</th>
                             </tr>
                             </tfoot>
                         </table>

@@ -73,6 +73,14 @@ use App\Http\Controllers\CountryController;
 <!--                                    </select>-->
 <!--                                </div>-->
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Выберите вид отправки</label>
+                                    <select id="tracktype" name="tracktype" class="select2"   style="width: 100%;">
+
+                                        <option value="0">Самолетом</option>
+                                        <option value="1">Автомобилем</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label>Выберите дату отправки</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">

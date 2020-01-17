@@ -9,7 +9,7 @@ class Trackings extends Model
 
     protected $fillable = [
         'usercode', 'userid','tracknumber', 'sentfrom', 'sentdate',
-        'receiveto', 'receivedate'
+        'receiveto', 'receivedate', 'tracktype'
     ];
 
 

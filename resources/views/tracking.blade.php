@@ -85,6 +85,7 @@ use App\Http\Controllers\TrackingsController;
 <!--                </table>-->
 <!--            </div>-->
 <!--            <img style="position: relative; top: -78px;left:630px" src="assets/img/plane.png">-->
+        <!--  <img style="position: relative; top: -78px;left:630px" src="assets/img/delivery-truck.png">-->
 <!--            </form>-->
 <!--        </div>-->
     </div>

@@ -66,6 +66,9 @@ class TrackingsController extends Controller
         $myid = Auth::user()->id;
         $tracknumber= $request->get('tracknumber');
 
+        $vehicle = 'plane';
+        $top=78;
+
         $samolet = Trackings::where('userid', $myid)
             ->where('tracknumber',  $tracknumber)
             ->get();
@@ -73,6 +76,14 @@ class TrackingsController extends Controller
         foreach($samolet as $values) {
           //  return $values->nowpercent;
 
+        if ($values->tracktype==0) {
+            $vehicle = 'plane';
+            $top=78;
+        }
+        else {
+            $vehicle = 'truckk';
+            $top = 90;
+        }
 
         $left = 30;
         if ($values->nowpercent >=0 && $values->nowpercent < 25)
@@ -130,9 +141,10 @@ class TrackingsController extends Controller
                 </table>
             </div>';
 
-            $resultstring .= '<img style="position: relative; top: -78px;left:';
+            $resultstring .= '<img style="position: relative; top: -'.$top.'px;left:';
             $resultstring .= $left;
-            $resultstring .= 'px;" src="assets/img/plane.png">'.'</form></div>';
+            $resultstring .= 'px;" src="assets/img/'.$vehicle.'.png">'.'</form></div>';
+
         }
         return  $resultstring;
     }
