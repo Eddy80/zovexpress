@@ -21,6 +21,55 @@ class GeneralController extends Controller
         return Comment::all()->where('allow', 1);
     }
 
+    public  function addressstore(Request $request){
+
+        //dd($request);
+
+        //Trackings::add($request->all());
+
+        // return view('root.tracklist');
+        //return redirect('/contacts');
+
+        $Name = 'Обращение с сайта'; //senders name
+
+        $email="info@zovexpress.com";
+
+        //$email="surat@surat.az";
+
+
+
+        $recipient = 'elshadaziz@yandex.ru, elshad.azizov@gmail.com'; //$_POST["email"]; //recipient
+
+        $mail_body =$request->get('text').
+            /*"Salam, <b>Tebriz qaqa</b>.<br/>
+
+                        <br>Bilet sifarish etmek isteyen var: \r\n ".*/
+
+           " <br>Имя : <b>". $request->get('name')."</b>\r\n".
+
+            "<br>Телефон : <b>". $request->get('phone')."</b>\r\n".
+
+            "<br>Email  : <b>". $request->get('email')."</b>\r\n"; //mail body */
+
+        $subject = "Обращение с сайта - ".$request->get('email'); //subject
+
+        $header = "From: ". $request->get('name') . " <" . $request->get('email') . ">\r\n"; //optional headerfields
+
+        $header .= "Reply-To: ". $request->get('name') . " <" . $request->get('email') . ">\r\n"; //optional headerfields
+
+        $header .= "MIME-Version: 1.0\r\n";
+
+        $header .= "Content-Type: text/html; charset=utf-8\r\n";
+
+
+
+       // mail($recipient, $subject, $mail_body, $header); //mail command :)
+
+
+       return redirect()->back()->with('status', 'Сообщение отправлено');
+
+    }
+
     public static function getName($type, $categoryid, $languageid)
     {
         $target = General::where('type', $type)->where('categoryid', $categoryid)->take(1)->get();

@@ -50,6 +50,8 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::post('/contactform', 'GeneralController@addressstore');
+
 Route::get('/tasco',  'GeneralController@getPageTasco');
 
 
@@ -144,6 +146,7 @@ Route::group([
     });
 
     Route::get('/contacts', 'GeneralController@pageaddressload');
+
     Route::get('/links', 'GeneralController@pagelinksload');
 
     Route::get('/tracklist', function () {
