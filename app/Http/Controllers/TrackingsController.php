@@ -5,11 +5,38 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Codes;
 use App\Trackings;
+use App\Country;
 use Auth;
 use Response;
+use Illuminate\Support\Facades\DB;
 
 class TrackingsController extends Controller
 {
+    public  function getCountryInfo(Request $request){
+
+
+
+         $countryid = $request->get('countryid');
+
+        $target = Country::where('id', $countryid)->take(1)->get();
+
+            return $target[0]->inforu;
+
+
+        //return Country::all()->find('id', $countryid)->get('inforu');
+    }
+
+    public static function getCountryInfoByCountryId(Request $request)
+    {
+       $countryid = $request->get('countryid');
+
+        $info =   DB::table('countriesinfo')
+                    ->where('countryid',$countryid)
+                    ->get();
+
+        return $info->all();
+
+    }
 
     public  function getusercode(Request $request){
 

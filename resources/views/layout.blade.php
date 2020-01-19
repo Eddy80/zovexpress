@@ -241,11 +241,12 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     </div>
                     <div class="col">
                         <label style="font-size: 14px; width: 400px;">Выберите страну отправки :</label>
-                        <SELECT id="country" class="border rounded border-warning" onchange="javascript:getCode(this.value);"
+                        @if ( Auth::check())
+                        <?php   $countries = CountryController::getListWithoutCodesCheck(); ?>
+                        <SELECT id="country" class="border rounded border-warning" onchange="javascript:loadinfo(this.value);"
                                 style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
-                            <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>
-                            @if ( Auth::check())
-                            <?php   $countries = CountryController::getListWithCodesCheck(); ?>
+                            <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" alt="-1" selected></OPTION>
+
 
                             @foreach($countries as $country)
                             <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
@@ -256,9 +257,21 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                             @endif
                         </SELECT>
+
                     </div>
 
                         <input type="hidden" id="countryid"  name="countryid" value="">
+
+                        <div class="col">
+                            <label style="font-size: 14px; width: 400px;">Выберите тип отправки :</label>
+
+                            <SELECT id="countryinfoid" name="countryinfoid" class="border rounded border-warning" onchange="javascript:getCode(this.value);"
+                                    style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
+                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" alt="-1" selected="selected"></OPTION>
+
+                            </SELECT>
+
+                        </div>
 
                     <div class="col">
                         <label style="font-size: 14px;width: 400px;">Ваш код отправки :</label>
@@ -266,9 +279,19 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
                     </div>
                     <div class="col">
+                        <label style="font-size: 14px; font-weight: bold;width: 400px;">Внимание! Полученный вами персональный код вы можете использовать на постоянной основе.</label>
+                    </div>
+                    <div class="col">
                         <label style="font-size: 14px;font-weight: bold; width: 400px;"></label>
                         <button class="btn btn-white" type="submit" style="font-size: 14px; color:#ffffff; background-color: #da9904;">Сохранить</button>
                     </div>
+    <br>
+                    <div class="col">
+                        <label style="font-size: 14px; font-weight: bold;width: 400px; color: red;">Cкопируйте адрес для передачи поставщику :</label>
+                        <input type="text" id="code" name="code" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 100%;" value="Address of Sklad in Guanchjou"/>
+                        <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
+                    </div>
+
 
                 </div>
 
@@ -317,11 +340,43 @@ $registration =  GeneralController::getName(     5,1, $lang );
        var userid = $('#userid').val();
        $('#countryid').val(countryid);
        $('#code').val('...');
-       $.get("{{ URL::to('usercode') }}",{countryid:countryid, userid:userid}, function(data){
-           //alert(data);
-           $('#code').val(data);
-       })
+       if (countryid !=-1) {
+           $.get("{{ URL::to('usercode') }}", {countryid: countryid, userid: userid}, function (data) {
+               //alert(data);
+               $('#code').val(data);
+           })
+
+
+       }
    }
+
+    function loadinfo(countryid)
+    {
+       // alert(countryid);
+        $('#myinfo').val('...');
+        $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
+            alert(data);
+            //$('#myinfo').val(data);
+
+          /*  var sel = $("#countryinfo");
+            sel.empty();
+            for (var i=0; i<data.length; i++) {
+                sel.append('<option value="' + data[i].code + '">' + data[i].code+'  -  '+ data[i].nameru+ '</option>');
+            }*/
+        });//, "json");
+
+        $.get("{{ URL::to('countryinfolist') }}",{ countryid:countryid }, function(data){
+
+          //  alert(58);alert(data);
+            var sel = $("#countryinfoid");
+            sel.empty();
+            for (var i=0; i<data.length; i++) {
+                sel.append('<option value="' + data[i].infoid + '">' +  data[i].inforu+ '</option>');
+            }
+        }, "json");
+
+        getCode(countryid);
+    }
 
    function saveCode()
    {
@@ -341,6 +396,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
    function getTrackings()
    {
        let codeid = $('#code').val();
+       $("#samolet").html('');
        $.get('{{url("cabgettrackings")}}', {codeid: codeid},function(data){
            $("#tracklist").html(data);
        });
@@ -349,6 +405,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
    function getSamolet(tracknumber)
    {
       // alert(tracknumber);
+       $("#samolet").html('');
        $.get('{{url("cabgetsamolet")}}', {tracknumber: tracknumber},function(data){
            $("#samolet").html(data);
        });

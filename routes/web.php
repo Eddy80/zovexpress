@@ -123,6 +123,8 @@ Route::group([
     Route::post('/usercodesave', 'TrackingsController@setusercode');
     //Route::get('/usercode', 'TrackingsController@saveusercode');
 
+    Route::get('/countryinfo', 'TrackingsController@getCountryInfo');
+    Route::get('/countryinfolist', 'TrackingsController@getCountryInfoByCountryId');
 });
 
 Route::group([

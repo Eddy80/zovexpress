@@ -8,7 +8,7 @@ class Codes extends Model
 {
 
     protected $fillable = [
-        'userid', 'code', 'countryid',
+        'userid', 'code', 'countryid','countryinfoid',
     ];
 
     public static function add($fields)

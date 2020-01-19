@@ -18,6 +18,7 @@ class CreateCodesTable extends Migration
             $table->integer('userid');
             $table->string('code');
             $table->integer('countryid');
+            $table->integer('countryinfoid');
             $table->timestamps();
         });
     }

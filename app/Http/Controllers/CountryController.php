@@ -17,6 +17,25 @@ class CountryController extends Controller
         return Country::all();
     }
 
+
+    public  function getCountryInfo(Request $request){
+
+
+
+       // $countryid = $request->get('countryid');
+        return 99 ; //Country::all()->find('id', $countryid)->get('inforu');
+    }
+
+    public static function getListWithoutCodesCheck()
+    {
+        //$myid = Auth::user()->id;
+        //$countries = Country::where('approved', 1)->get();
+
+        $countries = DB::table("countries")->select('id','nameru')->get();
+
+        return $countries;
+    }
+
     public static function getListWithCodesCheck()
     {
         //$myid = Auth::user()->id;
@@ -39,9 +58,19 @@ class CountryController extends Controller
         //$myid = Auth::user()->id;
         //$countries = Country::where('approved', 1)->get();
 
-        $countryname = DB::table("countries")->where('id',$id)->first();
+        $countryname = DB::table("countries")->where('id',$id)->get();
 
         return $countryname;
+    }
+
+    public static function getInfoByIds($countryid, $id)
+    {
+        //$myid = Auth::user()->id;
+        //$countries = Country::where('approved', 1)->get();
+
+        $countryinfoname = DB::table("countriesinfo")->where('countryid',$countryid)->orWhere('infoid',$id)->get();
+
+        return $countryinfoname;
     }
 
 
