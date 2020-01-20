@@ -40,7 +40,7 @@ use App\Http\Controllers\CountryController;
                       $countryinfo = CountryController::getInfoByIds($countryid, $countryinfoid);
                     ?>
 
-                    <OPTION style="background-color: #ffffff; width: auto;border-color: #DA9904; color:#DA9904; border-radius: 5px; font-size: 14px; font-weight: bold;" value="{{$code->code}}">{{$code->code}} - [{{ $country[0]->nameru }}] -  ({{$countryinfo[0]->inforu}})</OPTION>
+                    <OPTION style="background-color: #ffffff; width: auto;border-color: #DA9904; color:#DA9904; border-radius: 5px; font-size: 14px; font-weight: bold;" value="{{$code->code}}">{{$code->code}} - [{{ $country->nameru }}] -  ({{$countryinfo[0]->inforu}})</OPTION>
 
                     @endforeach
                     @endif

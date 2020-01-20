@@ -58,7 +58,7 @@ class CountryController extends Controller
         //$myid = Auth::user()->id;
         //$countries = Country::where('approved', 1)->get();
 
-        $countryname = DB::table("countries")->where('id',$id)->get();
+        $countryname = DB::table("countries")->where('id',$id)->first();
 
         return $countryname;
     }
@@ -77,7 +77,7 @@ class CountryController extends Controller
     public static function getFlag($countryid)
     {
         $target = Country::where('id', $countryid)->take(1)->get();
-
+        //dd($target);
         return $target[0]->avatar;
     }
 }
