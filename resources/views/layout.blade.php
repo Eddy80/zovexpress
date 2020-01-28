@@ -45,6 +45,20 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Article-List.css">
+    <!--[if IE 9]>
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
+    <![endif]-->
+    <!--[if lte IE 8]>
+    <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie8.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/g/html5shiv@3.7.3"></script>
+    <![endif]-->
+
+    <script type="text/javascript">
+        window.$crisp=[];
+        window.CRISP_WEBSITE_ID="83b434d0-9f06-472c-a895-9d515eae2662";
+        (function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";
+        s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();
+    </script>
 </head>
 
 <body>
@@ -130,6 +144,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
             </div>
             <div class="modal-body" style="padding-left: 27px;">
                 <div class="row">
+
                     <div class="col">
                         <label style="font-size: 14px; width: 200px;">Email адрес :</label>
                         <input required placeholder="your@email.com" type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
