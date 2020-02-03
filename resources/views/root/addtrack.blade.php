@@ -57,6 +57,10 @@ use App\Http\Controllers\CountryController;
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-form-label" for="inputSuccess"> Введите трек номер посылки </label>
+                                    <input type="text" class="form-control" id="tracknumber" name="tracknumber" placeholder="номер посылки">
+                                </div>
+                                <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите город отправки </label>
                                     <input type="text" class="form-control" id="receiveto" name="receiveto" placeholder="город отправки">
                                 </div>

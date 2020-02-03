@@ -39,16 +39,28 @@ use App\Http\Controllers\UsersController;
                             <thead>
                             <tr>
                                 <th>№</th>
+                                <th>Отпр.</th>
                                 <th>Имя и фам.</th>
                                 <th>Код поль.</th>
-                                <th>Трек номер</th>
-                                <th>Город отпр.</th>
-                                <th>Дата отпр.</th>
-                                <th>Город приб.</th>
-                                <th>Дата приб.</th>
-                                <th>Ожид. дата</th>
-                                <th>Статус</th>
-                                <th>Вид отпр.</th>
+                                <th>Трек</th>
+                                <th>КГ</th>
+                                <th>Наим.</th>
+                                <th>Гор. отп.</th>
+                                <th>Дата отп.</th>
+                                <th>Гор. пр.</th>
+                                <th>Дата пр.</th>
+                                <th>Ож. дата</th>
+                                <th></th><!-- status -->
+
+                                <th>За кг.</th>
+                                <th>Сумма</th>
+                                <th>СФ</th>
+                                <th>Стр.</th>
+                                <th>СОМ</th>
+                                <th>Дост.</th>
+                                <th>Ит.</th>
+
+                                <th>Вид отп.</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -62,6 +74,7 @@ use App\Http\Controllers\UsersController;
 
                             <tr>
                                 <td>{{$i}}</td>
+                                <td></td> <!-- otpravka -->
                                 @if (count($user2) > 0)
                                 <td>{{ $user2[0]->firstname }} {{ $user2[0]->lastname }}</td>
                                 @else
@@ -70,6 +83,8 @@ use App\Http\Controllers\UsersController;
                                 <td>{{$tracking->usercode}}</td>
 
                                 <td><a href="#">{{$tracking->tracknumber}}</td></a>
+                                <td></td> <!-- KG -->
+                                <td></td> <!-- Naimenovaniye -->
                                 <td>{{$tracking->sentfrom}}</td>
                                 <td>{{$tracking->sentdate}}</td>
                                 <td>{{$tracking->receiveto}}</td>
@@ -80,6 +95,15 @@ use App\Http\Controllers\UsersController;
                                 @else
                                 <td>доставлено</td>
                                 @endif
+
+                                <th></th><!-- За кг. -->
+                                <th></th><!-- Сумма -->
+                                <th></th><!-- СФ -->
+                                <th></th><!-- Страховка -->
+                                <th></th><!-- Сумма СОМ -->
+                                <th></th><!-- Доставка -->
+                                <th></th><!-- Итого -->
+
                                 @if ($tracking->tracktype==0)
                                 <td> <img  src="../assets/img/black-plane.png"></td>
                                 @else
@@ -92,17 +116,29 @@ use App\Http\Controllers\UsersController;
                             </tbody>
                             <tfoot>
                             <tr>
-                            <th>№</th>
-                            <th>Имя и фам.</th>
-                            <th>Код поль.</th>
-                            <th>Трек номер</th>
-                            <th>Город отпр.</th>
-                            <th>Дата отпр.</th>
-                            <th>Город приб.</th>
-                            <th>Дата приб.</th>
-                            <th>Ожид. дата</th>
-                            <th>Статус</th>
-                            <th>Вид отпр.</th>
+                                <th>№</th>
+                                <th>Отпр.</th>
+                                <th>Имя и фам.</th>
+                                <th>Код поль.</th>
+                                <th>Трек</th>
+                                <th>КГ</th>
+                                <th>Наим.</th>
+                                <th>Гор. отп.</th>
+                                <th>Дата отп.</th>
+                                <th>Гор. пр.</th>
+                                <th>Дата пр.</th>
+                                <th>Ож. дата</th>
+                                <th></th><!-- status -->
+
+                                <th>За кг.</th>
+                                <th>Сумма</th>
+                                <th>СФ</th>
+                                <th>Стр.</th>
+                                <th>СОМ</th>
+                                <th>Дост.</th>
+                                <th>Ит.</th>
+
+                                <th>Вид отп.</th>
                             </tr>
                             </tfoot>
                         </table>
