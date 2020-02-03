@@ -57,6 +57,16 @@ use App\Http\Controllers\CountryController;
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-form-label" for="inputSuccess">Какая отправка </label>
+                                    <select id="otpravka" name="otpravka" class="form-control select2" style="width: 100%;" >
+                                        <option selected="selected"></option>
+                                        <?php   $otpravka = OtpravkaController::getList(); ?>
+                                        @foreach($users as $user)
+                                        <OPTION  value="{{$otpravka->name}}">{{$otpravka->name}}</OPTION>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите трек номер посылки </label>
                                     <input type="text" class="form-control" id="tracknumber" name="tracknumber" placeholder="номер посылки">
                                 </div>

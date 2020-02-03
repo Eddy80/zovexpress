@@ -15,15 +15,27 @@ class CreateTrackingsTable extends Migration
     {
         Schema::create('trackings', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('otpravka');
             $table->string('usercode');
             $table->integer('userid');
             $table->string('tracknumber');
+            $table->double('kq');
+            $table->string('naimenovanie');
             $table->string('sentfrom');
             $table->date('sentdate');
             $table->string('receiveto');
             $table->date('receivedate');
             $table->date('expectedreceivedate');
             $table->integer('status');
+
+            $table->double('zakq');
+            $table->double('summa');
+            $table->double('sf');
+            $table->double('straxovka');
+            $table->double('som');
+            $table->string('dostavka');
+            $table->double('itoqo');
+
             $table->string('nowplace');
             $table->double('nowpercent');
             $table->integer('routeid');
@@ -31,6 +43,9 @@ class CreateTrackingsTable extends Migration
             $table->timestamps();
         });
     }
+
+
+
 
     /**
      * Reverse the migrations.

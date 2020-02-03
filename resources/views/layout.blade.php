@@ -45,6 +45,9 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Article-List.css">
+
+
+
     <!--[if IE 9]>
     <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
     <![endif]-->
@@ -514,10 +517,35 @@ $registration =  GeneralController::getName(     5,1, $lang );
        var count = $('#count').val();
        var weight = $('#weight').val();
 
-       $.get("{{ URL::to('calculate') }}",{sendcountry:sendcountry, fromcountry:fromcountry, count:count, weight:weight}, function(data){
-           $('#result').empty().html(data);
-       })
+       var count = parseFloat(count);
+       if (isNaN(count)) {
+           $("#warning").text("не правильное количество!!!");
+           return 0;
+       }
+
+       var weight = parseFloat(weight);
+       if (isNaN(weight)) {
+           $("#warning").text("не правильный вес!!!");
+           return 0;
+       }
+
+            // it's something else
+           $("#warning").text(" ");
+           $.get("{{ URL::to('/calculate') }}", {
+               sendcountry: sendcountry,
+               fromcountry: fromcountry,
+               count: count,
+               weight: weight
+           }, function (data) {
+
+               $("#result").text(data);
+           })
+
    }
+
+    function toNumber(str) {
+        return str*1;
+    }
 
    function enablesubmit()
    {

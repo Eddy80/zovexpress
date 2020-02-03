@@ -95,15 +95,18 @@ use App\Http\Controllers\CountryController;
                     </tr>
                     <tr>
                         <td class="text-right" style="font-size: 14px;">Кол-во посылок:</td>
-                        <td><input  id="count" class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
+                        <td><input  id="count"  class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
                     </tr>
                     <tr>
                         <td class="text-right" style="font-size: 14px;">Общий вес (кг):</td>
-                        <td><input  id="weight" class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
+                        <td><input  id="weight"  class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
                     </tr>
                     <tr>
-                        <td class="text-right"><button class="btn btn-primary text-right border rounded border-warning" type="button" style="background-color: #da9904;height: 30px;padding: 0px 25px;font-size: 14px;margin: 0px 0px;" onclick="calculate();"><strong>Посчитать</strong></button></td>
-                        <td><label style="font-size: 14px;margin: 0px 5px 0px 0px;"><strong>Итого ($):</strong></label><label style="color: #da9904;margin: 0px 5px 0px 0px;font-size: 14px;"><strong><div style="display: inline;" id="result"></div></strong></label></td>
+                        <td colspan="2" style="text-align: right; color: red; font-size: 12px; font-weight: bold;"><div id="warning"></div></td>
+                    </tr>
+                    <tr>
+                        <td class="text-right"><button class="btn btn-primary text-right border rounded border-warning" type="button" style="background-color: #da9904;height: 30px;padding: 0px 15px;font-size: 14px;margin: 0px 0px;" onclick="calculate();"><strong>Посчитать</strong></button></td>
+                        <td><label style="font-size: 13px;margin: 0px 5px 0px 0px;"><strong>Итого($):</strong></label><label style="color: #da9904;margin: 0px 5px 0px 0px;font-size: 14px;"><strong><div style="display: inline;" id="result">0</div></strong></label></td>
                     </tr>
                     </tbody>
                 </table>

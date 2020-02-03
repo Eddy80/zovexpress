@@ -55,7 +55,7 @@ Route::post('/contactform', 'GeneralController@addressstore');
 Route::get('/tasco',  'GeneralController@getPageTasco');
 
 
-
+Route::get('/calculate', 'PriceController@calculate');
 
 
 
@@ -117,7 +117,7 @@ Route::group([
         return view('tracking');
     });
 
-    Route::get('/calculate', 'PriceController@calculate');
+
 
     Route::get('/usercode', 'TrackingsController@getusercode');
     Route::post('/usercodesave', 'TrackingsController@setusercode');
