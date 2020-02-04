@@ -190,11 +190,14 @@ $registration =  GeneralController::getName(     5,1, $lang );
             <form action="/reg" method="post">
             {{csrf_field()}}
             <div class="modal-header">
-                <h4 class="modal-title" style="font-size: 16px;font-weight: bold;">Регистрация</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" style="font-size: 16px;font-weight: bold;margin-right: 15px;">Регистрация</h4>
+                <div id="kod"></div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
             </div>
             <div class="modal-body" style="padding-left: 27px;">
                 <div class="row">
                     <div class="col">
+                        <input  type="hidden" name="userkod" id="userkod" value="" />
                         <label style="font-size: 14px; width: 200px;">Email адрес :</label>
                         <input required placeholder="your@email.com" type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
                     </div>
@@ -348,9 +351,9 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                             @foreach($countries as $country)
                             <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
-                            @if ($country->id != 1)
+
                             <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
-                            @endif
+
                             @endforeach
 
                             @endif
@@ -373,7 +376,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                     <div class="col">
                         <label style="font-size: 14px;width: 400px;">Ваш код отправки :</label>
-                        <input type="text" id="code" name="code" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <input type="text" required id="code" name="code" class="border-warning border rounded" style="font-weight:bold; font-size: 14px; padding-left:5px; width: 200px;"/>
                         <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
                     </div>
                     <div class="col">
@@ -383,10 +386,11 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <label style="font-size: 14px;font-weight: bold; width: 400px;"></label>
                         <button class="btn btn-white" type="submit" style="font-size: 14px; color:#ffffff; background-color: #da9904;">Сохранить</button>
                     </div>
+                    </form>
     <br>
                     <div class="col">
                         <label style="font-size: 14px; font-weight: bold;width: 400px; color: red;">Cкопируйте адрес для передачи поставщику :</label>
-                        <input type="text" id="code" name="code" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 100%;" value="Address of Sklad in Guanchjou"/>
+                        <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 100%;" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
                         <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
                     </div>
 
@@ -405,6 +409,94 @@ $registration =  GeneralController::getName(     5,1, $lang );
     </div>
 </div>
 
+
+<div class="modal fade" id="codeformwithoutreg" role="dialog" tabindex="-1" style="margin: 0 auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="font-size: 16px;font-weight: bold;">Получить код</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+                <div class="row">
+                    <form method="post" action="/usercodesavewithoutreg" name="saveusercode">
+                        {{ csrf_field() }}
+
+                        <div class="col">
+                            <label style="font-size: 14px; width: 200px;">Выберите страну отправки :</label>
+
+                            <?php   $countries = CountryController::getListWithoutCodesCheck(); ?>
+                            <SELECT id="country" class="border rounded border-warning" onchange="javascript:loadinfowr(this.value);"
+                                    style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
+                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" alt="-1" selected></OPTION>
+
+
+                                @foreach($countries as $country)
+                                <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
+
+                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
+
+                                @endforeach
+
+
+                            </SELECT>
+
+                        </div>
+
+                        <input type="hidden" id="countryid"  name="countryid" value="">
+
+                        <div class="col">
+                            <label style="font-size: 14px; width: 200px;">Выберите тип отправки :</label>
+
+                            <SELECT id="countryinfoidwr" name="countryinfoidwr" class="border rounded border-warning" onchange="javascript:getCodewr(this.value);"
+                                    style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
+                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" alt="-1" selected="selected"></OPTION>
+
+                            </SELECT>
+
+                        </div>
+
+
+
+                        <div class="col">
+                            <label style="font-size: 14px;width: 200px;">Ваш код отправки :</label>
+                            <input type="text" id="codewr" required name="codewr" class="border-warning border rounded" style="font-weight:bold;font-size: 14px; padding-left:5px; width: 200px;"/>
+                            <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
+                        </div>
+
+
+                        <div class="col">
+                            <label style="font-size: 14px; width: 200px;"><br/>
+                            Хотите отслеживать посылки по коду,  <span style="color: #da9904; font-weight: bold;">  Регистрируйтесь</span></label>
+                        </div>
+                        <div class="col" style="text-align: center; width: 100%">
+                            <label style="font-size: 14px;font-weight: bold; width: 400px; "></label>
+                         <!--   <button class="btn btn-white" type="submit" style=" float:left; margin-right:45px; margin-bottom: 10px; width: 200px;border-width: 1px; border-color:#da9904; font-size: 14px; color:#da9904; background-color: #ffffff;">Сохранить</button>-->
+
+                            <button onclick="javascript:regform(1);" data-dismiss="modal" class="btn btn-white" type="button" style="text-align: center; width: 200px;font-size: 14px; font-weight: bold; color:#ffffff; background-color: #da9904;">Регистрация</button>
+                        </div>
+                        <br>
+                        <div class="col">
+                            <label style="font-size: 14px; font-weight: bold; color: red;"><br/>Cкопируйте адрес для передачи поставщику :</label>
+                            <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
+                            <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
+                        </div>
+
+
+                </div>
+
+
+            </div>
+            <!--
+            <div class="modal-footer">
+                <button onclick="regform()" class="btn btn-light border rounded border-warning" type="button" data-dismiss="modal" style="font-size: 14px; background-color: #ffffff;">Регистрация</button>
+                <button class="btn btn-white" type="button" style="font-size: 14px; color:#ffffff; background-color: #da9904;">Продолжить</button>
+            </div>
+            -->
+        </div>
+    </div>
+</div>
+
+
+
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/bs-animation.js"></script>
@@ -415,11 +507,24 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 <script type="text/javascript">
 
+    var userkod=-1;
+
     document.getElementById("year").innerHTML = new Date().getFullYear();
 
-   function regform()
+   function regform(param)
     {
+
         $("#registrationform").modal('show');
+        if (param ==1) {
+            $("#kod").text("  ( Ваш код: " + userkod + " )");
+            $("#userkod").val(userkod);
+        }
+        else
+        {
+            $("#kod").text("");
+            $("#userkod").val(-1);
+        }
+
     }
 
    function loginform()
@@ -432,7 +537,13 @@ $registration =  GeneralController::getName(     5,1, $lang );
        $("#codeform").modal('show');
    }
 
-   function getCode(countryid)
+    function codeformwithoutreg()
+    {
+        $("#codeformwithoutreg").modal('show');
+    }
+
+   /*
+    function getCode(countryid)
    {
       // var countryid = $('#country').val();
        var userid = $('#userid').val();
@@ -447,10 +558,87 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
        }
    }
+   */
+   /*
+     function getCode(countryinfo)
+   {
+       var countryid = $('#countryid').val();
+       var userid = $('#userid').val();
+       $('#countryid').val(countryid);
+       $('#code').val('...');
+       if (countryid !=-1) {
+           $.get("{{ URL::to('usercode') }}", {countryid: countryid, userid: userid}, function (data) {
+               //alert(data);
+               $('#code').val(data);
+           })
+
+
+       }
+   }
+  */
+    function getCode(countryinfo)
+    {
+        var countryid = $('#countryid').val();
+        var userid = $('#userid').val();
+        //$('#countryid').val(countryid);
+        $('#code').val('');
+        if (countryid !=-1) {
+            $.get("{{ URL::to('usercode') }}", {countryid: countryid,countryinfo:countryinfo, userid: userid}, function (data) {
+                //alert(data);
+                $('#code').val(data);
+            })
+
+
+        }
+    }
+    function getCodewr(countryinfo)
+    {
+         var countryid = $('#countryid').val();
+        var userid = $('#userid').val();
+        //$('#countryid').val(countryid);
+
+        //$('#countryid').val(countryid)
+
+        $('#codewr').val('');
+        if (countryid !=-1) {
+            $.get("{{ URL::to('usercode') }}", {countryid: countryid,countryinfo:countryinfo, userid: userid}, function (data) {
+                //alert(data);
+                $('#codewr').val(data);
+                userkod = data;
+            })
+
+
+        }
+    }
+
+
+    function loadinfowr(countryid)
+    {
+        $('#countryid').val(countryid);
+        $('#codewr').val('');
+        $('#myinfo').val('...');
+        $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
+            alert(data);
+        });//, "json");
+
+        $.get("{{ URL::to('countryinfolist') }}",{ countryid:countryid }, function(data){
+            var sel = $("#countryinfoidwr");
+            sel.empty();
+            for (var i=0; i<data.length; i++) {
+                if (i==0)
+                    sel.append('<option value="' + data[i].infoid + '" selected>' +  data[i].inforu+ '</option>');
+                else
+                sel.append('<option value="' + data[i].infoid + '">' +  data[i].inforu+ '</option>');
+            }
+        }, "json");
+
+        getCodewr(1);
+    }
 
     function loadinfo(countryid)
     {
-       // alert(countryid);
+        $('#countryid').val(countryid);
+        $('#code').val('');
         $('#myinfo').val('...');
         $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
             alert(data);
@@ -464,16 +652,17 @@ $registration =  GeneralController::getName(     5,1, $lang );
         });//, "json");
 
         $.get("{{ URL::to('countryinfolist') }}",{ countryid:countryid }, function(data){
-
-          //  alert(58);alert(data);
             var sel = $("#countryinfoid");
             sel.empty();
             for (var i=0; i<data.length; i++) {
-                sel.append('<option value="' + data[i].infoid + '">' +  data[i].inforu+ '</option>');
+                if (i==0)
+                    sel.append('<option value="' + data[i].infoid + '" selected>' +  data[i].inforu+ '</option>');
+                else
+                    sel.append('<option value="' + data[i].infoid + '">' +  data[i].inforu+ '</option>');
             }
         }, "json");
 
-        getCode(countryid);
+        getCode(1);
     }
 
    function saveCode()

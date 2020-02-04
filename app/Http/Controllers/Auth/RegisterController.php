@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class RegisterController extends Controller
 {
@@ -75,12 +77,34 @@ class RegisterController extends Controller
             'password'=> 'required',
             'phone'=> 'required',
             'passport'=> 'required',
+
             //'avatar' => 'nullable|image'
         ]);
 
 
 
         $user = User::add($request->all());
+
+        $userid = $user->id;
+        $code = $request->get('userkod');
+
+        $codearray = explode("-",$code);
+
+        $info = substr($codearray[0], 0, 1);
+
+        $country = (int) substr($codearray[0], 1, strlen($codearray[0])-1);
+
+        $countryinfoid = -1;
+        if ($info == 'S')
+            $countryinfoid = 1;
+        if ($info == 'A')
+            $countryinfoid = 2;
+
+
+        DB::table('codes')->insert([
+            ['userid' => $userid, 'code' => $code, 'countryid' => $country, 'countryinfoid' => $countryinfoid]
+
+        ]);
 
        // dd($user);
         return redirect('/tracking');

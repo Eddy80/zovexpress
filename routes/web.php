@@ -59,6 +59,14 @@ Route::get('/calculate', 'PriceController@calculate');
 
 
 
+Route::get('/usercode', 'TrackingsController@getusercode');
+
+//Route::get('/usercode', 'TrackingsController@saveusercode');
+
+Route::get('/countryinfo', 'TrackingsController@getCountryInfo');
+Route::get('/countryinfolist', 'TrackingsController@getCountryInfoByCountryId');
+
+
 
 Route::post('/reg','Auth\RegisterController@create');
 Route::post('/login','Auth\LoginController@login');
@@ -70,6 +78,8 @@ Route::group([
     'middleware'=>'member'
 ], function(){
 
+
+    Route::post('/usercodesave', 'TrackingsController@setusercode');
 
     Route::get('/cab', function () {
         return view('cab');
@@ -119,12 +129,7 @@ Route::group([
 
 
 
-    Route::get('/usercode', 'TrackingsController@getusercode');
-    Route::post('/usercodesave', 'TrackingsController@setusercode');
-    //Route::get('/usercode', 'TrackingsController@saveusercode');
 
-    Route::get('/countryinfo', 'TrackingsController@getCountryInfo');
-    Route::get('/countryinfolist', 'TrackingsController@getCountryInfoByCountryId');
 });
 
 Route::group([

@@ -40,32 +40,52 @@ class TrackingsController extends Controller
 
     public  function getusercode(Request $request){
 
+        $info = 1;$infoletter = 'S';
+
 
 
         $countryid = $request->get('countryid');
         $userid = $request->get('userid');
 
-        if (strlen($countryid)==1)
-            $countryid = '0'.$countryid;
+        $countryinfo = $request->get('countryinfo');
 
 
-        $characters = '0123456789'; // $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            $info = $countryinfo;
+
+        //if ($info == -1)
+          //  $info = $countryinfoid;
+        //return $info;
+        if ($info==1)
+            $infoletter = 'S';
+        if ($info==2)
+            $infoletter = 'A';
+        //else return '';
+
+        $leftCode = $infoletter.$countryid.'-';
+
+        //if (strlen($countryid)==1)
+          //  $countryid = '0'.$countryid;
+
+        $maxid = DB::table('codes')->max('id');
+
+       /* $characters = '0123456789'; // $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < 4; $i++) {
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
-
-
+       */
+        $randomString = 4000+$maxid+1;
+/*
         $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString2 = '';
         for ($i = 0; $i < 1; $i++) {
             $randomString2 .= $characters[rand(0, $charactersLength - 1)];
         }
-
-        $code = 'ZOV-'.$randomString2.''.$randomString.''.$countryid;
-
+*/
+        //$code = 'ZOV-'.$randomString2.''.$randomString.''.$countryid;
+        $code = $leftCode.$randomString;
        // $request->add(['code'=>$code]);
 /*        array_push($request, [
             'code'   => $code
