@@ -31,7 +31,7 @@ class CountryController extends Controller
         //$myid = Auth::user()->id;
         //$countries = Country::where('approved', 1)->get();
 
-        $countries = DB::table("countries")->select('id','nameru')->get();
+        $countries = DB::table("countries")->select('id','nameru')->Where('type', 2)->get();
 
         return $countries;
     }

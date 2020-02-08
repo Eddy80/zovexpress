@@ -109,4 +109,49 @@ class RegisterController extends Controller
        // dd($user);
         return redirect('/tracking');
     }
+
+
+    protected function createsimple(Request $request)  //array $data
+    {
+       //   dd($request->all());
+
+        $validator =  $this->validate($request,[
+
+            'firstname'=> 'required',
+            'lastname'=> 'required',
+            'email'=> 'required|email|unique:users',
+            'password'=> 'required',
+            'phone'=> 'required',
+            'passport'=> 'required',
+
+
+        ]);
+
+
+        $user = User::add($request->all());
+
+        $userid = $user->id;
+        $code = $request->get('userkod');
+
+        $codearray = explode("-",$code);
+
+        $info = substr($codearray[0], 0, 1);
+
+        $country = (int) substr($codearray[0], 1, strlen($codearray[0])-1);
+
+        $countryinfoid = -1;
+        if ($info == 'S')
+            $countryinfoid = 1;
+        if ($info == 'A')
+            $countryinfoid = 2;
+
+
+        DB::table('codes')->insert([
+            ['userid' => $userid, 'code' => $code, 'countryid' => $country, 'countryinfoid' => $countryinfoid]
+
+        ]);
+
+        // dd($user);
+
+    }
 }

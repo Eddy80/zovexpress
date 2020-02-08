@@ -199,7 +199,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <div class="col">
                         <input  type="hidden" name="userkod" id="userkod" value="" />
                         <label style="font-size: 14px; width: 200px;">Email адрес :</label>
-                        <input required placeholder="your@email.com" type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
+                        <input required placeholder="your@email.com" type="email" name="email" id="email"  value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>
                     </div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Страна проживания :</label>
 
@@ -421,6 +421,11 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         {{ csrf_field() }}
 
                         <div class="col">
+                            <label style="font-size: 14px;width: 200px;">Введите ваш <b>Email</b> :</label>
+                            <input type="text" id="emailorphonenumberwr" required name="emailorphonenumberwr" class="border-warning border rounded" style="font-weight:bold;font-size: 14px; padding-left:5px; width: 200px;"/>
+                            <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
+                        </div>
+                        <div class="col">
                             <label style="font-size: 14px; width: 200px;">Выберите страну отправки :</label>
 
                             <?php   $countries = CountryController::getListWithoutCodesCheck(); ?>
@@ -462,16 +467,23 @@ $registration =  GeneralController::getName(     5,1, $lang );
                             <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
                         </div>
 
+<!--                        <div class="col">-->
+<!--                            <label style="font-size: 16px; width: 200px ; color: #da9904; font-weight: bold;">-->
+<!--                                <div id='#codewrinform>Поздравляем!!!</div>-->
+<!--                                <input type="codewrinfo" id="codewrinfo" required name="codewr" class="border-warning border rounded" style="font-weight:bold;font-size: 14px; padding-left:5px; width: 200px;"/>-->
+<!--                            </label>-->
+<!--                        </div>-->
+
 
                         <div class="col">
                             <label style="font-size: 14px; width: 200px;"><br/>
-                            Хотите отслеживать посылки по коду,  <span style="color: #da9904; font-weight: bold;">  Регистрируйтесь</span></label>
+                                <span style="color: #da070c; font-weight: bold;">Внимание!!!</span> &nbsp;Если хотите отслеживать посылки по коду,  <span style="color: #da9904; font-weight: bold;">  Регистрируйтесь</span></label>
                         </div>
                         <div class="col" style="text-align: center; width: 100%">
                             <label style="font-size: 14px;font-weight: bold; width: 400px; "></label>
-                         <!--   <button class="btn btn-white" type="submit" style=" float:left; margin-right:45px; margin-bottom: 10px; width: 200px;border-width: 1px; border-color:#da9904; font-size: 14px; color:#da9904; background-color: #ffffff;">Сохранить</button>-->
+    <!--                            <button class="btn btn-white" type="submit" style=" float:left; margin-right:45px; margin-bottom: 10px; width: 200px;border-width: 1px; border-color:#da9904; font-size: 14px; color:#da9904; background-color: #ffffff;">Сохранить</button>-->
 
-                            <button onclick="javascript:regform(1);" data-dismiss="modal" class="btn btn-white" type="button" style="text-align: center; width: 200px;font-size: 14px; font-weight: bold; color:#ffffff; background-color: #da9904;">Регистрация</button>
+                            <button onclick="javascript:regform(1);" data-dismiss="modal" class="btn btn-white" type="button" style="text-align: center; width: 200px;font-size: 14px; font-weight: bold; color:#ffffff; background-color: #da9904;">Зарегистрироваться</button>
                         </div>
                         <br>
                         <div class="col">
@@ -496,6 +508,46 @@ $registration =  GeneralController::getName(     5,1, $lang );
 </div>
 
 
+<div class="modal fade" id="alertcountryinfo" role="dialog" tabindex="-1" style="margin: 0 auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="font-size: 16px;font-weight: bold;">Информация</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col">
+                        <label style="font-size: 14px;  font-weight: bold;color: #da9904;">
+                            <div id='#alertcountryinfotext'></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="infokodform" role="dialog" tabindex="-1" style="margin: 0 auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" style="font-size: 16px;font-weight: bold;">Информация</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+            <div class="modal-body">
+                <div class="row">
+                        <div class="col">
+                            <label style="font-size: 14px;  font-weight: bold;">
+                                <div id='#codewrinform'><span style="color: #da9904;">Поздравляем!!!</span> Вам выдан Код для быстрого старта. На ваш email адрес отправили информацию об этом</div>
+                            </label>
+                        </div>
+                 </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
@@ -508,6 +560,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 <script type="text/javascript">
 
     var userkod=-1;
+    var useremailorphone = "";
 
     document.getElementById("year").innerHTML = new Date().getFullYear();
 
@@ -518,6 +571,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
         if (param ==1) {
             $("#kod").text("  ( Ваш код: " + userkod + " )");
             $("#userkod").val(userkod);
+            $("email").val(useremailorphone);
         }
         else
         {
@@ -531,6 +585,19 @@ $registration =  GeneralController::getName(     5,1, $lang );
    {
        $("#loginform").modal('show');
    }
+
+    function infokod()
+    {
+        $("#infokodform").modal('show');
+    }
+
+
+
+    function alertcountryinfo(data)
+    {
+        $("#alertcountryinfo").modal('show');
+        $('#alertcountryinfotext').text(data);
+    }
 
    function codeform()
    {
@@ -593,7 +660,16 @@ $registration =  GeneralController::getName(     5,1, $lang );
     }
     function getCodewr(countryinfo)
     {
-         var countryid = $('#countryid').val();
+        var emailorphone = $('#emailorphonenumberwr').val();
+        if ( ( emailorphone == null ) || (emailorphone == '') )
+        {
+            alert('Email или Мобильный номер не ввели !');
+            return 0;
+
+        }
+       // alert(5556);
+       // useremailorphone = emailorphone;
+        var countryid = $('#countryid').val();
         var userid = $('#userid').val();
         //$('#countryid').val(countryid);
 
@@ -602,9 +678,20 @@ $registration =  GeneralController::getName(     5,1, $lang );
         $('#codewr').val('');
         if (countryid !=-1) {
             $.get("{{ URL::to('usercode') }}", {countryid: countryid,countryinfo:countryinfo, userid: userid}, function (data) {
-                //alert(data);
+
+                infokod();
+
                 $('#codewr').val(data);
+
                 userkod = data;
+
+                emailorphone = $('#emailorphonenumberwr').val();
+
+                $.post("{{ URL::to('regsimple') }}", {emailorphone:emailorphone, code:userkode, countryid: countryid,countryinfo:countryinfo, userid: userid}, function (datareg) {
+
+                    alert(datareg);
+
+                })
             })
 
 
@@ -619,6 +706,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
         $('#myinfo').val('...');
         $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
             alert(data);
+           // alertcountryinfo(data);
+
         });//, "json");
 
         $.get("{{ URL::to('countryinfolist') }}",{ countryid:countryid }, function(data){
@@ -631,6 +720,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 sel.append('<option value="' + data[i].infoid + '">' +  data[i].inforu+ '</option>');
             }
         }, "json");
+
 
         getCodewr(1);
     }
@@ -779,5 +869,17 @@ $registration =  GeneralController::getName(     5,1, $lang );
    }
 
 </script>
+
+<!-- Start of Async Callbell Code -->
+<!--<script>-->
+<!--    window.callbellSettings = {-->
+<!--        token: "Pn8qi3BTWqbGb9mytCVsqPGj"-->
+<!--    };-->
+<!--</script>-->
+<!--<script>-->
+<!--    (function(){var w=window;var ic=w.callbell;if(typeof ic==="function"){ic('reattach_activator');ic('update',callbellSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Callbell=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://dash.callbell.eu/include/'+window.callbellSettings.token+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()-->
+<!--</script>-->
+<!-- End of Async Callbell Code -->
+
 
 

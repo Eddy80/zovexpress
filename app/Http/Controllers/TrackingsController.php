@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Auth\RegisterController;
+use App\User;
 use Illuminate\Http\Request;
 use App\Codes;
 use App\Trackings;
@@ -42,7 +44,7 @@ class TrackingsController extends Controller
 
         $info = 1;$infoletter = 'S';
 
-
+        $code='0000';
 
         $countryid = $request->get('countryid');
         $userid = $request->get('userid');
@@ -96,6 +98,10 @@ class TrackingsController extends Controller
 
         //$createdcode = Codes::add($request->all());
 
+
+//        if ($code !='0000') {
+//            User::add();
+//        }
 
 
         return $code;

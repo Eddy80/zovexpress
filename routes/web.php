@@ -69,6 +69,7 @@ Route::get('/countryinfolist', 'TrackingsController@getCountryInfoByCountryId');
 
 
 Route::post('/reg','Auth\RegisterController@create');
+Route::post('/regsimple','Auth\RegisterController@createsimple');
 Route::post('/login','Auth\LoginController@login');
 Route::get('/logout','Auth\LoginController@logout');
 

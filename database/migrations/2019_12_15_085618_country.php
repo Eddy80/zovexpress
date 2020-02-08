@@ -25,6 +25,12 @@ class Country extends Migration
 
             $table->string('avatar')->nullable();
 
+            $table->string('info');
+            $table->string('inforu');
+            $table->string('infoen');
+
+            $table->string('type'); // 1 only from, 2 only to, 0 - both
+
         });
     }
 
