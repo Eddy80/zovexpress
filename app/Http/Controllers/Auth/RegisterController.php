@@ -111,9 +111,10 @@ class RegisterController extends Controller
     }
 
 
-    protected function createsimple(Request $request)  //array $data
+    public function createsimple(Request $request)  //array $data
     {
-       //   dd($request->all());
+        //return 999;
+      //  dd($request->all());
 
         $validator =  $this->validate($request,[
 
@@ -131,9 +132,11 @@ class RegisterController extends Controller
         $user = User::add($request->all());
 
         $userid = $user->id;
-        $code = $request->get('userkod');
+        $usercode = $request->get('userkod');
+        $useremail = $request->get('email');
+        $userpassword = $request->get('password');
 
-        $codearray = explode("-",$code);
+        $codearray = explode("-",$usercode);
 
         $info = substr($codearray[0], 0, 1);
 
@@ -147,11 +150,50 @@ class RegisterController extends Controller
 
 
         DB::table('codes')->insert([
-            ['userid' => $userid, 'code' => $code, 'countryid' => $country, 'countryinfoid' => $countryinfoid]
+            ['userid' => $userid, 'code' => $usercode, 'countryid' => $country, 'countryinfoid' => $countryinfoid]
 
         ]);
 
-        // dd($user);
+         //dd($user);
+
+        $Name = 'ZOVEXPRESS - Получение кода без регистрации'; //senders name
+
+        //$email="info@videoline.az";
+
+        $email="info@zovexpress.com";
+
+
+
+        $recipient = $useremail.', elshadaziz@yandex.ru, elshad.azizov@gmail.com'; //$_POST["email"]; //recipient
+
+        $mail_body = "Приветствуем вас.<br/>Вы получили быстрый код:'.$usercode.' \r\n ".
+
+            "<br>Вам выдан временный пароль : <b>". $userpassword."</b>\r\n".
+
+            "<br>Настоятельно рекомендуем изменить пароль и корректировать ваши личные данные !!!\r\n"; //mail body
+
+        $subject = "ZOVEXPRESS - Получение кода без регистрации"; //subject
+
+        $header = "From: ". $Name . " <" . $email . ">\r\n"; //optional headerfields
+
+        $header .= "Reply-To: ". $Name . " <" . $email . ">\r\n"; //optional headerfields
+
+
+
+        //$headers = "From: " . strip_tags($_POST['req-email']) . "\r\n";
+
+        //$headers .= "Reply-To: ". strip_tags($_POST['req-email']) . "\r\n";
+
+        //$headers .= "CC: susan@example.com\r\n";
+
+        $header .= "MIME-Version: 1.0\r\n";
+
+        $header .= "Content-Type: text/html; charset=utf-8\r\n";
+
+
+
+        mail($recipient, $subject, $mail_body, $header); //mail command :)
+
 
     }
 }

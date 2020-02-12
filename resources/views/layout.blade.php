@@ -446,6 +446,10 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                         </div>
 
+                        <input type="hidden" id="firstname"  name="firstname" value="demofirst">
+                        <input type="hidden" id="lastname"  name="lastname" value="demolast">
+                        <input type="hidden" id="passport"  name="passport" value="AZE000000">
+
                         <input type="hidden" id="countryid"  name="countryid" value="">
 
                         <div class="col">
@@ -537,7 +541,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 <div class="row">
                         <div class="col">
                             <label style="font-size: 14px;  font-weight: bold;">
-                                <div id='#codewrinform'><span style="color: #da9904;">Поздравляем!!!</span> Вам выдан Код для быстрого старта. На ваш email адрес отправили информацию об этом</div>
+                                <div id='#codewrinform'><span style="color: #da9904;">Поздравляем!!!</span> Вам выдан Код для быстрого старта.<br/>На ваш email адрес отправили информацию об этом.</div>
                             </label>
                         </div>
                  </div>
@@ -558,6 +562,15 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
 <script type="text/javascript">
+
+
+    $(document).ready(function(){
+        $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+    });
 
     var userkod=-1;
     var useremailorphone = "";
@@ -683,13 +696,18 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                 $('#codewr').val(data);
 
-                userkod = data;
+                var userkod = data;
 
                 emailorphone = $('#emailorphonenumberwr').val();
 
-                $.post("{{ URL::to('regsimple') }}", {emailorphone:emailorphone, code:userkode, countryid: countryid,countryinfo:countryinfo, userid: userid}, function (datareg) {
+                var firstname = $('#firstname').val();
+                var lastname = $('#lastname').val();
+                var passport = $('#passport').val();
 
-                    alert(datareg);
+                alert(userkod+' '+emailorphone+' '+firstname+' '+lastname+' '+passport);
+                $.post("{{ URL::to('regsimple') }}", {email:emailorphone, firstname:  firstname, lastname:lastname, passport:passport, password:'12345678', phone:'+994509999999', code:userkod, countryid: countryid,countryinfo:countryinfo, userid: userid}, function (datareg) {
+
+                   alert(datareg);
 
                 })
             })
@@ -705,7 +723,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
         $('#codewr').val('');
         $('#myinfo').val('...');
         $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
-            alert(data);
+            //alert(data);
            // alertcountryinfo(data);
 
         });//, "json");
