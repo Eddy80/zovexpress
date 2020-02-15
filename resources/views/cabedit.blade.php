@@ -30,7 +30,7 @@ use App\Http\Controllers\UsersController;
                 <h3 class="text-left name" style="font-size: 14px;width: 66%;">Паспорт: <span style="font-weight: normal;"><input name="passport" id="passport"  style="border: 1; border-radius: 5px; border-color: #da9904; padding-left: 5px; padding-bottom: 3px; background-color:#ffffff;width:150px;float: right;"  type="text" value="{{ $user[0]->passport }}" placeholder="Паспорт"/></span></h3>
                 <h3 class="text-left name" style="font-size: 14px;width: 66%;">Дата регистрации: <span style="font-weight: normal; float: right;">{{date('d.m.Y', strtotime($user[0]->created_at))}}</span></h3>
                 <p class="description" style="text-align: justify; width: 66%;"><textarea name="description" id="description" cols="50" rows="8">{{$user[0]->description}}</textarea></p>
-                <p class="description" style="text-align: right; width: 66%;"><input style="background-color:#da9904;border: 1; border-radius: 5; border-color: #1b1e21; " type="submit" value="Сохранить"/></p>
+                <p class="description" style="text-align: left; width: 66%;"><input style="background-color:#da9904;border: 1; border-radius: 5; border-color: #1b1e21; " type="submit" value="Сохранить"/></p>
                 </form>
             </div>
 

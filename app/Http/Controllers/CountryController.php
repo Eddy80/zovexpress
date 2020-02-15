@@ -36,6 +36,16 @@ class CountryController extends Controller
         return $countries;
     }
 
+    public static function getListSenders()
+    {
+        //$myid = Auth::user()->id;
+        //$countries = Country::where('approved', 1)->get();
+
+        $countries = DB::table("countries")->select('id','nameru')->Where('type', 1)->get();
+
+        return $countries;
+    }
+
     public static function getListWithCodesCheck()
     {
         //$myid = Auth::user()->id;

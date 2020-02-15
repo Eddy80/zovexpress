@@ -13,7 +13,7 @@ class Codes extends Model
 
     public static function add($fields)
     {
-       // dd($fields);
+       //dd($fields);
         $code = new static;
         $code->fill($fields);
         $code->save();

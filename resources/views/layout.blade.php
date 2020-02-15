@@ -489,14 +489,18 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                             <button onclick="javascript:regform(1);" data-dismiss="modal" class="btn btn-white" type="button" style="text-align: center; width: 200px;font-size: 14px; font-weight: bold; color:#ffffff; background-color: #da9904;">Зарегистрироваться</button>
                         </div>
-                        <br>
+                        <br/>
+                        <div class="col" style="text-align: left;">
+                            <label style="font-size: 14px;width: 200px;">Страна отправитель:</label>
+                            <input type="radio" name="FromCountry" id="FromCountry" value="CN" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" checked onclick="loadaddress(0);">Китай &nbsp;
+                            <input type="radio" name="FromCountry" id="FromCountry" value="TR" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" onclick="loadaddress(1);">Турция
+                        </div>
                         <div class="col">
                             <label style="font-size: 14px; font-weight: bold; color: red;"><br/>Cкопируйте адрес для передачи поставщику :</label>
-                            <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
-                            <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
                         </div>
-
-
+                        <div class="col" id="copyaddress">
+                            <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
+                        </div>
                 </div>
 
 
@@ -590,6 +594,20 @@ $registration =  GeneralController::getName(     5,1, $lang );
         {
             $("#kod").text("");
             $("#userkod").val(-1);
+        }
+
+    }
+
+    function loadaddress(param) {
+
+        if (param == 0) {
+            //  alert(0);
+           // $("#ouraddress").val("广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303");
+            $("#copyaddress").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>');
+        } else {//if (param==1) {
+            // alert(1);
+            //$("#ouraddress").val("Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99");
+            $("#copyaddress").html("<input type=\"text\" id=\"ouraddress\" name=\"ouraddress\" class=\"border-warning border rounded\" style=\"font-size: 14px; padding-left:5px; width: 95%\" value=\"Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99\"/>");
         }
 
     }
@@ -704,10 +722,10 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 var lastname = $('#lastname').val();
                 var passport = $('#passport').val();
 
-                alert(userkod+' '+emailorphone+' '+firstname+' '+lastname+' '+passport);
-                $.post("{{ URL::to('regsimple') }}", {email:emailorphone, firstname:  firstname, lastname:lastname, passport:passport, password:'12345678', phone:'+994509999999', code:userkod, countryid: countryid,countryinfo:countryinfo, userid: userid}, function (datareg) {
+               // alert(userkod+' '+emailorphone+' '+firstname+' '+lastname+' '+passport);
+                $.post("{{ URL::to('regsimple') }}", {email:emailorphone, firstname:  firstname, lastname:lastname, passport:passport, password:'12345678', phone:'+994509999999', userkod:userkod, countryid: countryid,countryinfo:countryinfo, userid: userid}, function (datareg) {
 
-                   alert(datareg);
+                 //  alert(datareg);
 
                 })
             })
@@ -809,16 +827,21 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
    function calculate()
    {
+
+
        var sendcountry = $('#sendcountry').val();
        var fromcountry = $('#fromcountry').val();
-       var count = $('#count').val();
+       var countryinfoid = $('#countryinfoid').val();
+      // var count = $('#count').val();
        var weight = $('#weight').val();
 
-       var count = parseFloat(count);
-       if (isNaN(count)) {
-           $("#warning").text("не правильное количество!!!");
-           return 0;
-       }
+       //alert(sendcountry+' '+fromcountry+' '+countryinfoid+' '+count+' '+weight);
+
+       // var count = parseFloat(count);
+       // if (isNaN(count)) {
+       //     $("#warning").text("не правильное количество!!!");
+       //     return 0;
+       // }
 
        var weight = parseFloat(weight);
        if (isNaN(weight)) {
@@ -828,14 +851,22 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
             // it's something else
            $("#warning").text(" ");
+           $('#wait').show();
            $.get("{{ URL::to('/calculate') }}", {
                sendcountry: sendcountry,
                fromcountry: fromcountry,
-               count: count,
+               countryinfoid: countryinfoid,
+              // count: count,
                weight: weight
            }, function (data) {
-
-               $("#result").text(data);
+               // alert(data);
+               if (data !=-1)
+               $("#result").html(data);
+               else {
+                   $("#result").html(0);
+                   $("#warning").text("Просим связаться с менеджерами");
+               }
+               $('#wait').hide();
            })
 
    }

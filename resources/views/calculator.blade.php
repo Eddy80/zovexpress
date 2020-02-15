@@ -44,9 +44,9 @@ use App\Http\Controllers\CountryController;
                             <div class="dropdown" >
                                 <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
                                  <div class="dropdown-menu" role="menu">-->
-                                <SELECT id="sendcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
-                                    <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>
-                                    <?php   $countries = CountryController::getList(); ?>
+                                <SELECT id="fromcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
+<!--                                    <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>-->
+                                    <?php   $countries = CountryController::getListSenders(); ?>
 
                                     @foreach($countries as $country)
                                     <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
@@ -66,9 +66,10 @@ use App\Http\Controllers\CountryController;
                             <div class="dropdown" >
                                 <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
                                  <div class="dropdown-menu" role="menu">-->
-                                <SELECT  id="fromcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
+                                <SELECT  id="sendcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
 
-                                    <?php   $countries = CountryController::getList(); ?>
+                                    <?php  // $countries = CountryController::getList();
+                                    $countries = CountryController::getListWithoutCodesCheck();?>
 
                                     @foreach($countries as $country)
                                     <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
@@ -93,10 +94,10 @@ use App\Http\Controllers\CountryController;
                             </div>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="text-right" style="font-size: 14px;">Кол-во посылок:</td>
-                        <td><input  id="count"  class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
-                    </tr>
+<!--                    <tr>-->
+<!--                        <td class="text-right" style="font-size: 14px;">Кол-во посылок:</td>-->
+<!--                        <td><input  id="count"  class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>-->
+<!--                    </tr>-->
                     <tr>
                         <td class="text-right" style="font-size: 14px;">Общий вес (кг):</td>
                         <td><input  id="weight"  class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>
@@ -107,6 +108,7 @@ use App\Http\Controllers\CountryController;
                     <tr>
                         <td class="text-right"><button class="btn btn-primary text-right border rounded border-warning" type="button" style="background-color: #da9904;height: 30px;padding: 0px 15px;font-size: 14px;margin: 0px 0px;" onclick="calculate();"><strong>Посчитать</strong></button></td>
                         <td><label style="font-size: 13px;margin: 0px 5px 0px 0px;"><strong>Итого($):</strong></label><label style="color: #da9904;margin: 0px 5px 0px 0px;font-size: 14px;"><strong><div style="display: inline;" id="result">0</div></strong></label></td>
+                        <td><div id="wait"><img src="assets/img/loadingData.gif" style="width: 25px; height: 25px;display: none;"></div></td>
                     </tr>
                     </tbody>
                 </table>

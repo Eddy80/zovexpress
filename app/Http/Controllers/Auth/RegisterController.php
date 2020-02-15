@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Codes;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -136,6 +137,8 @@ class RegisterController extends Controller
         $useremail = $request->get('email');
         $userpassword = $request->get('password');
 
+       // return $userid.' '.$usercode.' '.$useremail.' '.$userpassword;
+
         $codearray = explode("-",$usercode);
 
         $info = substr($codearray[0], 0, 1);
@@ -148,11 +151,13 @@ class RegisterController extends Controller
         if ($info == 'A')
             $countryinfoid = 2;
 
+      //  return $country.' '.$info.' '.$countryinfoid;
 
-        DB::table('codes')->insert([
+        DB::table('codes')->insert(
             ['userid' => $userid, 'code' => $usercode, 'countryid' => $country, 'countryinfoid' => $countryinfoid]
+           // ['userid' => 55, 'code' => 'SSSSSS', 'countryid' => 66, 'countryinfoid' => 77]
 
-        ]);
+        );
 
          //dd($user);
 
@@ -164,9 +169,10 @@ class RegisterController extends Controller
 
 
 
+
         $recipient = $useremail.', elshadaziz@yandex.ru, elshad.azizov@gmail.com'; //$_POST["email"]; //recipient
 
-        $mail_body = "Приветствуем вас.<br/>Вы получили быстрый код:'.$usercode.' \r\n ".
+        $mail_body = "Приветствуем вас.<br/>Вы получили быстрый код: ".$usercode." \r\n ".
 
             "<br>Вам выдан временный пароль : <b>". $userpassword."</b>\r\n".
 
