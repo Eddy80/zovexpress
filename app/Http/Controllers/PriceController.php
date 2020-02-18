@@ -38,4 +38,15 @@ class PriceController extends Controller
 
 
     }
+
+
+    function getRcByScId($senderCountryId){
+        $receiverCountries = Price::where('from_country_id', $senderCountryId)->get();
+
+        foreach ($receiverCountries as $receiverCountry ){
+
+                
+
+        }
+}
 }

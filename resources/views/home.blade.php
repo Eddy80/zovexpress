@@ -61,7 +61,7 @@ use App\Http\Controllers\UsersController;
 <!--            <a href="{{url('calculator')}}" style="text-decoration: none; color: #313437;"><h3 class="name" style="font-size: 16px;"><strong>Калькулятор</strong><br></h3></a>-->
         </div>
         <div class="col-md-6 col-lg-4 item" style="padding: 2px 15px 2px;">
-            <a href="{{url('tasco')}}"><img src="assets/img/info2.png" width="120px" height="120px" style="width: 120px;height: 120px;"></a>
+            <a href="{{url('tasco')}}"><img src="assets/img/tasco.png" style="width: 150px;height: 150px;"></a>
             <a href="{{url('tasco')}}" style="text-decoration: none; color: #313437;"><h3 class="name" style="font-size: 16px;"><strong>Информация о TASCO</strong><br></h3></a>
 <!--            <a href="{{url('infotracking')}}"><img src="assets/img/info5.png" style="width: 120px;height: 120px;"></a>-->
 <!--            <a href="{{url('infotracking')}}" style="text-decoration: none; color: #313437;"><h3 class="name" style="font-size: 16px;"><strong>Отслеживание</strong><br></h3></a>-->

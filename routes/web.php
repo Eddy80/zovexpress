@@ -57,6 +57,7 @@ Route::get('/tasco',  'GeneralController@getPageTasco');
 
 Route::get('/calculate', 'PriceController@calculate');
 
+Route::get('/getreceivecountryiesbysendercountryid', 'PriceController@getRcByScId');
 
 
 Route::get('/usercode', 'TrackingsController@getusercode');
@@ -156,6 +157,17 @@ Route::group([
     Route::get('/contacts', 'GeneralController@pageaddressload');
 
     Route::get('/links', 'GeneralController@pagelinksload');
+
+
+    Route::get('/otpravkalist', function () {
+        return view('root.otpravkalist');
+    });
+
+    Route::get('/addotpravka', function () {
+        return view('root.addotpravka');
+    });
+    Route::post('/addotpravka', 'OtpravkaController@store');
+
 
     Route::get('/tracklist', function () {
         return view('root.tracklist');

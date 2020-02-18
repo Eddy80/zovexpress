@@ -44,7 +44,7 @@ use App\Http\Controllers\CountryController;
                             <div class="dropdown" >
                                 <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
                                  <div class="dropdown-menu" role="menu">-->
-                                <SELECT id="fromcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
+                                <SELECT id="fromcountry" class="border rounded border-warning" onchange="loadreceivecountries(this.value);" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
 <!--                                    <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>-->
                                     <?php   $countries = CountryController::getListSenders(); ?>
 

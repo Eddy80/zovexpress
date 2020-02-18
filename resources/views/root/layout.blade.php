@@ -239,10 +239,35 @@
                         </a>
                     </li>
 
-
                     <li class="nav-item has-treeview">
                         <a href="#" class="nav-link">
                             <i class="nav-icon fas fa-shipping-fast"></i>
+                            <p>
+                                Отправки
+                                <i class="fas fa-angle-left right"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview" style="background-color: rgba(80,80,80,0.63);">
+                            <li class="nav-item">
+                                <a href="{{url('addotpravka')}}" class="nav-link">
+                                    <i class="fas fa-cart-plus nav-icon"></i>
+                                    <p>Добавить отправку</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{url('otpravkalist')}}" class="nav-link">
+                                    <i class="nav-icon fas fa-th-list"></i>
+                                    <p>Список отправок</p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                    <li class="nav-item has-treeview">
+                        <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-box"></i>
                             <p>
                                 Посылки
                                 <i class="fas fa-angle-left right"></i>

@@ -3,7 +3,7 @@
 @section('contentadmin')
 <?php
 use App\Http\Controllers\UsersController;
-use App\Http\Controllers\CountryController;
+use App\Http\Controllers\OtpravkaController;
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -61,50 +61,49 @@ use App\Http\Controllers\CountryController;
                                     <input type="text" class="form-control" id="tracknumber" name="tracknumber" placeholder="номер посылки">
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-form-label" for="inputSuccess"> Введите город отправки </label>
-                                    <input type="text" class="form-control" id="receiveto" name="receiveto" placeholder="город отправки">
-                                </div>
-<!--                                <div class="form-group">-->
-<!--                                    <label for="exampleInputEmail1">Выберите город отправки</label>-->
-<!--                                    <select class="form-control select2" style="width: 100%;">-->
-<!--                                        <option selected="selected">Alabama</option>-->
-<!--                                        <option>Alaska</option>-->
-<!--                                        <option>California</option>-->
-<!--                                        <option>Delaware</option>-->
-<!--                                        <option>Tennessee</option>-->
-<!--                                        <option>Texas</option>-->
-<!--                                        <option>Washington</option>-->
-<!--                                    </select>-->
-<!--                                </div>-->
-                                <div class="form-group">
-                                    <label for="exampleInputEmail1">Выберите вид отправки</label>
-                                    <select id="tracktype" name="tracktype" class="select2"   style="width: 100%;">
-
-                                        <option value="0">Самолетом</option>
-                                        <option value="1">Автомобилем</option>
+                                    <label for="exampleInputEmail1">Выберите отправку</label>
+                                    <select id="userid" name="userid" class="form-control select2" style="width: 100%;" onchange="">
+                                        <option selected="selected"></option>
+                                        <?php   $otpravkas = OtpravkaController::getList(); ?>
+                                        @foreach($otpravkas as $otpravka)
+                                        <OPTION  value="{{$otpravka->id}}">{{$otpravka->name}} - {{$otpravka->kod}}</OPTION>
+                                        @endforeach
                                     </select>
                                 </div>
-                                <div class="form-group">
-                                    <label>Выберите дату отправки</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                        </div>
-                                        <input type="text" id="sentdate" name="sentdate" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
-                                    </div>
-                                    <!-- /.input group -->
-                                </div>
-                                <div class="form-group">
-                                    <label>Ожидаемая дата прибытия</label>
+<!--                                <div class="form-group">-->
+<!--                                    <label class="col-form-label" for="inputSuccess"> Введите город отправки </label>-->
+<!--                                    <input type="text" class="form-control" id="receiveto" name="receiveto" placeholder="город отправки">-->
+<!--                                </div>-->
+<!---->
+<!--                                <div class="form-group">-->
+<!--                                    <label for="exampleInputEmail1">Выберите вид отправки</label>-->
+<!--                                    <select id="tracktype" name="tracktype" class="select2"   style="width: 100%;">-->
+<!---->
+<!--                                        <option value="0">Самолетом</option>-->
+<!--                                        <option value="1">Автомобилем</option>-->
+<!--                                    </select>-->
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <label>Выберите дату отправки</label>-->
+<!--                                    <div class="input-group">-->
+<!--                                        <div class="input-group-prepend">-->
+<!--                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>-->
+<!--                                        </div>-->
+<!--                                        <input type="text" id="sentdate" name="sentdate" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>-->
+<!--                                    </div>-->
 
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
-                                        </div>
-                                        <input type="text" id="expectedreceivedate" name="expectedreceivedate"  class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
-                                    </div>
-                                    <!-- /.input group -->
-                                </div>
+<!--                                </div>-->
+<!--                                <div class="form-group">-->
+<!--                                    <label>Ожидаемая дата прибытия</label>-->
+<!---->
+<!--                                    <div class="input-group">-->
+<!--                                        <div class="input-group-prepend">-->
+<!--                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>-->
+<!--                                        </div>-->
+<!--                                        <input type="text" id="expectedreceivedate" name="expectedreceivedate"  class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>-->
+<!--                                    </div>-->
+
+<!--                                </div>-->
 
 <!--                                <div class="form-check">-->
 <!--                                    <input type="checkbox" class="form-check-input" id="exampleCheck1">-->

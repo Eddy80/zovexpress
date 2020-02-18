@@ -871,6 +871,20 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
    }
 
+   function loadreceivecountries(sendercountry) {
+
+       $.get("{{ URL::to('getreceivecountryiesbysendercountryid') }}",{ sendercountryid:sendercountry }, function(data){
+           var sel = $("#sendcountry");
+           sel.empty();
+           for (var i=0; i<data.length; i++) {
+               if (i==0)
+                   sel.append('<option value="' + data[i].id + '" selected>' +  data[i].nameru+ '</option>');
+               else
+                   sel.append('<option value="' + data[i].id + '">' +  data[i].inforu+ '</option>');
+           }nameru
+       }, "json");
+   }
+
     function toNumber(str) {
         return str*1;
     }
