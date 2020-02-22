@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -108,7 +108,9 @@ class RegisterController extends Controller
         ]);
 
        // dd($user);
-        return redirect('/tracking');
+        Auth::login($user);
+      //  $this->redirectPath("/cab");
+        return redirect('/cab');
     }
 
 

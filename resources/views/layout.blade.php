@@ -28,6 +28,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>ZovExpress</title>
+    <link rel="shortcut icon" href="assets/logotip.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
@@ -179,7 +180,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
         </div>
     </footer>
 </div>
-<div></div>
+
 
 
 
@@ -223,13 +224,14 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input required minlength="2" placeholder="Ваше Имя" name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Фамилия :</label><input required minlength="2" placeholder="Ваша Фамилия" name="lastname" value="{{old('lastname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
                     <div class="col"><label style="font-size: 14px; width: 200px;">Отчество :</label><input required minlength="2" placeholder="Ваше Отчество" name="surname" value="{{old('surname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер паспорта :</label><input required name="passport" placeholder="Passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                  <!---  <div class="col"><label style="font-size: 14px; width: 200px;">Номер паспорта :</label><input required name="passport" placeholder="Passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
+                    <input type="hidden" id="passport"  name="passport" value="AZE000000">
                     <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input required name="phone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
-                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона (доп.):</label><input required name="additionalphone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('additionalphone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>
+                    <!---  <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона (доп.):</label><input required name="additionalphone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('additionalphone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div> -->
 
 
-                </div>
-                       <!--                <div class="row">-->
+                  </div>
+                         <!--                <div class="row">-->
 <!---->
 <!--                    <div class="col">-->
 <!--                        <label style="font-size: 14px; width: 200px;">Email адрес :</label>-->
@@ -387,12 +389,23 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <button class="btn btn-white" type="submit" style="font-size: 14px; color:#ffffff; background-color: #da9904;">Сохранить</button>
                     </div>
                     </form>
-    <br>
-                    <div class="col">
-                        <label style="font-size: 14px; font-weight: bold;width: 400px; color: red;">Cкопируйте адрес для передачи поставщику :</label>
-                        <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 100%;" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
-                        <!--<input onclick="saveCode()" style="margin-top:0px; font-size: 12px; height: 25px;" type="button" name="savebutton" class="border-warning border rounded" value="Сохранить"/>-->
+
+
+                    <br/>
+                    <div class="col" style="text-align: left;width: 400px;">
+                        <label style="font-size: 14px;width: 450px;">Страна отправитель:</label>
+                        <input type="radio" name="FromCountry" id="FromCountry" value="CN" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" checked onclick="loadaddress(0);">Китай &nbsp;
+                        <input type="radio" name="FromCountry" id="FromCountry" value="TR" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" onclick="loadaddress(1);">Турция
                     </div>
+                    <br/>
+                    <div class="col">
+                        <label style="font-size: 14px; font-weight: bold; color: red;width: 450px;"><br/>Cкопируйте адрес для передачи поставщику :</label>
+                    </div>
+                    <div class="col" id="copyaddress">
+                        <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
+                    </div>
+
+
 
 
                 </div>
@@ -846,6 +859,13 @@ $registration =  GeneralController::getName(     5,1, $lang );
        var weight = parseFloat(weight);
        if (isNaN(weight)) {
            $("#warning").text("не правильный вес!!!");
+           return 0;
+       }
+
+       if (countryinfoid==2){
+           $("#result").html(0);
+           $("#warning").html("Для калькуляции цены \"Авто\" посылок: <br/>Просим связаться с менеджерами");
+           $crisp.push(['do', 'chat:open'])
            return 0;
        }
 

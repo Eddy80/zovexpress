@@ -19,7 +19,7 @@ use App\Http\Controllers\UsersController;
 
 
     <h2 class="text-center" style="color: #ffffff;margin: 0px;padding: 0px;padding-top: 18px;">{{ $maintitle }}<br></h2>
-    <p class="text-justify d-xl-flex align-self-center" style="color: #ffffff;margin: 0 auto;font-size: 16px;padding: 0px 50px; margin: 20px 0px;">{{ $maintext }}<br></p>
+    <p class="text-justify d-xl-flex align-self-center" style="color: #ffffff;margin: 0 auto;font-size: 16px;padding: 0px 130px; margin: 20px 0px;">{{ $maintext }}<br></p>
     <div class="container text-justify">
         <div class="intro"></div>
         <div class="buttons" style="margin: 30px 23px;">
