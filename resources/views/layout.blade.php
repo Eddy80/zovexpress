@@ -442,7 +442,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                             <label style="font-size: 14px; width: 200px;">Выберите страну отправки :</label>
 
                             <?php   $countries = CountryController::getListWithoutCodesCheck(); ?>
-                            <SELECT id="country" class="border rounded border-warning" onchange="javascript:loadinfowr(this.value);"
+                            <SELECT id="country" name="country"  class="border rounded border-warning" onchange="javascript:loadinfowr(this.value);"
                                     style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 200px;height: 25px;" >
                                 <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" alt="-1" selected></OPTION>
 
@@ -723,9 +723,9 @@ $registration =  GeneralController::getName(     5,1, $lang );
         if (countryid !=-1) {
             $.get("{{ URL::to('usercode') }}", {countryid: countryid,countryinfo:countryinfo, userid: userid}, function (data) {
 
-                infokod();
 
-                $('#codewr').val(data);
+
+               // $('#codewr').val(data);
 
                 var userkod = data;
 
@@ -735,10 +735,23 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 var lastname = $('#lastname').val();
                 var passport = $('#passport').val();
 
-               // alert(userkod+' '+emailorphone+' '+firstname+' '+lastname+' '+passport);
+             //  alert(userkod+' '+emailorphone+' '+firstname+' '+lastname+' '+passport);
                 $.post("{{ URL::to('regsimple') }}", {email:emailorphone, firstname:  firstname, lastname:lastname, passport:passport, password:'12345678', phone:'+994509999999', userkod:userkod, countryid: countryid,countryinfo:countryinfo, userid: userid}, function (datareg) {
 
-                 //  alert(datareg);
+                    if (datareg==-999) {
+                        alert("Этот email адрес (" + emailorphone + ") уже зарегистрирован !!!");
+                        $('#codewr').val("");
+                        $('#country').val('');
+                        $('#countrywr').val('');
+                        $('#countryid').val('');
+                        $('#countryidwr').val('');
+                        $('#countryinfoidwr').val('');
+                    }
+                    else {
+                        $('#codewr').val(data);
+                        infokod();
+
+                    }
 
                 })
             })

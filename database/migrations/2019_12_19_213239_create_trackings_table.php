@@ -15,7 +15,8 @@ class CreateTrackingsTable extends Migration
     {
         Schema::create('trackings', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('otpravka');
+            $table->integer('otpravkaid');
+           // $table->string('otpravkaname');
             $table->string('usercode');
             $table->integer('userid');
             $table->string('tracknumber');

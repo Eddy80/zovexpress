@@ -62,7 +62,7 @@ use App\Http\Controllers\OtpravkaController;
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Выберите отправку</label>
-                                    <select id="userid" name="userid" class="form-control select2" style="width: 100%;" onchange="">
+                                    <select id="otpravkaid" name="otpravkaid" class="form-control select2" style="width: 100%;" onchange="">
                                         <option selected="selected"></option>
                                         <?php   $otpravkas = OtpravkaController::getList(); ?>
                                         @foreach($otpravkas as $otpravka)

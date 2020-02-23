@@ -93,4 +93,11 @@ class OtpravkaController extends Controller
     {
         return Otpravka::all();
     }
+
+    public static function getNameById($id)
+    {
+        $otpravka = Otpravka::where('id', $id)->get();
+        return $otpravka;
+
+    }
 }

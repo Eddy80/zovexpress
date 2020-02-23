@@ -4,6 +4,7 @@
 <?php
 use App\Http\Controllers\TrackingsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\OtpravkaController;
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -69,12 +70,18 @@ use App\Http\Controllers\UsersController;
                             <?php
                             $i++;
                             $user2 = UsersController::getUserFLNames($tracking->userid);
+                            $otpravkaname = OtpravkaController::getNameById($tracking->otpravkaid);
                             ?>
 
 
                             <tr>
                                 <td>{{$i}}</td>
-                                <td></td> <!-- otpravka -->
+                                @if (count($otpravkaname) > 0)
+                                <td>{{$otpravkaname[0]->name}} {{$otpravkaname[0]->kod}}</td> <!-- otpravka -->
+                                @else
+                                <td></td>
+                                @endif
+
                                 @if (count($user2) > 0)
                                 <td>{{ $user2[0]->firstname }} {{ $user2[0]->lastname }}</td>
                                 @else

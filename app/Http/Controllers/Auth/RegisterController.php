@@ -101,11 +101,12 @@ class RegisterController extends Controller
         if ($info == 'A')
             $countryinfoid = 2;
 
+        if ($countryinfoid != -1) {
+            DB::table('codes')->insert([
+                ['userid' => $userid, 'code' => $code, 'countryid' => $country, 'countryinfoid' => $countryinfoid]
 
-        DB::table('codes')->insert([
-            ['userid' => $userid, 'code' => $code, 'countryid' => $country, 'countryinfoid' => $countryinfoid]
-
-        ]);
+            ]);
+        }
 
        // dd($user);
         Auth::login($user);
@@ -117,21 +118,37 @@ class RegisterController extends Controller
     public function createsimple(Request $request)  //array $data
     {
         //return 999;
-      //  dd($request->all());
+       // dd($request->all());
 
-        $validator =  $this->validate($request,[
 
+
+      /*  $validator =  $this->validate($request,[
             'firstname'=> 'required',
             'lastname'=> 'required',
             'email'=> 'required|email|unique:users',
             'password'=> 'required',
             'phone'=> 'required',
-            'passport'=> 'required',
+            'passport'=> 'required'
 
+            //'avatar' => 'nullable|image'
+        ]);*/
 
+        $validator = Validator::make($request->all(), [
+            'firstname'=> 'required',
+            'lastname'=> 'required',
+            'email'=> 'required|email|unique:users',
+            'password'=> 'required',
+            'phone'=> 'required',
+            'passport'=> 'required'
         ]);
 
 
+        if ($validator->fails()) {
+            return -999;
+        }
+
+
+        //return 5;
         $user = User::add($request->all());
 
         $userid = $user->id;
@@ -139,7 +156,7 @@ class RegisterController extends Controller
         $useremail = $request->get('email');
         $userpassword = $request->get('password');
 
-       // return $userid.' '.$usercode.' '.$useremail.' '.$userpassword;
+      //  return $userid.' '.$usercode.' '.$useremail.' '.$userpassword;
 
         $codearray = explode("-",$usercode);
 
@@ -153,7 +170,7 @@ class RegisterController extends Controller
         if ($info == 'A')
             $countryinfoid = 2;
 
-      //  return $country.' '.$info.' '.$countryinfoid;
+     //   return $country.' '.$info.' '.$countryinfoid;
 
         DB::table('codes')->insert(
             ['userid' => $userid, 'code' => $usercode, 'countryid' => $country, 'countryinfoid' => $countryinfoid]

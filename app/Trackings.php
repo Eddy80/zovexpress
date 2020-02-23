@@ -8,8 +8,12 @@ class Trackings extends Model
 {
 
     protected $fillable = [
-        'usercode', 'userid','tracknumber', 'sentfrom', 'sentdate',
-        'receiveto', 'receivedate', 'tracktype'
+        'otpravkaid','usercode', 'userid','tracknumber',
+        //'sentfrom',
+        //'sentdate',
+        //'receiveto',
+        // 'receivedate',
+        // 'tracktype'
     ];
 
 
@@ -18,17 +22,17 @@ class Trackings extends Model
     {
         $tracking = new static;
         $tracking->fill($fields);
-        $sentdate = $fields['sentdate'];
-        $date = explode('/', $sentdate );
-        $new_sentdate = $date[2].'-'.$date[1].'-'.$date[0];
-        $tracking->sentdate =  $new_sentdate;
+        //$sentdate = $fields['sentdate'];
+        //$date = explode('/', $sentdate );
+       // $new_sentdate = $date[2].'-'.$date[1].'-'.$date[0];
+        //$tracking->sentdate =  $new_sentdate;
 
 
 
-        $expectedreceivedate = $fields['expectedreceivedate'];
-        $date = explode('/',  $expectedreceivedate );
-        $new_expectedreceivedate = $date[2].'-'.$date[1].'-'.$date[0];
-        $tracking->expectedreceivedate =  $new_expectedreceivedate;
+        //$expectedreceivedate = $fields['expectedreceivedate'];
+        //$date = explode('/',  $expectedreceivedate );
+        //$new_expectedreceivedate = $date[2].'-'.$date[1].'-'.$date[0];
+        //$tracking->expectedreceivedate =  $new_expectedreceivedate;
 
 /*
         $characters = '0123456789';
