@@ -211,9 +211,9 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                             @foreach($countries as $country)
                             <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>
-                            @if ($country->id != 1)
+
                             <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
-                            @endif
+
                             @endforeach
                         </SELECT>
 
@@ -505,14 +505,14 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <br/>
                         <div class="col" style="text-align: left;">
                             <label style="font-size: 14px;width: 200px;">Страна отправитель:</label>
-                            <input type="radio" name="FromCountry" id="FromCountry" value="CN" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" checked onclick="loadaddress(0);">Китай &nbsp;
-                            <input type="radio" name="FromCountry" id="FromCountry" value="TR" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" onclick="loadaddress(1);">Турция
+                            <input type="radio" name="FromCountry" id="FromCountry" value="CN" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" checked onclick="loadaddress2(0);">Китай &nbsp;
+                            <input type="radio" name="FromCountry" id="FromCountry" value="TR" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" onclick="loadaddress2(1);">Турция
                         </div>
                         <div class="col">
                             <label style="font-size: 14px; font-weight: bold; color: red;"><br/>Cкопируйте адрес для передачи поставщику :</label>
                         </div>
-                        <div class="col" id="copyaddress">
-                            <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
+                        <div class="col" id="copyaddress2">
+                            <input type="text" id="ouraddress2" name="ouraddress2" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
                         </div>
                 </div>
 
@@ -613,14 +613,34 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
     function loadaddress(param) {
 
-        if (param == 0) {
+      //  alert(param);
+        if (param === 0) {
             //  alert(0);
-           // $("#ouraddress").val("广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303");
+            $("#ouraddress").val("广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303");
             $("#copyaddress").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>');
-        } else {//if (param==1) {
-            // alert(1);
-            //$("#ouraddress").val("Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99");
-            $("#copyaddress").html("<input type=\"text\" id=\"ouraddress\" name=\"ouraddress\" class=\"border-warning border rounded\" style=\"font-size: 14px; padding-left:5px; width: 95%\" value=\"Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99\"/>");
+        } else {
+            if (param === 1) {//if (param==1) {
+                // alert(1);
+                $("#ouraddress").val("Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99");
+                $("#copyaddress").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Ares tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99"/>');
+            }
+        }
+
+    }
+
+    function loadaddress2(param) {
+
+       // alert(param);
+        if (param === 0) {
+            //  alert(0);
+            $("#ouraddress2").val("广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303");
+            $("#copyaddress2").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>');
+        } else {
+            if (param === 1) {//if (param==1) {
+                // alert(1);
+                $("#ouraddress2").val("Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99");
+                $("#copyaddress2").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Ares tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99"/>');
+            }
         }
 
     }
