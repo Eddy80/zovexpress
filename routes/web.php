@@ -146,9 +146,13 @@ Route::group([
         return view('root.users');
     });
 
+    Route::get('/pricelist', function () {
+        return view('root.pricelist');
+    });
+/*
     Route::get('/nousers', function () {
         return view('root.nousers');
-    });
+    });*/
 
     Route::get('/comments', function () {
         return view('root.comments');
@@ -172,6 +176,7 @@ Route::group([
     Route::get('/tracklist', function () {
         return view('root.tracklist');
     });
+
 
     Route::get('/addtrack', function () {
         return view('root.addtrack');

@@ -5,6 +5,7 @@
 <?php
 use App\Http\Controllers\TrackingsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\OtpravkaController;
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -43,22 +44,24 @@ use App\Http\Controllers\UsersController;
                         <div class="icon">
                             <i class="ion ion-bag"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/tracklist" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
+                    <?php $otpravkacount = OtpravkaController::getCount();  ?>
                     <div class="small-box bg-success">
                         <div class="inner">
-                            <h3>53<sup style="font-size: 20px">%</sup></h3>
+<!--                            <h3>53<sup style="font-size: 20px">%</sup></h3>-->
+                            <h3>{{$otpravkacount}}</h3>
 
-                            <p>Рейтинг клиентов</p>
+                            <p>Отправок</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-stats-bars"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/otpravkalist" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
@@ -80,26 +83,27 @@ use App\Http\Controllers\UsersController;
                 <!-- ./col -->
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
+                    <?php $otpravkacount = OtpravkaController::getCountDostavleno();  ?>
                     <div class="small-box bg-danger">
                         <div class="inner">
-                            <h3>65</h3>
+                            <h3>{{ $otpravkacount}}</h3>
 
                             <p>Доставлено</p>
                         </div>
                         <div class="icon">
                             <i class="ion ion-pie-graph"></i>
                         </div>
-                        <a href="#" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
+                        <a href="/otpravkalist" class="small-box-footer">Открыть <i class="fas fa-arrow-circle-right"></i></a>
                     </div>
                 </div>
                 <!-- ./col -->
             </div>
             <!-- /.row -->
-<!--            <!-- Main row -->
+<!--            < Main row -->
 <!--            <div class="row">-->
-<!--                <!-- Left col -->
+<!--                Left col -->
 <!--                <section class="col-lg-7 connectedSortable">-->
-<!--                    <!-- Custom tabs (Charts with tabs)-->
+<!--                  Custom tabs (Charts with tabs)-->
 <!--                    <div class="card">-->
 <!--                        <div class="card-header">-->
 <!--                            <h3 class="card-title">-->
@@ -116,10 +120,10 @@ use App\Http\Controllers\UsersController;
 <!--                                    </li>-->
 <!--                                </ul>-->
 <!--                            </div>-->
-<!--                        </div><!-- /.card-header -->
+<!--                        </div>< /.card-header -->
 <!--                        <div class="card-body">-->
 <!--                            <div class="tab-content p-0">-->
-<!--                                <!-- Morris chart - Sales -->
+<!--                                < Morris chart - Sales -->
 <!--                                <div class="chart tab-pane active" id="revenue-chart"-->
 <!--                                     style="position: relative; height: 300px;">-->
 <!--                                    <canvas id="revenue-chart-canvas" height="300" style="height: 300px;"></canvas>-->
@@ -128,11 +132,11 @@ use App\Http\Controllers\UsersController;
 <!--                                    <canvas id="sales-chart-canvas" height="300" style="height: 300px;"></canvas>-->
 <!--                                </div>-->
 <!--                            </div>-->
-<!--                        </div><!-- /.card-body -->
+<!--                        </div>< /.card-body -->
 <!--                    </div>-->
-<!--                    <!-- /.card -->
+<!--                     /.card -->
 <!---->
-<!--                    <!-- DIRECT CHAT -->
+<!--                     DIRECT CHAT -->
 <!--                    <div class="card direct-chat direct-chat-primary">-->
 <!--                        <div class="card-header">-->
 <!--                            <h3 class="card-title">Direct Chat</h3>-->

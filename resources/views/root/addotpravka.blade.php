@@ -47,27 +47,27 @@ use App\Http\Controllers\CountryController;
 
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите название отправки </label>
-                                    <input type="text" class="form-control"   id="name"  name="name" placeholder="название отправки">
+                                    <input type="text" required class="form-control"   id="name"  name="name" placeholder="название отправки">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите Код отправки </label>
-                                    <input type="text" class="form-control"  id="kod" name="kod" placeholder="код отправки">
+                                    <input type="text" required class="form-control"  id="kod" name="kod" placeholder="код отправки">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите откуда отправка </label>
-                                    <input type="text" class="form-control" id="sentfrom" name="sentfrom" placeholder="откуда отправка">
+                                    <input type="text" required class="form-control" id="sentfrom" name="sentfrom" placeholder="откуда отправка">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите город отправки </label>
-                                    <input type="text" class="form-control" id="receiveto" name="receiveto" placeholder="город отправки">
+                                    <input type="text" required class="form-control" id="receiveto" name="receiveto" placeholder="город отправки">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Выберите вид отправки</label>
-                                    <select id="type" name="type" class="select2"   style="width: 100%;">
+                                    <select id="type" required name="type" class="select2"   style="width: 100%;">
 
                                         <option value="0">Самолетом</option>
                                         <option value="1">Автомобилем</option>
@@ -79,7 +79,7 @@ use App\Http\Controllers\CountryController;
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" id="sentdate" name="sentdate" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                        <input type="text" required id="sentdate" name="sentdate" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
                                     </div>
                                     <!-- /.input group -->
                                 </div>

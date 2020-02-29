@@ -110,6 +110,22 @@ class OtpravkaController extends Controller
         return Otpravka::all();
     }
 
+
+    public static function getCount()
+    {
+
+        // return User::all();
+        return Otpravka::count();
+    }
+
+    public static function getCountDostavleno()
+    {
+
+        // return User::all();
+        return Otpravka::count(); //->with('status', 1);
+    }
+
+
     public static function getNameById($id)
     {
         $otpravka = Otpravka::where('id', $id)->get();

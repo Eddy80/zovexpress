@@ -42,7 +42,7 @@ use App\Http\Controllers\OtpravkaController;
                             <div class="card-body">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Выберите пользователя</label>
-                                    <select id="userid" name="userid" class="form-control select2" style="width: 100%;" onchange="javascript:getCodeList();">
+                                    <select required id="userid" name="userid" class="form-control select2" style="width: 100%;" onchange="javascript:getCodeList();">
                                         <option selected="selected"></option>
                                         <?php   $users = UsersController::getList(); ?>
                                         @foreach($users as $user)
@@ -52,17 +52,17 @@ use App\Http\Controllers\OtpravkaController;
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Выберите код пользователя</label>
-                                    <select id="usercode" name="usercode" class="form-control select2" style="width: 100%;">
+                                    <select required id="usercode" name="usercode" class="form-control select2" style="width: 100%;">
                                         <option selected="selected"></option>
                                     </select>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите трек номер посылки </label>
-                                    <input type="text" class="form-control" id="tracknumber" name="tracknumber" placeholder="номер посылки">
+                                    <input required type="text" class="form-control" id="tracknumber" name="tracknumber" placeholder="номер посылки">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Выберите отправку</label>
-                                    <select id="otpravkaid" name="otpravkaid" class="form-control select2" style="width: 100%;" onchange="">
+                                    <select required id="otpravkaid" name="otpravkaid" class="form-control select2" style="width: 100%;" onchange="">
                                         <option selected="selected"></option>
                                         <?php   $otpravkas = OtpravkaController::getList(); ?>
                                         @foreach($otpravkas as $otpravka)

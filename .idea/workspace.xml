@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f19416b2-6459-4d4f-84c1-a38153929c32" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/resources/views/root/pricelist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root/tracklist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/tracklist.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/OtpravkaController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/OtpravkaController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/root/addotpravka.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/addotpravka.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/root/addtrack.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/addtrack.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/root/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/root/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,8 +39,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3">
-              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+            <state relative-caret-position="-360">
+              <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
               <folding>
                 <element signature="e#7#451#0#PHP" expanded="true" />
               </folding>
@@ -43,84 +49,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/UsersController.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/root/layout.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="169" lean-forward="true" selection-start-line="149" selection-start-column="3" selection-end-line="169" />
+            <state relative-caret-position="-138">
+              <caret line="232" column="49" selection-start-line="232" selection-start-column="49" selection-end-line="232" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/root/home.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="138" column="24" lean-forward="true" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
               <folding>
-                <element signature="e#40#68#0#PHP" expanded="true" />
+                <element signature="e#57#102#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Otpravka.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="59" selection-start-line="59" selection-end-line="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
-              <caret line="49" column="54" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="54" />
-              <folding>
-                <element signature="e#23#69#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/root/addotpravka.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="45" column="90" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/root/tracklist.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="82" column="89" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
-              <folding>
-                <element signature="e#56#101#0#PHP" expanded="true" />
-                <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#4747#4753#0#HTML" expanded="true" />
-                <element signature="n#style#0;n#img#1;n#td#3;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OtpravkaController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/root/otpravkalist.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="99" lean-forward="true" selection-start-line="94" selection-start-column="28" selection-end-line="99" />
-              <folding>
-                <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#8;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#10;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#td#11;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="126">
+              <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -175,7 +128,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/MemberMiddleware.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" />
         <option value="$PROJECT_DIR$/public/assets/root/dist/js/adminlte.min.js" />
@@ -191,7 +143,6 @@
         <option value="$PROJECT_DIR$/resources/views/root/userdetails.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" />
-        <option value="$PROJECT_DIR$/resources/views/root/home.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/page.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_01_06_104553_create_comments_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GeneralController.php" />
@@ -206,7 +157,6 @@
         <option value="$PROJECT_DIR$/resources/views/cabpass.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/cabedit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/PriceController.php" />
-        <option value="$PROJECT_DIR$/resources/views/root/layout.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2020_02_18_055306_create_otpravkas_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/calculator.blade.php" />
@@ -214,18 +164,21 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/CountryController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/RegisterController.php" />
         <option value="$PROJECT_DIR$/resources/views/home.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/root/addtrack.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_12_19_213239_create_trackings_table.php" />
         <option value="$PROJECT_DIR$/app/Trackings.php" />
         <option value="$PROJECT_DIR$/resources/views/layout.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TrackingsController.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/OtpravkaController.php" />
-        <option value="$PROJECT_DIR$/resources/views/root/addotpravka.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/root/otpravkadetails.blade.php" />
         <option value="$PROJECT_DIR$/app/Otpravka.php" />
         <option value="$PROJECT_DIR$/resources/views/root/otpravkalist.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/root/tracklist.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/root/addotpravka.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/root/addtrack.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/root/layout.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/root/pricelist.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/root/home.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/OtpravkaController.php" />
       </list>
     </option>
   </component>
@@ -510,7 +463,7 @@
       <workItem from="1581939456952" duration="11217000" />
       <workItem from="1582227371869" duration="448000" />
       <workItem from="1582315430301" duration="26901000" />
-      <workItem from="1582915888920" duration="10435000" />
+      <workItem from="1582915888920" duration="13783000" />
     </task>
     <task id="LOCAL-00001" summary="Laravel - Registration, Login, Cabinet">
       <created>1576360567683</created>
@@ -820,11 +773,18 @@
       <option name="project" value="LOCAL" />
       <updated>1582984747143</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Admin: Improved design of  Tracking list with grouped otpravka">
+      <created>1582989047625</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1582989047626</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="435716000" />
+    <option name="totallyTimeSpent" value="439064000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -901,7 +861,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Admin panel: submenu colors" />
     <MESSAGE value="Admin panel: Add Track  not finished" />
     <MESSAGE value="Admin panel: Add Track, TrackList" />
     <MESSAGE value="Web:  Info pages take data from DB" />
@@ -926,19 +885,10 @@
     <MESSAGE value="Admin: Tracklist: otpravka column,  Add track wtih selecting otpravka" />
     <MESSAGE value="WEB: country on select change address" />
     <MESSAGE value="WEB: phone pattern deleted&#10;Admin:  Otpravka percent and place editing&#10;        Tracking list with grouped otpravka" />
-    <option name="LAST_COMMIT_MESSAGE" value="WEB: phone pattern deleted&#10;Admin:  Otpravka percent and place editing&#10;        Tracking list with grouped otpravka" />
+    <MESSAGE value="Admin: Improved design of  Tracking list with grouped otpravka" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin: Improved design of  Tracking list with grouped otpravka" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/root/comments.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" column="53" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="53" />
-          <folding>
-            <element signature="e#56#99#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/root/admins.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -1044,16 +994,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/assets/img/tasco.svg">
       <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/root/home.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-710">
-          <caret line="35" column="79" selection-start-line="35" selection-start-column="20" selection-end-line="35" selection-end-column="79" />
-          <folding>
-            <element signature="e#57#102#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -1195,48 +1135,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CountryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
-          <folding>
-            <element signature="e#40#56#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/root/layout.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="243" column="67" selection-start-line="243" selection-start-column="47" selection-end-line="243" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrackingsController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="300" column="45" selection-start-line="300" selection-start-column="45" selection-end-line="300" selection-end-column="45" />
-          <folding>
-            <element signature="e#40#89#0#PHP" expanded="true" />
-            <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#td#1;n#tr#1;n#tbody#0;n#table#0;n#div#0;n#li#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/root/users.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="62" column="73" lean-forward="true" selection-start-line="62" selection-start-column="36" selection-end-line="62" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/root/addtrack.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1175">
-          <caret line="70" column="45" selection-start-line="70" selection-start-column="45" selection-end-line="70" selection-end-column="45" />
-          <folding>
-            <element signature="e#56#97#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1257,40 +1159,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3">
-          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
-          <folding>
-            <element signature="e#7#451#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="49" column="54" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="54" />
-          <folding>
-            <element signature="e#23#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/root/addotpravka.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="45" column="90" selection-start-line="45" selection-start-column="90" selection-end-line="45" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Otpravka.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="59" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/root/otpravkadetails.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1298,13 +1166,6 @@
           <folding>
             <element signature="e#1389#1395#0#HTML" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OtpravkaController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="77" column="10" selection-start-line="77" selection-start-column="10" selection-end-line="77" selection-end-column="10" />
         </state>
       </provider>
     </entry>
@@ -1321,18 +1182,117 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="58">
+          <caret line="49" column="54" lean-forward="true" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="54" />
+          <folding>
+            <element signature="e#23#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/root/tracklist.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="82" column="89" selection-start-line="82" selection-start-column="89" selection-end-line="82" selection-end-column="89" />
+        <state relative-caret-position="721">
+          <caret line="108" column="62" selection-start-line="108" selection-start-column="62" selection-end-line="108" selection-end-column="94" />
           <folding>
             <element signature="e#56#101#0#PHP" expanded="true" />
             <element signature="n#style#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#td#1;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
             <element signature="e#4747#4753#0#HTML" expanded="true" />
             <element signature="n#style#0;n#img#1;n#td#3;n#tr#0;n#table#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#section#1;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/root/addotpravka.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="891">
+          <caret line="81" column="67" selection-start-line="81" selection-start-column="67" selection-end-line="81" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Otpravka.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/root/addtrack.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="60" column="52" selection-start-line="60" selection-start-column="52" selection-end-line="60" selection-end-column="52" />
+          <folding>
+            <element signature="e#56#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TrackingsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="302" lean-forward="true" selection-start-line="302" selection-end-line="309" />
+          <folding>
+            <element signature="e#40#89#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/CountryController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="65" column="38" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="38" />
+          <folding>
+            <element signature="e#40#56#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/root/pricelist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
+          <folding>
+            <element signature="e#56#97#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/root/home.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="138" column="24" lean-forward="true" selection-start-line="138" selection-start-column="24" selection-end-line="138" selection-end-column="24" />
+          <folding>
+            <element signature="e#57#102#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/root/layout.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-138">
+          <caret line="232" column="49" selection-start-line="232" selection-start-column="49" selection-end-line="232" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-360">
+          <caret line="148" column="26" selection-start-line="148" selection-start-column="26" selection-end-line="148" selection-end-column="26" />
+          <folding>
+            <element signature="e#7#451#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/OtpravkaController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
         </state>
       </provider>
     </entry>
