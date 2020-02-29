@@ -8,7 +8,8 @@ class Otpravka extends Model
 {
     protected $fillable = [
         'name', 'kod', 'sentfrom', 'sentdate',
-        'receiveto', 'expectedreceivedate', 'type'
+        'receiveto', 'expectedreceivedate', 'type',
+        'nowplace','nowpercent', 'receivedate'
     ];
 
 
@@ -47,9 +48,28 @@ class Otpravka extends Model
 
     public  function edit($fields)
     {
+        //return dd($fields);
+
         $this->fill($fields);
+
+        if ($this->nowpercent ==100) {
+            $this->status = 1;
+
+            $receivedate = $fields['receivedate'];
+
+
+
+            if (strpos($receivedate, '/') !== false) {
+                $date = explode('/', $receivedate);
+                $new_receivedate = $date[2] . '-' . $date[1] . '-' . $date[0];
+                $this->receivedate = $new_receivedate;
+            }
+        }
+
         $this->save();
 
-        return $this;
+       // return dd($this);
+
+       // return $this;
     }
 }

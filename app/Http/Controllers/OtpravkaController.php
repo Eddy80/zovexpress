@@ -75,7 +75,23 @@ class OtpravkaController extends Controller
      */
     public function update(Request $request, Otpravka $otpravka)
     {
-        //
+        // return dd($request);
+
+        $otpravka = Otpravka::findOrFail($request->id);
+
+
+
+        $otpravka->edit($request->all());
+        /*
+                return response()->json([
+                    'data' => [
+                        'success' => $user->save(),
+                    ]
+                ]);*/
+        //  return redirect('/tracklist');
+
+        return view('root.otpravkalist');
+
     }
 
     /**
@@ -99,5 +115,15 @@ class OtpravkaController extends Controller
         $otpravka = Otpravka::where('id', $id)->get();
         return $otpravka;
 
+    }
+
+    public function viewforeditotpravka(Request $request, $id){
+
+
+
+        $otpravka = Otpravka::find($id);
+        //return $member->firstname;
+
+        return view('root.otpravkadetails')->with('otpravka', $otpravka);
     }
 }

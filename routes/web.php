@@ -189,5 +189,12 @@ Route::group([
 
     Route::get('/admin/users/{id}','UsersController@viewmember');
 
+
+
     Route::post('/makeadmin', 'UsersController@adminuser');
+
+
+    Route::get('/admin/otpravkalist/{id}','OtpravkaController@viewforeditotpravka');
+
+    Route::post('/updateotpravka', 'OtpravkaController@update');
 });

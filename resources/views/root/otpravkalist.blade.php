@@ -49,6 +49,9 @@ use App\Http\Controllers\UsersController;
                                 <th>Дата пр.</th>
                                 <th>Ож. дата</th>
 
+                                <th>%</th>
+                                <th>Нах.</th>
+
 
 
                                 <th>Дост.</th>
@@ -68,8 +71,8 @@ use App\Http\Controllers\UsersController;
 
                             <tr>
                                 <td>{{$i}}</td>
-                                <td>{{$otpravka->name}}</td>
-                                <td>{{$otpravka->kod}}</td>
+                                <td><span style="color: green; font-style: italic; font-weight: bold; font-size: 14px;">{{$otpravka->name}}</span></td>
+                                <td><a href="/admin/otpravkalist/{{$otpravka->id}}">{{$otpravka->kod}}</a></td>
 
 
                                 <td>{{$otpravka->sentfrom}}</td>
@@ -77,10 +80,14 @@ use App\Http\Controllers\UsersController;
                                 <td>{{$otpravka->receiveto}}</td>
                                 <td>{{$otpravka->receivedate}}</td>
                                 <td>{{$otpravka->expectedreceivedate}}</td>
+
+                                <td><span style="font-weight: bold;font-style: italic">{{$otpravka->nowpercent}}</span></td>
+                                <td>{{$otpravka->nowplace}}</td>
+
                                 @if ($otpravka->status==0)
-                                <td>в пути</td>
+                                <td><span style="color: blue">в пути</span></td>
                                 @else
-                                <td>доставлено</td>
+                                <td><span style="color: green">доставлено</span></td>
                                 @endif
 
 
@@ -108,7 +115,8 @@ use App\Http\Controllers\UsersController;
                                 <th>Дата пр.</th>
                                 <th>Ож. дата</th>
 
-
+                                <th>%</th>
+                                <th>Нах.</th>
 
                                 <th>Дост.</th>
 

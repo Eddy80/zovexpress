@@ -40,31 +40,34 @@ use App\Http\Controllers\OtpravkaController;
                             <thead>
                             <tr>
                                 <th>№</th>
-                                <th>Отпр.</th>
+<!--                                <th>Отправка</th>-->
                                 <th>Имя и фам.</th>
                                 <th>Код поль.</th>
                                 <th>Трек</th>
-                                <th>КГ</th>
-                                <th>Наим.</th>
-                                <th>Гор. отп.</th>
-                                <th>Дата отп.</th>
-                                <th>Гор. пр.</th>
-                                <th>Дата пр.</th>
-                                <th>Ож. дата</th>
-                                <th></th><!-- status -->
+<!--                                <th>КГ</th>-->
+<!--                                <th>Наим.</th>-->
+<!--                                <th>Гор. отп.</th>-->
+<!--                                <th>Дата отп.</th>-->
+<!--                                <th>Гор. пр.</th>-->
+<!--                                <th>Дата пр.</th>-->
+<!--                                <th>Ож. дата</th>-->
+<!--                                <th></th> status -->
+<!---->
+<!--                                <th>За кг.</th>-->
+<!--                                <th>Сумма</th>-->
+<!--                                <th>СФ</th>-->
+<!--                                <th>Стр.</th>-->
+<!--                                <th>СОМ</th>-->
+<!--                                <th>Дост.</th>-->
+<!--                                <th>Ит.</th>-->
 
-                                <th>За кг.</th>
-                                <th>Сумма</th>
-                                <th>СФ</th>
-                                <th>Стр.</th>
-                                <th>СОМ</th>
-                                <th>Дост.</th>
-                                <th>Ит.</th>
-
-                                <th>Вид отп.</th>
+<!--                                <th>Вид отп.</th>-->
                             </tr>
                             </thead>
                             <tbody>
+                            <?php
+                            $otpravkanamehistory = -1;
+                            ?>
 
                             @foreach($trackings as $tracking)
                             <?php
@@ -73,14 +76,21 @@ use App\Http\Controllers\OtpravkaController;
                             $otpravkaname = OtpravkaController::getNameById($tracking->otpravkaid);
                             ?>
 
+                            @if (count($otpravkaname) > 0)
+                                @if ($tracking->otpravkaid != $otpravkanamehistory)
+                                    <tr>
+                                    <td colspan="5"><b> Отправка: </b>{{$otpravkaname[0]->name}} {{$otpravkaname[0]->kod}}</td> <!-- otpravka -->
+                                    </tr>
+
+                                <?php $otpravkanamehistory = $tracking->otpravkaid;?>
+                                @endif
+
+                            @endif
+
 
                             <tr>
                                 <td>{{$i}}</td>
-                                @if (count($otpravkaname) > 0)
-                                <td>{{$otpravkaname[0]->name}} {{$otpravkaname[0]->kod}}</td> <!-- otpravka -->
-                                @else
-                                <td></td>
-                                @endif
+
 
                                 @if (count($user2) > 0)
                                 <td>{{ $user2[0]->firstname }} {{ $user2[0]->lastname }}</td>
@@ -90,32 +100,32 @@ use App\Http\Controllers\OtpravkaController;
                                 <td>{{$tracking->usercode}}</td>
 
                                 <td><a href="#">{{$tracking->tracknumber}}</td></a>
-                                <td></td> <!-- KG -->
-                                <td></td> <!-- Naimenovaniye -->
-                                <td>{{$tracking->sentfrom}}</td>
-                                <td>{{$tracking->sentdate}}</td>
-                                <td>{{$tracking->receiveto}}</td>
-                                <td>{{$tracking->receivedate}}</td>
-                                <td>{{$tracking->expectedreceivedate}}</td>
-                                @if ($tracking->status==0)
-                                <td>в пути</td>
-                                @else
-                                <td>доставлено</td>
-                                @endif
+                             <!--   <td></td>  KG -->
+                             <!--   <td></td>  Naimenovaniye -->
+<!--                                <td>{{$tracking->sentfrom}}</td>-->
+<!--                                <td>{{$tracking->sentdate}}</td>-->
+<!--                                <td>{{$tracking->receiveto}}</td>-->
+<!--                                <td>{{$tracking->receivedate}}</td>-->
+<!--                                <td>{{$tracking->expectedreceivedate}}</td>-->
+<!--                                @if ($tracking->status==0)-->
+<!--                                <td>в пути</td>-->
+<!--                                @else-->
+<!--                                <td>доставлено</td>-->
+<!--                                @endif-->
 
-                                <th></th><!-- За кг. -->
-                                <th></th><!-- Сумма -->
-                                <th></th><!-- СФ -->
-                                <th></th><!-- Страховка -->
-                                <th></th><!-- Сумма СОМ -->
-                                <th></th><!-- Доставка -->
-                                <th></th><!-- Итого -->
+<!--                                <th></th> За кг. -->
+<!--                                <th></th> Сумма -->
+<!--                                <th></th> СФ -->
+<!--                                <th></th> Страховка -->
+<!--                                <th></th> Сумма СОМ -->
+<!--                                <th></th> Доставка -->
+<!--                                <th></th> Итого -->
 
-                                @if ($tracking->tracktype==0)
-                                <td> <img  src="../assets/img/black-plane.png"></td>
-                                @else
-                                <td> <img style="width: 25px; height:25px;" src="../assets/img/fast-delivery.png"></td>
-                                @endif
+<!--                                @if ($tracking->tracktype==0)-->
+<!--                                <td> <img  src="../assets/img/black-plane.png"></td>-->
+<!--                                @else-->
+<!--                                <td> <img style="width: 25px; height:25px;" src="../assets/img/fast-delivery.png"></td>-->
+<!--                                @endif-->
 
                             </tr>
 
@@ -124,28 +134,28 @@ use App\Http\Controllers\OtpravkaController;
                             <tfoot>
                             <tr>
                                 <th>№</th>
-                                <th>Отпр.</th>
+<!--                                <th>Отправка</th>-->
                                 <th>Имя и фам.</th>
                                 <th>Код поль.</th>
                                 <th>Трек</th>
-                                <th>КГ</th>
-                                <th>Наим.</th>
-                                <th>Гор. отп.</th>
-                                <th>Дата отп.</th>
-                                <th>Гор. пр.</th>
-                                <th>Дата пр.</th>
-                                <th>Ож. дата</th>
-                                <th></th><!-- status -->
-
-                                <th>За кг.</th>
-                                <th>Сумма</th>
-                                <th>СФ</th>
-                                <th>Стр.</th>
-                                <th>СОМ</th>
-                                <th>Дост.</th>
-                                <th>Ит.</th>
-
-                                <th>Вид отп.</th>
+<!--                                <th>КГ</th>-->
+<!--                                <th>Наим.</th>-->
+<!--                                <th>Гор. отп.</th>-->
+<!--                                <th>Дата отп.</th>-->
+<!--                                <th>Гор. пр.</th>-->
+<!--                                <th>Дата пр.</th>-->
+<!--                                <th>Ож. дата</th>-->
+<!--                                <th></th> status -->
+<!---->
+<!--                                <th>За кг.</th>-->
+<!--                                <th>Сумма</th>-->
+<!--                                <th>СФ</th>-->
+<!--                                <th>Стр.</th>-->
+<!--                                <th>СОМ</th>-->
+<!--                                <th>Дост.</th>-->
+<!--                                <th>Ит.</th>-->
+<!---->
+<!--                                <th>Вид отп.</th>-->
                             </tr>
                             </tfoot>
                         </table>

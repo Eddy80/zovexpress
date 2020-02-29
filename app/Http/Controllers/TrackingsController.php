@@ -297,7 +297,8 @@ class TrackingsController extends Controller
 
     public static function getList()
     {
-        return Trackings::all();
+       // return Trackings::all()->sortBy('otpravka');
+        return Trackings::orderBy('otpravkaid')->get();
     }
 
     public static function getCount()

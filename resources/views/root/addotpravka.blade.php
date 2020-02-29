@@ -41,14 +41,18 @@ use App\Http\Controllers\CountryController;
                             {{csrf_field()}}
                             <div class="card-body">
 
+                                <input type="hidden"   id="nowplace"  name="nowplace" />
+                                <input type="hidden"   id="nowpercent"  name="nowpercent" />
+                                <input type="hidden"   id="receivedate"  name="receivedate" />
+
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите название отправки </label>
-                                    <input type="text" class="form-control" id="otpravkaname"  id="name"  name="name" placeholder="название отправки">
+                                    <input type="text" class="form-control"   id="name"  name="name" placeholder="название отправки">
                                 </div>
 
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите Код отправки </label>
-                                    <input type="text" class="form-control" id="otpravkaname" id="kod" name="kod" placeholder="код отправки">
+                                    <input type="text" class="form-control"  id="kod" name="kod" placeholder="код отправки">
                                 </div>
 
                                 <div class="form-group">
