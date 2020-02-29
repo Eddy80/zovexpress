@@ -41,9 +41,9 @@ use App\Http\Controllers\OtpravkaController;
                             <tr>
                                 <th>№</th>
 <!--                                <th>Отправка</th>-->
-                                <th>Имя и фам.</th>
-                                <th>Код поль.</th>
-                                <th>Трек</th>
+                                <th>Имя и фамилия</th>
+                                <th>Код пользователя</th>
+                                <th>Трек номер посылки</th>
 <!--                                <th>КГ</th>-->
 <!--                                <th>Наим.</th>-->
 <!--                                <th>Гор. отп.</th>-->
@@ -78,8 +78,41 @@ use App\Http\Controllers\OtpravkaController;
 
                             @if (count($otpravkaname) > 0)
                                 @if ($tracking->otpravkaid != $otpravkanamehistory)
-                                    <tr>
-                                    <td colspan="5"><b> Отправка: </b>{{$otpravkaname[0]->name}} {{$otpravkaname[0]->kod}}</td> <!-- otpravka -->
+                                    <tr style="background: #ffff11;">
+                                        <td colspan="5">
+                                            <table style="border: 1px; border-width: 1px; border-color:#ffff11;  color: #111111; padding: 0; margin: 0;">
+                                                <tr>
+                                                    <td>
+                                                        <b> Отправка: </b>
+                                                        {{$otpravkaname[0]->name}}
+                                                    </td>
+                                                    <td>
+                                                        <b> Код отправки: </b>
+                                                        {{$otpravkaname[0]->kod}}
+                                                    </td>
+                                                    <td>
+                                                        @if ($otpravkaname[0]->status==0)
+                                                        <span style="color: blue">в пути</span>
+                                                        @else
+                                                        <span style="color: green">доставлено</span>
+                                                        @endif
+                                                        &nbsp;
+                                                        ({{$otpravkaname[0]->nowpercent}}
+                                                        <b>%</b>)
+                                                    </td>
+
+                                                    <td>
+
+                                                        @if ($otpravkaname[0]->tracktype==0)
+                                                        <img  src="../assets/img/black-plane.png">
+                                                        @else
+                                                        <img style="width: 25px; height:25px;" src="../assets/img/fast-delivery.png">
+                                                        @endif
+                                                    </td>
+
+                                                </tr>
+                                            </table>
+                                        </td> <!-- otpravka -->
                                     </tr>
 
                                 <?php $otpravkanamehistory = $tracking->otpravkaid;?>
@@ -135,9 +168,9 @@ use App\Http\Controllers\OtpravkaController;
                             <tr>
                                 <th>№</th>
 <!--                                <th>Отправка</th>-->
-                                <th>Имя и фам.</th>
-                                <th>Код поль.</th>
-                                <th>Трек</th>
+                                <th>Имя и фамилия</th>
+                                <th>Код пользователя</th>
+                                <th>Трек номер посылки</th>
 <!--                                <th>КГ</th>-->
 <!--                                <th>Наим.</th>-->
 <!--                                <th>Гор. отп.</th>-->
