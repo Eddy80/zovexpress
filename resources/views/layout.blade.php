@@ -512,7 +512,9 @@ $registration =  GeneralController::getName(     5,1, $lang );
                             <label style="font-size: 14px; font-weight: bold; color: red;"><br/>Cкопируйте адрес для передачи поставщику :</label>
                         </div>
                         <div class="col" id="copyaddress2">
-                            <input type="text" id="ouraddress2" name="ouraddress2" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>
+                            <input type="text" id="ouraddress2" name="ouraddress2" class="border-warning border rounded"
+                                   style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库 Тел: 16620001303"/>
+                            //广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303
                         </div>
                 </div>
 
@@ -633,13 +635,16 @@ $registration =  GeneralController::getName(     5,1, $lang );
        // alert(param);
         if (param === 0) {
             //  alert(0);
-            $("#ouraddress2").val("广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303");
+            $("#ouraddress2").val("广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库 Тел: 16620001303");
             $("#copyaddress2").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。16620001303"/>');
         } else {
             if (param === 1) {//if (param==1) {
                 // alert(1);
-                $("#ouraddress2").val("Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99");
-                $("#copyaddress2").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Ares tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99"/>');
+                $("#ouraddress2").val("Şehir: Istanbul, İlçe: Fatih, \n" +
+                    "Adres: (Ваш код)Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Ares tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Tel: (506) 147-93-99 34728 - почтовый индекс ");
+                $("#copyaddress2").html('<input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="Şehir: Istanbul, İlçe: Fatih, \n' +
+                    'Adres: (Ваш код)Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Ares tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Tel: (506) 147-93-99 34728 - почтовый индекс "/>');
+            //Şehir: Istanbul, İlçe: Fatih, Adres: Langa Karakolu No:11, Semt/Mahalle:Katıp Kasım Adres tarifi:Kuran Otelin iki sokak arkası Langa Polis karakol sokağı Seda otelin karşısında. Telefon: (506) 147-93-99
             }
         }
 
