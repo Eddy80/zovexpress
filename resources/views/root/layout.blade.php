@@ -889,7 +889,7 @@
             var sel = $("#userid");
             sel.empty();
             for (var i=0; i<data.length; i++) {
-                sel.append('<option value="' + data[i].id + '">' + data[i].firstname+'  -  '+ data[i].lastname +' '+ data[i].email +' ' + data[i].phone + '</option>');
+                sel.append('<option value="' + data[i].id + '">' +''+ data[i].firstname+' '+ data[i].lastname +',  '+ data[i].email +',  ' + data[i].phone + '</option>');
             }
         }, "json");
     }

@@ -41,7 +41,7 @@ use App\Http\Controllers\OtpravkaController;
                             {{csrf_field()}}
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Выберите код пользователя</label>
+                                    <label for="usercode">Выберите код пользователя</label>
                                     <select required id="usercode" name="usercode" class="form-control select2" style="width: 100%;" onchange="javascript:getUserIdByCodeId();">
                                         <option selected="selected"></option>
                                         <?php   $codes = CodesController::getList(); ?> <!-- getCodeList -->
@@ -51,7 +51,7 @@ use App\Http\Controllers\OtpravkaController;
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Пользователь</label>
+                                    <label for="userid">Пользователь</label>
                                     <select required id="userid" name="userid" class="form-control select2" style="width: 100%;" >
                                         <option selected="selected"></option>
 
@@ -59,7 +59,7 @@ use App\Http\Controllers\OtpravkaController;
                                 </div>
 
                                 <div class="form-group">
-                                    <label class="col-form-label" for="inputSuccess"> Введите трек номер посылки </label>
+                                    <label class="col-form-label" for="tracknumber"> Введите трек номер посылки </label>
                                     <input required type="text" class="form-control" id="tracknumber" name="tracknumber" placeholder="номер посылки">
                                 </div>
                                 <div class="form-group">
@@ -71,6 +71,46 @@ use App\Http\Controllers\OtpravkaController;
                                         <OPTION  value="{{$otpravka->id}}">{{$otpravka->name}} - {{$otpravka->kod}}</OPTION>
                                         @endforeach
                                     </select>
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="kq"> Введите вес посылки (кг.) </label>
+                                    <input required type="text" class="form-control" id="kq" name="kq" placeholder="вес посылки">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="naimenovanie"> Наименование </label>
+                                    <input required type="text" class="form-control" id="naimenovanie" name="naimenovanie" placeholder="наименование">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="zakq"> За кг </label>
+                                    <input required type="text" class="form-control" id="zakq" name="zakq" placeholder="за кг">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="summa"> Сумма </label>
+                                    <input required type="text" class="form-control" id="summa" name="summa" placeholder="сумма">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="sf"> СФ </label>
+                                    <input required type="text" class="form-control" id="sf" name="sf" placeholder="сф">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="straxovka"> Страховка </label>
+                                    <input required type="text" class="form-control" id="straxovka" name="straxovka" placeholder="страховка">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="itoqodollar"> Итого ($) </label>
+                                    <input required type="text" class="form-control" id="itoqodollar" name="itoqodollar" placeholder="Итого ($)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="som"> Сумма (локал.) </label>
+                                    <input required type="text" class="form-control" id="som" name="som" placeholder="сумма (локал.)">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="dostavka"> Доставка </label>
+                                    <input required type="text" class="form-control" id="dostavka" name="dostavka" placeholder="доставка">
+                                </div>
+                                <div class="form-group">
+                                    <label class="col-form-label" for="itoqo"> Итого </label>
+                                    <input required type="text" class="form-control" id="itoqo" name="itoqo" placeholder="Итого">
                                 </div>
 <!--                                <div class="form-group">-->
 <!--                                    <label class="col-form-label" for="inputSuccess"> Введите город отправки </label>-->

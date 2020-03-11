@@ -4,6 +4,7 @@
 <?php
 use App\Http\Controllers\TrackingsController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CodesController;
 use App\Http\Controllers\OtpravkaController;
 ?>
 <!-- Content Wrapper. Contains page content -->
@@ -40,28 +41,20 @@ use App\Http\Controllers\OtpravkaController;
                             <thead>
                             <tr>
                                 <th>№</th>
-<!--                                <th>Отправка</th>-->
-                                <th>Имя и фамилия</th>
-                                <th>Код пользователя</th>
-                                <th>Трек номер посылки</th>
-<!--                                <th>КГ</th>-->
-<!--                                <th>Наим.</th>-->
-<!--                                <th>Гор. отп.</th>-->
-<!--                                <th>Дата отп.</th>-->
-<!--                                <th>Гор. пр.</th>-->
-<!--                                <th>Дата пр.</th>-->
-<!--                                <th>Ож. дата</th>-->
-<!--                                <th></th> status -->
-<!---->
-<!--                                <th>За кг.</th>-->
-<!--                                <th>Сумма</th>-->
-<!--                                <th>СФ</th>-->
-<!--                                <th>Стр.</th>-->
-<!--                                <th>СОМ</th>-->
-<!--                                <th>Дост.</th>-->
-<!--                                <th>Ит.</th>-->
-
-<!--                                <th>Вид отп.</th>-->
+                                <th>Имя Фамилия</th>
+                                <th>Код польз.</th>
+                                <th>Трек №</th>
+                                <th>КГ</th>
+                                <th>Наим.</th>
+                                <th>За кг.</th>
+                                <th>Сумм</th>
+                                <th>СФ</th>
+                                <th>Стр.</th>
+                                <th>И($)</th>
+                                <th>Сумм (лок)</th>
+                                <th>Дост.</th>
+                                <th>Итого</th>
+                                <th>Статус</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -74,6 +67,7 @@ use App\Http\Controllers\OtpravkaController;
                             $i++;
                             $user2 = UsersController::getUserFLNames($tracking->userid);
                             $otpravkaname = OtpravkaController::getNameById($tracking->otpravkaid);
+                            $code = CodesController::getCodebyCodeId($tracking->usercode);
                             ?>
 
                             @if (count($otpravkaname) > 0)
@@ -88,7 +82,8 @@ use App\Http\Controllers\OtpravkaController;
                                                     </td>
                                                     <td>
                                                         <b> Код отправки: </b>
-                                                        {{$otpravkaname[0]->kod}}
+                                                        <a href="/admin/otpravkalist/{{$otpravkaname[0]->id}}">{{$otpravkaname[0]->kod}}</a>
+
                                                     </td>
                                                     <td>
                                                         @if ($otpravkaname[0]->status==0)
@@ -130,65 +125,51 @@ use App\Http\Controllers\OtpravkaController;
                                 @else
                                 <td></td>
                                 @endif
-                                <td>{{$tracking->usercode}}</td>
+
+                                @if (count($code) > 0)
+                                <td>{{ $code[0]->code }}</td>
+                                @else
+                                <td></td>
+                                @endif
+
+
 
                                 <td><a href="#">{{$tracking->tracknumber}}</td></a>
-                             <!--   <td></td>  KG -->
-                             <!--   <td></td>  Naimenovaniye -->
-<!--                                <td>{{$tracking->sentfrom}}</td>-->
-<!--                                <td>{{$tracking->sentdate}}</td>-->
-<!--                                <td>{{$tracking->receiveto}}</td>-->
-<!--                                <td>{{$tracking->receivedate}}</td>-->
-<!--                                <td>{{$tracking->expectedreceivedate}}</td>-->
-<!--                                @if ($tracking->status==0)-->
-<!--                                <td>в пути</td>-->
-<!--                                @else-->
-<!--                                <td>доставлено</td>-->
-<!--                                @endif-->
-
-<!--                                <th></th> За кг. -->
-<!--                                <th></th> Сумма -->
-<!--                                <th></th> СФ -->
-<!--                                <th></th> Страховка -->
-<!--                                <th></th> Сумма СОМ -->
-<!--                                <th></th> Доставка -->
-<!--                                <th></th> Итого -->
-
-<!--                                @if ($tracking->tracktype==0)-->
-<!--                                <td> <img  src="../assets/img/black-plane.png"></td>-->
-<!--                                @else-->
-<!--                                <td> <img style="width: 25px; height:25px;" src="../assets/img/fast-delivery.png"></td>-->
-<!--                                @endif-->
-
+                                <td>{{$tracking->kq}}</td>
+                                <td>{{$tracking->naimenovanie}}</td>
+                                <td>{{$tracking->zakq}}</td>
+                                <td>{{$tracking->summa}}</td>
+                                <td>{{$tracking->sf}}</td>
+                                <td>{{$tracking->straxovka}}</td>
+                                <td>{{$tracking->itoqodollar}}</td>
+                                <td>{{$tracking->som}}</td>
+                                <td>{{$tracking->dostavka}}</td>
+                                <td>{{$tracking->itoqo}}</td>
+                                @if ($tracking->status==0)
+                                <td>на складе</td>
+                                @else
+                                <td>забрал</td>
+                                @endif
                             </tr>
-
                             @endforeach
                             </tbody>
                             <tfoot>
                             <tr>
                                 <th>№</th>
-<!--                                <th>Отправка</th>-->
-                                <th>Имя и фамилия</th>
-                                <th>Код пользователя</th>
-                                <th>Трек номер посылки</th>
-<!--                                <th>КГ</th>-->
-<!--                                <th>Наим.</th>-->
-<!--                                <th>Гор. отп.</th>-->
-<!--                                <th>Дата отп.</th>-->
-<!--                                <th>Гор. пр.</th>-->
-<!--                                <th>Дата пр.</th>-->
-<!--                                <th>Ож. дата</th>-->
-<!--                                <th></th> status -->
-<!---->
-<!--                                <th>За кг.</th>-->
-<!--                                <th>Сумма</th>-->
-<!--                                <th>СФ</th>-->
-<!--                                <th>Стр.</th>-->
-<!--                                <th>СОМ</th>-->
-<!--                                <th>Дост.</th>-->
-<!--                                <th>Ит.</th>-->
-<!---->
-<!--                                <th>Вид отп.</th>-->
+                                <th>Имя Фамилия</th>
+                                <th>Код польз.</th>
+                                <th>Трек №</th>
+                                <th>КГ</th>
+                                <th>Наим.</th>
+                                <th>За кг.</th>
+                                <th>Сумм</th>
+                                <th>СФ</th>
+                                <th>Стр.</th>
+                                <th>И($)</th>
+                                <th>Сумм (лок)</th>
+                                <th>Дост.</th>
+                                <th>Итого</th>
+                                <th>Статус</th>
                             </tr>
                             </tfoot>
                         </table>

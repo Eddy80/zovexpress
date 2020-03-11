@@ -25,6 +25,12 @@ class CodesController extends Controller
         //return redirect('/login');
     }
 
+    public static function getCodeByCodeId($codeid)
+    {
+        $code = Codes::where('id', $codeid)->get();
+        return $code;
+    }
+
     public static function getListByUserId()
     {
         $myid = Auth::user()->id;

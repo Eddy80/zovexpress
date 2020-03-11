@@ -33,6 +33,7 @@ class CreateTrackingsTable extends Migration
             $table->double('summa');
             $table->double('sf');
             $table->double('straxovka');
+            $table->double('itoqodollar');
             $table->double('som');
             $table->string('dostavka');
             $table->double('itoqo');

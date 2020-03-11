@@ -9,6 +9,7 @@ class Trackings extends Model
 
     protected $fillable = [
         'otpravkaid','usercode', 'userid','tracknumber',
+        'kq', 'naimenovanie', 'zakq', 'summa', 'sf', 'straxovka', 'itoqodollar', 'som','dostavka', 'itoqo'
         //'sentfrom',
         //'sentdate',
         //'receiveto',
