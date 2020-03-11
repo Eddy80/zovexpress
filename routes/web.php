@@ -185,6 +185,8 @@ Route::group([
 
     Route::get('/usercodelist', 'CodesController@getListByUserId2');
 
+    Route::get('/userbycode', 'CodesController@getUserIdByCodeId');
+
     Route::get('/admins', function () {
         return view('root.admins');
     });

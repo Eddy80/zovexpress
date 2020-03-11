@@ -2,7 +2,7 @@
 
 @section('contentadmin')
 <?php
-use App\Http\Controllers\UsersController;
+use App\Http\Controllers\CodesController;
 use App\Http\Controllers\OtpravkaController;
 ?>
 <!-- Content Wrapper. Contains page content -->
@@ -41,21 +41,23 @@ use App\Http\Controllers\OtpravkaController;
                             {{csrf_field()}}
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Выберите пользователя</label>
-                                    <select required id="userid" name="userid" class="form-control select2" style="width: 100%;" onchange="javascript:getCodeList();">
+                                    <label for="exampleInputEmail1">Выберите код пользователя</label>
+                                    <select required id="usercode" name="usercode" class="form-control select2" style="width: 100%;" onchange="javascript:getUserIdByCodeId();">
                                         <option selected="selected"></option>
-                                        <?php   $users = UsersController::getList(); ?>
-                                        @foreach($users as $user)
-                                        <OPTION  value="{{$user->id}}">{{$user->firstname}} {{$user->lastname}} {{$user->surname}} [{{$user->email}}, {{$user->phone}}]</OPTION>
-                                        @endforeach
+                                        <?php   $codes = CodesController::getList(); ?> <!-- getCodeList -->
+                                            @foreach($codes as $code)
+                                            <OPTION  value="{{$code->id}}">{{$code->code}}</OPTION>
+                                            @endforeach
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for="exampleInputEmail1">Выберите код пользователя</label>
-                                    <select required id="usercode" name="usercode" class="form-control select2" style="width: 100%;">
+                                    <label for="exampleInputEmail1">Пользователь</label>
+                                    <select required id="userid" name="userid" class="form-control select2" style="width: 100%;" >
                                         <option selected="selected"></option>
+
                                     </select>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="col-form-label" for="inputSuccess"> Введите трек номер посылки </label>
                                     <input required type="text" class="form-control" id="tracknumber" name="tracknumber" placeholder="номер посылки">

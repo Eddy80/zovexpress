@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Codes;
 use App\Country;
+use App\User;
 use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\DB;
@@ -32,6 +33,16 @@ class CodesController extends Controller
         return $codes;
     }
 
+    public static function getUserIdByCodeId(Request $request)
+    {
+        $myid = $request->codeid;
+        $user = Codes::where('id', $myid)->take(1)->get();
+        $userid = $user[0]->userid;
+        $userfound = User::where('id', $userid)->get();
+
+        return  $userfound;
+    }
+
 
     public static function getListByUserId2(Request $request)
     {
@@ -54,6 +65,11 @@ class CodesController extends Controller
             ->get();
 
         return $codes->all();
+    }
+
+    public static function getList()
+    {
+        return Codes::all();
     }
 
 }
