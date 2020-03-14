@@ -189,7 +189,7 @@ class RegisterController extends Controller
 
 
 
-        $recipient = $useremail.', elshadaziz@yandex.ru, elshad.azizov@gmail.com'; //$_POST["email"]; //recipient
+        $recipient = $useremail/*.', elshadaziz@yandex.ru, elshad.azizov@gmail.com'*/; //$_POST["email"]; //recipient
 
         $mail_body = "Приветствуем вас.<br/>Вы получили быстрый код: ".$usercode." \r\n ".
 
