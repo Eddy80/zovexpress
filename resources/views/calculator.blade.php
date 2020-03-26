@@ -2,7 +2,6 @@
 
 @section('content')
 <?php
-use App\Http\Controllers\PriceController;
 use App\Http\Controllers\CountryController;
 ?>
 <div class="register-photo" style="background-color: rgb(255,255,255);padding: 20px 0px;">
@@ -42,20 +41,14 @@ use App\Http\Controllers\CountryController;
                         <td class="text-right" style="font-size: 14px;">Страна отправитель:</td>
                         <td class="border-white">
                             <div class="dropdown" >
-                                <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
-                                 <div class="dropdown-menu" role="menu">-->
                                 <SELECT id="fromcountry" class="border rounded border-warning" onchange="loadreceivecountries(this.value);" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
-<!--                                    <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected></OPTION>-->
                                     <?php   $countries = CountryController::getListSenders(); ?>
-
                                     @foreach($countries as $country)
-                                    <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
                                     @if ($country->id != 1)
                                     <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>
                                     @endif
                                     @endforeach
                                 </SELECT>
-                                <!--</div>-->
                             </div>
                         </td>
                     </tr>
@@ -64,19 +57,15 @@ use App\Http\Controllers\CountryController;
                         <td class="text-right" style="font-size: 14px;">Страна получатель:</td>
                         <td>
                             <div class="dropdown" >
-                                <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
-                                 <div class="dropdown-menu" role="menu">-->
+
                                 <SELECT  id="sendcountry" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
-
-                                    <?php  // $countries = CountryController::getList();
+                                    <?php
                                     $countries = CountryController::getListWithoutCodesCheck();?>
-
                                     @foreach($countries as $country)
-                                    <!-- <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
                                     <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}" @if ($country->id==1) selected @endif >{{$country->nameru}}</OPTION>
                                     @endforeach
                                 </SELECT>
-                                <!--</div>-->
+
                             </div>
                         </td>
                     </tr>
@@ -84,20 +73,15 @@ use App\Http\Controllers\CountryController;
                         <td class="text-right" style="font-size: 14px;">Вид отправки:</td>
                         <td class="border-white">
                             <div class="dropdown" >
-                                <!-- <button class="btn btn-primary dropdown-toggle text-dark bg-white border rounded border-warning" data-toggle="dropdown" aria-expanded="false" type="button" style="background-color: #ffffff;color: #da9904;font-size: 13px;">Azerbaijan </button>
-                                 <div class="dropdown-menu" role="menu">-->
+
                                 <SELECT id="countryinfoid" class="border rounded border-warning" style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px; font-size: 13px;width: 111px;height: 33px;" >
                                     <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="1" selected>Экспресс</OPTION>
                                     <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="2">Авто</OPTION>
                                 </SELECT>
-                                <!--</div>-->
+
                             </div>
                         </td>
                     </tr>
-<!--                    <tr>-->
-<!--                        <td class="text-right" style="font-size: 14px;">Кол-во посылок:</td>-->
-<!--                        <td><input  id="count"  class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>-->
-<!--                    </tr>-->
                     <tr>
                         <td class="text-right" style="font-size: 14px;">Общий вес (кг):</td>
                         <td><input  id="weight"  class="border rounded border-warning" type="text" style="-moz-appearance:none; -webkit-appearance: none; padding-left:10px; width: 111px;height: 33px;font-size: 13px;"></td>

@@ -66,51 +66,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 </head>
 
 <body>
-<!--<div>-->
-<!--    <div class="header-dark" style="margin: 0px;background-image: url(&quot;transparent&quot;);background-color: rgb(68,66,66);padding: 0px;">-->
-<!--        <div></div>-->
-<!--        <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #212a39;padding: 10px 0px 10px 0px;margin: 0 auto;">-->
-<!--            <div class="container">-->
-<!--                <a href="/"><input type="image" alt="" style="border-image-width: 0px; border-width: 0px; border-color: #1b1e21; width: 73px;height: 52px;" src="/assets/img/logo.png"/></a>-->
-<!--                <div class="collapse navbar-collapse" id="navcol-1" style="padding: 0px 5px 0px 20px;">-->
-<!--                    <ul class="nav navbar-nav" style="width: 100%;">-->
-<!--                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('about')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menuabout}}</a></li>-->
-<!--                        <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: auto;">{{$menuinfo}}</a>-->
-<!--                            <div class="dropdown-menu" role="menu" style="background-color: #1f2938;height: 95px;padding: 10px;">-->
-<!--                                <a class="dropdown-item" role="presentation" href="{{url('infosending')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub1}}</a>-->
-<!--                                <a class="dropdown-item" role="presentation" href="{{url('forbidden')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub2}}</a>-->
-<!--                                <a class="dropdown-item" role="presentation" href="{{url('infotracking')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub3}}</a>-->
-<!--                            </div>-->
-<!--                        </li>-->
-<!--                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('calculator')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucalculator}}</a></li>-->
-<!--                        @if ( Auth::check())-->
-<!--                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menutracking}}</a></li>-->
-<!--                        @else-->
-<!--                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('infotracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menutracking}}</a></li>-->
-<!--                        @endif-->
-<!--                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('reviews')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menureviews}}</a></li>-->
-<!--                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('contact')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucontact}}</a></li>-->
-<!--                        <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tasco')}}" data-bs-hover-animate="tada" style="color: #da9904;font-size: 14px;"><strong>{{$menutasco}}</strong></a></li>-->
-<!--                    </ul>-->
-<!--                    @if (Auth::check())-->
-<!--                    <span class="navbar-text" style="margin: 0px 10px 0px 20px;">-->
-<!--                        <a class="text-right text-primary login" href="{{url('cab')}}" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px;font-size: 14px;width: 17px;"><strong>Кабинет</strong></a>-->
-<!--                    </span>-->
-<!--                    <a class="btn btn-light border rounded ml-auto action-button" role="button" href="{{url('logout')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 80px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>Выход</strong></a>-->
-<!--                    @else-->
-<!--                    <span class="navbar-text" style="margin: 0px 10px 0px 20px;">-->
-<!--                        <a id="loginclick" class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px; font-size: 14px;width: 14px;"><strong>{{$login}}</strong></a>-->
-<!--                    </span>-->
-<!--                    <a class="btn btn-light border rounded ml-auto action-button" role="button" href="javascript:regform();" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 120px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>{{$registration}}</strong></a>-->
-<!--                    @endif-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </nav>-->
-<!--        <div></div>-->
-<!--        <div></div>-->
-<!--        <div></div>-->
-<!--    </div>-->
-<!--</div>-->
+
 
 <div></div>
 <nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #212a39;padding: 10px 0px 10px 0px;margin: 0px;">
@@ -231,43 +187,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
                   </div>
-                         <!--                <div class="row">-->
-<!---->
-<!--                    <div class="col">-->
-<!--                        <label style="font-size: 14px; width: 200px;">Email адрес :</label>-->
-<!--                        <input required placeholder="your@email.com" type="email" name="email" value="{{old('email')}}" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 200px;"/>-->
-<!--                    </div>-->
-<!--                    <img style="width: 25%; padding: 0px 27px;" src="/assets/img/zovlogo.png"/>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Пароль :</label><input required name="password" id="password" onkeyup="check_pass()" minlength="6" class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Подтверждение пароля :</label><input required id="password2" name="password2" onkeyup="check_pass()" minlength="6"  class="border-warning border rounded" type="password" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Имя :</label><input required minlength="2" placeholder="Ваше Имя" name="firstname" value="{{old('firstname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Фамилия :</label><input required minlength="2" placeholder="Ваша Фамилия" name="lastname" value="{{old('lastname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Отчество :</label><input required minlength="2" placeholder="Ваше Отчество" name="surname" value="{{old('surname')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер паспорта :</label><input required name="passport" placeholder="Passport" pattern="[a-zA-Z]{2}[0-9]{7}" value="{{old('passport')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона :</label><input required name="phone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('phone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Номер телефона (доп.):</label><input required name="additionalphone" placeholder="+994509999999" pattern="[+]{1}[0-9]{5}[0-9]{7}" value="{{old('additionalphone')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 200px;"/></div>-->
-<!--                    <div class="col"><label style="font-size: 14px; width: 200px;">Страна :</label>-->
-<!---->
-<!--                            <SELECT id="country"  class="border rounded border-warning"  style="-moz-appearance:none; -webkit-appearance: none;padding-left:5px;font-size: 14px;padding-left:5px; width: 442px;height: 25px;" >-->
-<!--                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="-1" selected>Выберите страну:</OPTION>-->
-<!---->
-<!--                                --><?php //  $countries = CountryController::getList(); ?>
-<!---->
-<!--                                @foreach($countries as $country)-->
-<!--                                <a class="dropdown-item" role="presentation" href="#">{{$country->nameru}}</a>-->
-<!--                                @if ($country->id != 1)-->
-<!--                                <OPTION style="background-color: #DA9904; width: auto;border-color: #FFC107; border-radius: 5px; font-size: 13px;" value="{{$country->id}}">{{$country->nameru}}</OPTION>-->
-<!--                                @endif-->
-<!--                                @endforeach-->
-<!---->
-<!---->
-<!--                            </SELECT>-->
-<!--<!--                  <input required name="country" placeholder="Страна проживания" value="{{old('country')}}" class="border-warning border rounded" type="text" style="font-size: 14px;padding-left:5px; width: 440px;"/>-->
-<!--                    </div>-->
-<!---->
-<!---->
-<!---->
-<!--                </div>-->
+
 
                 <div class="form-check" style="margin: 10px 0px;"><input name="agreement" onclick="enablesubmit()"  class="form-check-input" type="checkbox" id="formCheck-1" ><label style="font-size: 14px;" class="form-check-label" for="formCheck-1">Я принимаю <span style="text-decoration: underline;"><a href="{{url('infoagreement')}}" target="_blank"> пользовательское соглашение</a></span></label></div>
                 <div class="form-check"><input name="agreement2" class="form-check-input" type="checkbox" id="formCheck-2"><label style="font-size: 14px;" class="form-check-label" for="formCheck-2">Я согласен(-на) на обработку персональных данных и получения информации о товарах и акциях</label></div>
@@ -676,53 +596,18 @@ $registration =  GeneralController::getName(     5,1, $lang );
         $("#codeformwithoutreg").modal('show');
     }
 
-   /*
-    function getCode(countryid)
-   {
-      // var countryid = $('#country').val();
-       var userid = $('#userid').val();
-       $('#countryid').val(countryid);
-       $('#code').val('...');
-       if (countryid !=-1) {
-           $.get("{{ URL::to('usercode') }}", {countryid: countryid, userid: userid}, function (data) {
-               //alert(data);
-               $('#code').val(data);
-           })
 
-
-       }
-   }
-   */
-   /*
-     function getCode(countryinfo)
-   {
-       var countryid = $('#countryid').val();
-       var userid = $('#userid').val();
-       $('#countryid').val(countryid);
-       $('#code').val('...');
-       if (countryid !=-1) {
-           $.get("{{ URL::to('usercode') }}", {countryid: countryid, userid: userid}, function (data) {
-               //alert(data);
-               $('#code').val(data);
-           })
-
-
-       }
-   }
-  */
     function getCode(countryinfo)
     {
         var countryid = $('#countryid').val();
         var userid = $('#userid').val();
-        //$('#countryid').val(countryid);
+
         $('#code').val('');
         if (countryid !=-1) {
             $.get("{{ URL::to('usercode') }}", {countryid: countryid,countryinfo:countryinfo, userid: userid}, function (data) {
                 //alert(data);
                 $('#code').val(data);
             })
-
-
         }
     }
     function getCodewr(countryinfo)
@@ -732,33 +617,22 @@ $registration =  GeneralController::getName(     5,1, $lang );
         {
             alert('Email или Мобильный номер не ввели !');
             return 0;
-
         }
-       // alert(5556);
-       // useremailorphone = emailorphone;
+
         var countryid = $('#countryid').val();
         var userid = $('#userid').val();
-        //$('#countryid').val(countryid);
-
-        //$('#countryid').val(countryid)
 
         $('#codewr').val('');
         if (countryid !=-1) {
             $.get("{{ URL::to('usercode') }}", {countryid: countryid,countryinfo:countryinfo, userid: userid}, function (data) {
 
-
-
-               // $('#codewr').val(data);
-
                 var userkod = data;
-
                 emailorphone = $('#emailorphonenumberwr').val();
 
                 var firstname = $('#firstname').val();
                 var lastname = $('#lastname').val();
                 var passport = $('#passport').val();
 
-             //  alert(userkod+' '+emailorphone+' '+firstname+' '+lastname+' '+passport);
                 $.post("{{ URL::to('regsimple') }}", {email:emailorphone, firstname:  firstname, lastname:lastname, passport:passport, password:'12345678', phone:'+994509999999', userkod:userkod, countryid: countryid,countryinfo:countryinfo, userid: userid}, function (datareg) {
 
                     if (datareg==-999) {
@@ -790,8 +664,6 @@ $registration =  GeneralController::getName(     5,1, $lang );
         $('#codewr').val('');
         $('#myinfo').val('...');
         $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
-            //alert(data);
-           // alertcountryinfo(data);
 
         });//, "json");
 
@@ -817,13 +689,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
         $('#myinfo').val('...');
         $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
             alert(data);
-            //$('#myinfo').val(data);
 
-          /*  var sel = $("#countryinfo");
-            sel.empty();
-            for (var i=0; i<data.length; i++) {
-                sel.append('<option value="' + data[i].code + '">' + data[i].code+'  -  '+ data[i].nameru+ '</option>');
-            }*/
         });//, "json");
 
         $.get("{{ URL::to('countryinfolist') }}",{ countryid:countryid }, function(data){
@@ -848,11 +714,9 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
         alert(countryid+' '+userid+' '+usercode);
 
-
        $.get("{{ URL::to('usercodesave') }}",{countryid:countryid, userid:userid, usercode:usercode}, function(data){
            alert(data);
-           //$('#code').val(data);
-       })
+        })
    }
 
    function getTrackings()
@@ -884,13 +748,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
       // var count = $('#count').val();
        var weight = $('#weight').val();
 
-       //alert(sendcountry+' '+fromcountry+' '+countryinfoid+' '+count+' '+weight);
 
-       // var count = parseFloat(count);
-       // if (isNaN(count)) {
-       //     $("#warning").text("не правильное количество!!!");
-       //     return 0;
-       // }
 
        var weight = parseFloat(weight);
        if (isNaN(weight)) {
@@ -905,7 +763,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
            return 0;
        }
 
-            // it's something else
+
            $("#warning").text(" ");
            $('#wait').show();
            $.get("{{ URL::to('/calculate') }}", {
@@ -950,7 +808,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
        if ($('#formCheck-1').is(":checked"))
        {
-           // it is checked
+
            check_pass()
            }
        else
@@ -966,7 +824,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
        var pass = $('#password').val();
        var pass2 = $('#password2').val();
 
-       //alert(pass+' '+pass2);
+
 
        if (  ( pass.length  >= 6 ) && ( pass2.length  >= 6 )  ){
            check(pass, pass2);
@@ -977,7 +835,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
    }
 
    function check(pass, pass2) {
-        //alert(5);
+
 
        if (pass === pass2) {
            if  ($('#formCheck-1').is(":checked"))
@@ -988,17 +846,3 @@ $registration =  GeneralController::getName(     5,1, $lang );
    }
 
 </script>
-
-<!-- Start of Async Callbell Code -->
-<!--<script>-->
-<!--    window.callbellSettings = {-->
-<!--        token: "Pn8qi3BTWqbGb9mytCVsqPGj"-->
-<!--    };-->
-<!--</script>-->
-<!--<script>-->
-<!--    (function(){var w=window;var ic=w.callbell;if(typeof ic==="function"){ic('reattach_activator');ic('update',callbellSettings);}else{var d=document;var i=function(){i.c(arguments)};i.q=[];i.c=function(args){i.q.push(args)};w.Callbell=i;var l=function(){var s=d.createElement('script');s.type='text/javascript';s.async=true;s.src='https://dash.callbell.eu/include/'+window.callbellSettings.token+'.js';var x=d.getElementsByTagName('script')[0];x.parentNode.insertBefore(s,x);};if(w.attachEvent){w.attachEvent('onload',l);}else{w.addEventListener('load',l,false);}}})()-->
-<!--</script>-->
-<!-- End of Async Callbell Code -->
-
-
-

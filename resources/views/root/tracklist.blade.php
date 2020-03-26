@@ -73,7 +73,7 @@ use App\Http\Controllers\OtpravkaController;
                             @if (count($otpravkaname) > 0)
                                 @if ($tracking->otpravkaid != $otpravkanamehistory)
                                     <tr style="background: #ffff11;">
-                                        <td colspan="5">
+                                        <td colspan="15">
                                             <table style="border: 1px; border-width: 1px; border-color:#ffff11;  color: #111111; padding: 0; margin: 0;">
                                                 <tr>
                                                     <td>

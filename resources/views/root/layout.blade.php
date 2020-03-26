@@ -881,9 +881,6 @@
     function getUserIdByCodeId()
     {
         var codeid = $('#usercode').val();
-
-        //alert(codeid);
-
         $.get("{{ URL::to('userbycode') }}",{ codeid:codeid}, function(data){
             //alert(data);
             var sel = $("#userid");

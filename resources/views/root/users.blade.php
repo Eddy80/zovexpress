@@ -77,18 +77,7 @@ use App\Http\Controllers\UsersController;
                                     $status='';
                                 ?>
                                 <td>{{$status}}
-<!--                                    <div class="form-group">-->
-<!--                                        <div class="custom-control custom-switch">-->
-<!--                                        --><?php
-//                                       // if ($user->status==999)
-//                                            echo '<input type="checkbox" class="custom-control-input" id="customSwitch1'.$i.'" checked="checked" />';
-//                                       // else
-//                                         //   echo '<input type="checkbox" class="custom-control-input" id="customSwitch1'.$i.'" />';
-//
-//                                       // echo '<label class="custom-control-label" for="customSwitch1'.$i.'">'.$status.'</label>';
-//                                        ?>
-<!--                                        </div>-->
-<!--                                    </div>-->
+
                                 </td>
                             </tr>
 
