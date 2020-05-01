@@ -74,7 +74,7 @@ use App\Http\Controllers\OtpravkaController;
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="kq"> Введите вес посылки (кг.) </label>
-                                    <input required type="text" class="form-control" id="kq" name="kq" placeholder="вес посылки">
+                                    <input required type="text" class="form-control" id="kq" name="kq" placeholder="вес посылки" onkeyup="calcsum();" />
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="naimenovanie"> Наименование </label>
@@ -82,11 +82,11 @@ use App\Http\Controllers\OtpravkaController;
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="zakq"> За кг </label>
-                                    <input required type="text" class="form-control" id="zakq" name="zakq" placeholder="за кг">
+                                    <input required type="text" class="form-control" id="zakq" name="zakq" placeholder="за кг" onkeyup="calcsum();"/>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="summa"> Сумма </label>
-                                    <input required type="text" class="form-control" id="summa" name="summa" placeholder="сумма">
+                                    <input required type="text" class="form-control" id="summa" name="summa" placeholder="сумма" readonly />
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="sf"> СФ </label>

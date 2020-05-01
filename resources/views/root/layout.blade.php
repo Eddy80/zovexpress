@@ -891,6 +891,20 @@
         }, "json");
     }
 
+
+    function calcsum()
+   {
+      // alert(5);
+       var kq = $('#kq').val();
+       var zakq = $('#zakq').val();
+       var summa = kq * zakq;
+      //  alert(kq+" * "+zakq+" =  "+summa);
+
+     // if (summa != NAN) 
+       $("#summa").val(summa);
+     // else alert("Rəqəm daxil edilməyib");
+   }
+
 </script>
 </body>
 </html>

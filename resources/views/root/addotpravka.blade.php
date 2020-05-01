@@ -41,8 +41,8 @@ use App\Http\Controllers\CountryController;
                             {{csrf_field()}}
                             <div class="card-body">
 
-                                <input type="hidden"   id="nowplace"  name="nowplace" />
-                                <input type="hidden"   id="nowpercent"  name="nowpercent" />
+                                <input type="hidden"   id="nowplace"  name="nowplace" value="" />
+                                <input type="hidden"   id="nowpercent"  name="nowpercent" value="0" />
                                 <input type="hidden"   id="receivedate"  name="receivedate" />
 
                                 <div class="form-group">
@@ -90,7 +90,7 @@ use App\Http\Controllers\CountryController;
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
                                         </div>
-                                        <input type="text" id="expectedreceivedate" name="expectedreceivedate"  class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                        <input type="text" required id="expectedreceivedate" name="expectedreceivedate"  class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
                                     </div>
                                     <!-- /.input group -->
                                 </div>

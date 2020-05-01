@@ -20,7 +20,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
 
-<!DOCTYPE html>
+
 <html lang="az" style="filter: brightness(100%);">
 
 <head>
@@ -737,6 +737,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
        });
 
    }
+
+
 
    function calculate()
    {

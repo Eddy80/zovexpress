@@ -3,16 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f19416b2-6459-4d4f-84c1-a38153929c32" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/zovexpress.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/zovexpress.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UsersController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/calculator.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/calculator.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root/addtrack.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/addtrack.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root/tracklist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/tracklist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/root/users.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/root/users.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,48 +29,6 @@
     </option>
     <expand />
     <select />
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>vi</find>
-      <find>getli</find>
-      <find>FL</find>
-      <find>form</find>
-      <find>store</find>
-      <find>lo</find>
-      <find>adminuser</find>
-      <find>getusers</find>
-      <find>getlist</find>
-      <find>getus</find>
-      <find>membersc</find>
-      <find>calculate</find>
-      <find>otprav</find>
-      <find>codewrinfo</find>
-      <find>getu</find>
-      <find>infokodform</find>
-      <find>cal</find>
-      <find>usercode</find>
-      <find>calcu</find>
-      <find>infokod</find>
-      <find>ouraddress</find>
-      <find>loadaddress</find>
-      <find>ouraddress2</find>
-      <find>viewm</find>
-      <find>loadaddress2</find>
-      <find>coun</find>
-      <find>getl</find>
-      <find>getcountr</find>
-      <find>getUserFLNames</find>
-      <find>usercodelist</find>
-    </findStrings>
-    <replaceStrings>
-      <replace />
-      <replace>td</replace>
-      <replace>assets/root/plu</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>C:\xampp\htdocs\zovexpress\resources\views</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -185,7 +134,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../vl" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -246,14 +196,11 @@
       <workItem from="1584137826298" duration="2650000" />
       <workItem from="1584305698280" duration="6907000" />
       <workItem from="1584876212891" duration="813000" />
-      <workItem from="1585226842296" duration="3410000" />
-    </task>
-    <task id="LOCAL-00001" summary="Laravel - Registration, Login, Cabinet">
-      <created>1576360567683</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1576360567683</updated>
+      <workItem from="1585226842296" duration="4099000" />
+      <workItem from="1585233803091" duration="12659000" />
+      <workItem from="1585693221451" duration="7186000" />
+      <workItem from="1586132643442" duration="619000" />
+      <workItem from="1586386548321" duration="1239000" />
     </task>
     <task id="LOCAL-00002" summary="Reviews,  Tables: - Country, Packs">
       <created>1576400767232</created>
@@ -591,7 +538,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584212881231</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="cleaning">
+      <created>1585230876976</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1585230876977</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TodoView">
@@ -607,7 +561,6 @@
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Web:  Reviews from DB,  allow field in comments table" />
     <MESSAGE value="Web: VehicleType&#10;Admin: VehicleType" />
     <MESSAGE value="Web: Contact send to email, Review Full List" />
     <MESSAGE value="Web: Code, info, Tracking - new tasks" />
@@ -632,29 +585,42 @@
     <MESSAGE value="WEB: address changed" />
     <MESSAGE value="Admin: AddPosilka-da Koda gore useri tapmaq" />
     <MESSAGE value="web: getcode (removed my email addresses)" />
-    <option name="LAST_COMMIT_MESSAGE" value="web: getcode (removed my email addresses)" />
+    <MESSAGE value="cleaning" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1286" height="163" key="GridCell.Tab.0.bottom" timestamp="1585226950183">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1585230874019">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585226950183" />
-    <state width="1286" height="163" key="GridCell.Tab.0.center" timestamp="1585226950182">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1585230874019" />
+    <state x="463" y="118" key="FileChooserDialogImpl" timestamp="1585240783506">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585226950182" />
-    <state width="1286" height="163" key="GridCell.Tab.0.left" timestamp="1585226950181">
+    <state x="463" y="118" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1585240783506" />
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom" timestamp="1585232959694">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585226950181" />
-    <state width="1286" height="163" key="GridCell.Tab.0.right" timestamp="1585226950182">
+    <state width="1286" height="163" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1585232959694" />
+    <state width="1286" height="163" key="GridCell.Tab.0.center" timestamp="1585232959694">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state width="1286" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585226950182" />
-    <state x="384" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1585226842846">
+    <state width="1286" height="163" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1585232959694" />
+    <state width="1286" height="163" key="GridCell.Tab.0.left" timestamp="1585232959694">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="384" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585226842846" />
+    <state width="1286" height="163" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1585232959694" />
+    <state width="1286" height="163" key="GridCell.Tab.0.right" timestamp="1585232959694">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1286" height="163" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1585232959694" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1585230882099">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1585230882099" />
+    <state x="384" y="187" key="com.intellij.ide.util.TipDialog" timestamp="1585233805182">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="384" y="187" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1585233805182" />
   </component>
   <component name="masterDetails">
     <states>
