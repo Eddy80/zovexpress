@@ -892,7 +892,7 @@
     }
 
 
-    function calcsum()
+   function calcsum()
    {
       // alert(5);
        var kq = $('#kq').val();
@@ -902,6 +902,20 @@
 
      // if (summa != NAN) 
        $("#summa").val(summa);
+     // else alert("Rəqəm daxil edilməyib");
+   }
+
+   function calcitogo()
+   {
+      // alert(5);
+       var summa = $('#summa').val();
+       var sf = $('#sf').val();
+       var straxovka = $('#straxovka').val();
+       var itogo = parseFloat(summa) + parseFloat(sf) + parseFloat(straxovka);
+      //  alert(kq+" * "+zakq+" =  "+summa);
+
+     // if (summa != NAN) 
+       $("#itoqodollar").val(itogo);
      // else alert("Rəqəm daxil edilməyib");
    }
 

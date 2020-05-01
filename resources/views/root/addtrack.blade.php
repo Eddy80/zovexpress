@@ -86,21 +86,21 @@ use App\Http\Controllers\OtpravkaController;
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="summa"> Сумма </label>
-                                    <input required type="text" class="form-control" id="summa" name="summa" placeholder="сумма" readonly />
+                                    <input required type="text" class="form-control" id="summa" name="summa" placeholder="сумма" readonly onchange="calcitogo();" />
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="sf"> СФ </label>
-                                    <input required type="text" class="form-control" id="sf" name="sf" placeholder="сф">
+                                    <input required type="text" class="form-control" id="sf" name="sf" placeholder="сф" onkeyup="calcitogo();" />
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="straxovka"> Страховка </label>
-                                    <input required type="text" class="form-control" id="straxovka" name="straxovka" placeholder="страховка">
+                                    <input required type="text" class="form-control" id="straxovka" name="straxovka" placeholder="страховка" onkeyup="calcitogo();" />
                                 </div>
                                 <div class="form-group">
                                     <label class="col-form-label" for="itoqodollar"> Итого ($) </label>
-                                    <input required type="text" class="form-control" id="itoqodollar" name="itoqodollar" placeholder="Итого ($)">
+                                    <input required type="text" class="form-control" id="itoqodollar" name="itoqodollar"  readonly placeholder="Итого ($)">
                                 </div>
-                                <div class="form-group">
+                                <!-- <div class="form-group">
                                     <label class="col-form-label" for="som"> Сумма (локал.) </label>
                                     <input required type="text" class="form-control" id="som" name="som" placeholder="сумма (локал.)">
                                 </div>
@@ -111,7 +111,7 @@ use App\Http\Controllers\OtpravkaController;
                                 <div class="form-group">
                                     <label class="col-form-label" for="itoqo"> Итого </label>
                                     <input required type="text" class="form-control" id="itoqo" name="itoqo" placeholder="Итого">
-                                </div>
+                                </div> -->
 
                             </div>
                             <!-- /.card-body -->
