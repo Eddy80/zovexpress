@@ -118,10 +118,35 @@ class TrackingsController extends Controller
     public  function getSamoletByTrackNumber(Request $request){
         $myid = Auth::user()->id;
         $tracknumber= $request->get('tracknumber');
+        $otpravkaid= $request->get('otpravkaid');
+        $otpravka = OtpravkaController::getNameById($otpravkaid);
 
         $vehicle = 'plane';
         $top=78;
 
+
+    if ($otpravka[0]->type==0) {
+        $vehicle = 'plane';
+        $top=78;
+    }
+    else {
+        $vehicle = 'truckk';
+        $top = 90;
+    }
+
+    $left = 30;
+    if ($otpravka[0]->nowpercent >=0 && $otpravka[0]->nowpercent < 25)
+        $left = 30;
+    elseif ($otpravka[0]->nowpercent >=25 && $otpravka[0]->nowpercent < 50)
+        $left = 190;
+    elseif ($otpravka[0]->nowpercent >=50 && $otpravka[0]->nowpercent < 75)
+        $left = 420;
+    elseif ($otpravka[0]->nowpercent >=75 && $otpravka[0]->nowpercent < 100)
+        $left = 650;
+    else
+        $left = 830;
+
+        /*
         $samolet = Trackings::where('userid', $myid)
             ->where('tracknumber',  $tracknumber)
             ->get();
@@ -149,11 +174,13 @@ class TrackingsController extends Controller
             $left = 600;
         else
             $left = 830;
-
+*/
+       
         $resultstring = '';
+        /*
         if (count($samolet)==0)
             $resultstring = '';
-        else
+        else*/
             $resultstring .='<div class="form-container">
              <form method="post" style="width: 900px;padding: 0px 20px;background-color: #000000;">
             <p></p>
@@ -174,21 +201,21 @@ class TrackingsController extends Controller
                         <table style="width: 100%;">
                             <tbody>
                             <tr style="width: 100%;">
-                                <td style="padding: 3px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
-                                <td style="padding: 20px 10px;height: 10px; width: 100%; background-image: url(\'/assets/img/onedash2.png\');
+                                <td style="padding: 10px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 20px 20px;height: 10px;vertical-align: baseline; width: 100%; background-image: url(\'/assets/img/onedash2.png\');
                                 background-repeat: repeat-x;"></td>
-                                <td style="padding: 3px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 10px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
                             </tr>
                             </tbody>
                         </table>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Гуанчжоу</td>
-                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Пхеньян</td>
-                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Хабаровск</td>
-                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Казань</td>
-                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;">Москва</td>
+                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">'.$otpravka[0]->sentfrom.'</td>
+                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;"></td>
+                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;"></td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;"></td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;">'.$otpravka[0]->receiveto.'</td>
                     </tr>
                     </tbody>
                 </table>
@@ -196,9 +223,11 @@ class TrackingsController extends Controller
 
             $resultstring .= '<img style="position: relative; top: -'.$top.'px;left:';
             $resultstring .= $left;
-            $resultstring .= 'px;" src="assets/img/'.$vehicle.'.png">'.'</form></div>';
+            $resultstring .= 'px; animation:vehicle 5s;
+            -moz-animation:vehicle 5s; /* Firefox */
+            -webkit-animation:vehicle 5s;" src="assets/img/'.$vehicle.'.png">'.'</form></div>';
 
-        }
+        //}
         return  $resultstring;
     }
 
@@ -206,6 +235,8 @@ class TrackingsController extends Controller
 
         $myid = Auth::user()->id;
         $codeid = $request->get('codeid');
+
+
 
         $trackings = Trackings::where('userid', $myid)
             ->where('usercode',  $codeid)
@@ -217,6 +248,9 @@ class TrackingsController extends Controller
         $resultstring = '<ul class="list-group">';
             foreach($trackings as $values)
             {
+                $otpravkaid = $values->otpravkaid;
+                $otpravka = OtpravkaController::getNameById($otpravkaid);
+                $nowpercent = $otpravka[0]->nowpercent;
                 $resultstring.=
                 '<li class="list-group-item" style="height: 62px;">
                     <div class="table-responsive" style="">
@@ -228,7 +262,7 @@ class TrackingsController extends Controller
                             <tr></tr>
                             <tr >
                                 <td class="border-white" style="padding: 0px;">
-                                    <button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;" onclick="getSamolet('.$values->tracknumber.');">
+                                    <button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;" onclick="getSamolet('.$values->tracknumber.', '. $otpravkaid.', '.$nowpercent.');">
                                     '.$values->tracknumber.'
                                     </button>
                                 </td>
@@ -241,15 +275,15 @@ class TrackingsController extends Controller
                                             <tbody class="border-warning">
                                             <tr>
                                                 <td class="border-warning" style="padding: 0px 5px;font-size: 10px;background-color: #d79827;color: #ffffff;width: 50%;">
-                                                Дата отправлки: '.$values->sentdate.'&nbsp;
+                                                Дата отправлки: '.$otpravka[0]->sentdate.'&nbsp;
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td class="border-warning" style="height: 16px;padding: 0px 5px;font-size: 10px;background-color: #d79827;color: #ffffff;margin: 0px;">';
-                                                    if ($values->status==1)
-                                                        $resultstring .= 'Дата получения: '.$values->receivedate;
+                                                    if ($otpravka[0]->status==1)
+                                                        $resultstring .= 'Дата получения: '.$otpravka[0]->receivedate;
                                                     else
-                                                        $resultstring .= 'Ожидаемаема дата получения: '.$values->expectedreceivedate;
+                                                        $resultstring .= 'Ожидаемаема дата получения: '.$otpravka[0]->expectedreceivedate;
 
                                                $resultstring .= ' </td>
                                             </tr>
@@ -263,10 +297,10 @@ class TrackingsController extends Controller
                                 </label>
                                 <label style="font-size: 12px;">
                                 <strong><em>';
-                                    if ($values->status==1)
+                                    if ($otpravka[0]->status==1)
                                         $resultstring .= 'доставлено';
                                     else
-                                        $resultstring .= 'в пути';
+                                        $resultstring .= 'в пути ( '.$otpravka[0]->nowpercent.'% )';
                                 $resultstring .= '</em></strong>
                                 </label>
                                 </td>

@@ -133,6 +133,7 @@ class OtpravkaController extends Controller
 
     }
 
+ 
     public function viewforeditotpravka(Request $request, $id){
 
 

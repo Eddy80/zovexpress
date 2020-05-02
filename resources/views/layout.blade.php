@@ -728,11 +728,58 @@ $registration =  GeneralController::getName(     5,1, $lang );
        });
    }
 
-   function getSamolet(tracknumber)
+   function getSamolet(tracknumber, otpravkaid, nowpercent)
    {
-      // alert(tracknumber);
+     //  alert(tracknumber+'  '+otpravkaid);
+
+    var left = 30;
+    if (nowpercent >=0 && nowpercent < 25)
+        left = 30;
+    else if (nowpercent >=25 && nowpercent < 50)
+        left = 190;
+    else if (nowpercent >=50 && nowpercent < 75)
+        left = 420;
+    else if (nowpercent >=75 && nowpercent < 100)
+        left = 650;
+    else
+        left = 830;
+
+
+        var createdStyleTag = document.createElement("style");
+           /* createdStyleTag.textContent =   "@keyframes vehicle{"+
+                                            "from { left: 30px; }"+
+                                            "to{ left: 250px; }"+
+                                            "}"+
+                                            "@-moz-keyframes vehicle{"+
+                                            "from { left: 30px; }"+
+                                            "to{ left: 250px; }"+
+                                            "}"+
+                                            "@-webkit-keyframes vehicle{"+
+                                            "from { left: 30px; }"+
+                                            "to{ left: 250px; }"+
+                                            "}";*/
+
+            createdStyleTag.textContent =   "@keyframes vehicle{"+
+                                            "from { left: 30px; }"+
+                                            "to{ left: "+left.toString()+"px; }"+
+                                            "}"+
+                                            "@-moz-keyframes vehicle{"+
+                                            "from { left: 30px; }"+
+                                            "to{ left: "+left.toString()+"px; }"+
+                                            "}"+
+                                            "@-webkit-keyframes vehicle{"+
+                                            "from { left: 30px; }"+
+                                            "to{ left: "+left.toString()+"px; }"+
+                                            "}";
+
+
+
+
+            document.body.appendChild(createdStyleTag);
+
+
        $("#samolet").html('');
-       $.get('{{url("cabgetsamolet")}}', {tracknumber: tracknumber},function(data){
+       $.get('{{url("cabgetsamolet")}}', {tracknumber: tracknumber, otpravkaid:otpravkaid},function(data){
            $("#samolet").html(data);
        });
 
