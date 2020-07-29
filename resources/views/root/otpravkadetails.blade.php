@@ -50,11 +50,44 @@ use App\Http\Controllers\OtpravkaController;
                     <dt>Код:</dt>
                     <dd>{{ $otpravka->kod }}</dd>
                     <dt>Укажите в процентах пройденный путь (%):</dt>
-                    <dd><input type="text" value="{{ $otpravka->nowpercent }}" name="nowpercent" /></dd>
+                    <dd>
+                        <!-- <input type="text" value="{{ $otpravka->nowpercent }}" name="nowpercent" /> -->
+                        <select name="nowpercent" onchange="setreceivedate(this.value)">
+                            <option value="{{ $otpravka->nowpercent }}">{{ $otpravka->nowpercent }}%</option>
+                            <option value="0">0%</option>
+                            <option value="25">25%</option>
+                            <option value="50">50%</option>
+                            <option value="75">75%</option>
+                            <option value="100">100%</option>
+                        </select>
+                    </dd>
                     <dt>Укажите где находится отправка:</dt>
                     <dd><input type="text" value="{{ $otpravka->nowplace }}" name="nowplace" /></dd>
                     <dt>Укажите дату прибытия если уже доставлено:</dt>
-                    <dd><input type="text" value="{{ $otpravka->receivedate }}" name="receivedate" /></dd>
+                    <dd>
+                    <?php
+                    if (strpos($otpravka->receivedate, '-') !== false) {
+                        $date = explode('-', $otpravka->receivedate);
+                        $new_receivedate = $date[2] . '/' . $date[1] . '/' . $date[0];
+                        $otpravka->receivedate = $new_receivedate;
+                    }
+                    
+                    if (strpos($otpravka->sentdate, '-') !== false) {
+                        $date = explode('-', $otpravka->sentdate);
+                        $new_sentdate = $date[2] . '/' . $date[1] . '/' . $date[0];
+                        $otpravka->sentdate = $new_sentdate;
+                    }
+
+                    $sentdate = (string)$otpravka->sentdate;
+                    ?>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                        </div>
+                                        <input type="text" onkeyup="comparewithsentdate({{$sentdate}}, this.value);" readonly value="{{ $otpravka->receivedate }}" name="receivedate" id="receivedate" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                    </div>
+                    <!-- <input type="text" value="{{ $otpravka->receivedate }}" name="receivedate" /> -->
+                    </dd>
                     <dt></dt>
                     <dd><input class="btn btn-success" type="submit" value="Сохранить" /></dd>
 

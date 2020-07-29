@@ -122,12 +122,12 @@ class TrackingsController extends Controller
         $otpravka = OtpravkaController::getNameById($otpravkaid);
 
         $vehicle = 'plane';
-        $top=78;
+        $top=82;
 
 
     if ($otpravka[0]->type==0) {
         $vehicle = 'plane';
-        $top=78;
+        $top=82;
     }
     else {
         $vehicle = 'truckk';
@@ -201,21 +201,21 @@ class TrackingsController extends Controller
                         <table style="width: 100%;">
                             <tbody>
                             <tr style="width: 100%;">
-                                <td style="padding: 10px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
-                                <td style="padding: 20px 20px;height: 10px;vertical-align: baseline; width: 100%; background-image: url(\'/assets/img/onedash2.png\');
+                                <td style="padding: 12px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 23px 20px;height: 10px;vertical-align: baseline; width: 100%; background-image: url(\'/assets/img/onedash2.png\');
                                 background-repeat: repeat-x;"></td>
-                                <td style="padding: 10px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 12px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
                             </tr>
                             </tbody>
                         </table>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">'.$otpravka[0]->sentfrom.'</td>
-                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;"></td>
-                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;"></td>
-                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;"></td>
-                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;">'.$otpravka[0]->receiveto.'</td>
+                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;width: 169px;">'.$otpravka[0]->sentfrom.'</td>
+                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;width: 169px;"></td>
+                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;width: 169px;"></td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;width: 169px;"></td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;width: 169px;">'.$otpravka[0]->receiveto.'</td>
                     </tr>
                     </tbody>
                 </table>
@@ -262,7 +262,7 @@ class TrackingsController extends Controller
                             <tr></tr>
                             <tr >
                                 <td class="border-white" style="padding: 0px;">
-                                    <button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;" onclick="getSamolet('.$values->tracknumber.', '. $otpravkaid.', '.$nowpercent.');">
+                                    <button class="btn btn-primary border rounded border-warning" type="button" style="background-color: #ffffff;margin: 0px 5px 0px;height: 35px;padding: 0px 10px;width: 200px;color: #000000;" onclick="getSamolet(\''.$values->tracknumber.'\', '. $otpravkaid.', '.$nowpercent.');">
                                     '.$values->tracknumber.'
                                     </button>
                                 </td>

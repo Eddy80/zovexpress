@@ -39,6 +39,8 @@
     <!-- DataTables -->
     <link rel="stylesheet" href="/assets/root/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 
+   
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -918,6 +920,42 @@
        $("#itoqodollar").val(itogo);
      // else alert("Rəqəm daxil edilməyib");
    }
+
+function setreceivedate(percent){
+   // alert(formatDate(now));
+    
+    if (percent==100){
+    var now = new Date();
+    $("#receivedate").prop("readonly",false);
+    $("#receivedate").val(formatDate(now));
+    }
+    else{
+    $("#receivedate").val("");
+    $("#receivedate").prop("readonly",true);
+    }
+
+}
+
+function formatDate(date) {
+    var d = new Date(date),
+        month = '' + (d.getMonth() + 1),
+        day = '' + d.getDate(),
+        year = d.getFullYear();
+
+    if (month.length < 2) 
+        month = '0' + month;
+    if (day.length < 2) 
+        day = '0' + day;
+
+    return [day, month, year].join('/');
+}
+
+function comparewithsentdate(sentdate, receivedate){
+   // console.log(sentdate);
+    //alert(sentdate + "   " +receivedate);
+}
+
+
 
 </script>
 </body>

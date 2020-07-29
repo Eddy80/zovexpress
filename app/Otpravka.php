@@ -48,25 +48,49 @@ class Otpravka extends Model
 
     public  function edit($fields)
     {
-        //return dd($fields);
-
         $this->fill($fields);
 
-        if ($this->nowpercent ==100) {
-            $this->status = 1;
+        if ($this->nowpercent !=100) {
+            $this->status = 0; 
+            $this->receivedate =  NULL;
+            $this->save();
+            //return dd("1");
+   
+            return;
+        }
 
+
+
+        else if (($this->nowpercent ==100) || ($this->receivedate != NULL)) 
+        {
+            $this->status = 1;
+            $this->nowpercent =100;
+           
             $receivedate = $fields['receivedate'];
 
 
+            if ($receivedate == NULL)
+            $receivedate = Date('d/m/Y');
+            //return dd($receivedate);
 
             if (strpos($receivedate, '/') !== false) {
                 $date = explode('/', $receivedate);
                 $new_receivedate = $date[2] . '-' . $date[1] . '-' . $date[0];
                 $this->receivedate = $new_receivedate;
             }
-        }
 
-        $this->save();
+            $this->save();
+           // return dd("3");
+            return ;
+        }
+        
+        else if ($this->receivedate == NULL) {        
+            $this->status = 0;
+            $this->nowpercent =50;
+            $this->save();
+            //return dd("2");
+            return ;
+        }
 
        // return dd($this);
 

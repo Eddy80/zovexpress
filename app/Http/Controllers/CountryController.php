@@ -78,7 +78,7 @@ class CountryController extends Controller
         //$myid = Auth::user()->id;
         //$countries = Country::where('approved', 1)->get();
 
-        $countryinfoname = DB::table("countriesinfo")->where('countryid',$countryid)->orWhere('infoid',$id)->get();
+        $countryinfoname = DB::table("countriesinfo")->where('countryid',$countryid)->where('infoid',$id)->get();
 
         return $countryinfoname;
     }
