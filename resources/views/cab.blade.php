@@ -5,6 +5,7 @@
 <?php
 use App\Http\Controllers\UsersController;
 ?>
+<div class="highlight-blue" style="background-color: rgb(255,0,0);height: 14px;padding: 0px;"></div>
 <div class="article-list">
     <div class="container">
         <div class="intro"></div>

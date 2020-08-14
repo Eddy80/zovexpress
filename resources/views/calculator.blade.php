@@ -4,6 +4,7 @@
 <?php
 use App\Http\Controllers\CountryController;
 ?>
+<div class="highlight-blue" style="background-color: rgb(255,0,0);height: 14px;padding: 0px;"></div>
 <div class="register-photo" style="background-color: rgb(255,255,255);padding: 20px 0px;">
     <div class="table-responsive table-borderless">
         <table class="table table-bordered">

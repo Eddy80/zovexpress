@@ -18,16 +18,17 @@ $login =  GeneralController::getName(     5,0, $lang );
 $registration =  GeneralController::getName(     5,1, $lang );
 ?>
 
-
-
-
+<!DOCTYPE html>
 <html lang="az" style="filter: brightness(100%);">
 
 <head>
     <meta charset="utf-8">
+    <title>ZovExpress</title>
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>ZovExpress</title>
+
     <link rel="shortcut icon" href="assets/logotip.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
@@ -46,6 +47,22 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/Team-Clean.css">
     <link rel="stylesheet" href="assets/css/Article-List.css">
+    <!-- <link rel="stylesheet" href="assets/css/topmenu.css"> -->
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+
+    <link rel="stylesheet" href="assets/css/Highlight-Blue.css">
+    <link rel="stylesheet" href="assets/css/Highlight-Phone.css">
+    <link rel="stylesheet" href="assets/css/Navbar---Apple-1.css">
+    <link rel="stylesheet" href="assets/css/Navbar---Apple.css">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/Team-Grid.css">
 
 
 
@@ -65,21 +82,61 @@ $registration =  GeneralController::getName(     5,1, $lang );
     </script>
 </head>
 
-<body>
 
 
-<div></div>
-<nav class="navbar navbar-dark navbar-expand-md navigation-clean-search" style="background-color: #212a39;padding: 10px 0px 10px 0px;margin: 0px;">
-    <div class="container">
-        <a href="/"><input type="image" alt="" style="margin-left: 10px;border-image-width: 0px; border-width: 0px; border-color: #1b1e21; width: 73px;height: 52px;" src="/assets/img/logo.png"/></a>
-<!--        <a class="navbar-brand" href="#"><img style="margin-left: 10px;width: 73px;height: 52px;background-image: url(&quot;assets/img/logo.png&quot;);color: rgb(255,255,255);"></a>-->
-        <button style="margin-right: 10px;" class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1">
-            <span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navcol-1" style="text-align: right; margin-right: 10px; ">
-
-            <ul class="nav navbar-nav" style="width: 100%;text-align: right; margin-right: 10px; margin-left: 30px;">
-                    <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('about')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menuabout}}</a></li>
+<body style="background-color: transparent;height: 544px;">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="padding-bottom: 0;">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1" style="font-size: 11px;">
+                <ul class="nav navbar-nav ml-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="color: rgb(247,3,3);">VIP Bonus Card<br></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #0f3c80;">Услуга "Экспресс заказ"<br></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #423E3E;">Промокод<br></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #423E3E;">Заказать курьера<br></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #423E3E;">Друг в ZovExpress<br></a></li>
+                    <li class="nav-item" role="presentation"></li>
+                    <li class="nav-item dropdown" style="font-size: 10px;"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="text-decoration: none;border: 1px solid rgb(185,189,191) ;"><strong>RU</strong></a>
+                        <div class="dropdown-menu" role="menu" style="font-size: 10px;">
+                            <a class="dropdown-item" role="presentation" href="#"><strong>RU</strong></a>
+                            <a class="dropdown-item" role="presentation" href="#"><strong>EN</strong></a>
+                            <a class="dropdown-item" role="presentation" href="#"><strong>AZ</strong></a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="padding-top: 0px;">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a href="{{url('home')}}"><img src="assets/img/logo.png" style="padding: -96px 0px;margin-right: 20px;"/></a>
+            <div
+                class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav mr-auto">
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('about')}}" style="color: #0f3c80;margin-left: 0px;">{{$menuabout}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #0f3c80;">Как мы работаем</a></li>
+                    @if ( Auth::check())
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('tracking')}}" style="color: #0f3c80;">{{$menutracking}}</a></li>
+                    @else
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('infotracking')}}" style="color: #0f3c80;">{{$menutracking}}</a></li>
+                    @endif
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('contact')}}" style="color: #0f3c80;">{{$menucontact}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #0f3c80;">F.A.Q.</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="{{url('tasco')}}" style="color: #DF0707;">Магазины {{$menutasco}}</a>
+                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    </li>
+                </ul>
+                <span class="navbar-text actions"> 
+                @if (Auth::check())
+                <a class="text-right text-primary login" href="{{url('cab')}}" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px;font-size: 14px;width: 17px;"><strong>Кабинет</strong></a>
+                <a class="btn btn-light border rounded ml-auto action-button" role="button" href="{{url('logout')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 80px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>Выход</strong></a>
+                @else
+                <a class="login" href="javascript:loginform();" style="color: #423E3E;">{{$login}}</a>
+                <a class="btn btn-light border rounded action-button" role="button" href="javascript:regform();" style="background-color: #D79729;border-radius: 6px;padding-top: 5px;">{{$registration}}</a>
+                @endif
+                </span>
+               </div>
+        </div>
+    </nav>
+                    <!--                   
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: auto;">{{$menuinfo}}</a>
                         <div class="dropdown-menu" role="menu" style="background-color: #1f2938;height: 95px;padding: 10px;">
                             <a class="dropdown-item" role="presentation" href="{{url('infosending')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub1}}</a>
@@ -87,55 +144,78 @@ $registration =  GeneralController::getName(     5,1, $lang );
                             <a class="dropdown-item" role="presentation" href="{{url('infotracking')}}" data-bs-hover-animate="pulse" style="background-color: #da9904;color: rgb(255,255,255);">{{$menusub3}}</a>
                         </div>
                     </li>
-                    <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('calculator')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucalculator}}</a></li>
-                    @if ( Auth::check())
-                    <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menutracking}}</a></li>
-                    @else
-                    <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('infotracking')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menutracking}}</a></li>
-                    @endif
+                    <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('calculator')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucalculator}}</a></li>             
                     <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('reviews')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menureviews}}</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('contact')}}" data-bs-hover-animate="rubberBand" style="font-size: 14px;">{{$menucontact}}</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link text-left" href="{{url('tasco')}}" data-bs-hover-animate="tada" style="color: #da9904;font-size: 14px;"><strong>{{$menutasco}}</strong></a></li>
-                </ul>
-                @if (Auth::check())
-                <span class="navbar-text" style="margin: 0px 10px 0px 20px;">
-                    <a class="text-right text-primary login" href="{{url('cab')}}" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px;font-size: 14px;width: 17px;"><strong>Кабинет</strong></a>
-                </span>
-                <a class="btn btn-light border rounded ml-auto action-button" role="button" href="{{url('logout')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 80px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>Выход</strong></a>
-                @else
-                <span class="navbar-text" style="margin: 0px 10px 0px 20px;">
-                    <a id="loginclick" class="text-right text-primary login" href="javascript:loginform();" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px; font-size: 14px;width: 14px;"><strong>{{$login}}</strong></a>
-                </span>
-                <a class="btn btn-light border rounded ml-auto action-button" role="button" href="javascript:regform();" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 120px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>{{$registration}}</strong></a>
-                @endif
+                    -->
 
-            </div>
-    </div>
-</nav>
 
 @yield('content' )
 
-
-<div class="footer-clean" style="background-color: #da9904;margin: 0px;height: auto;padding-top: 5px;padding-bottom: 5px;">
-    <footer style="height: auto;">
-        <div class="container">
-            <div class="row justify-content-center" style="height: auto;">
-                <div class="col-sm-4 col-md-3 item" style="height: auto; color: #ffffff;">
-                    <?php $addresses = GeneralController::getAddress();  ?>
-                    {!! $addresses !!}
+<div class="footer-clean" style="background-color: #DF0707;color: #fff;">
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-sm-4 col-md-3 item">
+                        <div style="font-family: Roboto;font-style: normal;font-weight: normal;font-size: 30px;line-height: 35px;text-transform: uppercase;color: #fff; margin-bottom: 50px;">
+                        Наши <br>филиалы
+                    </div>
+                        
+                    </div>
+                    <div class="col-sm-4 col-md-3 item"></div>
+                    <div class="col-sm-4 col-md-3 item"></div>
+                    <div class="col-lg-3 item social">
+                    <?php /* $links = GeneralController::getLinks(); {!!  $links !!} */?>
+                    
+                        <a href="https://t.me/zov_express"><img src="assets/img/telegram.png"></a>
+                        <a href="@zov_express"><img src="assets/img/instagram.png"></a>
+                        <a href="#"><img src="assets/img/facebook.png"></a>
+                        <a href="#"><img src="assets/img/youtube.png"></a>
+                        <!-- <a href="#"><i class="icon ion-social-instagram"></i></a>
+                        <a href="#"><i class="icon ion-social-facebook"></i></a>
+                        <a href="#"><i class="icon ion-social-youtube"></i></a> -->
+                        <p class="copyright">ZovExpress © 2020</p>
+                    </div>
                 </div>
-                <div class="col-sm-4 col-md-3 item" style="height: auto;">
-                        <p class="copyright" style="color: #ffffff;margin: 13px 0px;"><strong><em>&copy; ZovExpress <span id="year"></span></em></strong></p>
-                </div>
-                <div class="col-sm-4 col-md-3 item" style="height: auto;padding-top: 5px;padding-bottom: 5px; color: #ffffff;">
-                    <?php $links = GeneralController::getLinks();  ?>
-                    {!! $links !!}
-                </div>
-                <div class="col"><a href="#"><img class="float-right" src="assets/img/uparrow.png"></a></div>
             </div>
-        </div>
-    </footer>
-</div>
+        </footer>
+        <footer>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        <div class="row">
+                        <?php $addresses = GeneralController::getAddress();  ?>
+                            {!! $addresses !!}
+                            <!-- <div class="col-2" style="font-style: normal;
+                            font-size: 13px;line-height: 20px;">
+                            <strong>Офис в Казахстане:</strong> <br><strong>Aдрес:</strong> Алматы,<br> ул. Досмухамедова 117<br> <strong>Тел.:</strong> +7 777 0151540
+                            </div>
+
+                            <div class="col-2" style="font-style: normal;
+                            font-size: 13px;line-height: 20px;">
+                            <strong>Офис в Кыргызстане:</strong> <br><strong>Aдрес:</strong> Бишкек,<br> ул. Ибраимова 42<br> <strong>Тел.:</strong> +996 50 4901601
+                            </div>
+
+                            <div class="col-2" style="font-style: normal;
+                            font-size: 13px;line-height: 20px;">
+                            <strong>Офис в России:</strong> <br><strong>Aдрес:</strong> Москва, <br> ТЦ Садовод<br> <strong>Тел.:</strong> +7 926 2398888
+                            </div>
+
+                            <div class="col-2" style="font-style: normal;
+                            font-size: 13px;line-height: 20px;">
+                            <strong>Офис в Азербайджане:</strong> <br><strong>Aдрес:</strong> Баку,<br> пр. Нобеля 175<br> <strong>Тел.:</strong> +994 55 6161619
+                            </div>
+                            -->
+                        
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-0" style="background-color: green; "></div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div class="team-clean"></div>
+
 
 
 
