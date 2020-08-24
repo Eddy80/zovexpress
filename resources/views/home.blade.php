@@ -448,8 +448,8 @@ use App\Http\Controllers\UsersController;
 
                             </div>
                             <div class="swiper-pagination"></div>
-                            <div class="swiper-button-prev prev"></div>
-                            <div class="swiper-button-next next"></div>
+                            <div class="swiper-button-prev prev myprev"></div>
+                            <div class="swiper-button-next next mynext"></div>
                             
                         </div>
                         <div style="text-align: center;">
