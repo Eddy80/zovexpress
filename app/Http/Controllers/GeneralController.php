@@ -123,6 +123,12 @@ class GeneralController extends Controller
         return view('page')->with('page', $page);
     }
 
+    public function getPageUnder()
+    {
+        $page = General::find(25);
+        return view('page')->with('page', $page);
+    }
+
     public function getPageAgreement()
     {
         $page = General::find(22);

@@ -39,7 +39,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css"> -->
     <link rel="stylesheet" href="assets/css/Simple-Slider.css">
 
     <link rel="stylesheet" href="assets/css/Map-Clean.css">
@@ -59,12 +59,13 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/swipermy.css">
+    <link rel="stylesheet" href="assets/css/swiper.css">
 
-
-    <link rel="stylesheet" href="assets/css/styles.css">
+  
     <link rel="stylesheet" href="assets/css/Team-Grid.css">
 
-
+    <link rel="stylesheet" href="assets/css/styles.css">
 
     <!--[if IE 9]>
     <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
@@ -86,16 +87,18 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 <body style="background-color: transparent;height: 544px;">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="padding-bottom: 0;">
-        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1" style="font-size: 11px;">
-                <ul class="nav navbar-nav ml-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link active" href="#" style="color: rgb(247,3,3);">VIP Bonus Card<br></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #0f3c80;">Услуга "Экспресс заказ"<br></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #423E3E;">Промокод<br></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #423E3E;">Заказать курьера<br></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #423E3E;">Друг в ZovExpress<br></a></li>
-                    <li class="nav-item" role="presentation"></li>
-                    <li class="nav-item dropdown" style="font-size: 10px;"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="text-decoration: none;border: 1px solid rgb(185,189,191) ;"><strong>RU</strong></a>
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-0"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-0" style="font-size: 11px; display:inline-block;">
+                <ul class="nav navbar-nav ml-auto" >
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;"> <span style="color: #DF0707;"><u>VIP</u></span> <span>Bonus Card</span></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #1E4888;"><u>Услуга "Экспресс заказ"</u></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;">Промокод<br></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;">Заказать курьера<br></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;">Друг в ZovExpress<br></a></li>
+                    <li class="nav-item" role="presentation" style="margin-right:281px;">&nbsp;</li>
+                </u>
+                <ul class="nav navbar-nav mr-auto" >
+                    <li class="nav-item dropdown" style="font-family: Roboto;font-size: 10px;"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="#" style="text-decoration: none;"><strong>RU</strong></a>
                         <div class="dropdown-menu" role="menu" style="font-size: 10px;">
                             <a class="dropdown-item" role="presentation" href="#"><strong>RU</strong></a>
                             <a class="dropdown-item" role="presentation" href="#"><strong>EN</strong></a>
@@ -106,32 +109,41 @@ $registration =  GeneralController::getName(     5,1, $lang );
             </div>
         </div>
     </nav>
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="padding-top: 0px;">
-        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a href="{{url('home')}}"><img src="assets/img/logo.png" style="padding: -96px 0px;margin-right: 20px;"/></a>
-            <div
-                class="collapse navbar-collapse" id="navcol-1">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="padding-top: 35px;">
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a href="{{url('home')}}"><img src="assets/img/logo.png" style="margin-top:-85px; padding: -96px 0px;margin-right: 20px;"/></a>
+            <div  class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav mr-auto">
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('about')}}" style="color: #0f3c80;margin-left: 0px;">{{$menuabout}}</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #0f3c80;">Как мы работаем</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('about')}}" style="font-family: Roboto;font-size: 13px;color: #0f3c80;margin-left: 0px;">{{$menuabout}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('underconstruction')}}" style="font-family: Roboto;font-size: 13px;color: #0f3c80;">Как мы работаем</a></li>
                     @if ( Auth::check())
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('tracking')}}" style="color: #0f3c80;">{{$menutracking}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('tracking')}}" style="font-family: Roboto;font-size: 13px;color: #0f3c80;">{{$menutracking}}</a></li>
                     @else
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('infotracking')}}" style="color: #0f3c80;">{{$menutracking}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('infotracking')}}" style="font-family: Roboto;font-size: 13px;color: #0f3c80;">{{$menutracking}}</a></li>
                     @endif
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('contact')}}" style="color: #0f3c80;">{{$menucontact}}</a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="color: #0f3c80;">F.A.Q.</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false" href="{{url('tasco')}}" style="color: #DF0707;">Магазины {{$menutasco}}</a>
-                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('contact')}}" style="font-family: Roboto;font-size: 13px;color: #0f3c80;">{{$menucontact}}</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('underconstruction')}}" style="font-family: Roboto;font-size: 13px;color: #0f3c80;">F.A.Q.</a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link"  href="{{url('tasco')}}" style="font-family: Roboto;font-size: 13px;color: #DF0707;"><strong><u>Магазины {{$menutasco}}</u></strong></a>
+                        <!-- <div class="dropdown-menu" role="menu">
+                            <a class="dropdown-item" role="presentation" href="#">First Item</a>
+                            <a class="dropdown-item" role="presentation" href="#">Second Item</a>
+                            <a class="dropdown-item" role="presentation" href="#">Third Item</a>
+                        </div> -->
                     </li>
                 </ul>
                 <span class="navbar-text actions"> 
                 @if (Auth::check())
-                <a class="text-right text-primary login" href="{{url('cab')}}" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px;font-size: 14px;width: 17px;"><strong>Кабинет</strong></a>
-                <a class="btn btn-light border rounded ml-auto action-button" role="button" href="{{url('logout')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 80px;height: 31px;padding: 3px 3px 3px 3px;font-size: 14px;"><strong>Выход</strong></a>
+                <a class="text-right text-primary login" href="{{url('cab')}}" data-aos="fade-up" data-aos-duration="100" data-aos-once="true" style="color: #1e5383;margin: -22px 5px 0px 38px;font-size: 14px;width: 17px;font-family: Roboto;font-size: 13px;"><strong>Кабинет</strong></a>
+                <a class="btn btn-light border rounded ml-auto action-button" role="button" href="{{url('logout')}}" data-bs-hover-animate="rubberBand" style="background-color: #da9904;width: 80px;height: 31px;padding: 3px 3px 3px 3px;font-family: Roboto;font-size: 13px;"><strong>Выход</strong></a>
                 @else
-                <a class="login" href="javascript:loginform();" style="color: #423E3E;">{{$login}}</a>
-                <a class="btn btn-light border rounded action-button" role="button" href="javascript:regform();" style="background-color: #D79729;border-radius: 6px;padding-top: 5px;">{{$registration}}</a>
+                <a class="login" href="javascript:loginform();" style="color: #423E3E;font-family: Roboto;font-size: 13px;">{{$login}}</a>
+                <a class="btn btn-light border rounded action-button" role="button" href="javascript:regform();" style="font-family: Roboto;font-size: 13px;background-color: #D79729;border-radius: 6px;padding-top: 5px;margin-right:15px;">{{$registration}}</a>
                 @endif
+                <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
+                    корзина &nbsp;
+                    <img src="assets/img/korzina.png"/>
+                    <div style="float:right;margin-top:15px;background-color:#DF0707; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
+                </a>
+
                 </span>
                </div>
         </div>
@@ -151,19 +163,19 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 @yield('content' )
 
-<div class="footer-clean" style="background-color: #DF0707;color: #fff;">
+<div class="footer-clean" style="background-color: #DF0707;color: #fff; margin-top:7px;">
         <footer>
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-sm-4 col-md-3 item">
-                        <div style="font-family: Roboto;font-style: normal;font-weight: normal;font-size: 30px;line-height: 35px;text-transform: uppercase;color: #fff; margin-bottom: 50px;">
+                        <div style="font-family: Roboto, sans-serif;font-style: normal;font-weight: normal;font-size: 30px;line-height: 35px;text-transform: uppercase;color: #fff; margin-bottom: 50px;">
                         Наши <br>филиалы
                     </div>
                         
                     </div>
                     <div class="col-sm-4 col-md-3 item"></div>
                     <div class="col-sm-4 col-md-3 item"></div>
-                    <div class="col-lg-3 item social">
+                    <div class="col-lg-3 item social" style="font-family: Roboto, sans-serif;">
                     <?php /* $links = GeneralController::getLinks(); {!!  $links !!} */?>
                     
                         <a href="https://t.me/zov_express"><img src="assets/img/telegram.png"></a>
@@ -181,15 +193,15 @@ $registration =  GeneralController::getName(     5,1, $lang );
         <footer>
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-lg-12">
-                        <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="row" style="font-family: Roboto, sans-serif;">
                         <?php $addresses = GeneralController::getAddress();  ?>
                             {!! $addresses !!}
                             <!-- <div class="col-2" style="font-style: normal;
                             font-size: 13px;line-height: 20px;">
                             <strong>Офис в Казахстане:</strong> <br><strong>Aдрес:</strong> Алматы,<br> ул. Досмухамедова 117<br> <strong>Тел.:</strong> +7 777 0151540
                             </div>
-
+xxxx
                             <div class="col-2" style="font-style: normal;
                             font-size: 13px;line-height: 20px;">
                             <strong>Офис в Кыргызстане:</strong> <br><strong>Aдрес:</strong> Бишкек,<br> ул. Ибраимова 42<br> <strong>Тел.:</strong> +996 50 4901601
@@ -204,7 +216,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                             font-size: 13px;line-height: 20px;">
                             <strong>Офис в Азербайджане:</strong> <br><strong>Aдрес:</strong> Баку,<br> пр. Нобеля 175<br> <strong>Тел.:</strong> +994 55 6161619
                             </div>
-                            -->
+                            --!>
                         
                         </div>
                     </div>

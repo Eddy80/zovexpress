@@ -7,9 +7,9 @@
 
   padding-bottom: 50px;
 
-  border-width: 2px 0px;
-  border-color: #5F5F5F;
-  border-style: outset ;
+  
+  box-shadow:0px 5px 5px 0px gray;  
+  margin-top: 8px;
 }
 
 .team-grid p {
@@ -58,6 +58,9 @@
   position: relative;
   overflow: hidden;
   z-index: 4;
+  /*border: 2px solid;*/
+  border-radius: 5px;
+  box-shadow:0px 5px 5px 0px gray;
 }
 
 .team-grid .item .minibox {
@@ -69,12 +72,14 @@
   width: 140px;
   position: absolute;
   top: 190px;
-  right: 7px;
+  right: 2px;
   overflow: hidden;
   z-index: 5;
   color: #fff;
   font-size: 12px;
   line-height: 30px;
+  
+  
 }
 
 .team-grid .item .minibox2 {
@@ -86,7 +91,7 @@
   width: 140px;
   position: absolute;
   top: 190px;
-  right: 7px;
+  right: 2px;
   overflow: hidden;
   z-index: 5;
   color: #000;
@@ -97,14 +102,14 @@
 .team-grid .item .arrow-up {
 
   position: absolute;
-  top: 185px;
-  right: 7px;
+  top: 175px;
+  right: 2px;
   overflow: hidden;
   z-index: 3;
  
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 5px solid #C80808;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 15px solid #C80808;
 }
 
 .team-grid .item .cover {

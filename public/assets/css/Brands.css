@@ -1,6 +1,9 @@
 .brands {
   color: #313437;
   background-color: #fff;
+  box-shadow:0px 5px 5px 0px gray;
+  margin-top: 6px;
+  padding-bottom:40px;
 }
 
 .brands a {

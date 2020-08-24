@@ -38,6 +38,8 @@ Route::get('/about', function () {
 */
 Route::get('/about', 'GeneralController@getPageAbout');
 
+Route::get('/underconstruction', 'GeneralController@getPageUnder');
+
 Route::get('/calculator', function () {
     return view('calculator');
 });

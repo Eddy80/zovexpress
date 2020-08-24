@@ -2,3 +2,74 @@ body, html{
     min-height:100%;
     min-width:100%;
 }
+
+
+.daire a  {
+
+    
+    transition: width 3s;
+
+}
+
+.daire a  :hover{
+
+    width: 60px;
+   
+
+}
+
+
+.myarrow-down {
+
+    position: relative;
+    width: 15px;
+    top: 13px;
+    left: 48.8%;
+    overflow: hidden;
+    z-index: 3;
+   
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #C80808;
+  }
+
+
+.inredwhitesquare{
+    float:left; 
+    margin-right:10px; 
+    margin-bottom:10px; 
+    height: 138px; 
+    width: 130px; 
+    border-radius: 5px; 
+    background-color: #fff;
+}
+
+.inredwhitesquarelast{
+    float:left; 
+    height: 138px; 
+    width: 130px; 
+    border-radius: 5px; 
+    background-color: #fff;
+}
+
+.myprev {
+    background-image: url(../img/left.png);
+    height: 60px;
+    margin-left: 0px;
+}
+
+.mynext {
+    background-image: url(../img/right.png);
+    height: 60px;
+    margin-left: 50px;
+}
+
+.dropdown-menu {
+    min-width: 4 rem;   
+}
+
+.circlebutton{
+    margin: 0px 15px; 
+    width:150px; 
+    display:inline-block;
+}
