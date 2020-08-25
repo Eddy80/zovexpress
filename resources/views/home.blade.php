@@ -155,18 +155,23 @@ use App\Http\Controllers\UsersController;
                                
                             <div class="col-lg-8" style="float:left:padding:0px 0px; margin: 90px 0px 20px 0px; display:inline-block;">    
                                 <div class="inredwhitesquare">
+                                    <img src="assets/img/top/1.jpeg" style="height:138px; width:130px;border-radius: 5px;">
                                 </div> 
                             
                                 <div class="inredwhitesquare">
+                                    <img src="assets/img/top/2.jpeg" style="height:138px; width:130px;border-radius: 5px;">
                                 </div> 
                             
                                 <div class="inredwhitesquare">
+                                    <img src="assets/img/top/3.jpeg" style="height:138px; width:130px;border-radius: 5px;">
                                 </div> 
                                
                                 <div class="inredwhitesquare">
+                                    <img src="assets/img/top/4.jpeg" style="height:138px; width:130px;border-radius: 5px;">
                                 </div> 
 
                                 <div class="inredwhitesquarelast">
+                                    <img src="assets/img/top/5.jpeg" style="height:138px; width:130px;border-radius: 5px;">
                                 </div> 
                             </div> 
                             
