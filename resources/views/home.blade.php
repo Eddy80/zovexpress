@@ -137,15 +137,15 @@ use App\Http\Controllers\UsersController;
         </div>
 
 
-        <div class="container" style="margin-bottom:50px;" >
+        <div class="container" style="margin-bottom:10px;" >
             
             
-            <div style="background-color: #DF0707; margin-bottom: 50px;
+            <div style="background-color: #DF0707; margin-bottom: 20px;
                  border-radius: 20px 20px 0px 0px; box-shadow:0px 5px 5px 0px gray; ">
                 
                         <div class="row" style="display:inline-block;width:100%;padding-left:10px;text-align:center;">
                             
-                            <div class="col-lg-4" style="float:left; padding: 90px 0px 20px 30px; height:145px;margin-bottom:20px;   ">
+                            <div class="col-lg-4" style="float:left; padding: 50px 0px 10px 30px; height:145px;margin-bottom:20px;   ">
                                 <div style="margin: 0px 20px 10px 20px;width:220px; ">
                                     <img src="assets/img/tasco.png" >
                                     <button class="btn btn-primary" type="button" 
@@ -153,7 +153,7 @@ use App\Http\Controllers\UsersController;
                                 </div> 
                             </div>
                                
-                            <div class="col-lg-8" style="float:left:padding:0px 0px; margin: 90px 0px 20px 0px; display:inline-block;">    
+                            <div class="col-lg-8" style="float:left:padding:0px 0px; margin: 50px 0px 10px 0px; display:inline-block;">    
                                 <div class="inredwhitesquare">
                                     <img src="assets/img/top/1.jpeg" style="height:138px; width:130px;border-radius: 5px;">
                                 </div> 
@@ -181,9 +181,9 @@ use App\Http\Controllers\UsersController;
                       
 
                         <div class="row">   
-                            <div class="col-md-4" style="font-family: Roboto, sans-serif;font-weight:bold;text-align:center;color:#fff;padding-top: 20px;padding-bottom: 20px;">
+                            <div class="col-md-4" style="font-family: Roboto, sans-serif;font-weight:bold;text-align:center;color:#fff;padding-top: 0px;padding-bottom: 10px;">
                             </div>
-                            <div class="col-md-8" style="text-align:center;font-family: Roboto, sans-serif;font-weight:bold;color:#fff;padding-top: 20px;padding-bottom: 20px;padding-right:100px;">
+                            <div class="col-md-8" style="text-align:center;font-family: Roboto, sans-serif;font-weight:bold;color:#fff;padding-top: 0px;padding-bottom: 10px;padding-right:70px;">
                                 Заказывайте товары напрямую у поставщиков                    
                             </div>
                         </div>
