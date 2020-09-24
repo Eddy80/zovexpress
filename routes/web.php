@@ -56,6 +56,9 @@ Route::post('/contactform', 'GeneralController@addressstore');
 
 Route::get('/tasco',  'GeneralController@getPageTasco');
 
+Route::get('/invoicenew', function () {
+    return view('nakladnaya');
+});// 'InvoiceController@CreateForm');
 
 Route::get('/calculate', 'PriceController@calculate');
 

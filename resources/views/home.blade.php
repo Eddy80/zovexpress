@@ -194,7 +194,7 @@ use App\Http\Controllers\UsersController;
 
 </div> <!-- brands div-->
         
-    <div class="team-grid">
+  
         <div class="container">
           
             <div class="row people" style="font-family: Roboto, sans-serif;">
@@ -208,7 +208,7 @@ use App\Http\Controllers\UsersController;
                     </div>
                     <div class="minibox">
                         Скидки
-                    </div>   
+             <div class="team-grid">         </div>   
                     <div class="arrow-up"></div> 
                 </div>
                 <div class="col-md-4 col-lg-3 item">

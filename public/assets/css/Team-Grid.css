@@ -12,6 +12,7 @@
   margin-top: 8px;
 }
 
+
 .team-grid p {
   color: #7d8285;
 }
@@ -157,5 +158,9 @@
 
 .team-grid .social a:hover {
   opacity: 1;
+}
+
+.nakladnaya {
+  background-color: #fff;
 }
 
