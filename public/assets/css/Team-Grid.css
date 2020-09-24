@@ -164,3 +164,86 @@
   background-color: #fff;
 }
 
+.nakladnaya h2{
+  color: #777777;
+  font-family: Roboto, sans-serif;
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+
+.nakladnaya .leftpart{
+  display:inline-block;
+  width:100%;
+}
+
+.leftpartitem{
+  float:left;
+  width: 191px;
+  margin-right:30px;
+}
+
+.narrow {
+  width: 88px;
+}
+
+.narrow2 {
+  width: 124px;
+}
+
+.lnarrow {
+  width: 66px;
+}
+
+.wide {
+  width: 210px;
+}
+
+.nakladnaya .leftpart select{
+  
+  width:90px;
+}
+
+.nakladnaya .leftpart input{
+  width:100%;
+}
+
+.nakladnaya .circleBase {
+  border-radius: 50%;
+  background-color: blue;
+  color:#fff;
+  float:left;
+  width:20px;
+  height:20px;
+  text-align:center;
+  vertical-align: text-top;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: small;
+  font-style: italic;
+  margin-top: 5px;
+  margin-left:5px; 
+  cursor: pointer; 
+}
+
+.nakladnaya input[type=button]{
+  background-color:blue;
+  color:#fff;
+  padding: 0px 18px;
+  height:35px;
+  vertical-align: baseline;
+  border-radius: 5px;
+  border:none;
+}
+
+.nakladnaya .endpriceblue {
+    background-color: blue;
+    color: #fff;
+    width: 50px;
+    height: 29px;
+    text-align: center ;
+    padding: 2px 0px;
+    vertical-align: middle;
+    margin-left:-2px;
+    border-radius: 0px 3px 3px 0px;
+    float: left;
+}
+
