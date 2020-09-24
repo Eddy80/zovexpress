@@ -92,9 +92,9 @@
                 </div>
             </div>
 
-                <div class="row" style="padding-left:0 auto; padding-left: 10%; padding-top: 30px; padding-bottom:10px;">
-                    <a href="#">Добавить новый линк</a>
-                </div>
+            <div class="row" style="padding-left:0 auto; padding-left: 10%; padding-top: 30px; padding-bottom:10px;">
+                <a href="#">Добавить новый линк</a>
+            </div>
 
             
                 

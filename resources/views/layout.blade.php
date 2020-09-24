@@ -86,6 +86,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
 <body style="background-color: transparent;height: 544px;">
+    <div style=" box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="padding-bottom: 0;">
         <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-0"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-0" style="font-size: 11px; display:inline-block;">
@@ -148,6 +149,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                </div>
         </div>
     </nav>
+    </div>
                     <!--                   
                     <li class="nav-item dropdown"><a class="dropdown-toggle nav-link text-left" data-toggle="dropdown" aria-expanded="false" href="#" data-bs-hover-animate="rubberBand" style="font-size: 14px;width: auto;">{{$menuinfo}}</a>
                         <div class="dropdown-menu" role="menu" style="background-color: #1f2938;height: 95px;padding: 10px;">

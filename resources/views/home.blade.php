@@ -68,7 +68,7 @@ use App\Http\Controllers\UsersController;
             <div class="row">
                 <div class="col-xs-6 col-sm-12  col-md-12 col-lg-12" style="text-align:center;">
                 <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #D79729;border-style: none;box-shadow:0px 5px 5px 0px gray;">Как заказать?</button>
-                <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;">Накладная</button>
+                <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;" onclick="window.location.href='/invoicenew'">Накладная</button>
                 <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;">Магазины</button>
                 <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;">Наши адреса</button>
                 </div>
