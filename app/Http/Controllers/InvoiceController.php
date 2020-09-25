@@ -38,7 +38,9 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Invoice::add($request->all());
+
+        return redirect('/invoices');
     }
 
     /**

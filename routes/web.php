@@ -58,7 +58,12 @@ Route::get('/tasco',  'GeneralController@getPageTasco');
 
 Route::get('/invoicenew', function () {
     return view('nakladnaya');
-});// 'InvoiceController@CreateForm');
+});
+
+Route::post('/invoices', 'InvoiceController@store');
+Route::get('/invoices', function () {
+    return view('invoiceslist');
+});
 
 Route::get('/calculate', 'PriceController@calculate');
 

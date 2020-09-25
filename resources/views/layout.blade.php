@@ -991,4 +991,25 @@ $registration =  GeneralController::getName(     5,1, $lang );
        }
    }
 
+   function clearNakladnaya(){
+       // alert(5);
+        $("#countries").val("");
+        $("#personalcode").val("");
+        $("#promocode").val("");
+        $("#description").val("");
+        $("#tovarlink").val("");
+        $("#size").val("");
+        $("#color").val("");
+        $("#count").val("");
+        $("#price").val("");
+        $("#endprice").val("");
+        $("#order5").prop("checked",false);
+        
+   }
+
+
+   function addToBasket(){
+        alert("Добавлено в корзину");    
+   }
+
 </script>

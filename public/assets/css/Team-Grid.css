@@ -224,7 +224,7 @@
   cursor: pointer; 
 }
 
-.nakladnaya input[type=button]{
+.nakladnaya input[type=button], input[type=submit]{
   background-color:blue;
   color:#fff;
   padding: 0px 18px;
