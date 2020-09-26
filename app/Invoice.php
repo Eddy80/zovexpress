@@ -10,12 +10,12 @@ class Invoice extends Model
     protected $fillable = [
         'countryid', 'personalcode', 'promocode', 'description',
         'link', 'size', 'color',
-        'count','price', 'lastprice','isexpress', 'status'
+        'count','price', 'lastprice','isexpress', 'status', 'userid'
     ];
 
     public static function add($fields)
     {
-        // dd($fields);
+        //dd($fields);
         $invoice = new static;
         $invoice->fill($fields);
         $invoice->save();

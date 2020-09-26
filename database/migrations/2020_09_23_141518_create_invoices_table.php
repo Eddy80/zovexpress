@@ -27,6 +27,8 @@ class CreateInvoicesTable extends Migration
             $table->double('lastPrice');
             $table->integer('isExpress');
             $table->integer('status'); //0 - default (not finished), 1 - v korzine, 2 ordered
+            $table->integer('userid');
+            $table->long('trackingid');
             $table->timestamps();
         });
     }

@@ -607,6 +607,17 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
+
+        $('input[type="checkbox"]').click(function(){
+            if($(this).prop("checked") == true){
+                console.log("Checkbox is checked.");
+                isexpress(1);
+            }
+            else if($(this).prop("checked") == false){
+                console.log("Checkbox is unchecked.");
+                isexpress(0);
+            }
+        });
     });
 
     var userkod=-1;
@@ -1010,6 +1021,44 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
    function addToBasket(){
         alert("Добавлено в корзину");    
+   }
+
+   function changeEndPrice(){
+       let promocode = $('#promocode').val();
+       let price = $('#price').val();
+       let endprice = "";
+
+        if (promocode.length==0)
+          endprice = price;
+        else endprice = price - (price*10.0/100.0);  
+       //alert(promocode+'  '+price);
+       check = $('#isexpress').is(":checked");
+
+       if (check == true)
+       endprice = endprice+ (endprice*5.0/100.0);
+
+       $('#lastprice').val(endprice);
+   }
+
+   function isexpress(v){
+    var endprice = parseFloat($('#lastprice').val());   
+    console.log(endprice);
+
+        if(v == 1)
+        {
+        // checked
+        endprice = endprice + ((endprice*5)/100);
+        
+        }else
+        {
+        // unchecked
+        endprice = endprice - ((endprice*5)/100);
+        
+        }
+
+    
+
+       $('#lastprice').val(endprice);
    }
 
 </script>

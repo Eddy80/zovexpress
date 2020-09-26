@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Invoice;
 use Illuminate\Http\Request;
+use Auth;
 
 class InvoiceController extends Controller
 {
@@ -47,6 +48,15 @@ class InvoiceController extends Controller
       else 
         $data['isexpress'] = 1;
 
+        $data['userid'] = Auth::user()->id;
+
+   /*
+    $newdata = array('userid'=>Auth::user()->id);
+    array_push($data, $newdata);
+
+var_dump($data);
+dd($data);
+*/
         Invoice::add($data);
 
         return redirect('/invoiceslist');
@@ -62,6 +72,13 @@ class InvoiceController extends Controller
     {
         //
     }
+
+
+    public static function getList()
+    {
+        return Invoice::all()->where('userid' , '=', Auth::user()->id);
+    }
+
 
     /**
      * Show the form for editing the specified resource.
