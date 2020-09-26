@@ -57,12 +57,12 @@ Route::post('/contactform', 'GeneralController@addressstore');
 Route::get('/tasco',  'GeneralController@getPageTasco');
 
 Route::get('/invoicenew', function () {
-    return view('nakladnaya');
+    return view('invoice');
 });
 
-Route::post('/invoices', 'InvoiceController@store');
-Route::get('/invoices', function () {
-    return view('invoiceslist');
+Route::post('/invoices', 'InvoiceController@store')->name('invoices');
+Route::get('/invoiceslist', function () {
+    return view('invoicelist');
 });
 
 Route::get('/calculate', 'PriceController@calculate');

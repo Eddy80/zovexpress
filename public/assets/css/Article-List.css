@@ -1,6 +1,8 @@
 .article-list {
   color: #313437;
   background-color: #fff;
+  padding-left: 50px;
+  box-shadow:0px 5px 5px 0px gray; 
 }
 
 .article-list p {
@@ -43,10 +45,9 @@
 }
 
 .article-list .item .name {
-  font-weight: bold;
+  
   font-size: 16px;
-  margin-top: 20px;
-  color: inherit;
+
 }
 
 .article-list .item .description {

@@ -7,12 +7,12 @@
           
             
             
-        <form method="post" action="/invoices" name="createinvoice" id="createinvoice">
-       
+        <form method="post" action="{{ route('invoices') }}" name="createinvoice" id="createinvoice">
+            @csrf
             <div class="container" style="background-color: #fff; box-shadow:0px 5px 5px 0px gray;">
                 <div class="row" style="padding-left:0 auto; padding-left: 8%; padding-bottom:30px;">
                 
-                        {{ csrf_field() }}
+               
                     <div class="col-md-12" style="margin-top:30px;">
                     <p><a href="/">Главная</a> > Накладная </p>
                     </div>
@@ -23,7 +23,7 @@
                             <!-- first row subrow1 -->
                             <div class="leftpartitem narrow">
                                 <h2>Страна:</h2>
-                                <SELECT name="countries" id="countries">
+                                <SELECT name="countryid" id="countryid">
                                     <OPTION value="-1"></OPTION>
                                     <OPTION value="1">Азербайджан</OPTION>
                                     <OPTION value="2">Россия</OPTION>
@@ -45,7 +45,7 @@
                         <div>                          
                             <div class="leftpartitem" style="width: 95%;">
                                 <h2>Линк товара:</h2>                              
-                                <input type="text" name="tovarlink" id="tovarlink" value="" style="width: 100%;">
+                                <input type="text" name="link" id="link" value="" style="width: 100%;">
                             </div>                                    
                         </div>
                     </div> 
@@ -80,13 +80,14 @@
                     <div class="col-md-4" style="margin-bottom: 30px;">
                             <div style="float:left;width:100%;">
                                 <h2>Заключительная цена:</h2>
-                                <INPUT type="text" name="endprice" id="endprice" value="" style="width:83%;float:left;margin-right:0px;"/> 
+                                <INPUT type="text" name="lastprice" id="lastprice" value="" style="width:83%;float:left;margin-right:0px;"/> 
+                                <INPUT type="hidden" name="status" id="status" value="0"/> 
                                 <div class="endpriceblue"> +5% </div>              
                             </div>      
                     </div>
                     <!-- third row -->
                     <div class="col-md-7">
-                        <input type="checkbox" id="order5" name="order5" value="order5+">
+                        <input type="checkbox" id="isExpress" name="isExpress">
                         <label for="order5"> Оформить экспресс заказ  <strong>+5%</strong> </label>                          
                     </div> 
                     <div class="col-md-4" style="margin-bottom: 30px;">

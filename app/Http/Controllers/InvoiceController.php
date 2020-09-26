@@ -38,9 +38,18 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-        Invoice::add($request->all());
+      //  dd($request);
 
-        return redirect('/invoices');
+
+      $data = $request->all();
+      if ( !isset($data['isexpress']) )
+        $data['isexpress'] = 0;  
+      else 
+        $data['isexpress'] = 1;
+
+        Invoice::add($data);
+
+        return redirect('/invoiceslist');
     }
 
     /**
