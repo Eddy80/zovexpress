@@ -78,6 +78,8 @@ Route::get('/countryinfo', 'TrackingsController@getCountryInfo');
 Route::get('/countryinfolist', 'TrackingsController@getCountryInfoByCountryId');
 
 
+Route::post('/checkpromocode','PromocodController@getpercent');
+
 
 Route::post('/reg','Auth\RegisterController@create');
 Route::post('/regsimple','Auth\RegisterController@createsimple');

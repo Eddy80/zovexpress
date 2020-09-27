@@ -58,6 +58,7 @@ use App\Http\Controllers\TrackingsController;
                             </div>    
                             <div class="leftpartitem"> 
                                 <h2>Промокод:</h2>
+                               <!-- <INPUT type="hidden" name="percent" id="percent" value="">-->
                                 <INPUT type="text" name="promocode" id="promocode" value="" onkeyup="javascript:changeEndPrice();"/>                                 
                             </div>       
                         </div>
@@ -114,7 +115,7 @@ use App\Http\Controllers\TrackingsController;
                     <div class="col-md-4" style="margin-bottom: 30px;">
                         <div style="float:left;width:100%;">
                             <INPUT onclick="addToBasket();" type="button" id="addtobasket" value="Добавить в корзину" style="margin-right: 15px;" />    
-                            <INPUT type="submit" id="order" value="Заказать" style="background-color:red; margin-right: 0px;"/>                
+                            <INPUT type="submit" id="order" value="Заказать" style="background-color: #DF0707; margin-right: 0px;"/>                
                         </div>      
                     </div>
                    

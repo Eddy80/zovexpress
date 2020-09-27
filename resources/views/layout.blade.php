@@ -1024,30 +1024,50 @@ $registration =  GeneralController::getName(     5,1, $lang );
    }
 
    function changeEndPrice(){
-       let promocode = $('#promocode').val();
-       let price = $('#price').val();
-       let count = $('#count').val();
-       let endprice = "";
-       let countprice = 0;
-
-       if (count.length!=0) {
+        var promocode = $('#promocode').val();
+        var discountpercent = 0;
+        var price = $('#price').val();
+        var count = $('#count').val();
+        var endprice = "";
+        var countprice = 0;
+        if (count.length!=0) {
            countprice = price*count;
+        } else countprice = price*1;
+
+        check = $('#isexpress').is(":checked");
+        if (check == true)
+        countprice = countprice+ (countprice*5.0/100.0);
+
+        countprice = Math.round(countprice, 2);
+
+
+        if (promocode.length>=4) {
+            $.ajax({type:'POST',url:'/checkpromocode',data:{parameter:promocode},
+            success:function(data){
+                    
+                    discountpercent = data;
+                    $('#percent').val(window.discountpercent);
+                    if (discountpercent>0) {
+                        endprice = countprice - (countprice*discountpercent/100.0);
+                    } else {
+                        endprice = countprice;
+                    }
+                    $('#lastprice').val(endprice);
+            },
+            error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    //alert("Status: " + textStatus); alert("Error: " + errorThrown); 
+                    $('#lastprice').val(countprice);
+            }  });
         }
-
-        if (promocode.length==0)
-             endprice = countprice;
-        else endprice = countprice - (countprice*10.0/100.0);  
-       //alert(promocode+'  '+price);
-       check = $('#isexpress').is(":checked");
-
-       if (check == true)
-       endprice = endprice+ (endprice*5.0/100.0);
-
-       endprice = Math.round(endprice, 2);
-      
+        else 
+        $('#lastprice').val(countprice);
        
 
-       $('#lastprice').val(endprice);
+       
+       
+       
+        
+        
    }
 
    function isexpress(v){
