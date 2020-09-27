@@ -1,7 +1,11 @@
 @extends('layout')
 
 @section('content')
-
+<?php
+use App\Http\Controllers\CodesController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\TrackingsController;
+?>
 <div class="team-grid nakladnaya">
         <div class="container">
           
@@ -23,17 +27,33 @@
                             <!-- first row subrow1 -->
                             <div class="leftpartitem narrow">
                                 <h2>Страна:</h2>
-                                <SELECT name="countryid" id="countryid">
-                                    <OPTION value="-1"></OPTION>
-                                    <OPTION value="1">Азербайджан</OPTION>
-                                    <OPTION value="2">Россия</OPTION>
-                                    <OPTION value="3">Китай</OPTION>
-                                    <OPTION value="4">Турция</OPTION>
+                                <SELECT name="countryid" id="countryid" style="height:30px;">
+                                <?php   $countries = CountryController::getList();?>
+                                @foreach($countries as $country)
+                                    <OPTION value="{{$country->id}}">{{$country->nameru}}</OPTION>
+                                @endforeach
                                 </SELECT>
                             </div>     
                             <div class="leftpartitem wide" style="display:inline-block;margin-right:10px;">
                                 <h2>Ваш персональный код:</h2>
-                                <INPUT type="text" name="personalcode" id="personalcode" value="" style="float:left;width:80%;" />   
+                                @if ( Auth::check())
+                                <SELECT name="personalcode" id="personalcode" style="float:left;width:80%;height:30px;">
+                                <?php   $codes = CodesController::getListByUserId();?>
+                                @foreach($codes as $code)
+                                    <?php
+                                    $countryid =  $code->countryid;
+                                    $country = CountryController::getNameById($countryid);
+                                    $countryinfoid =  $code->countryinfoid;
+                                    $countryinfo = CountryController::getInfoByIds($countryid, $countryinfoid);
+                                    ?>
+                                    <OPTION value="{{$code->id}}">{{$code->code}} - [{{ $country->nameru }}] -  ({{$countryinfo[0]->inforu}})</OPTION>
+                                @endforeach    
+                                </SELECT>
+                                @endif
+                                @if ( !Auth::check())
+                                <INPUT type="text" name="personalcode" id="personalcode" value="" 
+                                style="float:left;width:80%;" />   
+                                @endif
                                 <div class="circleBase">i</div>                              
                             </div>    
                             <div class="leftpartitem"> 
