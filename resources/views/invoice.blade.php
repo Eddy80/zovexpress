@@ -68,7 +68,7 @@
                             </div>    
                             <div class="leftpartitem lnarrow">
                                 <h2>Кол-во:</h2>
-                                <INPUT type="text" name="count" id="count" value="" />                                 
+                                <INPUT type="text" name="count" id="count" value="" onkeyup="javascript:changeEndPrice();" />                                 
                             </div> 
                             <div class="leftpartitem narrow2">
                                 <h2>Цена:</h2>
@@ -80,7 +80,7 @@
                     <div class="col-md-4" style="margin-bottom: 30px;">
                             <div style="float:left;width:100%;">
                                 <h2>Заключительная цена:</h2>
-                                <INPUT type="text" name="lastprice" id="lastprice" value="" style="width:83%;float:left;margin-right:0px;"/> 
+                                <INPUT type="text" name="lastprice" id="lastprice" value="" readonly style="width:83%;float:left;margin-right:0px;"/> 
                                 <INPUT type="hidden" name="status" id="status" value="0"/>
                                 <INPUT type="hidden" name="userid" id="userid" value="-1"/> 
                                 <div class="endpriceblue"> +5% </div>              
@@ -88,8 +88,8 @@
                     </div>
                     <!-- third row -->
                     <div class="col-md-7">
-                        <input type="checkbox" id="isExpress" name="isExpress" onmouseup="javascript:isexpress();">
-                        <label for="order5"> Оформить экспресс заказ  <strong>+5%</strong> </label>                          
+                        <input type="checkbox" id="isExpress" name="isExpress" >
+                        <label for="isExpress"> Оформить экспресс заказ  <strong>+5%</strong> </label>                          
                     </div> 
                     <div class="col-md-4" style="margin-bottom: 30px;">
                         <div style="float:left;width:100%;">

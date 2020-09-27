@@ -1013,8 +1013,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
         $("#color").val("");
         $("#count").val("");
         $("#price").val("");
-        $("#endprice").val("");
-        $("#order5").prop("checked",false);
+        $("#lastprice").val("");
+        $("#isexpress").prop("checked",false);
         
    }
 
@@ -1026,16 +1026,26 @@ $registration =  GeneralController::getName(     5,1, $lang );
    function changeEndPrice(){
        let promocode = $('#promocode').val();
        let price = $('#price').val();
+       let count = $('#count').val();
        let endprice = "";
+       let countprice = 0;
+
+       if (count.length!=0) {
+           countprice = price*count;
+        }
 
         if (promocode.length==0)
-          endprice = price;
-        else endprice = price - (price*10.0/100.0);  
+             endprice = countprice;
+        else endprice = countprice - (countprice*10.0/100.0);  
        //alert(promocode+'  '+price);
        check = $('#isexpress').is(":checked");
 
        if (check == true)
        endprice = endprice+ (endprice*5.0/100.0);
+
+       endprice = Math.round(endprice, 2);
+      
+       
 
        $('#lastprice').val(endprice);
    }
@@ -1049,14 +1059,15 @@ $registration =  GeneralController::getName(     5,1, $lang );
         // checked
         endprice = endprice + ((endprice*5)/100);
         
-        }else
+        }else if(v == 0)
         {
         // unchecked
         endprice = endprice - ((endprice*5)/100);
         
         }
 
-    
+        endprice = Math.round(endprice, 2);
+
 
        $('#lastprice').val(endprice);
    }
