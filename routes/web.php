@@ -65,6 +65,10 @@ Route::get('/invoiceslist', function () {
     return view('invoicelist');
 });
 
+Route::get('/shops', function () {
+    return view('shops');
+});
+
 Route::get('/calculate', 'PriceController@calculate');
 
 Route::get('/getreceivecountryiesbysendercountryid', 'PriceController@getRcByScId');
@@ -158,6 +162,8 @@ Route::group([
         return view('root.users');
     });
 
+    
+
     Route::get('/pricelist', function () {
         return view('root.pricelist');
     });
@@ -175,14 +181,6 @@ Route::group([
     Route::get('/links', 'GeneralController@pagelinksload');
 
 
-    Route::get('/otpravkalist', function () {
-        return view('root.otpravkalist');
-    });
-
-    Route::get('/addotpravka', function () {
-        return view('root.addotpravka');
-    });
-    Route::post('/addotpravka', 'OtpravkaController@store');
 
 
     Route::get('/tracklist', function () {
@@ -213,7 +211,22 @@ Route::group([
     Route::post('/makeadmin', 'UsersController@adminuser');
 
 
-    Route::get('/admin/otpravkalist/{id}','OtpravkaController@viewforeditotpravka');
 
+
+
+    Route::get('/otpravkalist', function () {
+        return view('root.otpravkalist');
+    });
+    Route::get('/addotpravka', function () {
+        return view('root.addotpravka');
+    });
+    Route::post('/addotpravka', 'OtpravkaController@store');
+    Route::get('/admin/otpravkalist/{id}','OtpravkaController@viewforeditotpravka');
     Route::post('/updateotpravka', 'OtpravkaController@update');
+
+    Route::get('/admininvoicelist', function () {
+        return view('root.invoicelist');
+    });
+    Route::get('/admin/invoicelist/{id}','InvoiceController@viewforeditinvoice');
+    Route::post('/updateinvoice', 'InvoiceController@update');
 });

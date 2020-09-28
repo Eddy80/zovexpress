@@ -76,6 +76,11 @@ dd($data);
 
     public static function getList()
     {
+        return Invoice::all();
+    }
+
+    public static function getListbyuserid()
+    {
         return Invoice::all()->where('userid' , '=', Auth::user()->id);
     }
 
@@ -100,7 +105,13 @@ dd($data);
      */
     public function update(Request $request, Invoice $invoice)
     {
-        //
+        $otpravka = Invoice::findOrFail($request->id);
+
+
+
+        $invoice->edit($request->all());
+  
+        return view('root.invoicelist');
     }
 
     /**
@@ -112,5 +123,15 @@ dd($data);
     public function destroy(Invoice $invoice)
     {
         //
+    }
+
+    public function viewforeditinvoice(Request $request, $id){
+
+
+
+        $invoice = Invoice::find($id);
+        //return $member->firstname;
+
+        return view('root.invoicedetails')->with('invoice', $invoice);
     }
 }

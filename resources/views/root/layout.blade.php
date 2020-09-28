@@ -430,6 +430,14 @@
 <!--                        </ul>-->
 <!--                    </li>-->
                     <li class="nav-item has-treeview">
+                        <a href="{{url('admininvoicelist')}}" class="nav-link">
+                            <i class="nav-icon far fa-user"></i>
+                            <p>
+                                Накладные
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item has-treeview">
                         <a href="{{url('users')}}" class="nav-link">
                             <i class="nav-icon far fa-user"></i>
                             <p>

@@ -61,7 +61,7 @@ use App\Http\Controllers\CountryController;
                                 <th>Страховка</th>
                                 <th>Итого$</th>
                                 </tr>
-                                <?php   $invoices = InvoiceController::getList(); $i=0; ?>
+                                <?php   $invoices = InvoiceController::getListbyuserid(); $i=0; ?>
                                 @foreach($invoices as $invoice)
                                 <?php 
                                 $i++;
