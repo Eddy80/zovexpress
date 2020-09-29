@@ -59,6 +59,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
     <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+
     <link rel="stylesheet" href="assets/css/swipermy.css">
     <link rel="stylesheet" href="assets/css/swiper.css">
 
@@ -199,30 +201,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                         <div class="row" style="font-family: Roboto, sans-serif;">
                         <?php $addresses = GeneralController::getAddress();  ?>
                             {!! $addresses !!}
-                            <!-- 					 
-                                 <div class="col-2" style="font-style: normal; margin-bottom:20px; margin-right:20px;
-								 font-size: 13px;line-height: 20px;">
-	                             <strong>Офис в Казахстане:</strong> <br><strong>Aдрес:</strong> Алматы,<br> ул. Досмухамедова 117<br> 
-	                             <strong>Тел.:</strong> +7 777 0151540
-	                             </div>
-	 
-	                             <div class="col-2" style="font-style: normal;margin-bottom:20px;margin-right:20px;
-	                             font-size: 13px;line-height: 20px;">
-	                             <strong>Офис в Кыргызстане:</strong> <br><strong>Aдрес:</strong> Бишкек,<br> ул. Ибраимова 42<br> 
-	                             <strong>Тел.:</strong> +996 50 4901601
-	                             </div>
-	 
-	                             <div class="col-2" style="font-style: normal;margin-bottom:20px;margin-right:20px;
-	                             font-size: 13px;line-height: 20px;">
-	                             <strong>Офис в России:</strong> <br><strong>Aдрес:</strong> Москва, <br> ТЦ Садовод<br> <strong>Тел.:</strong> +7 926 2398888
-	                             </div>
-	 
-	                             <div class="col-2" style="font-style: normal;margin-bottom:20px;margin-right:20px;
-	                             font-size: 13px;line-height: 20px;">
-	                             <strong>Офис в Азербайджане:</strong> <br><strong>Aдрес:</strong> Баку,<br> пр. Нобеля 175<br> <strong>Тел.:</strong> +994 55 6161619
-	                             </div>
-	 
-                            
+                        
                         
                         </div>
                     </div>

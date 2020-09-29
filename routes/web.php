@@ -22,7 +22,9 @@ Route::get('/home', function () {
     return view('home');
 });
 
-
+Route::get('/relogin', function () {
+    return view('relogin');
+});
 
 Route::get('/infotracking',  'GeneralController@getPageInfoTracking');
 
@@ -69,6 +71,10 @@ Route::get('/shops', function () {
     return view('shops');
 });
 
+Route::get('/branchs', function () {
+    return view('branchs');
+});
+
 Route::get('/calculate', 'PriceController@calculate');
 
 Route::get('/getreceivecountryiesbysendercountryid', 'PriceController@getRcByScId');
@@ -87,7 +93,8 @@ Route::post('/checkpromocode','PromocodController@getpercent');
 
 Route::post('/reg','Auth\RegisterController@create');
 Route::post('/regsimple','Auth\RegisterController@createsimple');
-Route::post('/login','Auth\LoginController@login');
+Route::post('/login','Auth\LoginController@login')->name('login');
+Route::post('/relogin','Auth\LoginController@relogin')->name('relogin');
 Route::get('/logout','Auth\LoginController@logout');
 
 

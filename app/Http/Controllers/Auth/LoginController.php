@@ -57,7 +57,27 @@ class LoginController extends Controller
         if ($result){
                 return redirect('/cab');
         }
-        return redirect()->back()->with('status','Yalnış email və ya parol');
+        return redirect('relogin')->with('status','Неправильный email или пароль');
+    }
+
+    public  function relogin(Request $request)
+    {
+       // dd($request->all());
+        $this->validate($request,[
+            'email'=>'required|email',
+            'password'=>'required'
+        ]);
+
+
+        $result = Auth::attempt([
+            'email'=> $request->get('email'),
+            'password'=> $request->get('password')
+        ]);
+
+        if ($result){
+                return redirect('/cab');
+        }
+        return redirect()->back()->with('status','Неправильный email или пароль');
     }
 
     public function logout()
