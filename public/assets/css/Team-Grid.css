@@ -190,6 +190,8 @@
   width: 124px;
 }
 
+
+
 .lnarrow {
   width: 66px;
 }
@@ -205,6 +207,16 @@
 
 .nakladnaya .leftpart input{
   width:100%;
+}
+
+.narrow3 {
+  width: 171px;
+  margin-right:27px;
+}
+
+.narrow3 input{
+  width: 99%;
+  
 }
 
 .nakladnaya .circleBase {

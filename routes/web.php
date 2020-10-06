@@ -58,6 +58,7 @@ Route::post('/contactform', 'GeneralController@addressstore');
 
 Route::get('/tasco',  'GeneralController@getPageTasco');
 
+//////////// INVOICE /////////////////////////////////////////////////
 Route::get('/invoicenew', function () {
     return view('invoice');
 });
@@ -66,14 +67,24 @@ Route::post('/invoices', 'InvoiceController@store')->name('invoices');
 Route::get('/invoiceslist', function () {
     return view('invoicelist');
 });
+//////////// COURIER /////////////////////////////////////////////////
+Route::get('/couriernew', function () {
+    return view('courier');
+});
 
+Route::post('/couriers', 'CourierController@store')->name('couriers');
+Route::get('/courierslist', function () {
+    return view('courierlist');
+});
+//////////// SHOP /////////////////////////////////////////////////
 Route::get('/shops', function () {
     return view('shops');
 });
-
+//////////// BRANCH /////////////////////////////////////////////////
 Route::get('/branchs', function () {
     return view('branchs');
 });
+//********************************************************************/
 
 Route::get('/calculate', 'PriceController@calculate');
 
