@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Courier;
+use App\Kuryer;
 use Illuminate\Http\Request;
 use Auth;
 
-class CourierController extends Controller
+class KuryerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,11 +25,20 @@ class CourierController extends Controller
      */
     public function createForm()
     {
-        return view('courier');
+        return view('kuryer');
     }
 
     
-    
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -39,8 +48,9 @@ class CourierController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
-        Courier::add($data);
+        $data = $request->all();
+       //dd($data);
+        Kuryer::add($data);
 
         return redirect('/courierslist');
     }
@@ -48,33 +58,21 @@ class CourierController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Courier  $courier
+     * @param  \App\Kuryer  $kuryer
      * @return \Illuminate\Http\Response
      */
-    public function show(Courier $courier)
+    public function show(Kuryer $kuryer)
     {
         //
     }
 
-
-    public static function getList()
-    {
-        return Courier::all();
-    }
-
-    public static function getListbyuserid()
-    {
-        return Courier::all()->where('userid' , '=', Auth::user()->id);
-    }
-
-
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Courier  $courier
+     * @param  \App\Kuryer  $kuryer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Courier $courier)
+    public function edit(Kuryer $kuryer)
     {
         //
     }
@@ -83,38 +81,43 @@ class CourierController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Courier  $courier
+     * @param  \App\Kuryer  $kuryer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Courier $courier)
+    public function update(Request $request, Kuryer $kuryer)
     {
-        $otpravka = Courier::findOrFail($request->id);
+        $otpravka = Kuryer::findOrFail($request->id);
 
-
-
-        $courier->edit($request->all());
+        $kuryer->edit($request->all());
   
-        return view('root.courierlist');
+        return view('root.kuryerlist');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Courier  $courier
+     * @param  \App\Kuryer  $kuryer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Courier $courier)
+    public function destroy(Kuryer $kuryer)
     {
         //
     }
 
     public function viewforeditcourier(Request $request, $id){
 
-
-
-        $courier = Courier::find($id);
+        $kuryer = Kuryer::find($id);
         //return $member->firstname;
+        return view('root.kuryerdetails')->with('kuryer', $kuryer);
+    }
 
-        return view('root.courierdetails')->with('courier', $courier);
+    public static function getList()
+    {
+        return Kuryer::all();
+    }
+
+    public static function getListbyuserid()
+    {
+        return Kuryer::all()->where('userid' , '=', Auth::user()->id);
     }
 }

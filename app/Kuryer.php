@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Сourier extends Model
+class Kuryer extends Model
 {
     protected $fillable = [
-        'countryid', 'personalcode', 'count','price', 'lastprice','isexpress', 'status', 'userid'
+        'targetcountryid', 'targetregionname', 'personalcode', 'targetphone1',
+        'targetphone2','targetaddress','posilkacount', 'lastprice', 'userid'
     ];
 
     public static function add($fields)

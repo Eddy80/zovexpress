@@ -72,7 +72,7 @@ Route::get('/couriernew', function () {
     return view('courier');
 });
 
-Route::post('/couriers', 'CourierController@store')->name('couriers');
+Route::post('/couriers', 'KuryerController@store')->name('couriers');
 Route::get('/courierslist', function () {
     return view('courierlist');
 });
@@ -83,6 +83,14 @@ Route::get('/shops', function () {
 //////////// BRANCH /////////////////////////////////////////////////
 Route::get('/branchs', function () {
     return view('branchs');
+});
+//////////// Search Tovar /////////////////////////////////////////////////
+Route::get('/searcht', function () {
+    return view('searchtovar');
+});
+
+Route::get('/searcht2', function () {
+    return view('searchtovar2');
 });
 //********************************************************************/
 

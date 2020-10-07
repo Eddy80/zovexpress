@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
-use App\Invoice;
+use App\Courier;
 use Illuminate\Http\Request;
 use Auth;
 
-class InvoiceController extends Controller
+
+class CourierController extends Controller
 {
+    
+
     /**
      * Display a listing of the resource.
      *
@@ -25,7 +28,7 @@ class InvoiceController extends Controller
      */
     public function createForm()
     {
-        return view('nakladnaya');
+        return view('courier');
     }
 
     
@@ -39,38 +42,22 @@ class InvoiceController extends Controller
      */
     public function store(Request $request)
     {
-      //  dd($request);
+       // dd($request);
 
+       $data = $request->all();
+       //dd($data);
+        Courier::add($data);
 
-      $data = $request->all();
-      if ( !isset($data['isexpress']) )
-        $data['isexpress'] = 0;  
-      else 
-        $data['isexpress'] = 1;
-
-        if (Auth::check())
-        $data['userid'] = Auth::user()->id;
-        else $data['userid'] = -1;
-
-   /*
-    $newdata = array('userid'=>Auth::user()->id);
-    array_push($data, $newdata);
-
-var_dump($data);
-dd($data);
-*/
-        Invoice::add($data);
-
-        return redirect('/invoiceslist');
+        return redirect('/courierslist');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Invoice  $invoice
+     * @param  \App\Courier  $courier
      * @return \Illuminate\Http\Response
      */
-    public function show(Invoice $invoice)
+    public function show(Courier $courier)
     {
         //
     }
@@ -78,22 +65,22 @@ dd($data);
 
     public static function getList()
     {
-        return Invoice::all();
+        return Courier::all();
     }
 
     public static function getListbyuserid()
     {
-        return Invoice::all()->where('userid' , '=', Auth::user()->id);
+        return Courier::all()->where('userid' , '=', Auth::user()->id);
     }
 
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Invoice  $invoice
+     * @param  \App\Courier  $courier
      * @return \Illuminate\Http\Response
      */
-    public function edit(Invoice $invoice)
+    public function edit(Courier $courier)
     {
         //
     }
@@ -102,38 +89,38 @@ dd($data);
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Invoice  $invoice
+     * @param  \App\Courier  $courier
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Invoice $invoice)
+    public function update(Request $request, Courier $courier)
     {
-        $otpravka = Invoice::findOrFail($request->id);
+        $otpravka = Courier::findOrFail($request->id);
 
 
 
-        $invoice->edit($request->all());
+        $courier->edit($request->all());
   
-        return view('root.invoicelist');
+        return view('root.courierlist');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Invoice  $invoice
+     * @param  \App\Courier  $courier
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Invoice $invoice)
+    public function destroy(Courier $courier)
     {
         //
     }
 
-    public function viewforeditinvoice(Request $request, $id){
+    public function viewforeditcourier(Request $request, $id){
 
 
 
-        $invoice = Invoice::find($id);
+        $courier = Courier::find($id);
         //return $member->firstname;
 
-        return view('root.invoicedetails')->with('invoice', $invoice);
+        return view('root.courierdetails')->with('courier', $courier);
     }
 }

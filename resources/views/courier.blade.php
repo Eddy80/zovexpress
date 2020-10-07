@@ -5,6 +5,7 @@
 use App\Http\Controllers\CodesController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\TrackingsController;
+
 ?>
 <div class="team-grid nakladnaya">
         <div class="container">
@@ -24,11 +25,12 @@ use App\Http\Controllers\TrackingsController;
                     
                     <!-- first row -->
                     <div class="col-md-12">
-                        
+                    
+
                             <!-- first row subrow1 -->
                             <div class="leftpartitem narrow2">
                                 <h2>Выберите страну:<span style="color:red;">*</span></h2>
-                                <SELECT name="countryid" id="countryid" style="height:30px;">
+                                <SELECT name="targetcountryid" id="targetcountryid" style="height:28px;">
                                 <?php   $countries = CountryController::getList();?>
                                 @foreach($countries as $country)
                                     <OPTION value="{{$country->id}}">{{$country->nameru}}</OPTION>
@@ -37,26 +39,26 @@ use App\Http\Controllers\TrackingsController;
                             </div>    
                             <div class="leftpartitem narrow2">
                                 <h2>Выберите регион:<span style="color:red;">*</span></h2>
-                                <SELECT name="countryid" id="countryid" style="height:30px;">
-                                <?php   $countries = CountryController::getList();?>
+                                <!--<SELECT name="countryid" id="countryid" style="height:30px;">
+                                <?php   //$countries = CountryController::getList();?>
                                 @foreach($countries as $country)
                                     <OPTION value="{{$country->id}}">{{$country->nameru}}</OPTION>
                                 @endforeach
-                                </SELECT>
+                                </SELECT>-->
+                                <input type="text" name="targetregionname" id="targetregionname" value="" style="width:125px;margin-right:40px;" />
                             </div>   
                             <div class="leftpartitem narrow3"> 
                                 <h2>Контактный номер:<span style="color:red;">*</span></h2>
-                               <!-- <INPUT type="hidden" name="percent" id="percent" value="">-->
-                                <INPUT type="text" name="contactnumber" id="contactnumber" value="" />                                 
+                                <INPUT type="text" name="targetphone1" id="targetphone1" value="" />                                 
                             </div>  
                             <div class="leftpartitem narrow3"> 
                                 <h2>Контактный номер2:</h2>
-                                <INPUT type="text" name="contactnumber2" id="contactnumber2" value="" />                                 
+                                <INPUT type="text" name="targetphone2" id="targetphone2" value="" />                                 
                             </div>      
                             <div class="leftpartitem narrow3">
                                 <h2>Персональный код:<span style="color:red;">*</span></h2>
                                 @if ( Auth::check())
-                                <SELECT name="personalcode" id="personalcode">
+                                <SELECT name="personalcode" id="personalcode" style="width:180px; height:28px;">
                                 <?php   $codes = CodesController::getListByUserId();?>
                                 @foreach($codes as $code)
                                     <?php
@@ -80,11 +82,11 @@ use App\Http\Controllers\TrackingsController;
                         <div class="leftpart">
                             <div class="leftpartitem wide" style="width:300px;margin-right:30px;">
                                 <h2>Точный адрес:<span style="color:red;">*</span></h2>
-                                <INPUT type="text" name="exactadres" id="exactadres" value="" style="width:300px;margin-right:30px;"/>                                 
+                                <INPUT type="text" name="targetaddress" id="targetaddress" value="" style="width:300px;margin-right:30px;"/>                                 
                             </div>    
                             <div class="leftpartitem narrow2">
                                 <h2>Кол-во посылок:</h2>
-                                <INPUT type="text" name="count" id="count" value=""/>                                 
+                                <INPUT type="text" name="posilkacount" id="posilkacount" value=""/>                                 
                             </div>          
                         </div>
                     </div> 
@@ -97,11 +99,16 @@ use App\Http\Controllers\TrackingsController;
                     <div class="col-md-8">
                             <div class="leftpartitem" style="margin-right:30px;">
                                 <h2>Стоимость доставки:</h2>
-                                <INPUT type="text" name="courierprice" id="courierprice" value=""/>                                 
+                                <INPUT type="text" name="lastprice" id="lastprice" value=""/> 
+                                @if ( Auth::check())
+                                <input type="hidden" name="userid" id="userid" value="{{Auth::id()}}" /> 
+                                @else
+                                <input type="hidden" name="userid" id="userid" value="-1" /> 
+                                @endif                               
                             </div>  
                             <div class="leftpartitem">
                                 <h2>&nbsp;</h2>
-                                <INPUT type="submit" id="order" value="Заказать" style="background-color: #DF0707;width:160px;"/>                
+                                <INPUT type="submit" id="order" value="Заказать" style="background-color: #DF0707;width:160px; height:30px;"/>                
                             </div>      
                     </div> 
                     <div class="col-md-4">

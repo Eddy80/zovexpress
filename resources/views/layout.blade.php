@@ -96,7 +96,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;"> <span style="color: #DF0707;"><u>VIP</u></span> <span>Bonus Card</span></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #1E4888;"><u>Услуга "Экспресс заказ"</u></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;">Промокод<br></a></li>
-                    <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;">Заказать курьера<br></a></li>
+                    <li class="nav-item" role="presentation"><a class="nav-link" href="/couriernew" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;" >Заказать курьера<br></a></li>
                     <li class="nav-item" role="presentation"><a class="nav-link" href="#" style="font-family: Roboto;font-size: 11px;color: #7F7F7F;">Друг в ZovExpress<br></a></li>
                     <li class="nav-item" role="presentation" style="margin-right:281px;">&nbsp;</li>
                 </u>

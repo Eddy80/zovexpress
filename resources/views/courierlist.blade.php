@@ -2,7 +2,7 @@
 
 @section('content')
 <?php
-use App\Http\Controllers\CourierController;
+use App\Http\Controllers\KuryerController;
 use App\Http\Controllers\CountryController;
 ?>
 <div class="team-grid nakladnaya">       
@@ -61,29 +61,31 @@ use App\Http\Controllers\CountryController;
                                 <th>Страховка</th>
                                 <th>Итого$</th>
                                 </tr>
-                                <?php   $couriers = CourierController::getListbyuserid(); $i=0; ?>
+                                @if ( Auth::check())
+                                <?php   $couriers = KuryerController::getListbyuserid(); $i=0; ?>
                                 @foreach($couriers as $courier)
                                 <?php 
                                 $i++;
                                 $countryname = CountryController::getNameById($courier->countryid); 
+                                //{{$countryname->nameru}}
                                 ?>
                                 <tr>
                                 <td>{{$i}}</td>    
-                                <td>{{$countryname->nameru}}</td>
+                                <td></td>
                                 <td>{{$courier->personalcode}}</td>
                                 <td></td>
                                 <td>{{$courier->count}}</td>
                                 <td>{{$courier->count}}</td>
                                 <td>2</td>
                                 <td>{{$courier->count}}</td>
-                                <td>{{$invoice->count}}</td>
+                                <td>{{$courier->count}}</td>
                                 <td>{{$courier->count}}</td>
                                 <th>0</th>
                                 <th>0</th>
                                 <th>{{$courier->count}}</th>
                                 </tr>
                                 @endforeach
-                                
+                                @endif
                             </table>
                             </div>
                             
