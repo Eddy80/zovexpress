@@ -92,6 +92,10 @@ Route::get('/tarrifs', function () {
 Route::get('/addressfill', function () {
     return view('addressfill');
 });
+//////////// Bonus card /////////////////////////////////////////////////
+Route::get('/bonuscard', function () {
+    return view('bonuscard');
+});
 //////////// Search Tovar /////////////////////////////////////////////////
 Route::get('/searcht', function () {
     return view('searchtovar');

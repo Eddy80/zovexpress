@@ -219,6 +219,12 @@
   
 }
 
+.narrow4 {
+  width: 171px;
+  margin-right:16px;
+  float:center;
+}
+
 .nakladnaya .circleBase {
   border-radius: 50%;
   background-color: #0F3C80;

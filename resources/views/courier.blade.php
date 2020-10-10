@@ -15,7 +15,7 @@ use App\Http\Controllers\TrackingsController;
         <form method="post" action="{{ route('couriers') }}" name="createcourier" id="createcourier">
             @csrf
             <div class="container" style="background-color: #fff; background-image:url(/assets/img/bg/bgcourier.png); background-position: right bottom;
-    background-repeat: no-repeat;background-size: cover;background-size: 755px 358px;;box-shadow:0px 5px 5px 0px gray;">
+    background-repeat: no-repeat;background-size: cover;background-size: 755px 358px;box-shadow:0px 5px 5px 0px gray;">
                 <div class="row" style="padding-left:0 auto; padding-left: 8%;padding-right: 8%; padding-bottom:130px;">
                
                
