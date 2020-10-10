@@ -88,6 +88,10 @@ Route::get('/branchs', function () {
 Route::get('/tarrifs', function () {
     return view('tarrifs');
 });
+//////////// Address for Fill /////////////////////////////////////////////////
+Route::get('/addressfill', function () {
+    return view('addressfill');
+});
 //////////// Search Tovar /////////////////////////////////////////////////
 Route::get('/searcht', function () {
     return view('searchtovar');
