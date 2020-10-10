@@ -110,7 +110,8 @@ use App\Http\Controllers\TrackingsController;
                     <!-- third row -->
                     <div class="col-md-7">
                         <input type="checkbox" id="isExpress" name="isExpress" >
-                        <label for="isExpress"> Оформить экспресс заказ  <strong>+5%</strong> </label>                          
+                        <label for="isExpress"> Оформить экспресс заказ</label>
+                        <label for="isExpress" style="background-color:#FFF800; margin-left:10px; padding-left:10px; padding-right:10px;"> <strong>+5%</strong> </label>                          
                     </div> 
                     <div class="col-md-4" style="margin-bottom: 30px;">
                         <div style="float:left;width:100%;">
