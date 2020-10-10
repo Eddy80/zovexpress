@@ -84,6 +84,10 @@ Route::get('/shops', function () {
 Route::get('/branchs', function () {
     return view('branchs');
 });
+//////////// Tarrifs /////////////////////////////////////////////////
+Route::get('/tarrifs', function () {
+    return view('tarrifs');
+});
 //////////// Search Tovar /////////////////////////////////////////////////
 Route::get('/searcht', function () {
     return view('searchtovar');
