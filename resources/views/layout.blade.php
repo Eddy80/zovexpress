@@ -141,11 +141,11 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 <a class="login" href="javascript:loginform();" style="color: #423E3E;font-family: Roboto;font-size: 13px;">{{$login}}</a>
                 <a class="btn btn-light border rounded action-button" role="button" href="javascript:regform();" style="font-family: Roboto;font-size: 13px;background-color: #D79729;border-radius: 6px;padding-top: 5px;margin-right:15px;">{{$registration}}</a>
                 @endif
-                <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
+                <!-- <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
                     корзина &nbsp;
                     <img src="assets/img/korzina.png"/>
                     <div style="float:right;margin-top:15px;background-color:#DF0707; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
-                </a>
+                </a> -->
 
                 </span>
                </div>
