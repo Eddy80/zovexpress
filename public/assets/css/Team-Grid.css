@@ -13,6 +13,7 @@
 }
 
 
+
 .team-grid p {
   color: #7d8285;
 }
@@ -48,6 +49,47 @@
 
 .team-grid .item {
   margin-bottom: 30px;
+}
+
+.team-grid .item .tascoRightMenu {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 4;
+  /*border: 2px solid;*/
+  border-radius: 3px;
+
+  font-family: Roboto;
+}
+
+
+.team-grid .item .tascoLeftMenu {
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  z-index: 4;
+  /*border: 2px solid;*/
+  border-radius: 3px;
+  box-shadow:3px 3px 0px 0px #ccc;
+  font-family: Roboto;
+}
+
+.tascoleftmenulink {
+  color:#0F3C80;
+
+}
+
+.tascoLeftMenu a:hover {
+  color:#DF0707;
+  text-decoration:none;
 }
 
 .team-grid .item .box {
