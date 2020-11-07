@@ -109,6 +109,10 @@ Route::get('/searcht2', function () {
 Route::get('/tascohome', function () {
     return view('tascohome');
 });
+
+Route::get('/tascogood', function () {
+    return view('tascogood');
+});
 //********************************************************************/
 
 Route::get('/calculate', 'PriceController@calculate');

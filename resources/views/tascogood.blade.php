@@ -77,196 +77,103 @@ use App\Http\Controllers\UsersController;
                         style="margin-top:10px;margin-left:5px;width:250px" />    
                     </div>
                 </div>
-                <div class="col-md-8 col-lg-6 item" style="padding:0px;"> 
+                <div class="col-md-9 col-lg-7 item" style="padding:0px;"> 
                     <div class="tascoLeftMenu" style="padding:0px;">
-                        <img src="assets/img/bg/tasco_main_banner.png" style="width:100%;"/>
-                        <!-- <div class="cover">
-                            <h3 class="name">Emily Clark</h3>
-                            <p class="title">Artist </p>
-                            <div class="social"><a href="#"><i class="fa fa-facebook-official"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-instagram"></i></a></div>
-                            </div> 
+                            
+                        <div style="display:inline-block; width:100%;padding:0px; font-family:Roboto;">
+                            <div style="width:100%">
+                                <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:0px;margin-right:0px;width:274px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
+                                    <div> 
+                                        <img src="assets/img/tasco/goodmain.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:100%; " />                                 
+                                    </div>
+                                    <div style="display:inline-block; width:100%;padding-left:0px;">
+                                        <img src="/assets/img/tasco/good1.png" style="width:23%; margin-top:3px;margin-left:0px;"/>
+                                        <img src="/assets/img/tasco/good2.png" style="width:23%; margin-top:3px;"/>
+                                        <img src="/assets/img/tasco/good3.png" style="width:23%; margin-top:3px;"/>
+                                        <img src="/assets/img/tasco/good4.png" style="width:23%; margin-top:3px;">
+                                    </div>      
+                                </div>
+                                <div style="float:right;width:374px;">
+                                    <div style="font-weight:bold; font-family:Roboto; font-size:12px;text-align:left;margin-bottom:5px;">Лейка для душа с эффектом дождя</div>
+                                    <div style="font-size:10px; font-family:Roboto;text-align:justify;margin-right:10px;">
+                                    Лейка для душа с эффектом дождя, насадка для душа, 300 отверстий, водосберегающий фильтр, распылительная насадка с функцией экономии воды под высоким давлением
+                                    </div>
+                                    <div style="display:inline-block; width:100%;">
+                                        <div style="float:left;text-align:left;">
+                                        <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
+                                        <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
+                                        <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
+                                        <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
+                                        <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
+                                        </div>
+                                        <div style="float:left;text-align:left;color:gray;font-size:12px; margin-left:22px;margin-top:8px;font-family:Roboto;">
+                                        4.9
+                                        </div>
+                                        <div style="float:left;text-align:left;color:gray;font-size:12px; margin-left:42px;margin-top:8px;font-family:Roboto;">
+                                        7854 Отзывы
+                                        </div>
+                                        <div style="float:left;text-align:left;color:gray;font-size:12px; margin-left:42px;margin-top:8px;font-family:Roboto;">
+                                        19903 заказа(ов)
+                                        </div>
+                                    </div>
+                                    <div style="display:block; width:100%;font-size:16px;font-weight:bold;float:left;text-align:left;font-family:Roboto;margin-bottom:10px;">$ 2.00</div>
+                                    <div style="display:block; width:100%;font-size:10px;float:left;text-align:left;font-family:Roboto;color:gray;margin-bottom:5px;">Количество:</div>
+                                    <div style="display:inline-block; width:100%;font-family:Roboto;margin-bottom:10px;">
+                                        <div style="float:left;background-color:#C4C4C4;
+                                        color: #E5E5E5;border-radius:50%;width:23px;height:23px;padding-left:1px; padding-top:0px;font-weight:bold;">+</div>
+                                        <div style="float:left;width:20px;margin-left:5px;">1</div>
+                                        <div style="float:left;background-color:#C4C4C4;
+                                        color: #E5E5E5;border-radius:50%;width:23px;height:23px;padding-left:1px; padding-top:0px;font-weight:bold;margin-left:5px;">-</div>
+                                        <div style="float:left;text-align:left;font-size:10px;margin-left:25px;">Дополнительно Скидка 5% (от 50 шт.)<br/>850 шт. в наличии (Не более 1 шт. на покупателя)</div>
+                                    </div>
+                                    <div style="display:inline-block; width:100%;font-family:Roboto;">
+                                        <div style="float:left;background-color:#C4C4C4;
+                                        color: #E5E5E5;border-radius:50%;width:22px;height:22px;padding-left:1px; padding-top:0px;">
+                                            <input type="radio" id="sellType" name="sellType" value="optom" checked>
+                                        </div> 
+                                        <div style="float:left;margin-top:5px;margin-left:10px;margin-right:50px;font-size:12px;">Оптом</div>      
+                                        <div style="float:left;background-color:#C4C4C4;
+                                        color: #E5E5E5;border-radius:50%;width:22px;height:22px;padding-left:1px; padding-top:0px;">
+                                            <input type="radio" id="sellType" name="sellType" value="roznitsa">
+                                        </div>
+                                        <div style="float:left;margin-top:5px;margin-left:10px;margin-right:50px;font-size:12px;">В розницу</div>
+                                    </div>
+                                    <div style="display:inline-block; width:100%;font-family:Roboto;margin-top:13px;">
+                                        <div style="float:left;background-color:#CC1111;font-size:12px;
+                                        color: #FFFFFF;border-radius:5%;width:100px;height:36px;padding-top:10px;margin-right:20px;">
+                                        Купить сейчас
+                                        </div> 
+                                        <div style="float:left;background-color:#D79729;font-size:12px;
+                                        color: #FFFFFF;border-radius:5%;width:130px;height:36px;padding-top:10px;margin-right:30px;">
+                                        Добавить в карзину
+                                        </div>
+                                        <div style="float:left;padding-top:4px;">
+                                        <img src="/assets/img/tasco/urek.png" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                        
+                        </div>
                     
-                    -->
-                    <div style="display:inline-block; width:100%;padding:0px;">
-                        <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
-
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
-
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:0px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
-
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
-
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:0px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
-                        </div>
-
-                        <div style="width:100%;padding:20px 28%; text-align:center;">
-                            <div style="border-radius:10px;width:250px; height:30px;padding-top:5px;background-color:#F0F0F3; text-align:center; font-size:12px;font-weight:bold;">
-                                <img src="assets/img/bg/arrow_left.png" />
-                                &nbsp;&nbsp;&nbsp;
-                                1 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;... &nbsp;&nbsp;&nbsp;10
-                                &nbsp;&nbsp;&nbsp;
-                                <img src="assets/img/bg/arrow_right.png" />
-                            </div>
-                        </div>
                     </div>
-                    
 
                 </div>
-                <div class="col-md-4 col-lg-3 item">
+                <div class="col-md-3 col-lg-2 item">
                     <div class="tascoRightMenu">
-                        <div>
-                        <img src="assets/img/bg/Tasco_right_banner1.png" style="width:250px;height:300px;"
+                        <div style="width:100%;display:inline-block; background-color:#C4D9ED;">
+                            <div style="color:#0F3C80;font-size:12px; font-weight:bold;margin-top:10px;margin-bottom:10px;"> Товары Магазина </div>
+                            <img src="assets/img/tasco/shop_product1.png" style="width:70px;height:70px;">
+                            <img src="assets/img/tasco/shop_product2.png" style="width:70px;height:70px;">  
+                            <img src="assets/img/tasco/shop_product3.png" style="width:70px;height:70px;">
+                            <img src="assets/img/tasco/shop_product4.png" style="width:70px;height:70px;">
+                            <img src="assets/img/tasco/shop_product5.png" style="width:70px;height:70px;">
+                            <img src="assets/img/tasco/shop_product6.png" style="width:70px;height:70px;">
+                            <div style="color:#0F3C80;font-size:12px; font-weight:bold;margin-top:10px;margin-bottom:10px;"> Показать больше </div>
                         </div>
-                        <div>
-                        <img src="assets/img/bg/Tasco_right_banner2.png" style="margin-top:10px;width:250px"/>
-                        </div>
-                        <div>
-                        <img src="assets/img/bg/Tasco_right_banner3.png" style="margin-top:10px;width:250px"/>
+                        <div style="width:100%;display:block;">
+                            <img src="assets/img/tasco/rightban1.png" style="width:170px;height:170px; margin-top:5px;">
+                            <img src="assets/img/tasco/rightban2.png" style="width:170px;height:170px; margin-top:5px;">  
+                            <img src="assets/img/tasco/rightban3.png" style="width:170px;height:170px; margin-top:5px;">
                         </div>
                     </div>
                     
