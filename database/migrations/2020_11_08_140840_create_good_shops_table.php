@@ -16,6 +16,13 @@ class CreateGoodShopsTable extends Migration
         Schema::create('good_shops', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('titleru');
+            $table->string('titleen');
+            $table->string('titlech');
+            $table->string('titlekz');
+            $table->string('titlekg');
+            $table->string('titletr');
+            $table->string('titletc');
             $table->integer('ownerid');
             $table->string('shoplogotip');
             $table->string('instagramlink');

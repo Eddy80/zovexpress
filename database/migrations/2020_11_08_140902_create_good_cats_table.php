@@ -16,6 +16,15 @@ class CreateGoodCatsTable extends Migration
         Schema::create('good_cats', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
+            $table->string('titleru');
+            $table->string('titleen');
+            $table->string('titlech');
+            $table->string('titlekz');
+            $table->string('titlekg');
+            $table->string('titletr');
+            $table->string('titletc');
+
+            
             $table->timestamps();
         });
     }
