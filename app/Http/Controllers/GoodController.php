@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Good;
 use Illuminate\Http\Request;
+use App\Http\Controllers\GoodPicController;
 
 class GoodController extends Controller
 {
@@ -12,9 +13,11 @@ class GoodController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($catid)
     {
-        //
+        $goods = Good::where('catid', $catid)->get();
+
+        return $goods;
     }
 
     /**
@@ -85,7 +88,17 @@ class GoodController extends Controller
 
     public static function getList()
     {
-        return Good::all();  // last 9
+        $goods =  Good::all();  // last 9
+
+        foreach($goods as $good){
+            $GoodPicControl = new GoodPicController();
+
+            $good->mainPicture = $GoodPicControl->getMain($good->id);
+        }
+
+        //dd($goods);
+
+        return view('tascohome')->with('goods', $goods);
     }
 
     public static function getListbycat($catid)
@@ -125,10 +138,14 @@ class GoodController extends Controller
 
         $good->price = $price;
 
-        //dd($good);
+        $GoodPicControl = new GoodPicController();
+
+        $goodPics = $GoodPicControl->index($good->id); 
+
+        //dd($goodPics);
         //$this->attributes['price'] = $price;
 
-        return view('tascogood')->with('good', $good);
+        return view('tascogood')->with('good', $good)->with('goodPics', $goodPics);
     }
      
     public function viewForEditGood(Request $request, $id){

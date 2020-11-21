@@ -12,9 +12,22 @@ class GoodPicController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($goodid)
     {
-        //
+        $goodPics = GoodPic::where('goodid', $goodid)->get();
+
+        return $goodPics;
+    }
+
+    public function getMain($goodid)
+    {
+        if  (GoodPic::where('goodid', $goodid)->where('ismain',1)->count()>0){
+        $goodPicsPath = GoodPic::where('goodid', $goodid)->where('ismain',1)->first()->path;
+        $goodPicsFilename = GoodPic::where('goodid', $goodid)->where('ismain',1)->first()->filename;
+
+        return $goodPicsPath.$goodPicsFilename;
+        }
+        else return '';
     }
 
     /**

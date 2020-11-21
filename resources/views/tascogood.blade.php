@@ -85,14 +85,22 @@ use App\Http\Controllers\GoodController;
                         <div style="display:inline-block; width:100%;padding:0px; font-family:Roboto;">
                             <div style="width:100%">
                                 <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:0px;margin-right:0px;width:274px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
+                                <?php $mainPicPath = null;$mainPicFilename = null; ?>
+                                @foreach($goodPics as $goodPic)
+                                    @if($goodPic->ismain==1)
                                     <div> 
-                                        <img src="/assets/img/tasco/goodmain.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:100%; " />                                 
+                                        <img src="{{$goodPic->path.$goodPic->filename}}" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:100%; " />                                 
                                     </div>
+                                    @endif
+                                @endforeach
+                                    
+
                                     <div style="display:inline-block; width:100%;padding-left:0px;">
-                                        <img src="/assets/img/tasco/good1.png" style="width:23%; margin-top:3px;margin-left:0px;"/>
-                                        <img src="/assets/img/tasco/good2.png" style="width:23%; margin-top:3px;"/>
-                                        <img src="/assets/img/tasco/good3.png" style="width:23%; margin-top:3px;"/>
-                                        <img src="/assets/img/tasco/good4.png" style="width:23%; margin-top:3px;">
+                                    @foreach($goodPics as $goodPic)
+                                        @if($goodPic->ismain==0)
+                                        <img src="{{ $goodPic->path.$goodPic->filename}}" style="width:23%; margin-top:3px;margin-left:0px;"/>
+                                        @endif
+                                    @endforeach
                                     </div>      
                                 </div>
                                 <div style="float:right;width:374px;">
@@ -143,7 +151,7 @@ use App\Http\Controllers\GoodController;
                                         <div style="float:left;width:20px;margin-left:5px;">1</div>
                                         <div style="float:left;background-color:#C4C4C4;
                                         color: #E5E5E5;border-radius:50%;width:23px;height:23px;padding-left:1px; padding-top:0px;font-weight:bold;margin-left:5px;">-</div>
-                                        <div style="float:left;text-align:left;font-size:10px;margin-left:25px;">Дополнительно Скидка {{$good->additionaldiscountpercent}}% (от {{$good->additionaldiscountpercentcount}} шт.)<br/>{{$good->totalcount}} шт. в наличии (Не более 1 шт. на покупателя)</div>
+                                        <div style="float:left;text-align:left;font-size:10px;margin-left:25px;">Дополнительно Скидка {{$good->additionaldiscountpercent}}% (от {{$good->additionaldiscountpercent}} шт.)<br/>{{$good->totalcount}} шт. в наличии (Не более 1 шт. на покупателя)</div>
                                     </div>
                                     <div style="display:inline-block; width:100%;font-family:Roboto;">
                                         <div style="float:left;background-color:#C4C4C4;
@@ -167,7 +175,7 @@ use App\Http\Controllers\GoodController;
                                         Добавить в карзину
                                         </div>
                                         <div style="float:left;padding-top:4px;">
-                                        <img src="/assets/img/tasco/urek.png" />
+                                        <img src="/assets/img/bg/urek.png" />
                                         </div>
                                     </div>
                                 </div>

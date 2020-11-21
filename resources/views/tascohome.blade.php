@@ -88,112 +88,18 @@ use App\Http\Controllers\UsersController;
                     
                     -->
                     <div style="display:inline-block; width:100%;padding:0px;">
-                        <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
 
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
+                                
 
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:0px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
+                            @php
+                            $count = 1;
+                            @endphp
 
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
+                            @foreach($goods as $good)
+                            <a href="/tascogood/{{$good->id}}" target="blank">
+                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:<? if ($count%3==0)echo "0"; else  echo "22";?>px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
                                 <div> 
-                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
+                                    <img src="{{$good->mainPicture}}" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; height:160px;" />
                                     <a href="#">
                                     <img src="/assets/img/bg/instagram_icon.png" 
                                     style="position:relative; top:-150px; left:-60px;z-index:10;" />
@@ -216,32 +122,14 @@ use App\Http\Controllers\UsersController;
                                     <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
                                 </div>          
                             </div>
+                            </a>
+                            @php 
+                            $count++;
+                            @endphp       
+                            @endforeach
 
-                            <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:0px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
-                                <div> 
-                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
-                                    <a href="#">
-                                    <img src="/assets/img/bg/instagram_icon.png" 
-                                    style="position:relative; top:-150px; left:-60px;z-index:10;" />
-                                    </a>
-                                </div>
-                                <div style="float:left;width:100%;color:#000000;font-size:10px; padding-left:10px;text-align:left;margin-top:-25px;margin-bottom:5px;">Мужские роскошные часы ...</div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:40%;font-weight:bold;font-size:14px;margin-left:10px; padding-left:0px;text-align:left;">$12</div>
-                                    <div style="float:right;width:40%;">
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_orange.png"/>
-                                        <img src="/assets/img/bg/Star_gray.png"/>
-                                    </div>
-                                </div>
-                                <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
-                                    <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
-                                </div>          
-                            </div>
+                            
+                        
                         </div>
 
                         <div style="width:100%;padding:20px 28%; text-align:center;">

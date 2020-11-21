@@ -14,7 +14,8 @@ class CreateGoodPicsTable extends Migration
     public function up()
     {
         Schema::create('good_pics', function (Blueprint $table) {
-            $table->bigIncrements('id');       
+            $table->bigIncrements('id');   
+            $table->integer('goodid');    
             $table->integer('ismain');
             $table->string('filename');
             $table->string('fileNamesmall');
