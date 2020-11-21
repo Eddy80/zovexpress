@@ -106,11 +106,11 @@ Route::get('/searcht2', function () {
 });
 
 //******************************************************************* */
-Route::get('/tascohome', function () {
+Route::get('/tascohome/{catid}', function () {
     return view('tascohome');
 });
 
-Route::get('/tascogood', function () {
+Route::get('/tascogood/{id}', function () {
     return view('tascogood');
 });
 //********************************************************************/

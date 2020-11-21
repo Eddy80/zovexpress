@@ -82,4 +82,28 @@ class GoodController extends Controller
     {
         //
     }
+
+    public static function getList()
+    {
+        return Good::all();  // last 9
+    }
+
+    public static function getListbycat($catid)
+    {
+        //return Good::all();
+        $goods = DB::table("goods")->select('id','titleru')->Where('catid', $catid)->get();
+
+        return $goods;
+    }
+    
+    public static function getCount()
+    {
+        return Good::count();
+    }
+
+     
+    public function viewforeditotpravka(Request $request, $id){
+        $good = Good::find($id);
+        return view('tascogood')->with('good', $good);
+    }
 }

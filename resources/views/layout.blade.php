@@ -29,45 +29,45 @@ $registration =  GeneralController::getName(     5,1, $lang );
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <link rel="shortcut icon" href="assets/logotip.ico" type="image/x-icon">
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="/assets/logotip.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bitter:400,700">
-    <link rel="stylesheet" href="assets/css/Brands.css">
-    <link rel="stylesheet" href="assets/css/Footer-Clean.css">
-    <link rel="stylesheet" href="assets/css/Header-Dark.css">
-    <link rel="stylesheet" href="assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="/assets/css/Brands.css">
+    <link rel="stylesheet" href="/assets/css/Footer-Clean.css">
+    <link rel="stylesheet" href="/assets/css/Header-Dark.css">
+    <link rel="stylesheet" href="/assets/css/Highlight-Clean.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.min.css"> -->
-    <link rel="stylesheet" href="assets/css/Simple-Slider.css">
+    <link rel="stylesheet" href="/assets/css/Simple-Slider.css">
 
-    <link rel="stylesheet" href="assets/css/Map-Clean.css">
-    <link rel="stylesheet" href="assets/css/Registration-Form-with-Photo.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/Team-Clean.css">
-    <link rel="stylesheet" href="assets/css/Article-List.css">
+    <link rel="stylesheet" href="/assets/css/Map-Clean.css">
+    <link rel="stylesheet" href="/assets/css/Registration-Form-with-Photo.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/Team-Clean.css">
+    <link rel="stylesheet" href="/assets/css/Article-List.css">
     <!-- <link rel="stylesheet" href="assets/css/topmenu.css"> -->
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/fonts/ionicons.min.css">
 
-    <link rel="stylesheet" href="assets/css/Highlight-Blue.css">
-    <link rel="stylesheet" href="assets/css/Highlight-Phone.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple-1.css">
-    <link rel="stylesheet" href="assets/css/Navbar---Apple.css">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
-    <link rel="stylesheet" href="assets/css/Navigation-with-Search.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Clean.css">
+    <link rel="stylesheet" href="/assets/css/Highlight-Blue.css">
+    <link rel="stylesheet" href="/assets/css/Highlight-Phone.css">
+    <link rel="stylesheet" href="/assets/css/Navbar---Apple-1.css">
+    <link rel="stylesheet" href="/assets/css/Navbar---Apple.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="/assets/css/Navigation-with-Search.css">
+    <link rel="stylesheet" href="/assets/css/Login-Form-Clean.css">
 
-    <link rel="stylesheet" href="assets/css/swipermy.css">
-    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="/assets/css/swipermy.css">
+    <link rel="stylesheet" href="/assets/css/swiper.css">
 
   
-    <link rel="stylesheet" href="assets/css/Team-Grid.css">
+    <link rel="stylesheet" href="/assets/css/Team-Grid.css">
 
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
 
     <!--[if IE 9]>
     <link href="https://cdn.jsdelivr.net/gh/coliff/bootstrap-ie8/css/bootstrap-ie9.min.css" rel="stylesheet">
@@ -113,7 +113,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
         </div>
     </nav>
     <nav class="navbar navbar-light navbar-expand-md navigation-clean-button" style="padding-top: 35px;">
-        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a href="{{url('home')}}"><img src="assets/img/logo.png" style="margin-top:-85px; padding: -96px 0px;margin-right: 20px;"/></a>
+        <div class="container"><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><a href="{{url('home')}}"><img src="/assets/img/logo.png" style="margin-top:-85px; padding: -96px 0px;margin-right: 20px;"/></a>
             <div  class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav mr-auto">
                     <li class="nav-item" role="presentation"><a class="nav-link" href="{{url('about')}}" style="font-family: Roboto;font-size: 13px;color: #0f3c80;margin-left: 0px;">{{$menuabout}}</a></li>
@@ -182,10 +182,10 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <div class="col-lg-3 item social" style="font-family: Roboto, sans-serif;">
                     <?php /* $links = GeneralController::getLinks(); {!!  $links !!} */?>
                     
-                        <a href="https://t.me/zov_express"><img src="assets/img/telegram.png"></a>
-                        <a href="@zov_express"><img src="assets/img/instagram.png"></a>
-                        <a href="#"><img src="assets/img/facebook.png"></a>
-                        <a href="#"><img src="assets/img/youtube.png"></a>
+                        <a href="https://t.me/zov_express"><img src="/assets/img/telegram.png"></a>
+                        <a href="@zov_express"><img src="/assets/img/instagram.png"></a>
+                        <a href="#"><img src="/assets/img/facebook.png"></a>
+                        <a href="#"><img src="/assets/img/youtube.png"></a>
                         <!-- <a href="#"><i class="icon ion-social-instagram"></i></a>
                         <a href="#"><i class="icon ion-social-facebook"></i></a>
                         <a href="#"><i class="icon ion-social-youtube"></i></a> -->
@@ -569,12 +569,12 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
 
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/bs-animation.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/bs-animation.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.1.1/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.jquery.min.js"></script>
-<script src="assets/js/Simple-Slider.js"></script>
+<script src="/assets/js/Simple-Slider.js"></script>
 
 
 <script type="text/javascript">

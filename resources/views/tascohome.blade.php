@@ -7,21 +7,21 @@ use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\UsersController;
 ?>
 
-<div class="highlight-phone" style="background: url(assets/img/bg/TascoHeaderBG2.png) no-repeat  ;background-size: 79% 140px; height:140px; background-color:#E5E5E5; margin-top:4px;box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);">
+<div class="highlight-phone" style="background: url(/assets/img/bg/TascoHeaderBG2.png) no-repeat  ;background-size: 79% 140px; height:140px; background-color:#E5E5E5; margin-top:4px;box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);">
         <div class="container">
             <div class="row">
                 <div  style= "width:100%;display:inline-block;">
-                    <div style="float:left;width:34%;"><img src="assets/img/bg/Tasco_logo.png" /></div>
+                    <div style="float:left;width:34%;"><img src="/assets/img/bg/Tasco_logo.png" /></div>
                     <div style="float:left;margin-left:55px;background-color:#FFF800; color:#000000; width:280px; height:40px; text-align:center;font-size:12px;font-weight:bold;border:1px solid #fff; border-radius:3px;cursor:pointer;">Открыть собственный <br/>магазин в TASCO</div>
                     <div style="float:right;padding-right:30px;">
                         <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; margin-right:10px;">
-                        <img src="assets/img/bg/heard.png"/>
+                        <img src="/assets/img/bg/heard.png"/>
                         <div style="float:right;margin-top:15px;background-color:#0F3C80; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
                         </a>
 
                         <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
                         корзина &nbsp;
-                        <img src="assets/img/korzina.png"/>
+                        <img src="/assets/img/korzina.png"/>
                         <div style="float:right;margin-top:15px;background-color:#DF0707; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
                         </a>
                     </div>
@@ -73,13 +73,13 @@ use App\Http\Controllers\UsersController;
                         </ul>
                     </div>  
                     <div>
-                        <img src="assets/img/bg/Tasco_left_banner.png" 
+                        <img src="/assets/img/bg/Tasco_left_banner.png" 
                         style="margin-top:10px;margin-left:5px;width:250px" />    
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 item" style="padding:0px;"> 
                     <div class="tascoLeftMenu" style="padding:0px;">
-                        <img src="assets/img/bg/tasco_main_banner.png" style="width:100%;"/>
+                        <img src="/assets/img/bg/tasco_main_banner.png" style="width:100%;"/>
                         <!-- <div class="cover">
                             <h3 class="name">Emily Clark</h3>
                             <p class="title">Artist </p>
@@ -90,7 +90,7 @@ use App\Http\Controllers\UsersController;
                     <div style="display:inline-block; width:100%;padding:0px;">
                         <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
                                 <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
+                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
                                     <a href="#">
                                     <img src="/assets/img/bg/instagram_icon.png" 
                                     style="position:relative; top:-150px; left:-60px;z-index:10;" />
@@ -108,15 +108,15 @@ use App\Http\Controllers\UsersController;
                                     </div>
                                 </div>
                                 <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
                                     <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
                                 </div>          
                             </div>
 
                             <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
                                 <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
+                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
                                     <a href="#">
                                     <img src="/assets/img/bg/instagram_icon.png" 
                                     style="position:relative; top:-150px; left:-60px;z-index:10;" />
@@ -134,15 +134,15 @@ use App\Http\Controllers\UsersController;
                                     </div>
                                 </div>
                                 <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
                                     <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
                                 </div>          
                             </div>
 
                             <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:0px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
                                 <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
+                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
                                     <a href="#">
                                     <img src="/assets/img/bg/instagram_icon.png" 
                                     style="position:relative; top:-150px; left:-60px;z-index:10;" />
@@ -160,14 +160,14 @@ use App\Http\Controllers\UsersController;
                                     </div>
                                 </div>
                                 <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
                                     <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
                                 </div>          
                             </div>
                             <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
                                 <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
+                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
                                     <a href="#">
                                     <img src="/assets/img/bg/instagram_icon.png" 
                                     style="position:relative; top:-150px; left:-60px;z-index:10;" />
@@ -185,15 +185,15 @@ use App\Http\Controllers\UsersController;
                                     </div>
                                 </div>
                                 <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
                                     <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
                                 </div>          
                             </div>
 
                             <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:22px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
                                 <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
+                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
                                     <a href="#">
                                     <img src="/assets/img/bg/instagram_icon.png" 
                                     style="position:relative; top:-150px; left:-60px;z-index:10;" />
@@ -211,15 +211,15 @@ use App\Http\Controllers\UsersController;
                                     </div>
                                 </div>
                                 <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
                                     <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
                                 </div>          
                             </div>
 
                             <div style="cursor:pointer;float:left;padding:0px;margin-left:0px;margin-top:10px;margin-right:0px;width:174px;border-radius: 3px; box-shadow:3px 3px 3px 0px #ccc; font-family: Roboto;">
                                 <div> 
-                                    <img src="assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
+                                    <img src="/assets/img/bg/tasco_goods.png" style="position:relative; top:0px; left:0px;z-index:1;border-radius: 3px 0px 0px 3px;width:174px; " />
                                     <a href="#">
                                     <img src="/assets/img/bg/instagram_icon.png" 
                                     style="position:relative; top:-150px; left:-60px;z-index:10;" />
@@ -237,8 +237,8 @@ use App\Http\Controllers\UsersController;
                                     </div>
                                 </div>
                                 <div style="display:inline-block; width:100%;">
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/heard_gray.png" /></div>
-                                    <div style="float:left;width:20%;"><img src="assets/img/bg/share_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/heard_gray.png" /></div>
+                                    <div style="float:left;width:20%;"><img src="/assets/img/bg/share_gray.png" /></div>
                                     <div style="float:right;width:60%;color:#C4C4C4;font-size:10px;text-align: right;padding-right: 6px;">Awatch Store</div>
                                 </div>          
                             </div>
@@ -246,11 +246,11 @@ use App\Http\Controllers\UsersController;
 
                         <div style="width:100%;padding:20px 28%; text-align:center;">
                             <div style="border-radius:10px;width:250px; height:30px;padding-top:5px;background-color:#F0F0F3; text-align:center; font-size:12px;font-weight:bold;">
-                                <img src="assets/img/bg/arrow_left.png" />
+                                <img src="/assets/img/bg/arrow_left.png" />
                                 &nbsp;&nbsp;&nbsp;
                                 1 &nbsp;&nbsp;&nbsp;2 &nbsp;&nbsp;&nbsp;3 &nbsp;&nbsp;&nbsp;4 &nbsp;&nbsp;&nbsp;5 &nbsp;&nbsp;&nbsp;6 &nbsp;&nbsp;&nbsp;... &nbsp;&nbsp;&nbsp;10
                                 &nbsp;&nbsp;&nbsp;
-                                <img src="assets/img/bg/arrow_right.png" />
+                                <img src="/assets/img/bg/arrow_right.png" />
                             </div>
                         </div>
                     </div>
@@ -260,13 +260,13 @@ use App\Http\Controllers\UsersController;
                 <div class="col-md-4 col-lg-3 item">
                     <div class="tascoRightMenu">
                         <div>
-                        <img src="assets/img/bg/Tasco_right_banner1.png" style="width:250px;height:300px;"
+                        <img src="/assets/img/bg/Tasco_right_banner1.png" style="width:250px;height:300px;">
                         </div>
                         <div>
-                        <img src="assets/img/bg/Tasco_right_banner2.png" style="margin-top:10px;width:250px"/>
+                        <img src="/assets/img/bg/Tasco_right_banner2.png" style="margin-top:10px;width:250px"/>
                         </div>
                         <div>
-                        <img src="assets/img/bg/Tasco_right_banner3.png" style="margin-top:10px;width:250px"/>
+                        <img src="/assets/img/bg/Tasco_right_banner3.png" style="margin-top:10px;width:250px"/>
                         </div>
                     </div>
                     
@@ -325,14 +325,14 @@ use App\Http\Controllers\UsersController;
                                 <div class="swiper-slide">
                                     <div class="row" style="text-align:center;margin:0 auto;padding-left:90px;">
                                     
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/1.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/2.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/3.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/4.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/5.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/6.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/7.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/chin/8.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/1.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/2.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/3.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/4.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/5.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/6.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/7.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/chin/8.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                                         <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px; background-color: #fff;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                                         <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px; background-color: #fff; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                                         <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px; background-color: #fff;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
@@ -346,120 +346,120 @@ use App\Http\Controllers\UsersController;
                                 <div class="swiper-slide">
                                     <div class="row" style="text-align:center;margin:0 auto;padding-left:90px;">
                                         
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/1.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/2.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/3.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/4.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/5.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/6.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/7.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/8.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/9.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/10.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/11.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/12.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/13.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/14.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/15.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/1.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/2.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/3.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/4.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/5.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/6.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/7.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/8.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/9.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/10.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/11.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/12.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/13.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/14.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/15.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
                                     
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="row" style="text-align:center;margin:0 auto;padding-left:90px;">
                                         
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/16.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/17.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/18.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/19.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/20.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/21.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/22.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/23.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/24.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/25.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/26.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/27.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/28.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/28.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/30.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/16.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/17.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/18.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/19.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/20.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/21.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/22.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/23.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/24.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/25.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/26.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/27.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/28.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/28.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/30.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
                                     
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="row" style="text-align:center;margin:0 auto;padding-left:90px;">
                                         
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/31.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/32.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/33.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/34.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/35.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/36.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/37.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/38.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/39.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/40.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/41.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/42.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/43.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/44.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/45.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/31.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/32.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/33.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/34.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/35.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/36.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/37.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/38.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/39.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/40.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/41.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/42.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/43.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/44.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/45.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
                                     
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="row" style="text-align:center;margin:0 auto;padding-left:90px;">
                                         
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/46.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/47.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/48.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/49.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/50.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/51.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/52.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/53.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/54.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/55.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/56.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/57.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/58.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/59.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/60.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/46.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/47.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/48.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/49.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/50.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/51.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/52.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/53.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/54.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/55.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/56.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/57.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/58.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/59.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/60.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
                                     
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="row" style="text-align:center;margin:0 auto;padding-left:90px;">
                                         
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/61.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/62.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/63.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/64.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/65.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/66.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/67.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/68.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/69.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/70.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/71.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/72.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/73.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/74.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/75.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/61.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/62.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/63.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/64.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/65.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/66.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/67.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/68.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/69.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/70.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/71.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/72.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/73.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/74.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/75.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;  "></div>
                                     
                                     </div>
                                 </div>
                                 <div class="swiper-slide">
                                     <div class="row" style="text-align:center;margin:0 auto;padding-left:90px;">
                                         
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/76.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/77.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/78.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/79.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/80.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/81.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/82.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/83.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/shops/turk/84.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/76.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/77.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/78.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/79.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/80.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/81.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/82.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/83.jpeg);background-size: 165px 92px; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                                        <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/shops/turk/84.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                                         <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color:#fff; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                                         <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color:#fff; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                                         <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color:#fff; height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
@@ -539,19 +539,19 @@ use App\Http\Controllers\UsersController;
 
             <div class="row" style="padding-left: 100px;">
                 
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/1.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/2.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/3.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/4.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/5.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/6.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/7.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/8.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/9.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/10.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/11.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/12.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
-                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/13.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/1.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/2.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/3.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/4.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/5.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/6.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/7.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/8.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/9.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/10.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/11.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/12.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(/assets/img/partners/13.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <!-- <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color: #C4C4C4;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color: #C4C4C4;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color: #C4C4C4;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
