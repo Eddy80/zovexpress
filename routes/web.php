@@ -109,10 +109,12 @@ Route::get('/searcht2', function () {
 Route::get('/tascohome/{catid}', function () {
     return view('tascohome');
 });
-
+/*
 Route::get('/tascogood/{id}', function () {
     return view('tascogood');
 });
+*/
+Route::get('/tascogood/{goodid}','GoodController@viewGood');
 //********************************************************************/
 
 Route::get('/calculate', 'PriceController@calculate');

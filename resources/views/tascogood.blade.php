@@ -5,6 +5,8 @@
 <?php
 use App\Http\Controllers\GeneralController;
 use App\Http\Controllers\UsersController;
+
+use App\Http\Controllers\GoodController;
 ?>
 
 <div class="highlight-phone" style="background: url(/assets/img/bg/TascoHeaderBG2.png) no-repeat  ;background-size: 79% 140px; height:140px; background-color:#E5E5E5; margin-top:4px;box-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);">
@@ -94,29 +96,46 @@ use App\Http\Controllers\UsersController;
                                     </div>      
                                 </div>
                                 <div style="float:right;width:374px;">
-                                    <div style="font-weight:bold; font-family:Roboto; font-size:12px;text-align:left;margin-bottom:5px;">Лейка для душа с эффектом дождя</div>
+                                    <div style="font-weight:bold; font-family:Roboto; font-size:12px;text-align:left;margin-bottom:5px;">{{ $good->titleru }}</div>
                                     <div style="font-size:10px; font-family:Roboto;text-align:justify;margin-right:10px;">
-                                    Лейка для душа с эффектом дождя, насадка для душа, 300 отверстий, водосберегающий фильтр, распылительная насадка с функцией экономии воды под высоким давлением
+                                    {{ $good->descriptionu }}
                                     </div>
                                     <div style="display:inline-block; width:100%;">
                                         <div style="float:left;text-align:left;">
+                                        
+                                        <?php
+                                        $avgstarscount = Round($good->avgstarscount);
+                                         $stars = '';
+                                         $j = 0;
+                                         for($i=0; $i<5;$i++){
+                                             if ($j<$avgstarscount)
+                                             $stars .= '<img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>';
+                                             else
+                                             $stars .= '<img src="/assets/img/bg/Star_gray.png" style="width:10px; margin-top:3px;"/>'; 
+                                             $j++;
+                                         }
+                                         
+                                         echo $stars;
+                                        ?>
+                                        <!--
                                         <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
                                         <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
                                         <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
                                         <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
                                         <img src="/assets/img/bg/Star_orange.png" style="width:10px; margin-top:3px;"/>
+                                        -->
                                         </div>
                                         <div style="float:left;text-align:left;color:gray;font-size:12px; margin-left:22px;margin-top:8px;font-family:Roboto;">
-                                        4.9
+                                        {{$good->avgstarscount}}
                                         </div>
                                         <div style="float:left;text-align:left;color:gray;font-size:12px; margin-left:42px;margin-top:8px;font-family:Roboto;">
-                                        7854 Отзывы
+                                        {{$good->commentcount}} Отзывы
                                         </div>
                                         <div style="float:left;text-align:left;color:gray;font-size:12px; margin-left:42px;margin-top:8px;font-family:Roboto;">
-                                        19903 заказа(ов)
+                                        {{$good->ordercount}} заказа(ов)
                                         </div>
                                     </div>
-                                    <div style="display:block; width:100%;font-size:16px;font-weight:bold;float:left;text-align:left;font-family:Roboto;margin-bottom:10px;">$ 2.00</div>
+                                    <div style="display:block; width:100%;font-size:16px;font-weight:bold;float:left;text-align:left;font-family:Roboto;margin-bottom:10px;">$ {{$good->price}}</div>
                                     <div style="display:block; width:100%;font-size:10px;float:left;text-align:left;font-family:Roboto;color:gray;margin-bottom:5px;">Количество:</div>
                                     <div style="display:inline-block; width:100%;font-family:Roboto;margin-bottom:10px;">
                                         <div style="float:left;background-color:#C4C4C4;
@@ -124,7 +143,7 @@ use App\Http\Controllers\UsersController;
                                         <div style="float:left;width:20px;margin-left:5px;">1</div>
                                         <div style="float:left;background-color:#C4C4C4;
                                         color: #E5E5E5;border-radius:50%;width:23px;height:23px;padding-left:1px; padding-top:0px;font-weight:bold;margin-left:5px;">-</div>
-                                        <div style="float:left;text-align:left;font-size:10px;margin-left:25px;">Дополнительно Скидка 5% (от 50 шт.)<br/>850 шт. в наличии (Не более 1 шт. на покупателя)</div>
+                                        <div style="float:left;text-align:left;font-size:10px;margin-left:25px;">Дополнительно Скидка {{$good->additionaldiscountpercent}}% (от {{$good->additionaldiscountpercentcount}} шт.)<br/>{{$good->totalcount}} шт. в наличии (Не более 1 шт. на покупателя)</div>
                                     </div>
                                     <div style="display:inline-block; width:100%;font-family:Roboto;">
                                         <div style="float:left;background-color:#C4C4C4;

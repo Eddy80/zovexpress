@@ -35,7 +35,7 @@ class CreateGoodsTable extends Migration
             $table->string('descriptionkg');
             $table->string('descriptiontr');
             $table->string('descriptiontc');
-            $table->integer('avgstarscount');
+            $table->double('avgstarscount');
             $table->integer('commentcount');
             $table->integer('ordercount');
             $table->double('price');

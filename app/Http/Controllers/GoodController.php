@@ -101,9 +101,38 @@ class GoodController extends Controller
         return Good::count();
     }
 
-     
-    public function viewforeditotpravka(Request $request, $id){
+
+    public function viewGood(Request $request, $id){
+
+       // dd($request);
+
         $good = Good::find($id);
+        $price = strval($good->price);
+        
+        if (strpos($price, '.')==false){
+            $price .= ".00";
+           
+        } else {
+            $pos = strpos($price, '.');
+            $len = strlen($price);
+
+            if ( ($len-$pos) > 1){
+            $price .="0";
+            }
+        }
+        
+        //settype($price, "double");
+
+        $good->price = $price;
+
+        //dd($good);
+        //$this->attributes['price'] = $price;
+
         return view('tascogood')->with('good', $good);
+    }
+     
+    public function viewForEditGood(Request $request, $id){
+        $good = Good::find($id);
+        return view('root.tascogood')->with('good', $good);
     }
 }
