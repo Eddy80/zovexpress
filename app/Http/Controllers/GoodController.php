@@ -17,7 +17,18 @@ class GoodController extends Controller
     {
         $goods = Good::where('catid', $catid)->get();
 
-        return $goods;
+        foreach($goods as $good){
+            $GoodPicControl = new GoodPicController();
+
+            $good->mainPicture = $GoodPicControl->getMain($good->id);
+        }
+
+        $goodCatController = new GoodCatController();
+        $goodCats = $goodCatController->index();
+
+        // dd($goodCats);
+
+        return view('tascogoods')->with('goods', $goods)->with('goodCats', $goodCats);
     }
 
     /**
@@ -96,18 +107,15 @@ class GoodController extends Controller
             $good->mainPicture = $GoodPicControl->getMain($good->id);
         }
 
-        //dd($goods);
+        $goodCatController = new GoodCatController();
+        $goodCats = $goodCatController->index();
 
-        return view('tascohome')->with('goods', $goods);
+        // dd($goodCats);
+
+        return view('tascogoods')->with('goods', $goods)->with('goodCats', $goodCats);
     }
 
-    public static function getListbycat($catid)
-    {
-        //return Good::all();
-        $goods = DB::table("goods")->select('id','titleru')->Where('catid', $catid)->get();
 
-        return $goods;
-    }
     
     public static function getCount()
     {
@@ -129,23 +137,21 @@ class GoodController extends Controller
             $pos = strpos($price, '.');
             $len = strlen($price);
 
-            if ( ($len-$pos) > 1){
+            if ( ($len-$pos) == 1){
             $price .="0";
             }
         }
         
-        //settype($price, "double");
-
         $good->price = $price;
 
         $GoodPicControl = new GoodPicController();
 
         $goodPics = $GoodPicControl->index($good->id); 
 
-        //dd($goodPics);
-        //$this->attributes['price'] = $price;
+        $goodCatController = new GoodCatController();
+        $goodCats = $goodCatController->index();
 
-        return view('tascogood')->with('good', $good)->with('goodPics', $goodPics);
+        return view('tascogood')->with('good', $good)->with('goodPics', $goodPics)->with('goodCats', $goodCats);
     }
      
     public function viewForEditGood(Request $request, $id){

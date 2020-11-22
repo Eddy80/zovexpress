@@ -147,9 +147,9 @@ use App\Http\Controllers\UsersController;
                             
                             <div class="col-lg-4" style="float:left; padding: 50px 0px 10px 30px; height:145px;margin-bottom:20px;   ">
                                 <div style="margin: 0px 20px 10px 20px;width:220px; ">
-                                    <img src="assets/img/tasco.png" >
-                                    <button class="btn btn-primary" type="button" 
-                                    style="border-style: solid;border-width: 2px; border-color:#fff;font-family: Roboto, sans-serif;padding: 10px 20px;  margin-top: 26px;  background-color: #D79729;">Перейти на страницу</button>
+                                    <img src="assets/img/tasco.png"  style="margin-bottom:0px;">
+                                    <a href="/tascohome" style="margin-top:0px;padding:20px 0px;"><button class="btn btn-primary" type="button" 
+                                    style="border-style: solid;border-width: 2px; border-color:#fff;font-family: Roboto, sans-serif;padding: 10px 20px;  margin-top: 0px;  background-color: #D79729;">Перейти на страницу</button></a>
                                 </div> 
                             </div>
                                

@@ -14,7 +14,7 @@ class GoodCatController extends Controller
      */
     public function index()
     {
-        //
+        return GoodCat::all()->sortBy("orderid");
     }
 
     /**
