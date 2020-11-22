@@ -108,6 +108,10 @@ Route::get('/searcht2', function () {
 //******************************************************************* */
 Route::get('/tascohome', 'GoodController@getList');
 
+Route::get('/tascohomepaginate', 'GoodController@getListPaginated');
+
+Route::get('/tascohomecatidpaginate/{catid}', 'GoodController@getListCatidPaginated');
+
 Route::get('/tascohome/{catid}', 'GoodController@index');
 
 Route::get('/tascogood/{goodid}','GoodController@viewGood');

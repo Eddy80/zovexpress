@@ -48,11 +48,11 @@ use App\Http\Controllers\UsersController;
             <div class="row" style="font-family: Roboto, sans-serif;margin-top:10px;">
                 <div class="col-md-4 col-lg-3 item">
                     <div class="tascoLeftMenu" style="text-align:left;color:#0F3C80;">
-                        <h4 style="margin-top:10px;margin-left:20px;">КАТЕГОРИИ</h4>
+                        <h4 style="margin-top:10px;margin-left:20px;"><a href="/tascohome#goodslist">КАТЕГОРИИ</a></h4>
                         <hr style="background-color:#0F3C80;">
                         <ul style="list-style:none;">
                             @foreach($goodCats as $goodCat)
-                            <li><a href="/tascohome/{{$goodCat->id}}" class="tascoleftmenulink">{{$goodCat->titleru}}</a></li>       
+                            <li><a href="/tascohome/{{$goodCat->id}}#goodslist" class="tascoleftmenulink">{{$goodCat->titleru}}</a></li>       
                             @endforeach
                         </ul>
                     </div>  

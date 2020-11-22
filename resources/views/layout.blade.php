@@ -597,6 +597,13 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 isexpress(0);
             }
         });
+
+        $(document).on('click', '.pagination a', function(event) {
+            event.preventDefault();
+            var page = $(this).attr('href').split('page=')[1];
+            let pageURL = window.location.href;
+            fetch_data(page, pageURL);
+        }); 
     });
 
     var userkod=-1;
@@ -1171,5 +1178,37 @@ $registration =  GeneralController::getName(     5,1, $lang );
                  
         );
    }
+
+
+/*
+<!-- pagination -->
+*/
+
+function isInteger(num) {
+    return /^[-]?\d+$/.test(num);
+}
+
+        function fetch_data(page, pageURL) {
+           
+            let catid = -1;
+            let myUrl = "/tascohomepaginate?page=" + page;
+
+            var start = pageURL.lastIndexOf("/");
+            var end = pageURL.lastIndexOf("#");
+            //alert(start);
+            catid = pageURL.substring(start+1, end);
+            //alert(catid);
+            //console.log(isInteger(catid));
+            if ((catid != -1 ) && (isInteger(catid)) )
+            myUrl = "/tascohomecatidpaginate/"+catid+"?page=" + page;
+            $.ajax({
+                url: myUrl,
+                success: function(goods) {
+                    //alert(myUrl);
+                    $('#table_data').html(goods);
+                }
+            });
+            //alert(myUrl);
+        }
 
 </script>
