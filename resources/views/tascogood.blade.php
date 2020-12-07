@@ -74,14 +74,22 @@ use App\Http\Controllers\GoodController;
                                         {{$good->ordercount}} заказа(ов)
                                         </div>
                                     </div>
-                                    <div style="display:block; width:100%;font-size:16px;font-weight:bold;float:left;text-align:left;font-family:Roboto;margin-bottom:10px;">$ {{$good->price}}</div>
+                                    <div style="display:block; width:100%;font-size:16px;font-weight:bold;float:left;text-align:left;font-family:Roboto;margin-bottom:10px;">${{$good->price}}</div>
                                     <div style="display:block; width:100%;font-size:10px;float:left;text-align:left;font-family:Roboto;color:gray;margin-bottom:5px;">Количество:</div>
                                     <div style="display:inline-block; width:100%;font-family:Roboto;margin-bottom:10px;">
                                         <div style="float:left;background-color:#C4C4C4;
-                                        color: #E5E5E5;border-radius:50%;width:23px;height:23px;padding-left:1px; padding-top:0px;font-weight:bold;">+</div>
-                                        <div style="float:left;width:20px;margin-left:5px;">1</div>
+                                        color: #E5E5E5;border-radius:50%;width:23px;height:23px;
+                                        padding-left:1px; padding-top:0px;font-weight:bold;cursor:pointer;" onclick="javascript:incCount({{$good->totalcount}});"
+                                        >+</div>
+                                        <div style="float:left;width:20px;margin-left:5px;" id="cartgoodcount">1</div>
                                         <div style="float:left;background-color:#C4C4C4;
-                                        color: #E5E5E5;border-radius:50%;width:23px;height:23px;padding-left:1px; padding-top:0px;font-weight:bold;margin-left:5px;">-</div>
+                                        color: #E5E5E5;border-radius:50%;width:23px;height:23px;
+                                        padding-left:1px; padding-top:0px;font-weight:bold;margin-left:5px;cursor:pointer;" onclick="javascript:decCount();"
+                                        >-</div>
+                                        <!--
+                                        <button class="button-primary plus" data-id="sss" onclick="javascript:plusFunction('sss');">+</button>
+                                        <button class="button-primary minus" data-id="sss" onclick="javascript:minusFunction('sss');">-</button>
+                                        -->
                                         <div style="float:left;text-align:left;font-size:10px;margin-left:25px;">Дополнительно Скидка {{$good->additionaldiscountpercent}}% (от {{$good->additionaldiscountpercent}} шт.)<br/>{{$good->totalcount}} шт. в наличии (Не более 1 шт. на покупателя)</div>
                                     </div>
                                     <div style="display:inline-block; width:100%;font-family:Roboto;">
@@ -101,8 +109,7 @@ use App\Http\Controllers\GoodController;
                                         color: #FFFFFF;border-radius:5%;width:100px;height:36px;padding-top:10px;margin-right:20px;">
                                         Купить сейчас
                                         </div> 
-                                        <div style="float:left;background-color:#D79729;font-size:12px;
-                                        color: #FFFFFF;border-radius:5%;width:130px;height:36px;padding-top:10px;margin-right:30px;">
+                                        <div id="addtocart" class="enabledAddToCardButton" onClick="javascript:plusFunction({{$good->id}},'{{$good->titleru}}');">
                                         Добавить в карзину
                                         </div>
                                         <div style="float:left;padding-top:4px;">

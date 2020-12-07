@@ -569,6 +569,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
 
+
 <script src="/assets/js/jquery.min.js"></script>
 <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="/assets/js/bs-animation.js"></script>
@@ -581,6 +582,9 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
     $(document).ready(function(){
+
+        loadCart();
+
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -1212,3 +1216,4 @@ function isInteger(num) {
         }
 
 </script>
+<script src="/assets/js/unit.js"></script>

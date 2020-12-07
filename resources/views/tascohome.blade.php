@@ -22,8 +22,9 @@ use App\Http\Controllers\UsersController;
                         <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
                         корзина &nbsp;
                         <img src="/assets/img/korzina.png"/>
-                        <div style="float:right;margin-top:15px;background-color:#DF0707; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
                         </a>
+                        <div id="cartlength" style="float:right;margin-top:15px;background-color:#DF0707; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
+                        
                     </div>
                 </div>
             </div>

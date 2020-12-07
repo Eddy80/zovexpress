@@ -105,7 +105,7 @@ Route::get('/searcht2', function () {
     return view('searchtovar2');
 });
 
-//******************************************************************* */
+//*********************TASCO SHOP******************************************** */
 Route::get('/tascohome', 'GoodController@getList');
 
 Route::get('/tascohomepaginate', 'GoodController@getListPaginated');
