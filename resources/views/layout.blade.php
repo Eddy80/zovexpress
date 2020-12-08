@@ -227,16 +227,12 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     <span aria-hidden="true">×</span>
                 </button>
             </div>
-            <div class="modal-body" style="padding-left: 20px;height:400px;overflow-y: scroll;" id="cartitems">
+            <div class="modal-body" 
+            style="padding-left: 20px;height:400px;overflow-y: scroll;" id="cartitems">
             <!-- Suda zaqrujayu spisok s pomoshyu funksii maincart(); -->
             </div>
-            <div class="modal-footer" style="padding-right: 33px;">
-                <button id="registersubmit" class="btn btn-white" type="submit" 
-                style="font-size: 14px; color:#ffffff; background-color: #da9904;"  >Подробно</button>
-                <button onclick="" class="btn btn-light border rounded border-warning" 
-                type="button" data-dismiss="modal" style="font-size: 14px; background-color: #ffffff;">Купить все</button>
-                <button id="registersubmit" class="btn btn-white" type="submit" 
-                style="font-size: 14px; color:#ffffff; background-color: Red;"  >Удалить все</button>
+            <div class="modal-footer" id="cartfoot" style="padding-right: 33px;">
+            <!-- Suda zaqrujayu nijniye knopki -->
             </div>
             
         </div>
@@ -656,12 +652,17 @@ $registration =  GeneralController::getName(     5,1, $lang );
         
         if ( !isEmptyArray(cart)) {
             $("#cartitems").html('<h5>Корзина пуста</h5>');
+            
+            $("#cartfoot").html('<button id="registersubmit" class="btn btn-white" type="button" data-dismiss="modal"'+ 
+                'style="font-size: 14px; color:#ffffff; background-color: #da9904;">Закрыть</button>'
+                );
+              
         }
         else {
         let out = '';
                 for (var key in cart){
                     out += ''+
-                    '<div class="row" style="background-color:#D79729;margin:3px 0px;padding-top:7px;">'+
+                    '<div class="row" style="background-color:#D79729;margin:3px 0px;padding-top:7px; padding-bottom:5px;">'+
                     '<label style="font-size: 16px; width: 100%;color:#fff; text-align:left;font-weight:bold;margin-left:15px;">'+
                     cart[key]['name']+'</label>'+
                     '<div class="col"><label style="font-size: 14px; width: 50px;font-weight:bold">'+cart[key]['price']+' $</label></div>'+
@@ -674,22 +675,17 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 }
 
                 $("#cartitems").html(out);
+
+                $("#cartfoot").html(''+
+                '<button id="registersubmit" onclick="/cartfull" class="btn btn-white" type="submit"'+ 
+                'style="font-size: 14px; color:#ffffff; background-color: #da9904;">Подробно</button>'+
+                '<button onclick="/payout" class="btn btn-light border rounded border-warning"'+
+                'type="submit" style="font-size: 14px; background-color: #ffffff;">Купить все</button>'+
+                '<button id="registersubmit" class="btn btn-white" type="button"'+
+                'style="font-size: 14px; color:#ffffff; background-color: Red;" onclick="javascript:deleteAllFunction();" >Удалить все</button>'
+                );
+                
         }  
-
-
-       
-        /*
-        if (param ==1) {
-            $("#kod").text("  ( Ваш код: " + userkod + " )");
-            $("#userkod").val(userkod);
-            $("email").val(useremailorphone);
-        }
-        else
-        {
-            $("#kod").text("");
-            $("#userkod").val(-1);
-        }
-        */
     }
 
    function regform(param)

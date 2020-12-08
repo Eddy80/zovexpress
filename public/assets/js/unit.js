@@ -66,6 +66,12 @@ const deleteFunction = (id) =>{
     maincart();
 }
 
+function deleteAllFunction(){
+    for (let key in cart)
+        delete cart[key];
+    saveCartToLocalStorage();
+    maincart();
+}
 
 
 const incCount = (totalCount) => {
