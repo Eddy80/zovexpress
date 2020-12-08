@@ -2,32 +2,33 @@ let cart = {
 
 } 
 
+let favorite = {
+
+} 
+
 /*
 document.click = event => {
-
-    alert(4);
 
     if (event.target.classlist.contains('plus'))
         plusFunction(event.target.dataset.id);
     if (event.target.classlist.contains('minus'))
-        minusFunction(event.target.dataset.id);
-    
+        minusFunction(event.target.dataset.id);  
     
     console.log(event.target.dataset.id);
-
 }
 */
 
-const plusFunction = (id,title) =>{
+const plusFunction = (id,title, price) =>{
     if(typeof cart[id] === 'undefined') {
-        addFunction(id, title);
+        addFunction(id, title, price);
         return true;
     }
 
     let count = $("div#cartgoodcount").text();
     cart[id]['count'] = Number(cart[id]['count'])+Number(count);
-    // renderCart(id);
+
     saveCartToLocalStorage();
+    maincart();
 }
 
 const minusFunction = (id) =>{
@@ -38,15 +39,16 @@ const minusFunction = (id) =>{
 
     cart[id]['count']--;
     saveCartToLocalStorage();
-    //renderCart(id);
+    maincart();
 }
 
-const addFunction = (id, title) =>{
+const addFunction = (id, title, price) =>{
 
     let count = $("div#cartgoodcount").text();
 
     cart[id] =  { 
                     "name": title,
+                    "price": price,
                     "count":count
                 }
 
@@ -54,19 +56,17 @@ const addFunction = (id, title) =>{
     //$("#addtocart").removeClass("enabledAddToCardButton");
 //    $("#addtocart").addClass("disabledAddToCardButton");
 
-   // showCartPopUp();
-
    saveCartToLocalStorage();
+   maincart();
 }
 
 const deleteFunction = (id) =>{
     delete cart[id];
-    //renderCart(ud);
+    saveCartToLocalStorage();
+    maincart();
 }
 
-const renderCart = (id) =>{
-    console.log(cart);
-}
+
 
 const incCount = (totalCount) => {
 
@@ -90,31 +90,13 @@ const decCount = () => {
 const loadCart = () => {
     if (localStorage.getItem('cart')) {
         cart = JSON.parse(localStorage.getItem('cart'));
-       // showMiniCart();
-       $('#cartlength').text(Object.keys(cart).length);
+        $('#cartlength').text(Object.keys(cart).length);
     }
 }
 
 
-
-const showMiniCart = () => {
-    var out = "";
-    for (var key in cart){
-        out += '<button data-id="key" class="del-goods">x</button>'
-        out += key = '  ---  ' +cart[key][name]+'count:'+cart[key][count]+ '<br>';
-    }
-
-    
-
-    $('#minicart').html(out);
-    $('.del-goods').on('click', delGoods);
-
-}
 
 const saveCartToLocalStorage = () => {
     localStorage.setItem('cart', JSON.stringify(cart));
-    //console.log(Object.keys(cart).length);
     $('#cartlength').text(Object.keys(cart).length);
 }
-
-//renderCart();

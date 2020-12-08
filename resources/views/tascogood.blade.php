@@ -109,7 +109,7 @@ use App\Http\Controllers\GoodController;
                                         color: #FFFFFF;border-radius:5%;width:100px;height:36px;padding-top:10px;margin-right:20px;">
                                         Купить сейчас
                                         </div> 
-                                        <div id="addtocart" class="enabledAddToCardButton" onClick="javascript:plusFunction({{$good->id}},'{{$good->titleru}}');">
+                                        <div id="addtocart" class="enabledAddToCardButton" onClick="javascript:plusFunction({{$good->id}},'{{$good->titleru}}',{{$good->price}});">
                                         Добавить в карзину
                                         </div>
                                         <div style="float:left;padding-top:4px;">

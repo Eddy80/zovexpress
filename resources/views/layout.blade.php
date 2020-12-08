@@ -215,6 +215,33 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
 
 
+    <div class="modal fade" id="maincartform" role="dialog" tabindex="-1" style="margin: 0 auto;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            
+            
+            <div class="modal-header">
+                <h4 class="modal-title" style="font-size: 16px;font-weight: bold;margin-right: 15px;">Корзина</h4>
+                <div id="kod"></div>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding-left: 20px;height:400px;overflow-y: scroll;" id="cartitems">
+            <!-- Suda zaqrujayu spisok s pomoshyu funksii maincart(); -->
+            </div>
+            <div class="modal-footer" style="padding-right: 33px;">
+                <button id="registersubmit" class="btn btn-white" type="submit" 
+                style="font-size: 14px; color:#ffffff; background-color: #da9904;"  >Подробно</button>
+                <button onclick="" class="btn btn-light border rounded border-warning" 
+                type="button" data-dismiss="modal" style="font-size: 14px; background-color: #ffffff;">Купить все</button>
+                <button id="registersubmit" class="btn btn-white" type="submit" 
+                style="font-size: 14px; color:#ffffff; background-color: Red;"  >Удалить все</button>
+            </div>
+            
+        </div>
+    </div>
+</div>
 
 
 
@@ -614,6 +641,56 @@ $registration =  GeneralController::getName(     5,1, $lang );
     var useremailorphone = "";
 
     document.getElementById("year").innerHTML = new Date().getFullYear();
+
+    function isEmptyArray(object){
+        for (var key in object)
+            if (object.hasOwnProperty(key)) 
+            return true;
+        return false;
+    }
+
+    function maincart()
+    {
+
+        $("#maincartform").modal('show');
+        
+        if ( !isEmptyArray(cart)) {
+            $("#cartitems").html('<h5>Корзина пуста</h5>');
+        }
+        else {
+        let out = '';
+                for (var key in cart){
+                    out += ''+
+                    '<div class="row" style="background-color:#D79729;margin:3px 0px;padding-top:7px;">'+
+                    '<label style="font-size: 16px; width: 100%;color:#fff; text-align:left;font-weight:bold;margin-left:15px;">'+
+                    cart[key]['name']+'</label>'+
+                    '<div class="col"><label style="font-size: 14px; width: 50px;font-weight:bold">'+cart[key]['price']+' $</label></div>'+
+                    '<div class="col"><button style="Background-color:#72B572;color:#fff;font-size: 14px; width: 25px;font-weight:bold;" onclick="javascript:minusFunction('+key+');">-</button></div>'+
+                    '<div class="col"><label style="font-size: 14px; width: 50px;font-weight:bold">'+cart[key]['count']+' шт.</label></div>'+
+                    '<div class="col"><button style="Background-color:green;color:#fff;font-size: 14px; width: 25px;font-weight:bold;" onclick="javascript:plusFunction('+key+');">+</button></div>'+
+                    '<div class="col"><label style="font-size: 14px; width: 70px;font-weight:bold">'+cart[key]['count']*cart[key]['price']+' $</label></div>'+
+                    '<div class="col"><button style="Background-color:red;color:#fff;font-size: 14px; width: 35px;font-weight:bold;" onclick="javascript:deleteFunction('+key+');">х</button></div>'+ 
+                    '</div>';
+                }
+
+                $("#cartitems").html(out);
+        }  
+
+
+       
+        /*
+        if (param ==1) {
+            $("#kod").text("  ( Ваш код: " + userkod + " )");
+            $("#userkod").val(userkod);
+            $("email").val(useremailorphone);
+        }
+        else
+        {
+            $("#kod").text("");
+            $("#userkod").val(-1);
+        }
+        */
+    }
 
    function regform(param)
     {

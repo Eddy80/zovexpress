@@ -16,10 +16,14 @@ use App\Http\Controllers\UsersController;
                     <div style="float:right;padding-right:30px;">
                         <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; margin-right:10px;">
                         <img src="/assets/img/bg/heard.png"/>
-                        <div style="float:right;margin-top:15px;background-color:#0F3C80; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
+                        <div id="favoritelength" style="float:right;margin-top:15px;background-color:#0F3C80; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
                         </a>
 
-                        <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
+                        <!--<a class="btn btn-light border rounded action-button" role="button" href="javascript:regform();" 
+                        style="font-family: Roboto;font-size: 13px;background-color: #D79729;border-radius: 6px;padding-top: 5px;
+                        margin-right:15px;"></a>-->
+
+                        <a class="login" href="javascript:maincart();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
                         корзина &nbsp;
                         <img src="/assets/img/korzina.png"/>
                         </a>
