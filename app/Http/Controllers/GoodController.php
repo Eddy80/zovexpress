@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Good;
+use App\GoodPic;
 use Illuminate\Http\Request;
 use App\Http\Controllers\GoodPicController;
+use App\Http\Controllers\DB;
 
 
 
@@ -301,6 +303,9 @@ class GoodController extends Controller
        // dd($request);
 
         $good = Good::find($id);
+
+        
+
         $price = strval($good->price);
         
         if (strpos($price, '.')==false){
@@ -309,13 +314,23 @@ class GoodController extends Controller
         } else {
             $pos = strpos($price, '.');
             $len = strlen($price);
-
             if ( ($len-$pos) == 1){
             $price .="0";
             }
         }
-        
         $good->price = $price;
+
+        $pricemany = strval($good->pricemany);
+        if (strpos($pricemany, '.')==false){
+            $pricemany .= ".00";
+        } else {
+            $pos = strpos($pricemany, '.');
+            $len = strlen($pricemany);
+            if ( ($len-$pos) == 1){
+            $pricemany .="0";
+            }
+        }        
+        $good->pricemany = $pricemany;
 
         $GoodPicControl = new GoodPicController();
 
@@ -323,12 +338,28 @@ class GoodController extends Controller
 
         $goodCatController = new GoodCatController();
         $goodCats = $goodCatController->index();
-
-        return view('tascogood')->with('good', $good)->with('goodPics', $goodPics)->with('goodCats', $goodCats);
+        
+        $shopGoodlist = $this->findByShopId($good->shopid);
+       // dd($shopGoodlist);
+        return view('tascogood')->with('good', $good)->with('shopgoods', $shopGoodlist)->with('goodPics', $goodPics)->with('goodCats', $goodCats);
     }
      
     public function viewForEditGood(Request $request, $id){
         $good = Good::find($id);
         return view('root.tascogood')->with('good', $good);
+    }
+
+    function findByShopId($shopid){
+        $shopGoodPics = [];
+        $shopGoods = Good::where('shopid', $shopid)->take(4)->get();
+       // dd($shopGoods);
+        
+        foreach($shopGoods as $shopGood){
+           $goodPics = GoodPic::where('goodid', $shopGood->id)->where('ismain', 1)->select('path','filename')->get();
+            array_push($shopGoodPics, $goodPics); 
+        }
+        return $shopGoodPics;
+        
+        //return $shopGoods;
     }
 }

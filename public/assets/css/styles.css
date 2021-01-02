@@ -110,3 +110,32 @@ body, html{
     margin-right:30px;
 }    
 
+
+.cabFormEdit {
+    border: 1; 
+    border-radius: 5px; 
+    border-color: #C4C4C4; 
+    padding-left: 5px; 
+    padding-bottom: 3px; 
+    background-color:#ffffff;
+    width:200px;
+    float: right;
+    margin-bottom: 5px;
+    height: 35px;
+}
+
+.cabFormLabel {
+    font-size: 14px;
+    width: 90%;
+    margin-bottom: 5px;
+    height: 35px;
+    font-weight: normal;
+}
+
+.cabFormSubmit{
+    font-weight:bold; 
+    background-color:#DF0707;
+    border: 1; 
+    border-radius: 5; 
+    
+}

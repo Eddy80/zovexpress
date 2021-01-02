@@ -35,7 +35,7 @@ class CodesController extends Controller
     {
         $myid = Auth::user()->id;
         $codes = Codes::where('userid', $myid)->get();
-
+        //dd($codes);
         return $codes;
     }
 

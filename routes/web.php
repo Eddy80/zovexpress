@@ -76,6 +76,15 @@ Route::post('/couriers', 'KuryerController@store')->name('couriers');
 Route::get('/courierslist', function () {
     return view('courierlist');
 });
+//////////// USER FAVORITES /////////////////////////////////////////////////
+Route::get('/userfavoritenew', function () {
+    return view('userfavorites');
+});
+
+Route::post('/userfavorites', 'UserFavoriteController@store');
+Route::get('/userfavoriteslist', function () {
+    return view('userfavoriteslist');
+});
 //////////// SHOP /////////////////////////////////////////////////
 Route::get('/shops', function () {
     return view('shops');
@@ -195,6 +204,14 @@ Route::group([
     });
 
 
+
+    //  Maqazin:
+
+    Route::get('/cabaddgoods', function () {
+        return view('cabaddgoods');
+    });
+
+    Route::post('/cabaddgoods','GoodController@storemydata');
 
 
 });

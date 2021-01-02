@@ -60,6 +60,24 @@ const addFunction = (id, title, price) =>{
    maincart();
 }
 
+const addToFavoriteFunction = (id, title, price) =>{
+
+    favorite[id] =  { 
+                    "name": title,
+                    "price": price,
+                    "count":1
+                }
+    saveFavoriteToLocalStorage();
+    $('#goodsurek').html('<img src="/assets/img/bg/heard.png" onClick="javascript:deleteFromFavoriteFunction('+id+',\''+title+'\','+price+');"/>');
+}
+
+const deleteFromFavoriteFunction = (id, title, price) =>{
+
+    delete favorite[id];
+    saveFavoriteToLocalStorage();
+    $('#goodsurek').html('<img src="/assets/img/bg/urek.png" onClick="javascript:addToFavoriteFunction('+id+',\''+title+'\','+price+');"/>');
+}
+
 const deleteFunction = (id) =>{
     delete cart[id];
     saveCartToLocalStorage();
@@ -103,6 +121,47 @@ const loadCart = () => {
 
 
 const saveCartToLocalStorage = () => {
+
     localStorage.setItem('cart', JSON.stringify(cart));
     $('#cartlength').text(Object.keys(cart).length);
+    
+}
+
+const saveFavoriteToLocalStorage = () => {
+    
+    localStorage.setItem('favorite', JSON.stringify(favorite));
+    $('#favoritelength').text(Object.keys(favorite).length);
+
+    /*
+     console.log(favorite);
+
+
+    $.ajax({
+        type: "POST",
+        cache: false,
+        url : '/userfavorites',
+        data: {favorite},
+        success: function(data) {
+            console.log( "succes" );
+            console.log( data );
+        }
+    });
+
+    /*
+     $.ajax({
+         type: "POST",
+         cache: false,
+         url : path+'/userfavorites',
+         data: {favorite}, //{'ma':$('select[name=ma]').val()},
+         success: function(data) {
+            console.log( "succes" ); 
+         }
+     });
+*/
+     /*
+     $.post( "/userfavorites", {favorite}, function( data ) {
+        console.log( "succes" ); 
+        //console.log( data.name+'  '+ data.time ); // John // 2pm
+      }, "json");*/
+
 }

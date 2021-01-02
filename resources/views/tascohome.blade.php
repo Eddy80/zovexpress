@@ -14,8 +14,8 @@ use App\Http\Controllers\UsersController;
                     <div style="float:left;width:34%;"><img src="/assets/img/bg/Tasco_logo.png" /></div>
                     <div style="float:left;margin-left:55px;background-color:#FFF800; color:#000000; width:280px; height:40px; text-align:center;font-size:12px;font-weight:bold;border:1px solid #fff; border-radius:3px;cursor:pointer;">Открыть собственный <br/>магазин в TASCO</div>
                     <div style="float:right;padding-right:30px;">
-                        <a class="login" href="javascript:korzina();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; margin-right:10px;">
-                        <img src="/assets/img/bg/heard.png"/>
+                        <a class="login" href="javascript:favorites();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; margin-right:10px;">
+                        <img src="/assets/img/bg/urek.png"/>
                         <div id="favoritelength" style="float:right;margin-top:15px;background-color:#0F3C80; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
                         </a>
 
@@ -26,9 +26,9 @@ use App\Http\Controllers\UsersController;
                         <a class="login" href="javascript:maincart();" style="display:inline-block;color: #423E3E;font-family: Roboto;font-size: 13px; ">
                         корзина &nbsp;
                         <img src="/assets/img/korzina.png"/>
-                        </a>
-                        <div id="cartlength" style="float:right;margin-top:15px;background-color:#DF0707; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
                         
+                        <div id="cartlength" style="float:right;margin-top:15px;background-color:#DF0707; color:#fff;border-radius: 50%!important;width:20px;height:20px;text-align:center; margin-left:-6px;">0</div>
+                        </a>
                     </div>
                 </div>
             </div>

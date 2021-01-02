@@ -688,6 +688,11 @@ $registration =  GeneralController::getName(     5,1, $lang );
         }  
     }
 
+
+    function setPrice(price){
+        $("#goodsprice").text('$'+price);
+    }
+
    function regform(param)
     {
 

@@ -1,26 +1,14 @@
 
-@extends('layout')
+@extends('cabhome')
 
-@section('content')
+@section('cabcontent')
 <?php
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\CodesController;
 use App\Http\Controllers\CountryController;
+$user = UsersController::getUserFLNames(Auth::user()->id);
 ?>
-<div class="article-list">
-    <div class="container">
-        <div class="intro"></div>
-        <div class="row articles" style="margin-top: 20px;">
-            <div class="col-sm-6 col-md-3 item" style="background-color: #da9904;padding: 20px 15px 20px;"><img class="border rounded border-warning shadow-lg" src="assets/img/profile.png" style="width: 160px;height: 150px;background-color: #787373;">
-               <!-- <h3 class="name">Изменить изображение</h3> -->
-                <h3 class="name"><a style="text-decoration: none;color: #000000;" href="{{url('cab')}}">Информация</a></h3>
-                <h3 class="name"><a style="text-decoration: none;color: #000000;" href="{{url('cabedit')}}">Редактировать профиль</a></h3>
-                <h3 class="name"><a style="text-decoration: none;color: #000000;" href="{{url('cabpassword')}}">Поменять пароль</a></h3>
-                <h3 class="name" style="background-color: #ffffff;"><a style="text-decoration: none;color: #000000;" href="javascript:codeform();">Получить КОД</a></h3>
-                <h3 class="name" style="background-color: #ffffff;"><a style="text-decoration: none;color: #000000;" href="{{url('cabcodelist')}}">Полученные коды</a></h3>
-<!--                <h3 class="name" style="background-color: #ffffff;"><a style="text-decoration: none;color: #000000;" href="{{url('cabtracking')}}">Отследить посылку</a></h3>-->
-<!--                <h3 class="name" style="background-color: #ffffff;"><a style="text-decoration: none;color: #000000;" href="{{url('cabhistory')}}">История отправок</a></h3>-->
-            </div>
-            <div class="col-sm-6 col-md-6 item" style="width: 100%;padding: 0px 20px;"><a href="#"></a>
+            <div class="col-sm-6 col-md-9 item" style="width: 750px;padding: 10px 20px;"><a href="#"></a>
                 <ul class="list-group">
                     <?php   $codes = CodesController::getListByUserId(); ?>
 
@@ -46,7 +34,7 @@ use App\Http\Controllers\CountryController;
                                                 <?php   $countryname = CountryController::getNameById($code->countryid); ?>
 
                                                 <tr>
-                                                    <td style="height: 25px; padding: 3px 5px;font-size: 10px;background-color: #d79827;color: #ffffff;width: 200px;">
+                                                    <td style="text-align:center;height: 25px; padding: 3px 5px;font-size: 10px;background-color: #d79827;color: #ffffff;width: 200px;">
                                                         {{$countryname->nameru}}
                                                     </td>
                                                 </tr>
@@ -66,8 +54,5 @@ use App\Http\Controllers\CountryController;
                     @endforeach
                 </ul>
             </div>
-
-        </div>
-    </div>
 </div>
 @endsection

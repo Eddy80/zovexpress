@@ -74,7 +74,7 @@ use App\Http\Controllers\GoodController;
                                         {{$good->ordercount}} заказа(ов)
                                         </div>
                                     </div>
-                                    <div style="display:block; width:100%;font-size:16px;font-weight:bold;float:left;text-align:left;font-family:Roboto;margin-bottom:10px;">${{$good->price}}</div>
+                                    <div id="goodsprice" style="display:block; width:100%;font-size:16px;font-weight:bold;float:left;text-align:left;font-family:Roboto;margin-bottom:10px;">${{$good->price}}</div>
                                     <div style="display:block; width:100%;font-size:10px;float:left;text-align:left;font-family:Roboto;color:gray;margin-bottom:5px;">Количество:</div>
                                     <div style="display:inline-block; width:100%;font-family:Roboto;margin-bottom:10px;">
                                         <div style="float:left;background-color:#C4C4C4;
@@ -95,12 +95,12 @@ use App\Http\Controllers\GoodController;
                                     <div style="display:inline-block; width:100%;font-family:Roboto;">
                                         <div style="float:left;background-color:#C4C4C4;
                                         color: #E5E5E5;border-radius:50%;width:22px;height:22px;padding-left:1px; padding-top:0px;">
-                                            <input type="radio" id="sellType" name="sellType" value="optom" checked>
+                                            <input type="radio" id="sellType" name="sellType" value="optom" onclick="javascript:setPrice({{$good->pricemany}});">
                                         </div> 
                                         <div style="float:left;margin-top:5px;margin-left:10px;margin-right:50px;font-size:12px;">Оптом</div>      
                                         <div style="float:left;background-color:#C4C4C4;
                                         color: #E5E5E5;border-radius:50%;width:22px;height:22px;padding-left:1px; padding-top:0px;">
-                                            <input type="radio" id="sellType" name="sellType" value="roznitsa">
+                                            <input type="radio" id="sellType" name="sellType" value="roznitsa" checked onclick="javascript:setPrice({{$good->price}});">
                                         </div>
                                         <div style="float:left;margin-top:5px;margin-left:10px;margin-right:50px;font-size:12px;">В розницу</div>
                                     </div>
@@ -112,9 +112,21 @@ use App\Http\Controllers\GoodController;
                                         <div id="addtocart" class="enabledAddToCardButton" onClick="javascript:plusFunction({{$good->id}},'{{$good->titleru}}',{{$good->price}});">
                                         Добавить в карзину
                                         </div>
-                                        <div style="float:left;padding-top:4px;">
-                                        <img src="/assets/img/bg/urek.png" />
-                                        </div>
+                                        
+                                            <div id="goodsurek" style="float:left;padding-top:4px;cursor:pointer;">
+                                            <img src="/assets/img/bg/urek.png" onClick="javascript:addToFavoriteFunction({{$good->id}},'{{$good->titleru}}',{{$good->price}});"/>
+                                            </div>
+
+                                        <script>
+                                            let urek='';
+                                        if(typeof favorite[{{$good->id}}] === 'undefined') {
+                                            urek = '<img src="/assets/img/bg/urek.png" onClick="javascript:addToFavoriteFunction('+{{$good->id}}+',\''+{{$good->titleru}}+','+{{$good->price}}+');"/>';
+                                        }else {
+                                            urek = '<img src="/assets/img/bg/urek.png" onClick="javascript:deleteFromFavoriteFunction('+{{$good->id}}+',\''+{{$good->titleru}}+','+{{$good->price}}+');"/>';
+                                        }
+                                        $('#goodsurek').html(urek);
+                                        </script>
+
                                     </div>
                                 </div>
                             </div>                        
@@ -127,12 +139,9 @@ use App\Http\Controllers\GoodController;
                     <div class="tascoRightMenu">
                         <div style="width:100%;display:inline-block; background-color:#C4D9ED;">
                             <div style="color:#0F3C80;font-size:12px; font-weight:bold;margin-top:10px;margin-bottom:10px;"> Товары Магазина </div>
-                            <img src="/assets/img/tasco/shop_product1.png" style="width:70px;height:70px;">
-                            <img src="/assets/img/tasco/shop_product2.png" style="width:70px;height:70px;">  
-                            <img src="/assets/img/tasco/shop_product3.png" style="width:70px;height:70px;">
-                            <img src="/assets/img/tasco/shop_product4.png" style="width:70px;height:70px;">
-                            <img src="/assets/img/tasco/shop_product5.png" style="width:70px;height:70px;">
-                            <img src="/assets/img/tasco/shop_product6.png" style="width:70px;height:70px;">
+                            @foreach($shopgoods as $shopgood)
+                            <img src="{{ $goodPic->path.$goodPic->filename}}" style="width:70px;height:70px;margin-bottom:2px;">                                                
+                            @endforeach
                             <div style="color:#0F3C80;font-size:12px; font-weight:bold;margin-top:10px;margin-bottom:10px;"> Показать больше </div>
                         </div>
                         <div style="width:100%;display:block;">
