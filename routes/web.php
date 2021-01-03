@@ -206,7 +206,14 @@ Route::group([
 
 
     //  Maqazin:
+     // Tovari
+     Route::get('/cabaddshop', function () {
+        return view('cabaddshop');
+    });
 
+    Route::post('/cabaddshop','GoodShopController@storemydata');
+
+    // Tovari
     Route::get('/cabaddgoods', function () {
         return view('cabaddgoods');
     });

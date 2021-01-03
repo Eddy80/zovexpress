@@ -28,34 +28,28 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                         <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">Название магазина</label>
                         <input type="text" class="cabFormEdit2" value="" name="" id=""/>
                         <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">Категория магазина</label>
-                        <input type="text"  class="cabFormEdit2" value="" name="" id="" />
-                    </div> 
-
-                       <div style="float:left; width:200px;text-align:left;margin-left:40px; background-color:#fff;">
-                        <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">Страна</label>
-                        <input type="text" class="cabFormEdit2" style="float:right;" value="" name="" id=""/>
-                        <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">&nbsp;</label>
-                        <input class="cabFormSubmit" style="background-color:#DF0707;width:200px;" type="submit" value="Сохранить"/>
                         
+                        <select id="shopcat" name="shopcat" class="cabFormEdit2">
+                            <option value=""></value>
+                            <option value="other">Другое</value>
+                        </select>
                     </div> 
 
-                <!--
-                    <h3 class="text-left name cabFormLabel" >Имя: <input class="cabFormEdit"  name="firstname" id="firstname" type="text" value="{{ $user[0]->firstname }}" placeholder="Имя"/></h3>
-                <h3 class="text-left name cabFormLabel" >Дата регистрации: <span class="cabFormEdit">{{date('d.m.Y', strtotime($user[0]->created_at))}}</span></h3>
-                <p class="description" style="text-align: justify; width: 96%;"><textarea name="description" id="description" cols="60" rows="8" style="border: 1; border-radius: 5px; border-color: #C4C4C4; padding-left: 5px; padding-bottom: 3px; background-color:#ffffff;;" >{{$user[0]->description}}</textarea></p>
-                <p class="description" style="text-align: left; width: 96%;">
--->
-                
+                    <div style="float:left; width:200px;text-align:left;margin-left:40px; background-color:#fff;">
+                        <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">Страна</label>
+                        <select id="country" name="country" class="cabFormEdit2">
+                            <option value=""></value>
+                            <option value="other">Азербайджан</value>
+                        </select>
+                        
+                        <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">&nbsp;</label>
+                        <input class="cabFormSubmit" style="background-color:#DF0707;width:200px;" type="submit" value="Сохранить"/>  
+                    </div>                 
                 </form>
 
                 
             </div>
-            <hr style="margin:20px 180px 10px 60px;">  
-            <div>
-            <form action="/cabaddgoods" method="post">
-            {{csrf_field()}}
-            </form>
-            </div>
+         
 </div>
 
 <div>

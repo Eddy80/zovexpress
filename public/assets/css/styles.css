@@ -124,6 +124,19 @@ body, html{
     height: 35px;
 }
 
+.cabFormEdit2 {
+    border: 1; 
+    border-radius: 5px; 
+    border-color: #C4C4C4; 
+    padding-left: 5px; 
+    padding-bottom: 3px; 
+    background-color:#ffffff;
+    width:200px;
+    float: right;
+    margin-bottom: 5px;
+    height: 35px;
+}
+
 .cabFormLabel {
     font-size: 14px;
     width: 90%;
