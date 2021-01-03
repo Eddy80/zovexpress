@@ -206,12 +206,10 @@ Route::group([
 
 
     //  Maqazin:
-     // Tovari
-     Route::get('/cabaddshop', function () {
-        return view('cabaddshop');
-    });
+    
+     Route::get('/cabaddshop', 'GoodShopController@create');
 
-    Route::post('/cabaddshop','GoodShopController@storemydata');
+    Route::post('/cabaddshop','GoodShopController@store');
 
     // Tovari
     Route::get('/cabaddgoods', function () {

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\GoodShop;
+use App\Country;
+use App\GoodCat;
+use Auth;
 use Illuminate\Http\Request;
 
 class GoodShopController extends Controller
@@ -24,8 +27,12 @@ class GoodShopController extends Controller
      */
     public function create()
     {
-        //
+        $countries = Country::all();
+        $shopcats = GoodCat::all();
+        return view('cabaddshop')->with('countries', $countries)->with('shopcats', $shopcats);
     }
+
+
 
     /**
      * Store a newly created resource in storage.
@@ -35,7 +42,54 @@ class GoodShopController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+       /* if ( !isset($data['isexpress']) )
+          $data['isexpress'] = 0;  
+        else 
+          $data['isexpress'] = 1;
+  */
+
+  $data['titleru'] = $data['shopname'];
+  $data['shopcatid'] = $data['shopcat'];
+  $data['shopcountryid'] = $data['country'];
+
+
+          if (Auth::check())
+          $data['ownerid'] = Auth::user()->id;
+          else $data['ownerid'] = -1;
+  
+     /*
+      $newdata = array('userid'=>Auth::user()->id);
+      array_push($data, $newdata);
+  
+  var_dump($data);
+  
+  */
+
+  
+
+  $request->validate([
+    //  'file' => 'required|mimes:pdf,xlx,csv|max:2048',
+    'file' => 'required|mimes:jpeg,gif,png|max:2048',
+  ]);
+
+  $fileName = time().'.'.$request->file->extension();  
+  $data['shoplogotip'] = $fileName;
+
+  $path = '/assets/img/users/'.Auth::user()->id.'/shops/'.$data['shopname'].'/';
+
+  //$request->file->move(public_path('uploads'), $fileName);
+  $request->file->move(public_path($path), $fileName);
+  //dd($data);
+  GoodShop::add($data);
+  
+  return back()
+      ->with('success','You have successfully upload file.')
+      ->with('file',$fileName);
+
+
+          
+  
     }
 
     /**
