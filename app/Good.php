@@ -20,11 +20,12 @@ class Good extends Model
 
     public static function add($fields)
     {
+       // dd($fields);
         $good = new static;
         $good->fill($fields);
         $good->save();
 
-        return  $good;
+        return  $good->id;
     }
 
 

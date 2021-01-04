@@ -75,7 +75,13 @@ class GoodController extends Controller
         $data = $request->all();
 
         $data['titleru'] = $data['goodname'];
-        $data['shopid'] = $data['shopid'];
+
+        $shopidname = $data['shopidname'];
+        $pos = strpos($shopidname, '_');
+        $shopid = substr($shopidname, 0, $pos);
+        $shopname = substr($shopidname, $pos+1, strlen($shopidname)-$pos);
+        //dd($shopname);
+        $data['shopid'] = $shopid;
 
         $data['pricemany'] = $data['priseoptom'];
         $data['price'] = $data['priseroznitsa'];
@@ -91,35 +97,88 @@ class GoodController extends Controller
           else $data['userid'] = -1;
   
 
-  
+      
+        //dd($data);
+        $goodInsertId = Good::add($data);
+      //  dd($goodInsertId);
+       
+
 
         $request->validate([
             //  'file' => 'required|mimes:pdf,xlx,csv|max:2048',
-            'file' => 'required|mimes:jpeg,gif,png|max:2048',
+            'goodfilemain' => 'required|mimes:jpeg,jpg,gif,png|max:2048',
+            'goodfile2' => 'mimes:jpeg,jpg,gif,png|max:2048',
+            'goodfile3' => 'mimes:jpeg,jpg,gif,png|max:2048',
+            'goodfile4' => 'mimes:jpeg,jpg,gif,png|max:2048',
+            'goodfile5' => 'mimes:jpeg,jpg,gif,png|max:2048',
         ]);
 
-        $fileNameMain = time().'.'.$request->goodfilemain->extension();  
-        $fileName2 = time().'.'.$request->goodfile2->extension();  
-        $fileName3 = time().'.'.$request->goodfile3->extension();  
-        $fileName4 = time().'.'.$request->goodfile4->extension();  
-        $fileName5 = time().'.'.$request->goodfile5->extension();  
-         
-        //$data['shoplogotip'] = $fileName;
+        $path = '/assets/img/users/'.Auth::user()->id.'/shops/'.$shopname.'/goods/'.$data['goodname'].'/';
 
-        $path = '/assets/img/users/'.Auth::user()->id.'/shops/'.$data['shopname'].'/goods/'.$data['goodname'].'/';
-
-        //$request->file->move(public_path('uploads'), $fileName);
+        $fileNameMain = '1'.    time().'.'.$request->goodfilemain->extension();  
         $request->goodfilemain->move(public_path($path), $fileNameMain);
+        $datapic['goodid'] = $goodInsertId;
+        $datapic['ismain'] = 1;
+        $datapic['filename'] = $fileNameMain;
+        $datapic['filenamesmall'] = null;
+        $datapic['path'] = $path;
+        $datapic['orderid'] = 0;
+        GoodPic::add($datapic);
+
+        if ($request->goodfile2 != null){
+        $fileName2 = '2'.time().'.'.$request->goodfile2->extension();  
         $request->goodfile2->move(public_path($path), $fileName2);
+        $datapic2['goodid'] = $goodInsertId;
+        $datapic2['ismain'] = 0;
+        $datapic2['filename'] = $fileName2;
+        $datapic2['filenamesmall'] = null;
+        $datapic2['path'] = $path;
+        $datapic2['orderid'] = 0;
+        GoodPic::add($datapic2);
+        }
+        if ($request->goodfile3 != null){
+        $fileName3 = '3'.time().'.'.$request->goodfile3->extension();  
         $request->goodfile3->move(public_path($path), $fileName3);
+        $datapic3['goodid'] = $goodInsertId;
+        $datapic3['ismain'] = 0;
+        $datapic3['filename'] = $fileName3;
+        $datapic3['filenamesmall'] = null;
+        $datapic3['path'] = $path;
+        $datapic3['orderid'] = 0;
+        GoodPic::add($datapic3);
+        }
+        if ($request->goodfile4 != null){
+        $fileName4 = '4'.time().'.'.$request->goodfile4->extension(); 
         $request->goodfile4->move(public_path($path), $fileName4);
-        $request->goodfile5->move(public_path($path), $fileName5);
+        $datapic4['goodid'] = $goodInsertId;
+        $datapic4['ismain'] = 0;
+        $datapic4['filename'] = $fileName4;
+        $datapic4['filenamesmall'] = null;
+        $datapic4['path'] = $path;
+        $datapic4['orderid'] = 0;
+        GoodPic::add($datapic4);
+        }
+        if ($request->goodfile5 != null){ 
+        $fileName5 = '5'.time().'.'.$request->goodfile5->extension();  
+        $request->goodfile5->move(public_path($path), $fileName5);  
+        $datapic5['goodid'] = $goodInsertId;
+        $datapic5['ismain'] = 0;
+        $datapic5['filename'] = $fileName5;
+        $datapic5['filenamesmall'] = null;
+        $datapic5['path'] = $path;
+        $datapic5['orderid'] = 0;
+        GoodPic::add($datapic5);
+        }
         
-        //dd($data);
-        Good::add($data);
+       
         
+        
+        
+        
+        
+
         return back()
-            ->with('success','Вы успешно добавили себе продукт в магазин '.$data['shopname'].' !');
+            ->with('success','Вы успешно добавили себе продукт в магазин '.$shopname.' !');
           //  ->with('file',$fileName);  
     }
 

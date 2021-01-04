@@ -58,16 +58,16 @@ class GoodShopController extends Controller
 
         $request->validate([
             //  'file' => 'required|mimes:pdf,xlx,csv|max:2048',
-            'file' => 'required|mimes:jpeg,gif,png|max:2048',
+            'myfile' => 'required|mimes:jpeg,gif,png|max:2048',
         ]);
 
-        $fileName = time().'.'.$request->file->extension();  
+        $fileName = time().'.'.$request->myfile->extension();  
         $data['shoplogotip'] = $fileName;
 
         $path = '/assets/img/users/'.Auth::user()->id.'/shops/'.$data['shopname'].'/';
 
         //$request->file->move(public_path('uploads'), $fileName);
-        $request->file->move(public_path($path), $fileName);
+        $request->myfile->move(public_path($path), $fileName);
         //dd($data);
         GoodShop::add($data);
         

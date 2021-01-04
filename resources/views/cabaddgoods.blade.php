@@ -81,7 +81,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
             <hr style="margin:20px 180px 10px 60px;">  
             <div style="background-color:#F7F7F7; width:750px; height:450px;margin-top:40px;margin-left:30px;
                         border-radius:10px;padding: 20px;box-shadow:1px 2px 2px 1px #888888;">
-            <form action="/cabaddgoods" method="post">
+            <form action="/cabaddgoods" method="post" enctype="multipart/form-data">
             {{csrf_field()}}
                 <div style="text-align:left;float:left;width:210px; ">
                         <label for="goodname" style="width:150px;font-size:11px;font-family:Roboto;
@@ -89,10 +89,10 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                         <input id="goodname" name="goodname" class="cabFormEdit3" type="text" required />
                         <label for="shop" style="float:left;width:200px;font-size:11px;font-family:Roboto;
                         color:#777777;">Выберите магазин</label>
-                        <select id="shopid" name="shopid" class="cabFormSelect" required>
+                        <select id="shopidname" name="shopidname" class="cabFormSelect" required>
                             <option value=""></value>
                             @foreach ($myshops as $myshop)
-                            <option value="{{$myshop->titleru}}">{{$myshop->titleru}}</value>
+                            <option value="{{$myshop->id}}_{{$myshop->titleru}}">{{$myshop->titleru}}</value>
                             @endforeach
                         </select>
 
@@ -100,19 +100,19 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                         <!-- <input type="radio" id="optom" name="selltype" class="cabFormRadio" value="0">-->
                         <label for="priseoptom" style="padding-left:5px;padding-top:10px;float:left;width:160px;font-size:11px;font-family:Roboto;
                         color:#777777;margin-right:40px;">Цена оптом ($)</label>
-                        <input id="priseoptom" name="priseoptom" class="cabFormEdit3" type="text" required />    
+                        <input id="priseoptom" name="priseoptom" class="cabFormEdit3" type="number" min="0.00" max="10000.00" step="0.01"  required />    
                         <!-- <input type="radio" id="roznitsa" name="selltype" class="cabFormRadio" value="1" checked>-->
                         <label for="priseroznitsa" style="padding-left:5px;float:left;width:160px;font-size:11px;font-family:Roboto;
                         color:#777777;">Цена в розницу ($)</label>
-                        <input id="priseroznitsa" name="priseroznitsa" class="cabFormEdit3" type="text" required />
+                        <input id="priseroznitsa" name="priseroznitsa" class="cabFormEdit3" type="number" min="0.00" max="10000.00" step="0.01"  required />
                         
 
                         <label for="discountfrom" style="margin-top:10px;adding-top:10px;float:left;width:60px;font-size:11px;font-family:Roboto;
                         color:#777777;">Скидка от</label>
-                        <input id="discountfrom" name="discountfrom" class="cabFormEdit4" type="text" required />
+                        <input id="discountfrom" name="discountfrom" class="cabFormEdit4" type="number" min="0" max="10000" step="1"  required />
                         <label for="discountpercent" style="padding-top:10px;padding-left:5px;float:left;width:20px;font-size:11px;font-family:Roboto;
                         color:#777777;">шт.</label>
-                        <input id="discountpercent" name="discountpercent" class="cabFormEdit4" type="text" required />
+                        <input id="discountpercent" name="discountpercent" class="cabFormEdit4" type="number" min="0.00" max="10000.00" step="0.01"  required />
                         <label style="padding-top:10px;padding-left:5px;float:left;width:10px;font-size:11px;font-family:Roboto;
                         color:#777777;">%</label>
                        
@@ -121,7 +121,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                 <div style="text-align:left;float:left;width:480px;margin-left:10px; ">
                         <label for="goodname" style="width:150px;font-size:11px;font-family:Roboto;
                         color:#777777;float:left;">Описание товара</label>
-                        <textarea id="gooddescription" name="gooddescription" class="cabFormTextarea"></textarea>
+                        <textarea id="gooddescription" name="gooddescription" class="cabFormTextarea" required></textarea>
 
                         <div style="display:inline-block; width:100%;">
                         <label style="float:left;margin-top:3px;margin-bottom:0px;font-size:11px;font-family:Roboto;color:#777777;">Добавить фото    
@@ -133,7 +133,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                                         border-radius:5px;width:85px;height:85px;padding:0px 0px;margin-right:11px;">
                                 <img id="goodimgmain" src="/assets/img/bigplus_.png" alt="goodimgmain" 
                                 style="width:79px; height:79px;max-width:79px; max-height:79px;" />
-                            <input id="goodfilemain" name="goodfilemain" type="file" onchange="readURL(this, '#goodimgmain');" required />
+                            <input type="file" id="goodfilemain" name="goodfilemain" onchange="readURL(this, '#goodimgmain');" required />
                             </div>
                             </label>
                             <label for="goodfile2" >
@@ -142,7 +142,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                                         border-radius:5px;width:85px;height:85px;padding:0px 0px;margin-right:11px;">
                                 <img id="goodimg2" src="/assets/img/bigplus_.png" alt="goodimg2" 
                                 style="width:79px; height:79px;max-width:79px; max-height:79px;" />
-                            <input id="goodfile2" name="goodfile2" type="file" onchange="readURL(this, '#goodimg2');" required />
+                            <input id="goodfile2" name="goodfile2" type="file" onchange="readURL(this, '#goodimg2');"  />
                             </div>
                             </label>
                             <label for="goodfile3" >
@@ -151,7 +151,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                                         border-radius:5px;width:85px;height:85px;padding:0px 0px;margin-right:11px;">
                                 <img id="goodimg3" src="/assets/img/bigplus_.png" alt="goodimg3" 
                                 style="width:79px; height:79px;max-width:79px; max-height:79px;" />
-                            <input id="goodfile3" name="goodfile3" type="file" onchange="readURL(this, '#goodimg3');" required />
+                            <input id="goodfile3" name="goodfile3" type="file" onchange="readURL(this, '#goodimg3');"  />
                             </div>
                             </label>
                             <label for="goodfile4" >
@@ -160,7 +160,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                                         border-radius:5px;width:85px;height:85px;padding:0px 0px;margin-right:11px;">
                                 <img id="goodimg4" src="/assets/img/bigplus_.png" alt="goodimg4" 
                                 style="width:79px; height:79px;max-width:79px; max-height:79px;" />
-                            <input id="goodfile4" name="goodfile4" type="file" onchange="readURL(this, '#goodimg4');" required />
+                            <input id="goodfile4" name="goodfile4" type="file" onchange="readURL(this, '#goodimg4');" />
                             </div>
                             </label>
                             <label for="goodfile5" >
@@ -169,7 +169,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                                         border-radius:5px;width:85px;height:85px;padding:0px 0px;margin-right:0px;">
                                 <img id="goodimg5" src="/assets/img/bigplus_.png" alt="goodimg5" 
                                 style="width:79px; height:79px;max-width:79px; max-height:79px;" />
-                            <input id="goodfile5" name="goodfile5" type="file" onchange="readURL(this, '#goodimg5');" required />
+                            <input id="goodfile5" name="goodfile5" type="file" onchange="readURL(this, '#goodimg5');" />
                             </div>
                             </label>
                            

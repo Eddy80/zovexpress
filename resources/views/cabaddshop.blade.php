@@ -36,14 +36,14 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                     {{csrf_field()}}
 
                     <div style="text-align:left;float:left; ">
-                        <label for="file" style="margin-top:5px;font-size:11px;font-family:Roboto;color:#777777;">Обложка
+                        <label for="myfile" style="margin-top:5px;font-size:11px;font-family:Roboto;color:#777777;">Обложка
                         <div style="margin-top:10px;text-align:center; border-width:3px; 
                                     border-color: #C4C4C4;border-style:solid;
                                     border-radius:5px;width:130px;height:110px;padding:0px 0px;">
                             <img id="shopimg" src="/assets/img/bigplus_.png" alt="shopimg" 
                                  style="width:125px; height:104px;max-width:126px; max-height:105px;" />
                         </label>
-                        <input id="file" name="file" type="file" onchange="readURL(this);" required />
+                        <input id="myfile" name="myfile" type="file" onchange="readURL(this,'#shopimg');" required />
                         </div>
                     </div> 
 
