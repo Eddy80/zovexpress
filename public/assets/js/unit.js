@@ -167,12 +167,12 @@ const saveFavoriteToLocalStorage = () => {
 }
 
 
-function readURL(input) {
+function readURL(input, divid) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
         reader.onload = function (e) {
-            $('#shopimg')
+            $(divid)
                 .attr('src', e.target.result)
 
         };

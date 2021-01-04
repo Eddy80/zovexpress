@@ -112,7 +112,8 @@ body, html{
 
 
 .cabFormEdit {
-    border: 1; 
+    border-width: 1px; 
+    border-style: solid;
     border-radius: 5px; 
     border-color: #C4C4C4; 
     padding-left: 5px; 
@@ -125,7 +126,8 @@ body, html{
 }
 
 .cabFormEdit2 {
-    border: 1; 
+    border-width: 1px; 
+    border-style: solid;
     border-radius: 5px; 
     border-color: #C4C4C4; 
     padding-left: 5px; 
@@ -135,6 +137,89 @@ body, html{
     float: right;
     margin-bottom: 5px;
     height: 35px;
+}
+
+.cabFormEdit3 {
+    border-width: 1px; 
+    border-style: solid;
+    border-radius: 5px; 
+    border-color: #C4C4C4; 
+    padding-left: 5px; 
+    padding-bottom: 3px; 
+    background-color:#ffffff;
+    width:200px;
+    float: left;
+    margin-bottom: 15px;
+    height: 35px;
+   
+}
+
+
+.cabFormEdit4 {
+    border-width: 1px; 
+    border-style: solid;
+    border-radius: 5px; 
+    border-color: #C4C4C4; 
+    padding-left: 5px; 
+    padding-bottom: 3px; 
+    background-color:#ffffff;
+    width:50px;
+    float: left;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    height: 35px;
+   
+}
+
+.cabFormSelect {
+    border-width: 1px; 
+    border-style: solid;
+    border-radius: 5px; 
+    border-color: #C4C4C4; 
+    padding-left: 5px; 
+    padding-bottom: 3px; 
+    background-color:#ffffff;
+    width:200px;
+    float: left;
+    margin-bottom: 5px;
+    height: 35px;
+   
+}
+
+.cabFormRadio {
+    border-width: 1px; 
+    border-style: solid;
+    border-radius: 5px; 
+    border-color: #C4C4C4; 
+    padding-left: 5px; 
+    padding-bottom: 3px; 
+    background-color:#ffffff;
+    width:15px;
+    float: left;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    height: 35px;
+   
+}
+
+.cabFormTextarea {
+    border-width: 1px; 
+    border-style: solid;
+    border-radius: 5px; 
+    border-color: #C4C4C4; 
+    padding-left: 5px; 
+    padding-bottom: 3px; 
+    background-color:#ffffff;
+    width:100%;
+    min-width: 490px;
+    max-width: 490px;
+    min-height: 184px;
+    max-height: 184px;
+    float: left;
+    margin-bottom: 12px;
+    margin-left: 0px;
+    height: 184px;
+   
 }
 
 input[type="file"] {

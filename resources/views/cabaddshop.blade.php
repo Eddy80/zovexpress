@@ -43,16 +43,16 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                             <img id="shopimg" src="/assets/img/bigplus_.png" alt="shopimg" 
                                  style="width:125px; height:104px;max-width:126px; max-height:105px;" />
                         </label>
-                        <input id="file" name="file" type="file" onchange="readURL(this);" />
+                        <input id="file" name="file" type="file" onchange="readURL(this);" required />
                         </div>
                     </div> 
 
                     <div style="float:left; width:200px;text-align:left;margin-left:60px; background-color:#fff;">
                         <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">Название магазина</label>
-                        <input type="text" class="cabFormEdit2" value="" name="shopname" id="shopname"/>
+                        <input type="text" class="cabFormEdit2" value="" name="shopname" id="shopname" required />
                         <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">Категория магазина</label>
                         
-                        <select id="shopcat" name="shopcat" class="cabFormEdit2">
+                        <select id="shopcat" name="shopcat" class="cabFormEdit2" required>
                             <option value=""></value>
                             @foreach ($shopcats as $shopcat)
                             <option value="{{$shopcat->id}}">{{$shopcat->titleru}}</value>
@@ -62,8 +62,8 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
 
                     <div style="float:left; width:200px;text-align:left;margin-left:40px; background-color:#fff;">
                         <label style="width:200px;font-size:11px;font-family:Roboto;color:#777777;text-align:left;">Страна</label>
-                        <select id="country" name="country" class="cabFormEdit2">
-                            <option value="-1"></value>
+                        <select id="country" name="country" class="cabFormEdit2" required>
+                            <option value=""></value>
                             @foreach ($countries as $country)
                             <option value="{{$country->id}}">{{$country->nameru}}</value>
                             @endforeach
@@ -79,8 +79,5 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
          
 </div>
 
-<div>
-
-</div>
         
 @endsection

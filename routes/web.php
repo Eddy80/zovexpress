@@ -212,11 +212,9 @@ Route::group([
     Route::post('/cabaddshop','GoodShopController@store');
 
     // Tovari
-    Route::get('/cabaddgoods', function () {
-        return view('cabaddgoods');
-    });
+    Route::get('/cabaddgoods', 'GoodController@create');
 
-    Route::post('/cabaddgoods','GoodController@storemydata');
+    Route::post('/cabaddgoods','GoodController@store');
 
 
 });
