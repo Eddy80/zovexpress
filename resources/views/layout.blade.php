@@ -1087,6 +1087,35 @@ $registration =  GeneralController::getName(     5,1, $lang );
    }
 
 
+   function clearTovar(){
+       // alert(5);
+        $("#goodfile5").val("");
+        $("#goodfile4").val("");
+        $("#goodfile3").val("");
+        $("#goodfile2").val("");
+        $("#goodfilemain").val("");
+        $('#goodimgmain')
+            .attr('src', '/assets/img/bigplus_.png');
+        $("#goodimg5")
+            .attr('src', '/assets/img/bigplus_.png');
+        $("#goodimg4")
+            .attr('src', '/assets/img/bigplus_.png');
+        $("#goodimg3")
+            .attr('src', '/assets/img/bigplus_.png');
+        $("#goodimg2")
+            .attr('src', '/assets/img/bigplus_.png');
+       
+        $("#discountpercent").val("");
+        $("#discountfrom").val("");
+        $("#priseoptom").val("");
+        $("#priseroznitsa").val("");
+        $("#gooddescription").val("");
+        $("#shopidname").val("");
+        $("#goodname").val("");
+        
+   }
+
+
    function addToBasket(){
         alert("Добавлено в корзину");    
    }

@@ -73,6 +73,12 @@ dd($data);
     public function show(Invoice $invoice)
     {
         //
+        if (Auth::check())
+        return view('invoice');
+        else 
+        return view('login');
+
+        // $data['userid'] = Auth::user()->id;
     }
 
 

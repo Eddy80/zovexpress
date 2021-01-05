@@ -1,6 +1,13 @@
 @extends('layout') 
 @section('content')
-<div class="login-clean">
+<div class="team-grid nakladnaya">
+        <div class="container">     
+       
+            <div class="container" style="background-color: #fff; box-shadow:0px 5px 5px 0px gray;">
+                <div class="row" style="padding-left:0 auto; padding-left: 8%; padding-bottom:30px;">
+                
+               
+
             @if (session('status'))
                 <div class="alert alert-danger" role="alert" style="text-align:center;margin-top:0px;">
                     {{ session('status') }}
@@ -11,11 +18,11 @@
                 <h2 class="sr-only">Вход в кабинет</h2>
                 <div class="illustration">
                   <img src="assets/img/logo.png">
-                  {{-- <i class="icon ion-ios-navigate" style="color: #FF6A00;"></i> --}}
+                  
                 </div>
-                <div class="form-group">
-                  {{-- <input class="form-control" type="email" name="email" placeholder="Email"> --}}
-                  {{-- {{ __('Password') }} --}}
+                <div class="leftpartitem">
+                  <h2>Email:</h2>
+         
                   <input placeholder="Email" id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                   @error('email')
                       <span class="invalid-feedback" role="alert">
@@ -23,9 +30,8 @@
                       </span>
                   @enderror
                 </div>
-                <div class="form-group">
-                  {{-- <input class="form-control" type="password" name="password" placeholder="Parol"> --}}
-                  {{-- {{ __('E-Mail Address') }} --}}
+                <div class="leftpartitem">
+                  <h2>Пароль:</h2>
                   <input placeholder="Parol" id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
                   @error('password')
                       <span class="invalid-feedback" role="alert">
@@ -34,20 +40,28 @@
                   @enderror
                 </div>
 
-                <div class="form-group">
+                <div class="leftpartitem" style="width:110px;">
+                <h2>&nbsp;</h2>
                 <input type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                 <label class="form-check-label" for="remember">
-                  Запомнить  {{-- {{ __('Remember Me') }} --}}
+                  &nbsp;Запомнить 
                 </label>
                 </div>
 
-                <div class="form-group">
-                  <button class="btn btn-primary btn-block" type="submit" style="background-color: #D79729;">
-                    {{--  {{ __('Login') }} --}} Войти
+                <div class="leftpartitem" style="width:120px;">
+                  <h2>&nbsp;</h2>
+                  <button class="btn btn-primary btn-block" type="submit" style="font-weight:bold;background-color: #DF0707;">
+                  Войти
                   </button>
+                </div>
 
-
+                <div class="leftpartitem">
+                <h2>&nbsp;</h2>
+                  <button onclick="regform()" class="btn btn-light border rounded border-warning" 
+                                type="button" data-dismiss="modal" style="font-size: 14px; background-color: #ffffff;">
+                    Регистрация
+                  </button>
                 </div>
 
                 @if (Route::has('password.request'))
@@ -57,8 +71,11 @@
                 @endif
 
             </form>
+  
+
   </div>
-
-
+  </div>
+  </div>
+  </div>
 
 @endsection

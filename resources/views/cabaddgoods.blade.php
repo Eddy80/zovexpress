@@ -87,7 +87,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                         <label for="goodname" style="width:150px;font-size:11px;font-family:Roboto;
                         color:#777777;float:left;">Название товара</label>
                         <input id="goodname" name="goodname" class="cabFormEdit3" type="text" required />
-                        <label for="shop" style="float:left;width:200px;font-size:11px;font-family:Roboto;
+                        <label for="shopidname" style="float:left;width:200px;font-size:11px;font-family:Roboto;
                         color:#777777;">Выберите магазин</label>
                         <select id="shopidname" name="shopidname" class="cabFormSelect" required>
                             <option value=""></value>
@@ -119,7 +119,7 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                 </div> 
 
                 <div style="text-align:left;float:left;width:480px;margin-left:10px; ">
-                        <label for="goodname" style="width:150px;font-size:11px;font-family:Roboto;
+                        <label for="gooddescription" style="width:150px;font-size:11px;font-family:Roboto;
                         color:#777777;float:left;">Описание товара</label>
                         <textarea id="gooddescription" name="gooddescription" class="cabFormTextarea" required></textarea>
 
@@ -181,6 +181,9 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
             
                 </div> 
             </form>
+            </div>
+            <div class="row" style="padding-left:0 auto; padding-left: 10%; padding-top: 30px; padding-bottom:10px;">
+                <a href="javascript:clearTovar();">Добавить новый товар</a>
             </div>
 </div>
 

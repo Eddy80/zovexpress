@@ -59,9 +59,7 @@ Route::post('/contactform', 'GeneralController@addressstore');
 Route::get('/tasco',  'GeneralController@getPageTasco');
 
 //////////// INVOICE /////////////////////////////////////////////////
-Route::get('/invoicenew', function () {
-    return view('invoice');
-});
+Route::get('/invoicenew','InvoiceController@show'); 
 
 Route::post('/invoices', 'InvoiceController@store')->name('invoices');
 Route::get('/invoiceslist', function () {
