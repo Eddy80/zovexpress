@@ -49,7 +49,7 @@
                 </label>
                 </div>
 
-                <div class="leftpartitem" style="width:120px;">
+                <div class="leftpartitem" style="width:130px;">
                   <h2>&nbsp;</h2>
                   <button class="btn btn-primary btn-block" type="submit" style="font-weight:bold;background-color: #DF0707;">
                   Войти
@@ -59,7 +59,7 @@
                 <div class="leftpartitem">
                 <h2>&nbsp;</h2>
                   <button onclick="regform()" class="btn btn-light border rounded border-warning" 
-                                type="button" data-dismiss="modal" style="font-size: 14px; background-color: #ffffff;">
+                                type="button" data-dismiss="modal" style="font-size: 14px;font-weight:bold; background-color: #ffffff;">
                     Регистрация
                   </button>
                 </div>
