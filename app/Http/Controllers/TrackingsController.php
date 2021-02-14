@@ -188,11 +188,11 @@ class TrackingsController extends Controller
                 <table class="table table-bordered" >
                     <tbody>
                     <tr>
-                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">0% пути</td>
-                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">25% пути</td>
-                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">50% пути</td>
-                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">75% пути</td>
-                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;">100% пути</td>
+                        <td style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Принято</td>
+                        <td class="text-left" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">Сдано на отправку</td>
+                        <td class="text-center" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">В пути</td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;widtd: 169px;">В пути</td>
+                        <td class="text-right" style="padding: 2px 0px;font-size: 10px;color: #ffffff;">Принято</td>
                     </tr>
                    
                    

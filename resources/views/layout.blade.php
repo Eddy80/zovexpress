@@ -173,7 +173,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 <div class="row justify-content-center">
                     <div class="col-sm-4 col-md-3 item">
                         <div style="font-family: Roboto, sans-serif;font-style: normal;font-weight: normal;font-size: 30px;line-height: 35px;text-transform: uppercase;color: #fff; margin-bottom: 50px;">
-                        Наши <br>филиалы
+                        <!-- Наши <br>филиалы -->
                     </div>
                         
                     </div>
@@ -199,8 +199,8 @@ $registration =  GeneralController::getName(     5,1, $lang );
                 <div class="row justify-content-center">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="row" style="font-family: Roboto, sans-serif;">
-                        <?php $addresses = GeneralController::getAddress();  ?>
-                            {!! $addresses !!}
+                         <!--$addresses = GeneralController::getAddress();  
+                             $addresses -->
                         
                         
                         </div>
@@ -410,20 +410,20 @@ $registration =  GeneralController::getName(     5,1, $lang );
                     </div>
                     </form>
 
-
+                    <!--
                     <br/>
                     <div class="col" style="text-align: left;width: 400px;">
                         <label style="font-size: 14px;width: 450px;">Страна отправитель:</label>
                         <input type="radio" name="FromCountry" id="FromCountry" value="CN" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" checked onclick="loadaddress(0);">Китай &nbsp;
                         <input type="radio" name="FromCountry" id="FromCountry" value="TR" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" onclick="loadaddress(1);">Турция
                     </div>
-                    <br/>
+                     <br/>
                     <div class="col">
                         <label style="font-size: 14px; font-weight: bold; color: red;width: 450px;"><br/>Cкопируйте адрес для передачи поставщику :</label>
                     </div>
                     <div class="col" id="copyaddress">
                         <input type="text" id="ouraddress" name="ouraddress" class="border-warning border rounded" style="font-size: 14px; padding-left:5px; width: 95%" value="广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。13145748283"/>
-                    </div>
+                    </div> -->
 
 
 
@@ -522,20 +522,21 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
                             <button onclick="javascript:regform(1);" data-dismiss="modal" class="btn btn-white" type="button" style="text-align: center; width: 200px;font-size: 14px; font-weight: bold; color:#ffffff; background-color: #da9904;">Зарегистрироваться</button>
                         </div>
+                        <!--
                         <br/>
                         <div class="col" style="text-align: left;">
                             <label style="font-size: 14px;width: 200px;">Страна отправитель:</label>
                             <input type="radio" name="FromCountry" id="FromCountry" value="CN" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" checked onclick="loadaddress2(0);">Китай &nbsp;
                             <input type="radio" name="FromCountry" id="FromCountry" value="TR" style="text-align: left; font-size: 12px; font-weight: bold; width: 30px; color:#000000;" onclick="loadaddress2(1);">Турция
                         </div>
-                        <div class="col">
+                         <div class="col">
                             <label style="font-size: 14px; font-weight: bold; color: red;"><br/>Cкопируйте адрес для передачи поставщику :</label>
                         </div>
                         <div class="col" id="copyaddress2">
                             <input type="text" id="ouraddress2" name="ouraddress2" class="border-warning border rounded"
                                    style="font-size: 14px; padding-left:5px; width: 95%" value="(Ваш код)广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库 Тел: 13145748283"/>
-                         <!--   //广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。13145748283 -->
-                        </div>
+                            //广州市荔湾区环市西路宇宙鞋城D区503A—505  398G库。13145748283 
+                        </div> -->
                 </div>
 
 
@@ -836,11 +837,14 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
     function loadinfowr(countryid)
     {
+       // var message = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.');
         $('#countryid').val(countryid);
         $('#codewr').val('');
         $('#myinfo').val('...');
         $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
-
+            if (countryid == 1 || countryid == 5)
+                data = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.';
+            alert(data);
         });//, "json");
 
         $.get("{{ URL::to('countryinfolist') }}",{ countryid:countryid }, function(data){
@@ -860,11 +864,16 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
     function loadinfo(countryid)
     {
+        //var message = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.');
+       
         $('#countryid').val(countryid);
         $('#code').val('');
         $('#myinfo').val('...');
         $.get("{{ URL::to('countryinfo') }}",{countryid:countryid}, function(data){
-            alert(data);
+
+            if (countryid == 1 || countryid ==5 )
+                data = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.                                                                                           '+data;
+               alert(data);
 
         });//, "json");
 

@@ -33,7 +33,8 @@ $user = UsersController::getUserFLNames(Auth::user()->id);
                 <h6><a style="text-decoration: none;color: #000000;" href="{{url('cabcodelist')}}">Полученные коды</a></h6>
                 <h6><a style="text-decoration: none;color: #000000;" href="{{url('tracking')}}">Отследить посылку</a></h6>
                 <h6><a style="text-decoration: none;color: #000000;" href="{{url('invoicelist')}}">Мои заказы</a></h6>
-                <h6><a style="text-decoration: none;color: #000000;" href="{{url('invoicenew')}}">Накладная</a></h6>
+                <h6><a style="text-decoration: none;color: #000000;" href="{{url('invoicenew')}}">Заказать</a></h6>
+                <h6><a style="text-decoration: none;color: #000000;">Накладная</a></h6>
 
                 <h6><a style="text-decoration: none;color: #000000;" href="{{url('mybonuses')}}">Мои бонусы</a></h6>
                 <hr style="margin-right:25px;">

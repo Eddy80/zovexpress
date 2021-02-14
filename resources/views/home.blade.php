@@ -20,8 +20,8 @@ use App\Http\Controllers\UsersController;
                     </label>
                     <br/><br/>
                     <div>
-                    <a class="btn btn-primary" role="button" href="{{url('underconstruction')}}" style="font-family: Roboto, sans-serif;font-size: 14px;padding-top:11px;background-color: #DF0707;margin-right: 37px;border-width: 2px; border-color: #FFF;color:#fff;height:42px;width:165px;font-weight: bold;line-height: 16px;text-align: center;">заказать</a>
-                    <a class="btn btn-primary" role="button" href="javascript:codeformwithoutreg();" style="font-family: Roboto, sans-serif;font-size: 14px;padding-top:11px;background-color: #FFFFFF;color: #000000;border-width: 2px; border-color: #FFF;height:42px;width:165px;font-weight: bold;line-height: 16px;text-align: center;">получить код</a>
+                    <a class="btn btn-primary" role="button" onclick="window.location.href='/invoicenew'"  style="font-family: Roboto, sans-serif;font-size: 14px;padding-top:11px;background-color: #DF0707;margin-right: 37px;border-width: 2px; border-color: #FFF;color:#fff;height:42px;width:165px;font-weight: bold;line-height: 16px;text-align: center;">заказать</a>
+                   <!-- <a class="btn btn-primary" role="button" href="javascript:codeformwithoutreg();" style="font-family: Roboto, sans-serif;font-size: 14px;padding-top:11px;background-color: #FFFFFF;color: #000000;border-width: 2px; border-color: #FFF;height:42px;width:165px;font-weight: bold;line-height: 16px;text-align: center;">получить код</a> -->
                     </div>
                 </div>
                 <div class="col-md-6" style="height: 340px; padding-left: 10px;">
@@ -68,7 +68,7 @@ use App\Http\Controllers\UsersController;
             <div class="row">
                 <div class="col-xs-6 col-sm-12  col-md-12 col-lg-12" style="text-align:center;">
                 <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #D79729;border-style: none;box-shadow:0px 5px 5px 0px gray;">Как заказать?</button>
-                <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;" onclick="window.location.href='/invoicenew'">Накладная</button>
+                <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;" onclick="window.location.href='/underconstruction'" >Накладная</button>
                 <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;" onclick="window.location.href='/shops'">Магазины</button>
                 <button class="btn btn-primary" type="button" style="margin: 0px 30px ; height:42px;width:146px;font-family: Roboto, sans-serif;margin-bottom: 20px; background-color: #E5E5E5;border-style: none;color: #000000;box-shadow:0px 5px 5px 0px gray;">Наши адреса</button>
                 </div>
@@ -528,9 +528,11 @@ use App\Http\Controllers\UsersController;
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/8.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/9.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/10.jpeg);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     <!--
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/11.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/12.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-image: url(assets/img/partners/13.png);background-size: 165px 92px;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
+                     -->
                      <!-- <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color: #C4C4C4;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color: #C4C4C4;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
                      <div class="col-md-2"  style="margin-top: 20px; margin-right: 20px;background-color: #C4C4C4;  height: 92px;width: 165px;box-shadow:0px 5px 5px 0px gray;"></div>
