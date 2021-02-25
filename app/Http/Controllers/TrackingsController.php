@@ -122,21 +122,21 @@ class TrackingsController extends Controller
         $otpravka = OtpravkaController::getNameById($otpravkaid);
 
         $vehicle = 'plane';
-        $top=82;
+        $top=80;
 
 
     if ($otpravka[0]->type==0) {
         $vehicle = 'plane';
-        $top=82;
+        $top=80;
     }
     else {
         $vehicle = 'truckk';
         $top = 90;
     }
 
-    $left = 30;
+    $left = 10;
     if ($otpravka[0]->nowpercent >=0 && $otpravka[0]->nowpercent < 25)
-        $left = 30;
+        $left = 10;
     elseif ($otpravka[0]->nowpercent >=25 && $otpravka[0]->nowpercent < 50)
         $left = 190;
     elseif ($otpravka[0]->nowpercent >=50 && $otpravka[0]->nowpercent < 75)
@@ -201,10 +201,10 @@ class TrackingsController extends Controller
                         <table style="width: 100%;">
                             <tbody>
                             <tr style="width: 100%;">
-                                <td style="padding: 12px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 7px 0px;height: 10px;"><img src="/assets/img/Ellipse.png"></td>
                                 <td style="padding: 23px 20px;height: 10px;vertical-align: baseline; width: 100%; background-image: url(\'/assets/img/onedash2.png\');
                                 background-repeat: repeat-x;"></td>
-                                <td style="padding: 12px 0px;height: 10px;vertical-align: baseline;"><img src="/assets/img/Ellipse.png"></td>
+                                <td style="padding: 7px 0px;height: 10px;"><img src="/assets/img/Ellipse.png"></td>
                             </tr>
                             </tbody>
                         </table>

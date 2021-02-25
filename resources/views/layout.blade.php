@@ -837,7 +837,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
     function loadinfowr(countryid)
     {
-       // var message = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.');
+       // var message = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.';
         $('#countryid').val(countryid);
         $('#codewr').val('');
         $('#myinfo').val('...');
@@ -864,7 +864,7 @@ $registration =  GeneralController::getName(     5,1, $lang );
 
     function loadinfo(countryid)
     {
-        //var message = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.');
+        //var message = 'ВНИМАНИЕ ! Приём посылок для отправок в Казахстан (Россию) на данный момент составляет от 20 кг и выше.';
        
         $('#countryid').val(countryid);
         $('#code').val('');
